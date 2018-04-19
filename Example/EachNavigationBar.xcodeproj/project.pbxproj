@@ -28,7 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		389D3AD49EDE388A3635EF2F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		389D3AD49EDE388A3635EF2F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* EachNavigationBar_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EachNavigationBar_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -40,12 +40,12 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		6DC958CF1AA02B5F56B43E61 /* Pods_EachNavigationBar_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EachNavigationBar_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7CCDC80169FB11DA20D877F8 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		7CCDC80169FB11DA20D877F8 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		8EF7189A83D599973972FD39 /* Pods_EachNavigationBar_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EachNavigationBar_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A117A3F435ACF9DE3690102A /* Pods-EachNavigationBar_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EachNavigationBar_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EachNavigationBar_Tests/Pods-EachNavigationBar_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		C088ADBF8B4C88FD6B82A889 /* Pods-EachNavigationBar_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EachNavigationBar_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-EachNavigationBar_Example/Pods-EachNavigationBar_Example.release.xcconfig"; sourceTree = "<group>"; };
 		C964FBED21DC84ED13CFEC3E /* Pods-EachNavigationBar_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EachNavigationBar_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EachNavigationBar_Tests/Pods-EachNavigationBar_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		CCDF8E6E95979234BCE43BC2 /* EachNavigationBar.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = EachNavigationBar.podspec; path = ../EachNavigationBar.podspec; sourceTree = "<group>"; };
+		CCDF8E6E95979234BCE43BC2 /* EachNavigationBar.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = EachNavigationBar.podspec; path = ../EachNavigationBar.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		E8650B3C8219004704BFEEDE /* Pods-EachNavigationBar_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EachNavigationBar_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EachNavigationBar_Example/Pods-EachNavigationBar_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 

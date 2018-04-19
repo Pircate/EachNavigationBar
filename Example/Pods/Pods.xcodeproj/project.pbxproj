@@ -28,8 +28,8 @@
 		9673CF780F48C8E4EC2A331717B1F67C /* FBSnapshotTestCase.h in Headers */ = {isa = PBXBuildFile; fileRef = E37899BD4B349060AA147E2A3721D3A2 /* FBSnapshotTestCase.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A4F69F3477A935285620AC3031C5C848 /* FBSnapshotTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 052258A488A96C35531FAC73C4F42924 /* FBSnapshotTestController.m */; };
 		B27DFD6025D94758785918F1D6F6C060 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A27810809BAD71E4022600B21251449F /* QuartzCore.framework */; };
-		B50460F0208860A600C47159 /* EachNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50460EE208860A600C47159 /* EachNavigationBar.swift */; };
-		B50460F1208860A600C47159 /* UIViewController+NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50460EF208860A600C47159 /* UIViewController+NavigationBar.swift */; };
+		B50460F6208865BF00C47159 /* EachNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50460F4208865BF00C47159 /* EachNavigationBar.swift */; };
+		B50460F7208865BF00C47159 /* UIViewController+NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50460F5208865BF00C47159 /* UIViewController+NavigationBar.swift */; };
 		B758FB09FE2C06C1B8E36A71A9D76D41 /* FBSnapshotTestCase-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A11D5B54955E3381F067364E427B571A /* FBSnapshotTestCase-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BC952FC04FC963C1294DCD619C9B6B3B /* UIApplication+StrictKeyWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = B9109B8B333B5A1A3E92EFC09EDC10AC /* UIApplication+StrictKeyWindow.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		BE14F2198CDB0DAD98A567981D21C7A1 /* FBSnapshotTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 39577E2B806B8B2D019998DE60728F63 /* FBSnapshotTestCase.m */; };
@@ -106,8 +106,8 @@
 		A27810809BAD71E4022600B21251449F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		A679B4E121659DDEEB70CF6B68B73746 /* Pods-EachNavigationBar_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EachNavigationBar_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		AA323C90663942983643D7A4D1F697C8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		B50460EE208860A600C47159 /* EachNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EachNavigationBar.swift; sourceTree = "<group>"; };
-		B50460EF208860A600C47159 /* UIViewController+NavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+NavigationBar.swift"; sourceTree = "<group>"; };
+		B50460F4208865BF00C47159 /* EachNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EachNavigationBar.swift; path = EachNavigationBar/Classes/EachNavigationBar.swift; sourceTree = "<group>"; };
+		B50460F5208865BF00C47159 /* UIViewController+NavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+NavigationBar.swift"; path = "EachNavigationBar/Classes/UIViewController+NavigationBar.swift"; sourceTree = "<group>"; };
 		B9109B8B333B5A1A3E92EFC09EDC10AC /* UIApplication+StrictKeyWindow.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIApplication+StrictKeyWindow.h"; path = "FBSnapshotTestCase/Categories/UIApplication+StrictKeyWindow.h"; sourceTree = "<group>"; };
 		B9CEF7D6C5E08AB80E58DABC75D882BC /* UIImage+Diff.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Diff.m"; path = "FBSnapshotTestCase/Categories/UIImage+Diff.m"; sourceTree = "<group>"; };
 		C2C68734173E0CDE100919E78EF65383 /* Pods-EachNavigationBar_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EachNavigationBar_Example-frameworks.sh"; sourceTree = "<group>"; };
@@ -292,8 +292,8 @@
 		87B0BB1A91A8FD7BAE8A150FD5DDF79F /* EachNavigationBar */ = {
 			isa = PBXGroup;
 			children = (
-				B50460EE208860A600C47159 /* EachNavigationBar.swift */,
-				B50460EF208860A600C47159 /* UIViewController+NavigationBar.swift */,
+				B50460F4208865BF00C47159 /* EachNavigationBar.swift */,
+				B50460F5208865BF00C47159 /* UIViewController+NavigationBar.swift */,
 				8248ABE537D299896C520A065C4065D7 /* Pod */,
 				6DD410F29E6C95E32915ECEFAAD3DA73 /* Support Files */,
 			);
@@ -547,8 +547,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B50460F0208860A600C47159 /* EachNavigationBar.swift in Sources */,
-				B50460F1208860A600C47159 /* UIViewController+NavigationBar.swift in Sources */,
+				B50460F6208865BF00C47159 /* EachNavigationBar.swift in Sources */,
+				B50460F7208865BF00C47159 /* UIViewController+NavigationBar.swift in Sources */,
 				349DE2A552A587E1003BF64298EDFE64 /* EachNavigationBar-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

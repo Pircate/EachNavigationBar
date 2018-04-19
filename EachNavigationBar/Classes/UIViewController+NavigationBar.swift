@@ -2,7 +2,7 @@
 //  UIViewController+NavigationBar.swift
 //  EachNavigationBar
 //
-//  Created by GorXion on 2018/3/26.
+//  Created by gaoX on 2018/3/26.
 //  Copyright © 2018年 gaoX. All rights reserved.
 //
 

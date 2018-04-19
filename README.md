@@ -47,7 +47,7 @@ EachNavigationBar is available under the MIT license. See the LICENSE file for m
   UIViewController.setupNavigationBar
 ```
 
-### To enable FKNavigationBar of a navigation controller
+### To enable EachNavigationBar of a navigation controller
 
 ``` swift
   let nav = UINavigationController(rootViewController: vc)

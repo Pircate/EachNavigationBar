@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'EachNavigationBar_Example' do
+  pod 'EachNavigationBar', :path => '../'
+
+  target 'EachNavigationBar_Tests' do
+    inherit! :search_paths
+
+    pod 'FBSnapshotTestCase' , '~> 2.1.4'
+  end
+end

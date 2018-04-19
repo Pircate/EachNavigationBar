@@ -25,7 +25,7 @@ A custom navigation bar of UIViewController addtion with CocoaPods support.
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'gaoX' => 'gao497868860@163.com' }
-  s.source           = { :git => 'https://github.com/Ginxx/EachNavigationBar.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/Ginxx/EachNavigationBar.git', :tag => s.version.to_s, :commit => "02a66b5aba39d54cc06f08b1f0780a922143a0df" }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
@@ -39,4 +39,6 @@ A custom navigation bar of UIViewController addtion with CocoaPods support.
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit'
   # s.dependency 'AFNetworking', '~> 2.3'
+  
+  s.swift_version = '4.0'
 end

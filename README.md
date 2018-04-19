@@ -69,16 +69,16 @@ EachNavigationBar is available under the MIT license. See the LICENSE file for m
 ##### normal
 
 ``` swift
-  self.navigation.bar  -> UINavigationBar
-  self.navigation.item -> UINavigationItem
+  navigation.bar  -> UINavigationBar
+  navigation.item -> UINavigationItem
 ```
 
 ##### additional
 
 ``` swift
   // override alpha & backgroundColor
-  self.navigation.bar.alpha ->　UINavigationBar.barBackground.alpha
-  self.navigation.bar.backgroundColor -> UINavigationBar.barTintColor
+  navigation.bar.alpha ->　UINavigationBar.barBackground.alpha
+  navigation.bar.backgroundColor -> UINavigationBar.barTintColor
 ```
 
 ##### largeTitle(iOS 11.0+)

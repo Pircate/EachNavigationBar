@@ -19,5 +19,6 @@
     "ios": "8.0"
   },
   "source_files": "EachNavigationBar/Classes/**/*",
-  "frameworks": "UIKit"
+  "frameworks": "UIKit",
+  "swift_version": "4.0"
 }

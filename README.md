@@ -20,14 +20,6 @@ it, simply add the following line to your Podfile:
 pod 'EachNavigationBar'
 ```
 
-## Author
-
-gaoX, gao497868860@163.com
-
-## License
-
-EachNavigationBar is available under the MIT license. See the LICENSE file for more info.
-
 ## Overview
 
 ![](https://github.com/Ginxx/EachNavigationBar/blob/master/demo.gif)
@@ -97,3 +89,11 @@ if #available(iOS 11.0, *) {
     navigationItem.largeTitleDisplayMode = .never
 }
 ```
+
+## Author
+
+gaoX, gao497868860@163.com
+
+## License
+
+EachNavigationBar is available under the MIT license. See the LICENSE file for more info.

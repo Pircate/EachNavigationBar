@@ -40,10 +40,26 @@ class ViewController: UIViewController {
         navigation.item.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(rightBarButtonAction))
         navigation.item.title = "Home"
         navigation.bar.titleTextAttributes = [.foregroundColor: UIColor.blue]
+        
+        // remove blur effect
+        navigation.bar.isTranslucent = false
+        
+        // hide navigation bar bottom black line
+        navigation.bar.barStyle = .black
+        
+        // if you need to set status bar style lightContent
+        // navigationController?.navigationBar.barStyle = .black
+        
+        // update navigation bar frame by user custom
         navigation.bar.isUnrestoredWhenViewWillLayoutSubviews = true
+        
         if #available(iOS 11.0, *) {
             navigationController?.navigationBar.prefersLargeTitles = true
         }
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 
     override func didReceiveMemoryWarning() {

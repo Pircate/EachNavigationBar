@@ -63,6 +63,18 @@ nav.navigation.configuration.shadowImage = UIImage(named: "shadow")
 ``` swift
 navigation.bar  -> UINavigationBar
 navigation.item -> UINavigationItem
+
+// Remove blur effect
+navigation.bar.isTranslucent = false
+
+// Hide bottom black line
+navigation.bar.barStyle = .black
+
+// If you need to set status bar style lightContent
+navigationController?.navigationBar.barStyle = .black
+
+// If you want change navigation bar position
+navigation.bar.isUnrestoredWhenViewWillLayoutSubviews = true
 ```
 
 ##### additional

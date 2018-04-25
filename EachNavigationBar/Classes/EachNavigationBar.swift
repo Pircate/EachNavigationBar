@@ -27,14 +27,6 @@ open class EachNavigationBar: UINavigationBar {
         }
     }
     
-    open override var barTintColor: UIColor? {
-        didSet {
-            if let visualEffectView = subviews.first?.subviews.last as? UIVisualEffectView {
-                visualEffectView.contentView.backgroundColor = barTintColor
-            }
-        }
-    }
-    
     /// map to barTintColor
     open override var backgroundColor: UIColor? {
         get {
@@ -59,8 +51,5 @@ open class EachNavigationBar: UINavigationBar {
                                   y: -UIApplication.shared.statusBarFrame.maxY,
                                   width: bounds.width,
                                   height: bounds.height + UIApplication.shared.statusBarFrame.maxY)
-        if let visualEffectView = background.subviews.last as? UIVisualEffectView {
-            visualEffectView.contentView.backgroundColor = barTintColor
-        }
     }
 }

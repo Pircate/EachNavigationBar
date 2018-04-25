@@ -50,7 +50,7 @@ class ViewController: UIViewController {
         // if you need to set status bar style lightContent
         // navigationController?.navigationBar.barStyle = .black
         
-        // update navigation bar frame by user custom
+        // if you want change navigation bar position
         navigation.bar.isUnrestoredWhenViewWillLayoutSubviews = true
         
         if #available(iOS 11.0, *) {

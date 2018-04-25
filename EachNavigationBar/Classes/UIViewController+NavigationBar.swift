@@ -36,6 +36,7 @@ extension UIViewController {
             public var shadowImage: UIImage?
             public var titleTextAttributes: [NSAttributedStringKey : Any]?
             public var isTranslucent: Bool = true
+            public var barStyle: UIBarStyle = .default
         }
         
         public let bar: EachNavigationBar
@@ -91,6 +92,7 @@ extension UIViewController {
         _navigationBar.titleTextAttributes = configuration.titleTextAttributes
         _navigationBar.setBackgroundImage(configuration.backgroundImage, for: configuration.position, barMetrics: configuration.metrics)
         _navigationBar.isTranslucent = configuration.isTranslucent
+        _navigationBar.barStyle = configuration.barStyle
     }
     
     @objc private func each_viewDidLoad() {

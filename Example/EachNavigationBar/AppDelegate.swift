@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = UIColor.white
         let nav = UINavigationController(rootViewController: ViewController())
         // config
-        nav.navigation.configuration.enabled = true
+        nav.navigation.configuration.isEnabled = true
         nav.navigation.configuration.barTintColor = UIColor.yellow
         window?.rootViewController = nav
         window?.makeKeyAndVisible()

@@ -53,6 +53,12 @@ extension UIViewController {
         return navigation
     }
     
+    public func adjustsNavigationBarPosition() {
+        guard let navigationBar = navigationController?.navigationBar else { return }
+        _navigationBar.frame = navigationBar.frame
+        _navigationBar.setNeedsLayout()
+    }
+    
     private var _navigationBar: EachNavigationBar {
         if let bar = objc_getAssociatedObject(self, &kUIViewControllerNavigationBarKey) as? EachNavigationBar {
             return bar

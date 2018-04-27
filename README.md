@@ -67,9 +67,6 @@ navigation.item -> UINavigationItem
 // Remove blur effect
 navigation.bar.isTranslucent = false
 
-// Hide bottom black line
-navigation.bar.subviews.first?.clipsToBounds = true
-
 // If you need to set status bar style lightContent
 navigationController?.navigationBar.barStyle = .black
 

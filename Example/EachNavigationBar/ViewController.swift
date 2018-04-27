@@ -44,9 +44,6 @@ class ViewController: UIViewController {
         // remove blur effect
         navigation.bar.isTranslucent = false
         
-        // hide navigation bar bottom black line
-        navigation.bar.barStyle = .black
-        
         // if you need to set status bar style lightContent
         // navigationController?.navigationBar.barStyle = .black
         

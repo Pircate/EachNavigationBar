@@ -43,7 +43,7 @@ UIViewController.setupNavigationBar
 
 ``` swift
 let nav = UINavigationController(rootViewController: vc)
-nav.navigation.configuration.enabled = true
+nav.navigation.configuration.isEnabled = true
 ```
 
 ### Setting

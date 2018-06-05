@@ -37,6 +37,7 @@ extension UIViewController {
             public var titleTextAttributes: [NSAttributedStringKey : Any]?
             public var isTranslucent: Bool = true
             public var barStyle: UIBarStyle = .default
+            public var extraHeight: CGFloat = 0
         }
         
         public let bar: EachNavigationBar
@@ -99,6 +100,7 @@ extension UIViewController {
         _navigationBar.setBackgroundImage(configuration.backgroundImage, for: configuration.position, barMetrics: configuration.metrics)
         _navigationBar.isTranslucent = configuration.isTranslucent
         _navigationBar.barStyle = configuration.barStyle
+        _navigationBar.extraHeight = configuration.extraHeight
     }
     
     @objc private func each_viewDidLoad() {
@@ -134,5 +136,6 @@ extension UINavigationController {
                 bar.frame.origin.y = UIApplication.shared.statusBarFrame.maxY
             }
         }
+        bar.frame.size.height = navigationBar.frame.height + bar.extraHeight
     }
 }

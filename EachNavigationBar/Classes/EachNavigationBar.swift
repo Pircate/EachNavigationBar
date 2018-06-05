@@ -15,6 +15,12 @@ open class EachNavigationBar: UINavigationBar {
     /// Default is false. If set true, navigation bar will not restore when the UINavigationController call viewWillLayoutSubviews
     open var isUnrestoredWhenViewWillLayoutSubviews = false
     
+    open var extraHeight: CGFloat = 0 {
+        didSet {
+            frame.size.height = 44.0 + extraHeight
+        }
+    }
+    
     open override var alpha: CGFloat {
         get {
             return super.alpha

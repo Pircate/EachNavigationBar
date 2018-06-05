@@ -1,5 +1,5 @@
 PODS:
-  - EachNavigationBar (0.1.0)
+  - EachNavigationBar (0.2.0)
   - FBSnapshotTestCase (2.1.4):
     - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
   - FBSnapshotTestCase/Core (2.1.4)
@@ -11,7 +11,7 @@ DEPENDENCIES:
   - FBSnapshotTestCase (~> 2.1.4)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - FBSnapshotTestCase
 
 EXTERNAL SOURCES:
@@ -19,9 +19,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  EachNavigationBar: 8521c59e6399199e884eb4b0df5c978d55f87264
+  EachNavigationBar: 596acf5ed0189db3b1c0848e3b30794b46ccf632
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
 
 PODFILE CHECKSUM: ef7fd897f575ae22ea8b15077539cb8ccc88e09a
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.3

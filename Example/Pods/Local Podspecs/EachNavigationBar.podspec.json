@@ -1,9 +1,8 @@
 {
   "name": "EachNavigationBar",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "summary": "A custom navigation bar of UIViewController.",
-  "description": "A custom navigation bar of UIViewController addtion with CocoaPods support.",
-  "homepage": "https://github.com/Ginxx/EachNavigationBar",
+  "homepage": "https://github.com/Pircate/EachNavigationBar",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,8 +11,8 @@
     "gaoX": "gao497868860@163.com"
   },
   "source": {
-    "git": "https://github.com/Ginxx/EachNavigationBar.git",
-    "tag": "0.1.0"
+    "git": "https://github.com/Pircate/EachNavigationBar.git",
+    "tag": "0.2.0"
   },
   "platforms": {
     "ios": "8.0"

@@ -131,9 +131,10 @@ extension UINavigationController {
         }
         else {
             bar.frame = navigationBar.frame
-            guard #available(iOS 11.0, *) else { return }
-            if bar.prefersLargeTitles {
-                bar.frame.origin.y = UIApplication.shared.statusBarFrame.maxY
+            if #available(iOS 11.0, *) {
+                if bar.prefersLargeTitles {
+                    bar.frame.origin.y = UIApplication.shared.statusBarFrame.maxY
+                }
             }
         }
         bar.frame.size.height = navigationBar.frame.height + bar.extraHeight

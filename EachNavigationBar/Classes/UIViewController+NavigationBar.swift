@@ -9,8 +9,7 @@
 import UIKit
 import ObjectiveC
 
-private var kUIViewControllerNavigationKey     = "UI_VIEW_CONTROLLER_NAVIGATION_KEY"
-private var kUIViewControllerNavigationBarKey  = "UI_VIEW_CONTROLLER_NAVIGATION_BAR_KEY"
+private var kUIViewControllerNavigationBarKey = "UI_VIEW_CONTROLLER_NAVIGATION_BAR_KEY"
 private var kUIViewControllerNavigationItemKey = "UI_VIEW_CONTROLLER_NAVIGATION_ITEM_KEY"
 
 extension UIViewController {
@@ -25,42 +24,13 @@ extension UIViewController {
         }
     }()
     
-    public struct Navigation {
-        
-        public class Configuration {
-            public var isEnabled = false
-            public var barTintColor: UIColor?
-            public var backgroundImage: UIImage?
-            public var metrics: UIBarMetrics = .default
-            public var position: UIBarPosition = .any
-            public var shadowImage: UIImage?
-            public var titleTextAttributes: [NSAttributedStringKey : Any]?
-            public var isTranslucent: Bool = true
-            public var barStyle: UIBarStyle = .default
-            public var extraHeight: CGFloat = 0
-        }
-        
-        public let bar: EachNavigationBar
-        public let item: UINavigationItem
-        public let configuration = Configuration()
-    }
-    
-    public var navigation: Navigation {
-        if let navigation = objc_getAssociatedObject(self, &kUIViewControllerNavigationKey) as? Navigation {
-            return navigation
-        }
-        let navigation = Navigation(bar: _navigationBar, item: _navigationItem)
-        objc_setAssociatedObject(self, &kUIViewControllerNavigationKey, navigation, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        return navigation
-    }
-    
     public func adjustsNavigationBarPosition() {
         guard let navigationBar = navigationController?.navigationBar else { return }
         _navigationBar.frame = navigationBar.frame
         _navigationBar.setNeedsLayout()
     }
     
-    private var _navigationBar: EachNavigationBar {
+    var _navigationBar: EachNavigationBar {
         if let bar = objc_getAssociatedObject(self, &kUIViewControllerNavigationBarKey) as? EachNavigationBar {
             return bar
         }
@@ -69,7 +39,7 @@ extension UIViewController {
         return bar
     }
     
-    private var _navigationItem: UINavigationItem {
+    var _navigationItem: UINavigationItem {
         if let item = objc_getAssociatedObject(self, &kUIViewControllerNavigationItemKey) as? UINavigationItem {
             return item
         }

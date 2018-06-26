@@ -98,8 +98,7 @@ extension UINavigationController {
         
         if bar.isUnrestoredWhenViewWillLayoutSubviews {
             bar.frame.size = navigationBar.frame.size
-        }
-        else {
+        } else {
             bar.frame = navigationBar.frame
             if #available(iOS 11.0, *) {
                 if bar.prefersLargeTitles {

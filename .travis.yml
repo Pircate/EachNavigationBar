@@ -6,18 +6,8 @@ osx_image: xcode9.4.1
 language: swift
 cache: cocoapods
 podfile: Example/Podfile
-
-env:
-  global:
-    - LANG=en_US.UTF-8
-    - LC_ALL=en_US.UTF-8
-    - XCODE_PROJECT=Example/EachNavigationBar.xcworkspace
-  matrix:
-    - SCHEME="EachNavigationBar"
 # before_install:
 # - gem install cocoapods # Since Travis is not always on latest version
 # - pod install --project-directory=Example
 script:
-- set -o pipefail
-- xcodebuild -project "$XCODE_PROJECT" -scheme "$SCHEME" -configuration Debug clean build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty -c
 - pod lib lint

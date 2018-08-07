@@ -98,7 +98,7 @@ if #available(iOS 11.0, *) {
 
 ## Author
 
-gaoX, gao497868860@163.com
+Pircate, gao497868860@163.com
 
 ## License
 

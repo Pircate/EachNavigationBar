@@ -18,6 +18,6 @@ env:
 # - gem install cocoapods # Since Travis is not always on latest version
 # - pod install --project-directory=Example
 script:
-# - set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/EachNavigationBar.xcworkspace -scheme EachNavigationBar-Example -sdk iphonesimulator9.3 ONLY_ACTIVE_ARCH=NO | xcpretty
+- set -o pipefail
 - xcodebuild -project "$XCODE_PROJECT" -scheme "$SCHEME" -configuration Debug clean build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty -c
 - pod lib lint

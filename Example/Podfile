@@ -2,7 +2,6 @@ use_frameworks!
 
 target 'EachNavigationBar_Example' do
   pod 'EachNavigationBar', :path => '../'
-  pod 'EachNavigationBarOC', :path => '../'
 
   target 'EachNavigationBar_Tests' do
     inherit! :search_paths

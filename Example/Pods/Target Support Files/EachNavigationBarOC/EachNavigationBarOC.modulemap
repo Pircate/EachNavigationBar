@@ -1,6 +1,0 @@
-framework module EachNavigationBarOC {
-  umbrella header "EachNavigationBarOC-umbrella.h"
-
-  export *
-  module * { export * }
-}

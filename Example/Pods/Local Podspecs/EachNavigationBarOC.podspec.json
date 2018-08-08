@@ -1,0 +1,22 @@
+{
+  "name": "EachNavigationBarOC",
+  "version": "0.0.1",
+  "summary": "A custom navigation bar of UIViewController.",
+  "homepage": "https://github.com/Pircate/EachNavigationBar",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "gaoX": "gao497868860@163.com"
+  },
+  "source": {
+    "git": "https://github.com/Pircate/EachNavigationBar.git",
+    "tag": "0.0.1"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "EachNavigationBarOC/Classes/**/*",
+  "frameworks": "UIKit"
+}

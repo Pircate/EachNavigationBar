@@ -55,6 +55,7 @@ nav.navigation.configuration.titleTextAttributes = [.foregroundColor: UIColor.bl
 nav.navigation.configuration.barTintColor = UIColor.red
 nav.navigation.configuration.backgroundImage = UIImage(named: "nav")
 nav.navigation.configuration.shadowImage = UIImage(named: "shadow")
+nav.navigation.configuration.backImage = UIImage(named: "back")
 ```
 
 #### Each view controller

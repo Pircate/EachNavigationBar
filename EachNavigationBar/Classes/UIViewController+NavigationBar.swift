@@ -21,13 +21,6 @@ extension UIViewController {
         }
     }()
     
-    public func adjustsNavigationBarPosition() {
-        guard let navigationBar = navigationController?.navigationBar else { return }
-        _navigationBar.frame = navigationBar.frame
-        _navigationBar.frame.size.height += _navigationBar.extraHeight
-        _navigationBar.setNeedsLayout()
-    }
-    
     var _navigationBar: EachNavigationBar {
         if let bar = objc_getAssociatedObject(self, &AssociatedKeys.navigationBar) as? EachNavigationBar {
             return bar
@@ -46,11 +39,32 @@ extension UIViewController {
         return item
     }
     
+    @objc private func each_viewDidLoad() {
+        each_viewDidLoad()
+        bindNavigationBar()
+    }
+    
+    @objc private func each_viewWillAppear(_ animated: Bool) {
+        each_viewWillAppear(animated)
+        bringNavigationBarToFront()
+    }
+}
+
+extension UIViewController {
+    
+    public func adjustsNavigationBarPosition() {
+        guard let navigationBar = navigationController?.navigationBar else { return }
+        _navigationBar.frame = navigationBar.frame
+        _navigationBar.frame.size.height += _navigationBar.extraHeight
+        _navigationBar.setNeedsLayout()
+    }
+    
     private func bindNavigationBar() {
         guard let navigationController = navigationController,
             navigationController.navigation.configuration.isEnabled else { return }
         navigationController.navigationBar.isHidden = true
         configureNavigationBarStyle()
+        setupBackBarButtonItem()
         view.addSubview(_navigationBar)
     }
     
@@ -71,14 +85,18 @@ extension UIViewController {
         _navigationBar.extraHeight = configuration.extraHeight
     }
     
-    @objc private func each_viewDidLoad() {
-        each_viewDidLoad()
-        bindNavigationBar()
+    private func setupBackBarButtonItem() {
+        guard let navigationController = navigationController,
+            navigationController.viewControllers.count > 1,
+            let image = navigationController.navigation.configuration.backImage else { return }
+        _navigationItem.leftBarButtonItem = UIBarButtonItem(image: image,
+                                                            style: .plain,
+                                                            target: self,
+                                                            action: #selector(backAction))
     }
     
-    @objc private func each_viewWillAppear(_ animated: Bool) {
-        each_viewWillAppear(animated)
-        bringNavigationBarToFront()
+    @objc private func backAction() {
+        navigationController?.popViewController(animated: true)
     }
 }
 

@@ -31,7 +31,11 @@ extension UINavigationController {
         
         public var barStyle: UIBarStyle = .default
         
+        /// Extra height for the navigation bar.
         public var extraHeight: CGFloat = 0
+        
+        /// Image for leftBarButtonItem(not backBarButtonItem), Default is no back button.
+        public var backImage: UIImage?
     }
     
     var _configuration: Configuration {

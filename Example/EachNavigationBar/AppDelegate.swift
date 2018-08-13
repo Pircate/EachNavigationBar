@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // config
         nav.navigation.configuration.isEnabled = true
         nav.navigation.configuration.barTintColor = UIColor.yellow
+        nav.navigation.configuration.backImage = #imageLiteral(resourceName: "back")
         window?.rootViewController = nav
         window?.makeKeyAndVisible()
         return true

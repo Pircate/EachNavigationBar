@@ -1,5 +1,5 @@
 //
-//  UINavigationController+Navigation.swift
+//  Navigation+UINavigationController.swift
 //  EachNavigationBar
 //
 //  Created by Pircate on 2018/6/26.

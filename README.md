@@ -62,7 +62,7 @@ nav.navigation.configuration.backImage = UIImage(named: "back")
 ##### normal
 
 ``` swift
-navigation.bar  -> UINavigationBar
+navigation.bar  -> EachNavigationBar -> UINavigationBar
 navigation.item -> UINavigationItem
 
 // Remove blur effect
@@ -78,6 +78,9 @@ navigationController?.navigationBar.barStyle = .black
 
 // If you want change navigation bar position
 navigation.bar.isUnrestoredWhenViewWillLayoutSubviews = true
+
+// Custom back action
+navigation.item.leftBarButtonItem?.action = #selector(backBarButtonAction)
 ```
 
 ##### largeTitle(iOS 11.0+)

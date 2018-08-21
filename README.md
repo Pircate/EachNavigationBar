@@ -32,7 +32,7 @@ pod 'EachNavigationBar'
 import EachNavigationBar
 ```
 
-### Setup
+### Setup (Don't Forget)
 
 ``` swift
 // before window set root view controller

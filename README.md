@@ -14,11 +14,15 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Installation
 
-EachNavigationBar is available through [CocoaPods](http://cocoapods.org). To install
+EachNavigationBar is available through [CocoaPods](http://cocoapods.org) or [Carthage](https://github.com/Carthage/Carthage). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
 pod 'EachNavigationBar'
+
+or
+
+github "Pircate/EachNavigationBar"
 ```
 
 ## Overview

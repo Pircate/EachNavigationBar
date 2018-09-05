@@ -109,7 +109,7 @@ if #available(iOS 11.0, *) {
 ```
 
 ### For Objective-C
-![AYNavigationBar](https://github.com/Pircate/AYNavigationBar)
+[AYNavigationBar](https://github.com/Pircate/AYNavigationBar)
 
 ## Author
 

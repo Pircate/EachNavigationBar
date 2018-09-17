@@ -12,6 +12,9 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
+* iOS 8.0+
+* Swift 4
+
 ## Installation
 
 EachNavigationBar is available through [CocoaPods](http://cocoapods.org) or [Carthage](https://github.com/Carthage/Carthage). To install
@@ -30,7 +33,7 @@ github "Pircate/EachNavigationBar"
 
 ## Overview
 
-![](https://github.com/Ginxx/EachNavigationBar/blob/master/demo.gif)
+![](https://github.com/Pircate/EachNavigationBar/blob/master/demo.gif)
 
 ## Usage
 
@@ -43,7 +46,7 @@ import EachNavigationBar
 ### Setup (Don't Forget)
 
 ``` swift
-// before window set root view controller
+// before window set rootViewController
 UIViewController.setupNavigationBar
 ```
 
@@ -73,7 +76,13 @@ nav.navigation.configuration.backImage = UIImage(named: "back")
 navigation.bar  -> EachNavigationBar -> UINavigationBar
 navigation.item -> UINavigationItem
 
-// Remove blur effect
+// hide navigation bar
+navigation.bar.isHidden = true
+
+// set alpha
+navigation.bar.alpha = 0.5
+
+// remove blur effect
 navigation.bar.isTranslucent = false
 
 // hide bottom black line
@@ -81,13 +90,13 @@ navigation.bar.shadowImage = UIImage()
 // if version < iOS 11.0, also need:
 navigation.bar.setBackgroundImage(UIImage(), for: .default)
 
-// If you need to set status bar style lightContent
+// if you need to set status bar style lightContent
 navigationController?.navigationBar.barStyle = .black
 
-// If you want change navigation bar position
+// if you want change navigation bar position
 navigation.bar.isUnrestoredWhenViewWillLayoutSubviews = true
 
-// Custom back action
+// custom back action
 navigation.item.leftBarButtonItem?.action = #selector(backBarButtonAction)
 ```
 

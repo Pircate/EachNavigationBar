@@ -10,9 +10,9 @@ import UIKit
 import EachNavigationBar
 
 #if swift(>=4.2)
-typealias UIApplicationLaunchOptionsKey = UIApplication.LaunchOptionsKey
+typealias ApplicationLaunchOptionsKey = UIApplication.LaunchOptionsKey
 #else
-typealias UIApplicationLaunchOptionsKey = UIApplicationLaunchOptionsKey
+typealias ApplicationLaunchOptionsKey = UIApplicationLaunchOptionsKey
 #endif
 
 @UIApplicationMain
@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [ApplicationLaunchOptionsKey: Any]?) -> Bool {
         // setup
         UIViewController.setupNavigationBar
         window = UIWindow(frame: UIScreen.main.bounds)

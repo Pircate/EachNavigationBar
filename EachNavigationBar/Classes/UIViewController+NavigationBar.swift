@@ -71,7 +71,11 @@ extension UIViewController {
     private func bringNavigationBarToFront() {
         guard let navigationController = navigationController,
             navigationController.navigation.configuration.isEnabled else { return }
+        #if swift(>=4.2)
+        view.bringSubviewToFront(_navigationBar)
+        #else
         view.bringSubview(toFront: _navigationBar)
+        #endif
     }
     
     private func configureNavigationBarStyle() {

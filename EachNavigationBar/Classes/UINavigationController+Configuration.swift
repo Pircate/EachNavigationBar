@@ -25,7 +25,11 @@ extension UINavigationController {
         
         public var shadowImage: UIImage?
         
+        #if swift(>=4.2)
+        public var titleTextAttributes: [NSAttributedString.Key : Any]?
+        #else
         public var titleTextAttributes: [NSAttributedStringKey : Any]?
+        #endif
         
         public var isTranslucent: Bool = true
         

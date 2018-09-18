@@ -9,6 +9,12 @@
 import UIKit
 import EachNavigationBar
 
+#if swift(>=4.2)
+typealias UIApplicationLaunchOptionsKey = UIApplication.LaunchOptionsKey
+#else
+typealias UIApplicationLaunchOptionsKey = UIApplicationLaunchOptionsKey
+#endif
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

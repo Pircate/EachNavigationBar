@@ -102,6 +102,9 @@ navigationController?.navigationBar.barStyle = .black
 // 如果你想改变导航栏位置
 navigation.bar.isUnrestoredWhenViewWillLayoutSubviews = true
 
+// 导航栏额外高度
+navigation.bar.extraHeight = 14
+
 // 自定义返回按钮事件
 navigation.item.leftBarButtonItem?.action = #selector(backBarButtonAction)
 ```

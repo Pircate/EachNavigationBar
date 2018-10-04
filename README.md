@@ -96,6 +96,9 @@ navigationController?.navigationBar.barStyle = .black
 // if you want change navigation bar position
 navigation.bar.isUnrestoredWhenViewWillLayoutSubviews = true
 
+// navigation bar extra height
+navigation.bar.extraHeight = 14
+
 // custom back action
 navigation.item.leftBarButtonItem?.action = #selector(backBarButtonAction)
 ```

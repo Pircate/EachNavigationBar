@@ -101,6 +101,10 @@ navigation.bar.extraHeight = 14
 
 // custom back action
 navigation.item.leftBarButtonItem?.action = #selector(backBarButtonAction)
+
+// adjust navigation bar position when status bar appearance update
+setNeedsStatusBarAppearanceUpdate()
+adjustsNavigationBarPosition()
 ```
 
 ##### largeTitle(iOS 11.0+)

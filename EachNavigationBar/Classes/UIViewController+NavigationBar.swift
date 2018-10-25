@@ -21,7 +21,7 @@ extension UIViewController {
         }
     }()
     
-    @objc public static func each_setupNavigationBar() {
+    @objc public static func swizzle_setupNavigationBar() {
         setupNavigationBar
     }
     
@@ -84,6 +84,8 @@ extension UIViewController {
     
     private func configureNavigationBarStyle() {
         guard let configuration = navigationController?.navigation.configuration else { return }
+        each_navigationBar.isHidden = configuration.isHidden
+        each_navigationBar.alpha = configuration.alpha
         each_navigationBar.barTintColor = configuration.barTintColor
         each_navigationBar.shadowImage = configuration.shadowImage
         each_navigationBar.titleTextAttributes = configuration.titleTextAttributes

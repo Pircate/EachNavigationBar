@@ -13,6 +13,10 @@ public class Configuration: NSObject {
     
     @objc public var isEnabled = false
     
+    @objc public var isHidden = false
+    
+    @objc public var alpha: CGFloat = 1
+    
     @objc public var barTintColor: UIColor?
     
     @objc public var backgroundImage: UIImage?
@@ -43,7 +47,7 @@ public class Configuration: NSObject {
 
 extension UINavigationController {
     
-    @objc public var each_configuration: Configuration {
+    @objc public var global_configuration: Configuration {
         if let configuration = objc_getAssociatedObject(self, &AssociatedKeys.configuration) as? Configuration {
             return configuration
         }

@@ -9,6 +9,6 @@
 public extension Navigation where Base: UINavigationController {
     
     var configuration: Configuration {
-        return base.each_configuration
+        return base.global_configuration
     }
 }

@@ -39,22 +39,40 @@ github "Pircate/EachNavigationBar"
 
 ### Import
 
+Swift
 ``` swift
 import EachNavigationBar
+```
+Objective-C
+``` ObjC
+@import EachNavigationBar;
 ```
 
 ### Setup (Don't Forget)
 
+Swift
 ``` swift
 // before window set rootViewController
 UIViewController.setupNavigationBar
 ```
 
+Objective-C
+``` ObjC
+[UIViewController swizzle_setupNavigationBar];
+```
+
 ### To enable EachNavigationBar of a navigation controller
 
+Swift
 ``` swift
 let nav = UINavigationController(rootViewController: vc)
 nav.navigation.configuration.isEnabled = true
+```
+
+Objective-C
+``` ObjC
+UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+nav.global_configuration.isEnabled = YES;
 ```
 
 ### Setting
@@ -72,6 +90,7 @@ nav.navigation.configuration.backImage = UIImage(named: "back")
 #### Each view controller
 ##### normal
 
+Swift
 ``` swift
 navigation.bar  -> EachNavigationBar -> UINavigationBar
 navigation.item -> UINavigationItem
@@ -107,6 +126,12 @@ setNeedsStatusBarAppearanceUpdate()
 adjustsNavigationBarPosition()
 ```
 
+Objective-C
+``` ObjC
+self.each_navigationBar
+self.each_navigationItem
+```
+
 ##### largeTitle(iOS 11.0+)
 
 ``` swift
@@ -122,14 +147,6 @@ if #available(iOS 11.0, *) {
 if #available(iOS 11.0, *) {
     navigationItem.largeTitleDisplayMode = .never
 }
-```
-
-### For Objective-C
-```ObjC
-[UIViewController each_setupNavigationBar];
-nav.each_configuration
-self.each_navigationBar
-self.each_navigationItem
 ```
 
 ## Author

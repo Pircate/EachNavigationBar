@@ -8,7 +8,7 @@
 
 public extension Navigation where Base: UINavigationController {
     
-    var configuration: UINavigationController.Configuration {
-        return base._configuration
+    var configuration: Configuration {
+        return base.each_configuration
     }
 }

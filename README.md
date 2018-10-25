@@ -77,6 +77,7 @@ nav.global_configuration.isEnabled = YES;
 ### Setting
 #### Global
 
+Swift
 ``` swift
 let nav = UINavigationController(rootViewController: vc)
 nav.navigation.configuration.titleTextAttributes = [.foregroundColor: UIColor.blue]
@@ -84,6 +85,16 @@ nav.navigation.configuration.barTintColor = UIColor.red
 nav.navigation.configuration.backgroundImage = UIImage(named: "nav")
 nav.navigation.configuration.shadowImage = UIImage(named: "shadow")
 nav.navigation.configuration.backImage = UIImage(named: "back")
+```
+
+Objective-C
+``` ObjC
+UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+nav.global_configuration.titleTextAttributes = @{NSForegroundColorAttributeName: UIColor.blueColor};
+nav.global_configuration.barTintColor = UIColor.redColor;
+nav.global_configuration.backgroundImage = [UIImage imageNamed:@"nav"];
+nav.global_configuration.shadowImage = [UIImage imageNamed:@"shadow"];
+nav.global_configuration.backImage = [UIImage imageNamed:@"back"];
 ```
 
 #### Each view controller

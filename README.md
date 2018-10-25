@@ -48,11 +48,10 @@ Objective-C
 @import EachNavigationBar;
 ```
 
-### Setup (Don't Forget)
+### Setup before window set rootViewController (Don't Forget)
 
 Swift
 ``` swift
-// before window set rootViewController
 UIViewController.setupNavigationBar
 ```
 

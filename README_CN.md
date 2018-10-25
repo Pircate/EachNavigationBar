@@ -109,30 +109,30 @@ navigation.item -> UINavigationItem
 // 隐藏导航栏
 navigation.bar.isHidden = true
 
-// set alpha
+// 设置透明度
 navigation.bar.alpha = 0.5
 
-// remove blur effect
+// 移除毛玻璃效果
 navigation.bar.isTranslucent = false
 
-// hide bottom black line
+// 隐藏底部黑线
 navigation.bar.shadowImage = UIImage()
-// if version < iOS 11.0, also need:
+// 如果 iOS 版本小于 11.0，还需要
 navigation.bar.setBackgroundImage(UIImage(), for: .default)
 
-// if you need to set status bar style lightContent
+// 如果你想设置状态栏白色文字
 navigationController?.navigationBar.barStyle = .black
 
-// if you want change navigation bar position
+// 如果你想改变导航栏位置
 navigation.bar.isUnrestoredWhenViewWillLayoutSubviews = true
 
-// navigation bar extra height
+// 导航栏额外高度
 navigation.bar.extraHeight = 14
 
-// custom back action
+// 自定义返回按钮事件
 navigation.item.leftBarButtonItem?.action = #selector(backBarButtonAction)
 
-// adjust navigation bar position when status bar appearance update
+// 当状态栏更新显隐时，调整导航栏位置
 setNeedsStatusBarAppearanceUpdate()
 adjustsNavigationBarPosition()
 ```

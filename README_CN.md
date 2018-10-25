@@ -102,10 +102,11 @@ nav.global_configuration.backImage = [UIImage imageNamed:@"back"];
 
 Swift
 ``` swift
+// 一般用法同系统组件
 navigation.bar  -> EachNavigationBar -> UINavigationBar
 navigation.item -> UINavigationItem
 
-// hide navigation bar
+// 隐藏导航栏
 navigation.bar.isHidden = true
 
 // set alpha

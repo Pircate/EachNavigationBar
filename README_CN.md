@@ -39,78 +39,107 @@ github "Pircate/EachNavigationBar"
 
 ### 导入
 
+Swift
 ``` swift
 import EachNavigationBar
 ```
+Objective-C
+``` ObjC
+@import EachNavigationBar;
+```
 
-### 安装(千万别忘了)
+### 安装在设置 window 的 rootViewController 之前(千万别忘了)
 
+Swift
 ``` swift
-// 在设置 rootViewController 之前
 UIViewController.setupNavigationBar
+```
+
+Objective-C
+``` ObjC
+[UIViewController swizzle_setupNavigationBar];
 ```
 
 ### 开启导航控制器每个子控制器的独立导航栏
 
+Swift
 ``` swift
 let nav = UINavigationController(rootViewController: vc)
 nav.navigation.configuration.isEnabled = true
 ```
 
+Objective-C
+``` ObjC
+UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+nav.global_configuration.isEnabled = YES;
+```
+
 ###  设置
 #### 导航栈全局配置
 
+Swift
 ``` swift
 let nav = UINavigationController(rootViewController: vc)
-// 设置标题属性
 nav.navigation.configuration.titleTextAttributes = [.foregroundColor: UIColor.blue]
-// 设置导航栏背景色
 nav.navigation.configuration.barTintColor = UIColor.red
-// 设置导航栏背景图片
 nav.navigation.configuration.backgroundImage = UIImage(named: "nav")
-// 设置导航栏阴影图片
 nav.navigation.configuration.shadowImage = UIImage(named: "shadow")
-// 设置返回按钮图片
 nav.navigation.configuration.backImage = UIImage(named: "back")
+```
+
+Objective-C
+``` ObjC
+UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+nav.global_configuration.titleTextAttributes = @{NSForegroundColorAttributeName: UIColor.blueColor};
+nav.global_configuration.barTintColor = UIColor.redColor;
+nav.global_configuration.backgroundImage = [UIImage imageNamed:@"nav"];
+nav.global_configuration.shadowImage = [UIImage imageNamed:@"shadow"];
+nav.global_configuration.backImage = [UIImage imageNamed:@"back"];
 ```
 
 #### 每个控制器设置
 ##### 基础设置
 
+Swift
 ``` swift
-// 一般用法同系统组件
 navigation.bar  -> EachNavigationBar -> UINavigationBar
 navigation.item -> UINavigationItem
 
-// 隐藏导航栏
+// hide navigation bar
 navigation.bar.isHidden = true
 
-// 设置透明度
+// set alpha
 navigation.bar.alpha = 0.5
 
-// 移除毛玻璃效果
+// remove blur effect
 navigation.bar.isTranslucent = false
 
-// 隐藏底部黑线
+// hide bottom black line
 navigation.bar.shadowImage = UIImage()
-// 如果 iOS 版本小于11.0，还需要
+// if version < iOS 11.0, also need:
 navigation.bar.setBackgroundImage(UIImage(), for: .default)
 
-// 如果你想设置状态栏白色文字
+// if you need to set status bar style lightContent
 navigationController?.navigationBar.barStyle = .black
 
-// 如果你想改变导航栏位置
+// if you want change navigation bar position
 navigation.bar.isUnrestoredWhenViewWillLayoutSubviews = true
 
-// 导航栏额外高度
+// navigation bar extra height
 navigation.bar.extraHeight = 14
 
-// 自定义返回按钮事件
+// custom back action
 navigation.item.leftBarButtonItem?.action = #selector(backBarButtonAction)
 
-// 当状态栏更新显隐时，调整导航栏位置
+// adjust navigation bar position when status bar appearance update
 setNeedsStatusBarAppearanceUpdate()
 adjustsNavigationBarPosition()
+```
+
+Objective-C
+``` ObjC
+self.each_navigationBar
+self.each_navigationItem
 ```
 
 ##### 大标题设置(iOS 11.0+)
@@ -132,9 +161,6 @@ if #available(iOS 11.0, *) {
     navigationItem.largeTitleDisplayMode = .never
 }
 ```
-
-### For Objective-C
-[AYNavigationBar](https://github.com/Pircate/AYNavigationBar)
 
 ## Author
 

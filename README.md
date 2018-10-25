@@ -125,7 +125,12 @@ if #available(iOS 11.0, *) {
 ```
 
 ### For Objective-C
-[AYNavigationBar](https://github.com/Pircate/AYNavigationBar)
+```ObjC
+[UIViewController each_setupNavigationBar];
+nav.each_configuration
+self.each_navigationBar
+self.each_navigationItem
+```
 
 ## Author
 

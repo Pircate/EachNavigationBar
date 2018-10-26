@@ -15,4 +15,13 @@ public extension Navigation where Base: UIViewController {
     var item: UINavigationItem {
         return base.each_navigationItem
     }
+    
+    func setShadowHidden(_ hidden: Bool) {
+        let image = hidden ? UIImage() : nil
+        base.each_navigationBar.shadowImage = image
+        guard #available(iOS 11.0, *) else {
+            base.each_navigationBar.setBackgroundImage(image, for: .default)
+            return
+        }
+    }
 }

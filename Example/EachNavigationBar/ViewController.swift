@@ -44,6 +44,9 @@ class ViewController: UIViewController {
         // remove blur effect
         navigation.bar.isTranslucent = false
         
+        // hide bottom black line
+        navigation.setShadowHidden(true)
+        
         // if you need to set status bar style lightContent
         // navigationController?.navigationBar.barStyle = .black
         
@@ -52,6 +55,7 @@ class ViewController: UIViewController {
         
         if #available(iOS 11.0, *) {
             navigationController?.navigationBar.prefersLargeTitles = true
+            navigation.item.largeTitleDisplayMode = .always
         }
     }
     

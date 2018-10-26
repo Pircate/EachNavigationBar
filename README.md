@@ -82,9 +82,9 @@ Swift
 let nav = UINavigationController(rootViewController: vc)
 nav.navigation.configuration.titleTextAttributes = [.foregroundColor: UIColor.blue]
 nav.navigation.configuration.barTintColor = UIColor.red
-nav.navigation.configuration.backgroundImage = UIImage(named: "nav")
 nav.navigation.configuration.shadowImage = UIImage(named: "shadow")
 nav.navigation.configuration.backImage = UIImage(named: "back")
+nav.navigation.configuration.setBackgroundImage(UIImage(named: "nav"), for: .any, barMetrics: .default)
 ```
 
 Objective-C
@@ -92,9 +92,9 @@ Objective-C
 UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
 nav.global_configuration.titleTextAttributes = @{NSForegroundColorAttributeName: UIColor.blueColor};
 nav.global_configuration.barTintColor = UIColor.redColor;
-nav.global_configuration.backgroundImage = [UIImage imageNamed:@"nav"];
 nav.global_configuration.shadowImage = [UIImage imageNamed:@"shadow"];
 nav.global_configuration.backImage = [UIImage imageNamed:@"back"];
+[self.navigationController.global_configuration setBackgroundImage:[UIImage imageNamed:@"nav"] for:UIBarPositionAny barMetrics:UIBarMetricsDefault];
 ```
 
 #### Each view controller

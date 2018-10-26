@@ -6,7 +6,7 @@
 [![License](https://img.shields.io/cocoapods/l/EachNavigationBar.svg?style=flat)](http://cocoapods.org/pods/EachNavigationBar)
 ![iOS 8.0+](https://img.shields.io/badge/iOS-8.0%2B-blue.svg)
 
-##[中文文档](https://github.com/Pircate/EachNavigationBar/blob/master/README_CN.md)
+[中文文档](https://github.com/Pircate/EachNavigationBar/blob/master/README_CN.md)
 
 ## Example
 

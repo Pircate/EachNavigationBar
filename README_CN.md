@@ -6,19 +6,18 @@
 [![License](https://img.shields.io/cocoapods/l/EachNavigationBar.svg?style=flat)](http://cocoapods.org/pods/EachNavigationBar)
 ![iOS 8.0+](https://img.shields.io/badge/iOS-8.0%2B-blue.svg)
 
-## Example
+## 示例
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+要运行示例项目，首先克隆repo并从示例目录运行 `pod install`。
 
-## Requirements
+## 版本要求
 
 * iOS 8.0+
 * Swift 4
 
-## Installation
+## 安装
 
-EachNavigationBar is available through [CocoaPods](http://cocoapods.org) or [Carthage](https://github.com/Carthage/Carthage). To install
-it, simply add the following line to your Podfile or Cartfile:
+EachNavigationBar 可通过 [CocoaPods](http://cocoapods.org) or [Carthage](https://github.com/Carthage/Carthage) 安装, 简单的添加下面一行到你的 Podfile or Cartfile:
 
 ### CocoaPods
 
@@ -31,7 +30,7 @@ pod 'EachNavigationBar'
 github "Pircate/EachNavigationBar"
 ```
 
-## Overview
+## 预览
 
 ![](https://github.com/Pircate/EachNavigationBar/blob/master/demo.gif)
 

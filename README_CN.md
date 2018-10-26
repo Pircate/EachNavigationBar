@@ -116,9 +116,7 @@ navigation.bar.alpha = 0.5
 navigation.bar.isTranslucent = false
 
 // 隐藏底部黑线
-navigation.bar.shadowImage = UIImage()
-// 如果 iOS 版本小于 11.0，还需要
-navigation.bar.setBackgroundImage(UIImage(), for: .default)
+[self.each_navigationBar setShadowHidden:YES];
 
 // 如果你想设置状态栏白色文字
 navigationController?.navigationBar.barStyle = .black

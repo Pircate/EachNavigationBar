@@ -115,9 +115,7 @@ navigation.bar.alpha = 0.5
 navigation.bar.isTranslucent = false
 
 // hide bottom black line
-navigation.bar.shadowImage = UIImage()
-// if version < iOS 11.0, also need:
-navigation.bar.setBackgroundImage(UIImage(), for: .default)
+navigation.bar.setShadowHidden(true)
 
 // if you need to set status bar style lightContent
 navigationController?.navigationBar.barStyle = .black

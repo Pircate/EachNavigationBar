@@ -8,7 +8,7 @@
 
 ## 示例
 
-要运行示例项目，首先克隆repo并从示例目录运行 `pod install`。
+要运行示例项目，首先克隆 repo 并从示例目录运行 `pod install`。
 
 ## 版本要求
 
@@ -17,7 +17,7 @@
 
 ## 安装
 
-EachNavigationBar 可通过 [CocoaPods](http://cocoapods.org) or [Carthage](https://github.com/Carthage/Carthage) 安装, 简单的添加下面一行到你的 Podfile or Cartfile:
+EachNavigationBar 可通过 [CocoaPods](http://cocoapods.org) 或者 [Carthage](https://github.com/Carthage/Carthage) 安装, 简单的添加下面一行到你的 Podfile 或者 Cartfile:
 
 ### CocoaPods
 
@@ -185,10 +185,10 @@ if (@available(iOS 11.0, *)) {
 }
 ```
 
-## Author
+## 作者
 
 Pircate, gao497868860@163.com
 
-## License
+## 许可证
 
-EachNavigationBar is available under the MIT license. See the LICENSE file for more info.
+EachNavigationBar 可在 MIT 许可证下使用。有关更多信息，请参阅许可证文件。

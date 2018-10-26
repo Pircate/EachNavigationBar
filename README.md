@@ -6,6 +6,8 @@
 [![License](https://img.shields.io/cocoapods/l/EachNavigationBar.svg?style=flat)](http://cocoapods.org/pods/EachNavigationBar)
 ![iOS 8.0+](https://img.shields.io/badge/iOS-8.0%2B-blue.svg)
 
+##[中文文档](https://github.com/Pircate/EachNavigationBar/blob/master/README_CN.md)
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
@@ -136,8 +138,8 @@ adjustsNavigationBarPosition()
 
 Objective-C
 ``` ObjC
-self.each_navigationBar
-self.each_navigationItem
+self.each_navigationBar.xxx
+self.each_navigationItem.xxx
 ```
 
 ##### largeTitle(iOS 11.0+)

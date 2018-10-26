@@ -116,7 +116,7 @@ navigation.bar.alpha = 0.5
 navigation.bar.isTranslucent = false
 
 // 隐藏底部黑线
-[self.each_navigationBar setShadowHidden:YES];
+navigation.bar.setShadowHidden(true)
 
 // 如果你想设置状态栏白色文字
 navigationController?.navigationBar.barStyle = .black
@@ -137,8 +137,8 @@ adjustsNavigationBarPosition()
 
 Objective-C
 ``` ObjC
-self.each_navigationBar
-self.each_navigationItem
+self.each_navigationBar.xxx
+self.each_navigationItem.xxx
 ```
 
 ##### 大标题设置(iOS 11.0+)

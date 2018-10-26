@@ -21,10 +21,6 @@ extension UIViewController {
         }
     }()
     
-    @objc public static func swizzle_setupNavigationBar() {
-        setupNavigationBar
-    }
-    
     @objc public var each_navigationBar: EachNavigationBar {
         if let bar = objc_getAssociatedObject(self, &AssociatedKeys.navigationBar) as? EachNavigationBar {
             return bar
@@ -41,6 +37,10 @@ extension UIViewController {
         let item = UINavigationItem()
         objc_setAssociatedObject(self, &AssociatedKeys.navigationItem, item, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         return item
+    }
+    
+    @objc public static func swizzle_setupNavigationBar() {
+        setupNavigationBar
     }
     
     @available(iOS 11.0, *)

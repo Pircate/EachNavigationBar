@@ -43,6 +43,21 @@ extension UIViewController {
         return item
     }
     
+    @available(iOS 11.0, *)
+    @objc public func each_setLargeTitleHidden(_ hidden: Bool) {
+        navigationItem.largeTitleDisplayMode = hidden ? .never : .always
+    }
+    
+    @objc public func adjustsNavigationBarPosition() {
+        guard let navigationBar = navigationController?.navigationBar else { return }
+        each_navigationBar.frame = navigationBar.frame
+        each_navigationBar.frame.size.height += each_navigationBar.extraHeight
+        each_navigationBar.setNeedsLayout()
+    }
+}
+
+extension UIViewController {
+    
     @objc private func each_viewDidLoad() {
         each_viewDidLoad()
         bindNavigationBar()
@@ -55,13 +70,6 @@ extension UIViewController {
 }
 
 extension UIViewController {
-    
-    public func adjustsNavigationBarPosition() {
-        guard let navigationBar = navigationController?.navigationBar else { return }
-        each_navigationBar.frame = navigationBar.frame
-        each_navigationBar.frame.size.height += each_navigationBar.extraHeight
-        each_navigationBar.setNeedsLayout()
-    }
     
     private func bindNavigationBar() {
         guard let navigationController = navigationController,
@@ -89,7 +97,10 @@ extension UIViewController {
         each_navigationBar.barTintColor = configuration.barTintColor
         each_navigationBar.shadowImage = configuration.shadowImage
         each_navigationBar.titleTextAttributes = configuration.titleTextAttributes
-        each_navigationBar.setBackgroundImage(configuration.backgroundImage, for: configuration.position, barMetrics: configuration.metrics)
+        each_navigationBar.setBackgroundImage(
+            configuration.backgroundImage,
+            for: configuration.barPosition,
+            barMetrics: configuration.barMetrics)
         each_navigationBar.isTranslucent = configuration.isTranslucent
         each_navigationBar.barStyle = configuration.barStyle
         each_navigationBar.extraHeight = configuration.extraHeight

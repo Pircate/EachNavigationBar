@@ -142,18 +142,35 @@ self.each_navigationItem
 
 ##### largeTitle(iOS 11.0+)
 
+Swift
 ``` swift
 // enable
 if #available(iOS 11.0, *) {
-    navigationController?.navigationBar.prefersLargeTitles = true
+    navigationController?.navigation.configuration.prefersLargeTitles = true
 }
 // show
 if #available(iOS 11.0, *) {
-    navigationItem.largeTitleDisplayMode = .always
+    navigation.setLargeTitleHidden(false)
 }
 // hide
 if #available(iOS 11.0, *) {
-    navigationItem.largeTitleDisplayMode = .never
+    navigation.setLargeTitleHidden(true)
+}
+```
+
+Objective-C
+``` ObjC
+// enable
+if (@available(iOS 11.0, *)) {
+    self.navigationController.global_configuration.prefersLargeTitles = YES;
+}
+// show
+if (@available(iOS 11.0, *)) {
+    [self each_setLargeTitleHidden:NO];
+}
+// hide
+if (@available(iOS 11.0, *)) {
+    [self each_setLargeTitleHidden:YES];
 }
 ```
 

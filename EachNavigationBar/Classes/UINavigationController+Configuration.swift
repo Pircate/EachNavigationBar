@@ -19,12 +19,6 @@ public class Configuration: NSObject {
     
     @objc public var barTintColor: UIColor?
     
-    @objc public var backgroundImage: UIImage?
-    
-    @objc public var metrics: UIBarMetrics = .default
-    
-    @objc public var position: UIBarPosition = .any
-    
     @objc public var shadowImage: UIImage?
     
     #if swift(>=4.2)
@@ -44,6 +38,37 @@ public class Configuration: NSObject {
     /// If you don't set, there will be no back button by default.
     @objc public var backImage: UIImage?
     
+    @available(iOS 11.0, *)
+    @objc public var prefersLargeTitles: Bool {
+        get {
+            return navigationController?.navigationBar.prefersLargeTitles ?? false
+        }
+        set {
+            navigationController?.navigationBar.prefersLargeTitles = newValue
+        }
+    }
+    
+    var backgroundImage: UIImage?
+    
+    var barMetrics: UIBarMetrics = .default
+    
+    var barPosition: UIBarPosition = .any
+    
+    private weak var navigationController: UINavigationController?
+    
+    init(_ navigationController: UINavigationController?) {
+        self.navigationController = navigationController
+    }
+    
+    @objc public func setBackgroundImage(
+        _ backgroundImage: UIImage?,
+        for barPosition: UIBarPosition,
+        barMetrics: UIBarMetrics) {
+        self.backgroundImage = backgroundImage
+        self.barPosition = barPosition
+        self.barMetrics = barMetrics
+    }
+    
     @objc public func setShadowHidden(_ hidden: Bool) {
         let image = hidden ? UIImage() : nil
         shadowImage = image
@@ -60,7 +85,7 @@ extension UINavigationController {
         if let configuration = objc_getAssociatedObject(self, &AssociatedKeys.configuration) as? Configuration {
             return configuration
         }
-        let configuration = Configuration()
+        let configuration = Configuration(self)
         objc_setAssociatedObject(self, &AssociatedKeys.configuration, configuration, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         return configuration
     }

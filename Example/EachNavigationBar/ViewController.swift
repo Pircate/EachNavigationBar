@@ -54,8 +54,8 @@ class ViewController: UIViewController {
         navigation.bar.isUnrestoredWhenViewWillLayoutSubviews = true
         
         if #available(iOS 11.0, *) {
-            navigationController?.navigationBar.prefersLargeTitles = true
-            navigation.item.largeTitleDisplayMode = .always
+            navigationController?.navigation.configuration.prefersLargeTitles = true
+            navigation.setLargeTitleHidden(false)
         }
     }
     

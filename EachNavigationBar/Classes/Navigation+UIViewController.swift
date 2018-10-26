@@ -15,4 +15,9 @@ public extension Navigation where Base: UIViewController {
     var item: UINavigationItem {
         return base.each_navigationItem
     }
+    
+    @available(iOS 11.0, *)
+    func setLargeTitleHidden(_ hidden: Bool) {
+        base.each_setLargeTitleHidden(hidden)
+    }
 }

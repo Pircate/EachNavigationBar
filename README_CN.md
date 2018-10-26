@@ -144,20 +144,45 @@ self.each_navigationItem
 ##### 大标题设置(iOS 11.0+)
 
 ###### 全局导航栈开启大标题
+
+Swift
 ``` swift
 if #available(iOS 11.0, *) {
     navigationController?.navigationBar.prefersLargeTitles = true
 }
 ```
-###### 每个控制器显示和隐藏大标题
-```swift
-// 显示大标题
-if #available(iOS 11.0, *) {
-    navigationItem.largeTitleDisplayMode = .always
+
+Objective-C
+``` ObjC
+// enable
+if (@available(iOS 11.0, *)) {
+    self.navigationController.global_configuration.prefersLargeTitles = YES;
 }
-// 隐藏大标题
+```
+
+###### 每个控制器显示和隐藏大标题
+
+Swift
+``` swift
+// show
 if #available(iOS 11.0, *) {
-    navigationItem.largeTitleDisplayMode = .never
+    navigation.setLargeTitleHidden(false)
+}
+// hide
+if #available(iOS 11.0, *) {
+    navigation.setLargeTitleHidden(true)
+}
+```
+
+Objective-C
+``` ObjC
+// show
+if (@available(iOS 11.0, *)) {
+    [self each_setLargeTitleHidden:NO];
+}
+// hide
+if (@available(iOS 11.0, *)) {
+    [self each_setLargeTitleHidden:YES];
 }
 ```
 

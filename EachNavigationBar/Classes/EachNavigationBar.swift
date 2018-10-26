@@ -59,3 +59,15 @@ open class EachNavigationBar: UINavigationBar {
                                   height: bounds.height + UIApplication.shared.statusBarFrame.maxY)
     }
 }
+
+extension UINavigationBar {
+    
+    @objc public func setShadowHidden(_ hidden: Bool) {
+        let image = hidden ? UIImage() : nil
+        shadowImage = image
+        guard #available(iOS 11.0, *) else {
+            setBackgroundImage(image, for: .default)
+            return
+        }
+    }
+}

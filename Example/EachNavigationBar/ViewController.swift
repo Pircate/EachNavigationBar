@@ -45,7 +45,7 @@ class ViewController: UIViewController {
         navigation.bar.isTranslucent = false
         
         // hide bottom black line
-        navigation.setShadowHidden(true)
+        navigation.bar.setShadowHidden(true)
         
         // if you need to set status bar style lightContent
         // navigationController?.navigationBar.barStyle = .black

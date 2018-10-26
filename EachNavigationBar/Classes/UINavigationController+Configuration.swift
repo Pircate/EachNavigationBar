@@ -44,7 +44,7 @@ public class Configuration: NSObject {
     /// If you don't set, there will be no back button by default.
     @objc public var backImage: UIImage?
     
-    public func setShadowHidden(_ hidden: Bool) {
+    @objc public func setShadowHidden(_ hidden: Bool) {
         let image = hidden ? UIImage() : nil
         shadowImage = image
         guard #available(iOS 11.0, *) else {

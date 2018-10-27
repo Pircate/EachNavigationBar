@@ -108,8 +108,18 @@ navigation.item -> UINavigationItem
 // 隐藏导航栏
 navigation.bar.isHidden = true
 
-// 设置透明度
+// 设置导航栏透明度
 navigation.bar.alpha = 0.5
+
+// 设置标题透明度
+navigation.bar.setTitleAlpha(0.5)
+
+// 设置 barButtonItem 透明度
+navigation.bar.setTintAlpha(0.5)
+// 如果 barButtonItem 是自定义视图
+navigation.item.leftBarButtonItem?.customView?.alpha = 0.5
+// 如果 barButtonItem 自定义了 tintColor
+navigation.item.leftBarButtonItem?.tintColor = navigation.item.leftBarButtonItem?.tintColor?.withAlphaComponent(0.5)
 
 // 移除毛玻璃效果
 navigation.bar.isTranslucent = false

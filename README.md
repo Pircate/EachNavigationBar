@@ -152,11 +152,11 @@ if #available(iOS 11.0, *) {
 }
 // show
 if #available(iOS 11.0, *) {
-    navigation.setLargeTitleHidden(false)
+    navigation.bar.isLargeTitleHidden = false
 }
 // hide
 if #available(iOS 11.0, *) {
-    navigation.setLargeTitleHidden(true)
+    navigation.bar.isLargeTitleHidden = true
 }
 ```
 
@@ -168,11 +168,11 @@ if (@available(iOS 11.0, *)) {
 }
 // show
 if (@available(iOS 11.0, *)) {
-    [self each_setLargeTitleHidden:NO];
+    self.each_navigationBar.isLargeTitleHidden = NO;
 }
 // hide
 if (@available(iOS 11.0, *)) {
-    [self each_setLargeTitleHidden:YES];
+    self.each_navigationBar.isLargeTitleHidden = YES;
 }
 ```
 

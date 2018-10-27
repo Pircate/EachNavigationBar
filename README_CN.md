@@ -93,7 +93,7 @@ nav.global_configuration.titleTextAttributes = @{NSForegroundColorAttributeName:
 nav.global_configuration.barTintColor = UIColor.redColor;
 nav.global_configuration.shadowImage = [UIImage imageNamed:@"shadow"];
 nav.global_configuration.backImage = [UIImage imageNamed:@"back"];
-[self.navigationController.global_configuration setBackgroundImage:[UIImage imageNamed:@"nav"] for:UIBarPositionAny barMetrics:UIBarMetricsDefault];
+[nav.global_configuration setBackgroundImage:[UIImage imageNamed:@"nav"] for:UIBarPositionAny barMetrics:UIBarMetricsDefault];
 ```
 
 #### 每个控制器设置

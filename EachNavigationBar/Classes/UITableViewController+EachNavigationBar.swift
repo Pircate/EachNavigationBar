@@ -22,7 +22,8 @@ extension UITableViewController {
         if #available(iOS 11.0, *) {
             if !each_navigationBar.isLargeTitleHidden,
                 let navigationBar = navigationController?.navigationBar {
-                each_navigationBar.frame.size = navigationBar.frame.size
+                each_navigationBar.frame.size.width = navigationBar.frame.size.width
+                each_navigationBar.frame.size.height = navigationBar.frame.size.height + each_navigationBar.extraHeight
             }
         }
         tableView.contentInset.top = each_navigationBar.bounds.height

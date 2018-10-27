@@ -2,8 +2,8 @@
 //  UITableViewController+EachNavigationBar.swift
 //  EachNavigationBar
 //
-//  Created by Pircate(gao497868860@gmail.com) on 2018/10/27
-//  
+//  Created by Pircate(gao497868860@gmail.com) on 2018/10/27.
+//  Copyright © 2018年 Pircate. All rights reserved.
 //
 
 extension UITableViewController {

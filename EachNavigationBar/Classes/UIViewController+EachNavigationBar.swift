@@ -1,8 +1,8 @@
 //
-//  UIViewController+NavigationBar.swift
+//  UIViewController+EachNavigationBar.swift
 //  EachNavigationBar
 //
-//  Created by Pircate on 2018/3/26.
+//  Created by Pircate(gao497868860@gmail.com) on 2018/3/26.
 //  Copyright © 2018年 Pircate. All rights reserved.
 //
 

@@ -9,6 +9,12 @@
 import UIKit
 import ObjectiveC
 
+#if swift(>=4.2)
+public typealias AttributedStringKey = NSAttributedString.Key
+#else
+public typealias AttributedStringKey = NSAttributedStringKey
+#endif
+
 public class Configuration: NSObject {
     
     @objc public var isEnabled = false
@@ -21,11 +27,7 @@ public class Configuration: NSObject {
     
     @objc public var shadowImage: UIImage?
     
-    #if swift(>=4.2)
-    @objc public var titleTextAttributes: [NSAttributedString.Key : Any]?
-    #else
-    @objc public var titleTextAttributes: [NSAttributedStringKey : Any]?
-    #endif
+    @objc public var titleTextAttributes: [AttributedStringKey : Any]?
     
     @objc public var isTranslucent: Bool = true
     
@@ -45,6 +47,16 @@ public class Configuration: NSObject {
         }
         set {
             navigationController?.navigationBar.prefersLargeTitles = newValue
+        }
+    }
+    
+    @available(iOS 11.0, *)
+    @objc public var largeTitleTextAttributes: [AttributedStringKey: Any]? {
+        get {
+            return navigationController?.navigationBar.largeTitleTextAttributes
+        }
+        set {
+            navigationController?.navigationBar.largeTitleTextAttributes = newValue
         }
     }
     

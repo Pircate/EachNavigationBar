@@ -43,9 +43,12 @@ open class EachNavigationBar: UINavigationBar {
         }
     }
     
-    public convenience init(navigationItem: UINavigationItem) {
+    private weak var viewController: UIViewController?
+    
+    public convenience init(_ viewController: UIViewController) {
         self.init()
-        setItems([navigationItem], animated: false)
+        self.viewController = viewController
+        setItems([viewController.each_navigationItem], animated: false)
     }
     
     open override func layoutSubviews() {
@@ -53,10 +56,25 @@ open class EachNavigationBar: UINavigationBar {
         
         guard let background = subviews.first else { return }
         background.alpha = _alpha
-        background.frame = CGRect(x: 0,
-                                  y: -UIApplication.shared.statusBarFrame.maxY,
-                                  width: bounds.width,
-                                  height: bounds.height + UIApplication.shared.statusBarFrame.maxY)
+        background.frame = CGRect(
+            x: 0,
+            y: -UIApplication.shared.statusBarFrame.maxY,
+            width: bounds.width,
+            height: bounds.height + UIApplication.shared.statusBarFrame.maxY)
+    }
+}
+
+extension EachNavigationBar {
+    
+    @available(iOS 11.0, *)
+    @objc public var isLargeTitleHidden: Bool {
+        get {
+            guard let viewController = viewController else { return false }
+            return viewController.navigationItem.largeTitleDisplayMode == .never
+        }
+        set {
+            viewController?.navigationItem.largeTitleDisplayMode = newValue ? .never : .always
+        }
     }
 }
 

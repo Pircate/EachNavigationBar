@@ -55,7 +55,7 @@ class ViewController: UIViewController {
         
         if #available(iOS 11.0, *) {
             navigationController?.navigation.configuration.prefersLargeTitles = true
-            navigation.setLargeTitleHidden(false)
+            navigation.bar.isLargeTitleHidden = false
         }
     }
     

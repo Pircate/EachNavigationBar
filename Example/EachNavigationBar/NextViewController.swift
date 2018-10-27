@@ -48,7 +48,7 @@ class NextViewController: UIViewController {
         titleView.layer.masksToBounds = true
         navigation.item.titleView = titleView
         if #available(iOS 11.0, *) {
-            navigationItem.largeTitleDisplayMode = .never
+            navigation.bar.isLargeTitleHidden = true
         }
     }
 

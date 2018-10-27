@@ -39,7 +39,15 @@ class ViewController: UIViewController {
         
         navigation.item.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(rightBarButtonAction))
         navigation.item.title = "Home"
-        navigation.bar.titleTextAttributes = [.foregroundColor: UIColor.blue]
+        navigation.bar.titleTextAttributes = [
+            .foregroundColor: UIColor.blue,
+            .font: UIFont.systemFont(ofSize: 24)]
+        
+        let leftButton = UIButton(type: .custom)
+        leftButton.setTitle("LEFT", for: .normal)
+        leftButton.setTitleColor(UIColor.red, for: .normal)
+        leftButton.sizeToFit()
+        navigation.item.leftBarButtonItem = UIBarButtonItem(customView: leftButton)
         
         // remove blur effect
         navigation.bar.isTranslucent = false
@@ -78,8 +86,9 @@ extension ViewController: UIScrollViewDelegate {
         let statusBarMaxY = UIApplication.shared.statusBarFrame.maxY
         let originY = -scrollView.contentOffset.y + statusBarMaxY
         let alpha = 1 - (scrollView.contentOffset.y) / navigation.bar.frame.height
-        navigation.bar.tintColor = navigation.bar.tintColor.withAlphaComponent(alpha)
-        navigation.bar.titleTextAttributes = [.foregroundColor: UIColor.blue.withAlphaComponent(alpha)]
+        navigation.item.leftBarButtonItem?.customView?.alpha = alpha
+        navigation.bar.setTintAlpha(alpha)
+        navigation.bar.setTitleAlpha(alpha)
         if originY <= statusBarMaxY {
             let minY = statusBarMaxY - navigation.bar.frame.height
             navigation.bar.frame.origin.y = originY > minY ? originY : minY

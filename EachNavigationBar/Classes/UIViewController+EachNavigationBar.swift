@@ -51,15 +51,15 @@ extension UIViewController {
 // MARK: - Swizzle
 extension UIViewController {
     
+    private var asTableViewController: UITableViewController? {
+        return self as? UITableViewController
+    }
+    
     private static func selector_exchangeImplementations(_ sel1: Selector, _ sel2: Selector) {
         if let originalMethod = class_getInstanceMethod(UIViewController.self, sel1),
             let swizzledMethod = class_getInstanceMethod(UIViewController.self, sel2) {
             method_exchangeImplementations(originalMethod, swizzledMethod)
         }
-    }
-    
-    private var asTableViewController: UITableViewController? {
-        return self as? UITableViewController
     }
     
     @objc private func each_viewDidLoad() {
@@ -69,7 +69,7 @@ extension UIViewController {
             navigationController.navigation.configuration.isEnabled else { return }
         
         bindNavigationBar()
-        asTableViewController?.addObserverIfViewIsTableView()
+        asTableViewController?.addObserverForContentOffset()
     }
     
     @objc private func each_viewWillAppear(_ animated: Bool) {

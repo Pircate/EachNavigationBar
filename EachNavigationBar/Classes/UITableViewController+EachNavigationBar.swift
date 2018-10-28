@@ -8,7 +8,7 @@
 
 extension UITableViewController {
     
-    func addObserverIfViewIsTableView() {
+    func addObserverForContentOffset() {
         each_navigationBar.isUnrestoredWhenViewWillLayoutSubviews = true
         tableView.addObserver(
             self,

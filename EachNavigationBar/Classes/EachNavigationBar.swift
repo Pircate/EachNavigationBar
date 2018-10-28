@@ -76,6 +76,9 @@ extension EachNavigationBar {
             viewController?.navigationItem.largeTitleDisplayMode = newValue ? .never : .always
         }
     }
+}
+
+extension UINavigationBar {
     
     @objc public func setTitleAlpha(_ alpha: CGFloat) {
         if var titleTextAttributes = titleTextAttributes {
@@ -90,9 +93,6 @@ extension EachNavigationBar {
     @objc public func setTintAlpha(_ alpha: CGFloat) {
         tintColor = tintColor.withAlphaComponent(alpha)
     }
-}
-
-extension UINavigationBar {
     
     @objc public func setShadowHidden(_ hidden: Bool) {
         let image = hidden ? UIImage() : nil

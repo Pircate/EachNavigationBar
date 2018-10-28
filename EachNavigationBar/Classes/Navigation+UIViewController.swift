@@ -9,10 +9,10 @@
 public extension Navigation where Base: UIViewController {
     
     var bar: EachNavigationBar {
-        return base.each_navigationBar
+        return base._navigationBar
     }
     
     var item: UINavigationItem {
-        return base.each_navigationItem
+        return base._navigationItem
     }
 }

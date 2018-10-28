@@ -48,7 +48,7 @@ open class EachNavigationBar: UINavigationBar {
     public convenience init(_ viewController: UIViewController) {
         self.init()
         self.viewController = viewController
-        setItems([viewController.each_navigationItem], animated: false)
+        setItems([viewController._navigationItem], animated: false)
     }
     
     open override func layoutSubviews() {

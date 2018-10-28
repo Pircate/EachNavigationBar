@@ -11,7 +11,7 @@ extension UINavigationController {
     open override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
-        guard let bar = topViewController?.each_navigationBar else { return }
+        guard let bar = topViewController?._navigationBar else { return }
         
         if #available(iOS 11.0, *) {
             bar.prefersLargeTitles = navigationBar.prefersLargeTitles

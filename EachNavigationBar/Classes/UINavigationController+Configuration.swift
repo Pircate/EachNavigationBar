@@ -93,7 +93,12 @@ public class Configuration: NSObject {
 
 extension UINavigationController {
     
+    @available(swift, deprecated: 4.0, message: "Please use navigation.configuration")
     @objc public var global_configuration: Configuration {
+        return _configuration
+    }
+    
+    var _configuration: Configuration {
         if let configuration = objc_getAssociatedObject(self, &AssociatedKeys.configuration) as? Configuration {
             return configuration
         }

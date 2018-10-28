@@ -28,6 +28,6 @@ platform :ios do
     git_commit(path: "./EachNavigationBar.podspec", message: "release #{target_version} version")
     add_git_tag tag: target_version
     push_to_git_remote
-    pod_push
+    pod_push(allow_warnings: true)
   end
 end

@@ -10,4 +10,4 @@ podfile: Example/Podfile
 # - gem install cocoapods # Since Travis is not always on latest version
 # - pod install --project-directory=Example
 script:
-- pod lib lint
+- pod lib lint --allow-warnings

@@ -19,13 +19,13 @@
 
 EachNavigationBar 可通过 [CocoaPods](http://cocoapods.org) 或者 [Carthage](https://github.com/Carthage/Carthage) 安装, 简单的添加下面一行到你的 Podfile 或者 Cartfile:
 
-### CocoaPods
+### Podfile
 
 ```ruby
 pod 'EachNavigationBar'
 ```
 
-### Carthage
+### Cartfile
 ```ruby
 github "Pircate/EachNavigationBar"
 ```

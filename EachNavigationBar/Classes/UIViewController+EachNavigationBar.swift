@@ -13,13 +13,9 @@ import ObjectiveC
 extension UIViewController {
     
     public static let setupNavigationBar: Void = {
-        if let viewDidLoad = class_getInstanceMethod(UIViewController.self, #selector(viewDidLoad)),
-            let each_viewDidLoad = class_getInstanceMethod(UIViewController.self, #selector(each_viewDidLoad)),
-            let viewWillAppear = class_getInstanceMethod(UIViewController.self, #selector(viewWillAppear(_:))),
-            let each_viewWillAppear = class_getInstanceMethod(UIViewController.self, #selector(each_viewWillAppear(_:))) {
-            method_exchangeImplementations(viewDidLoad, each_viewDidLoad)
-            method_exchangeImplementations(viewWillAppear, each_viewWillAppear)
-        }
+        selector_exchangeImplementations(#selector(viewDidLoad), #selector(each_viewDidLoad))
+        selector_exchangeImplementations(#selector(viewWillAppear(_:)), #selector(each_viewWillAppear(_:)))
+        selector_exchangeImplementations(#selector(setNeedsStatusBarAppearanceUpdate), #selector(each_setNeedsStatusBarAppearanceUpdate))
     }()
     
     @objc public var each_navigationBar: EachNavigationBar {
@@ -55,6 +51,13 @@ extension UIViewController {
 // MARK: - Swizzle
 extension UIViewController {
     
+    private static func selector_exchangeImplementations(_ sel1: Selector, _ sel2: Selector) {
+        if let originalMethod = class_getInstanceMethod(UIViewController.self, sel1),
+            let swizzledMethod = class_getInstanceMethod(UIViewController.self, sel2) {
+            method_exchangeImplementations(originalMethod, swizzledMethod)
+        }
+    }
+    
     private var asTableViewController: UITableViewController? {
         return self as? UITableViewController
     }
@@ -77,6 +80,12 @@ extension UIViewController {
         
         bringNavigationBarToFront()
         asTableViewController?.adjustsTableViewContentInset()
+    }
+    
+    @objc private func each_setNeedsStatusBarAppearanceUpdate() {
+        each_setNeedsStatusBarAppearanceUpdate()
+        
+        adjustsNavigationBarPosition()
     }
 }
 

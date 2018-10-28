@@ -138,10 +138,6 @@ navigation.bar.extraHeight = 14
 
 // 自定义返回按钮事件
 navigation.item.leftBarButtonItem?.action = #selector(backBarButtonAction)
-
-// 当状态栏更新显隐时，调整导航栏位置
-setNeedsStatusBarAppearanceUpdate()
-adjustsNavigationBarPosition()
 ```
 
 Objective-C

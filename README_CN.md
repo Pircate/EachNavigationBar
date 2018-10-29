@@ -47,7 +47,8 @@ Objective-C
 @import EachNavigationBar;
 ```
 
-### 安装在设置 window 的 rootViewController 之前(千万别忘了)
+### 安装
+#### 在设置 window 的 rootViewController 之前调用以下方法（千万别忘了）
 
 Swift
 ``` swift

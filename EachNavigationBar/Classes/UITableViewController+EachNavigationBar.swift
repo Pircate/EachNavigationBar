@@ -19,13 +19,6 @@ extension UITableViewController {
     
     func adjustsTableViewContentInset() {
         guard !_navigationBar.isHidden else { return }
-        if #available(iOS 11.0, *) {
-            if _navigationBar.prefersLargeTitles,
-                let navigationBar = navigationController?.navigationBar {
-                _navigationBar.frame.size.width = navigationBar.frame.size.width
-                _navigationBar.frame.size.height = navigationBar.frame.size.height + _navigationBar.extraHeight
-            }
-        }
         tableView.contentInset.top = _navigationBar.bounds.height
         tableView.scrollIndicatorInsets.top = _navigationBar.bounds.height
     }

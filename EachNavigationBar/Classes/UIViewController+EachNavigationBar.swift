@@ -18,17 +18,17 @@ extension UIViewController {
         selector_exchangeImplementations(#selector(setNeedsStatusBarAppearanceUpdate), #selector(each_setNeedsStatusBarAppearanceUpdate))
     }()
     
-    @available(swift, obsoleted: 4.0, message: "Please use navigation.bar")
+    @available(swift, obsoleted: 4.2, message: "Please use navigation.bar")
     @objc public var each_navigationBar: EachNavigationBar {
         return _navigationBar
     }
     
-    @available(swift, obsoleted: 4.0, message: "Please use navigation.item")
+    @available(swift, obsoleted: 4.2, message: "Please use navigation.item")
     @objc public var each_navigationItem: UINavigationItem {
         return _navigationItem
     }
     
-    @available(swift, obsoleted: 4.0, message: "Please use setupNavigationBar")
+    @available(swift, obsoleted: 4.2, message: "Please use setupNavigationBar")
     @objc public static func swizzle_setupNavigationBar() {
         setupNavigationBar
     }

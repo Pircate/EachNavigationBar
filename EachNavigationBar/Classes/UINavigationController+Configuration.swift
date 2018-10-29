@@ -93,7 +93,7 @@ public class Configuration: NSObject {
 
 extension UINavigationController {
     
-    @available(swift, obsoleted: 4.0, message: "Please use navigation.configuration")
+    @available(swift, obsoleted: 4.2, message: "Please use navigation.configuration")
     @objc public var global_configuration: Configuration {
         return _configuration
     }

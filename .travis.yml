@@ -6,8 +6,8 @@ osx_image: xcode10
 language: swift
 cache: cocoapods
 podfile: Example/Podfile
-# before_install:
-# - gem install cocoapods # Since Travis is not always on latest version
-# - pod install --project-directory=Example
+before_install:
+- gem install cocoapods # Since Travis is not always on latest version
+- pod install --project-directory=Example
 script:
-- pod lib lint --allow-warnings
+- pod spec lint --allow-warnings

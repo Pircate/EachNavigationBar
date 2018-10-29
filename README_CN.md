@@ -8,7 +8,7 @@
 
 ## 示例
 
-要运行示例项目，首先克隆 repo 并从示例目录运行 `pod install`。
+要运行示例项目，首先克隆 repo 并在 Example 目录运行 `pod install`。
 
 ## 版本要求
 

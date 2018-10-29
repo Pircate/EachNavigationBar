@@ -10,6 +10,8 @@ import UIKit
 
 class MainViewController: UIViewController {
     
+    @IBOutlet weak var setLargeTitleAlphaSlider: UISlider!
+    
     override var prefersStatusBarHidden: Bool {
         return isStatusBarHidden
     }
@@ -50,6 +52,7 @@ class MainViewController: UIViewController {
     @available(iOS 11.0, *)
     @IBAction func prefersLargetTitleAction(_ sender: UISwitch) {
         navigation.bar.prefersLargeTitles = sender.isOn
+        setLargeTitleAlphaSlider.isEnabled = sender.isOn
     }
     
     @available(iOS 11.0, *)

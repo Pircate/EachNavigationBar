@@ -60,7 +60,11 @@ Objective-C
 [UIViewController swizzle_setupNavigationBar];
 ```
 
-### 开启导航控制器每个子控制器的独立导航栏
+### 开启
+
+给当前导航栈的 viewControllers 添加一个独立的导航栏。
+
+只对当前导航栈有效，不影响其他导航栈。
 
 Swift
 ``` swift
@@ -76,6 +80,8 @@ nav.global_configuration.isEnabled = YES;
 
 ###  设置
 #### 导航栈全局配置
+
+更多配置请看[这里](https://github.com/Pircate/EachNavigationBar/blob/master/EachNavigationBar/Classes/UINavigationController%2BConfiguration.swift)
 
 Swift
 ``` swift
@@ -98,7 +104,7 @@ nav.global_configuration.backImage = [UIImage imageNamed:@"back"];
 ```
 
 #### 每个控制器设置
-##### 基础设置
+##### 普通设置
 
 Swift
 ``` swift
@@ -149,7 +155,7 @@ self.each_navigationItem.xxx
 
 ##### 大标题设置(iOS 11.0+)
 
-###### 全局导航栈开启大标题
+###### 导航栈开启大标题功能
 
 Swift
 ``` swift
@@ -160,7 +166,6 @@ if #available(iOS 11.0, *) {
 
 Objective-C
 ``` ObjC
-// enable
 if (@available(iOS 11.0, *)) {
     self.navigationController.global_configuration.prefersLargeTitles = YES;
 }
@@ -170,11 +175,11 @@ if (@available(iOS 11.0, *)) {
 
 Swift
 ``` swift
-// show
+// 显示大标题
 if #available(iOS 11.0, *) {
     navigation.bar.isLargeTitleHidden = false
 }
-// hide
+// 隐藏大标题
 if #available(iOS 11.0, *) {
     navigation.bar.isLargeTitleHidden = true
 }
@@ -182,11 +187,11 @@ if #available(iOS 11.0, *) {
 
 Objective-C
 ``` ObjC
-// show
+// 显示大标题
 if (@available(iOS 11.0, *)) {
     self.each_navigationBar.isLargeTitleHidden = NO;
 }
-// hide
+// 隐藏大标题
 if (@available(iOS 11.0, *)) {
     self.each_navigationBar.isLargeTitleHidden = YES;
 }

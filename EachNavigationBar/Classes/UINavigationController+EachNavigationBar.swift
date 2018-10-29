@@ -13,11 +13,6 @@ extension UINavigationController {
         
         guard let bar = topViewController?._navigationBar else { return }
         
-        if #available(iOS 11.0, *) {
-            bar.prefersLargeTitles = navigationBar.prefersLargeTitles
-            bar.largeTitleTextAttributes = navigationBar.largeTitleTextAttributes
-        }
-        
         if bar.isUnrestoredWhenViewWillLayoutSubviews {
             bar.frame.size = navigationBar.frame.size
         } else {

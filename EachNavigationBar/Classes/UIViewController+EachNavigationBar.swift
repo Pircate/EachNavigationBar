@@ -89,7 +89,7 @@ extension UIViewController {
         if let bar = objc_getAssociatedObject(self, &AssociatedKeys.navigationBar) as? EachNavigationBar {
             return bar
         }
-        let bar = EachNavigationBar(self)
+        let bar = EachNavigationBar(navigationItem: _navigationItem)
         objc_setAssociatedObject(self, &AssociatedKeys.navigationBar, bar, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         return bar
     }
@@ -133,6 +133,10 @@ extension UIViewController {
         _navigationBar.isTranslucent = configuration.isTranslucent
         _navigationBar.barStyle = configuration.barStyle
         _navigationBar.extraHeight = configuration.extraHeight
+        if #available(iOS 11.0, *) {
+            _navigationBar.prefersLargeTitles = configuration.prefersLargeTitles
+            _navigationBar.largeTitleTextAttributes = configuration.largeTitleTextAttributes
+        }
     }
     
     private func setupBackBarButtonItem() {

@@ -49,21 +49,14 @@ class ViewController: UIViewController {
         leftButton.sizeToFit()
         navigation.item.leftBarButtonItem = UIBarButtonItem(customView: leftButton)
         
-        // remove blur effect
-        navigation.bar.isTranslucent = false
-        
-        // hide bottom black line
-        navigation.bar.setShadowHidden(true)
-        
-        // if you need to set status bar style lightContent
-        // navigationController?.navigationBar.barStyle = .black
-        
         // if you want change navigation bar position
         navigation.bar.isUnrestoredWhenViewWillLayoutSubviews = true
         
         if #available(iOS 11.0, *) {
-            navigationController?.navigation.configuration.prefersLargeTitles = true
-            navigation.bar.isLargeTitleHidden = false
+            navigation.bar.largeTitleTextAttributes = [
+                .font: UIFont.systemFont(ofSize: 50),
+                .foregroundColor: UIColor.green]
+            navigation.bar.prefersLargeTitles = true
         }
     }
     
@@ -89,6 +82,9 @@ extension ViewController: UIScrollViewDelegate {
         navigation.item.leftBarButtonItem?.customView?.alpha = alpha
         navigation.bar.setTintAlpha(alpha)
         navigation.bar.setTitleAlpha(alpha)
+        if #available(iOS 11.0, *) {
+            navigation.bar.setLargeTitleAlpha(alpha)
+        }
         if originY <= statusBarMaxY {
             let minY = statusBarMaxY - navigation.bar.frame.height
             navigation.bar.frame.origin.y = originY > minY ? originY : minY

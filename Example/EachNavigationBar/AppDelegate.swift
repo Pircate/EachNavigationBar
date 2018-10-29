@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIViewController.setupNavigationBar
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = UIColor.white
-        let nav = UINavigationController(rootViewController: ViewController())
+        let nav = UINavigationController(rootViewController: MainViewController())
         // config
         nav.navigation.configuration.isEnabled = true
         nav.navigation.configuration.barTintColor = UIColor.yellow

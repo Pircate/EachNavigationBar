@@ -134,11 +134,11 @@ navigation.bar.isTranslucent = false
 // 隐藏底部黑线
 navigation.bar.setShadowHidden(true)
 
-// 如果你想设置状态栏白色文字
+// 设置状态栏白色文字
 navigationController?.navigationBar.barStyle = .black
 
-// 如果你想改变导航栏位置
-navigation.bar.isUnrestoredWhenViewWillLayoutSubviews = true
+// 如果想自定义导航栏位置，请将下面属性设为 true
+navinavigation.bar.isUnrestoredWhenViewWillLayoutSubviews = true
 
 // 导航栏额外高度
 navigation.bar.extraHeight = 14

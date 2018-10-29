@@ -10,6 +10,12 @@ import UIKit
 
 class MainViewController: UIViewController {
     
+    override var prefersStatusBarHidden: Bool {
+        return isStatusBarHidden
+    }
+    
+    private var isStatusBarHidden: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -49,5 +55,10 @@ class MainViewController: UIViewController {
     @available(iOS 11.0, *)
     @IBAction func setLargeTitleAlphaAction(_ sender: UISlider) {
         navigation.bar.setLargeTitleAlpha(CGFloat(sender.value))
+    }
+    
+    @IBAction func isStatusBarHiddenAction(_ sender: UISwitch) {
+        isStatusBarHidden = sender.isOn
+        setNeedsStatusBarAppearanceUpdate()
     }
 }

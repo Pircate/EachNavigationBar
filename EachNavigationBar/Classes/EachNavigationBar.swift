@@ -79,13 +79,14 @@ open class EachNavigationBar: UINavigationBar {
 extension EachNavigationBar {
     
     @available(iOS 11.0, *)
-    private var largeTitleHeight: CGFloat {
+    var largeTitleHeight: CGFloat {
+        guard prefersLargeTitles else { return 0 }
         guard let largeTitleTextAttributes = largeTitleTextAttributes,
             let font = largeTitleTextAttributes[.font] as? UIFont else {
-                return prefersLargeTitles ? 49 : 0
+                return 49
         }
         let size = font.pointSize * 1.2
-        return prefersLargeTitles ? (size > 49 ? size : 49) : 0
+        return size > 49 ? size : 49
     }
 }
 

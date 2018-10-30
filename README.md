@@ -36,6 +36,7 @@ github "Pircate/EachNavigationBar"
 ## Overview
 
 ![](https://github.com/Pircate/EachNavigationBar/blob/master/demo.gif)
+![](https://github.com/Pircate/EachNavigationBar/blob/master/new_demo.gif)
 
 ## Usage
 

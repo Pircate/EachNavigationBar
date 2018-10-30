@@ -17,11 +17,7 @@ open class EachNavigationBar: UINavigationBar {
     
     @objc open var extraHeight: CGFloat = 0 {
         didSet {
-            if #available(iOS 11.0, *) {
-                frame.size.height = 44.0 + largeTitleHeight + extraHeight
-            } else {
-                frame.size.height = 44.0 + extraHeight
-            }
+            frame.size.height = 44.0 + additionalHeight
         }
     }
     
@@ -54,7 +50,7 @@ open class EachNavigationBar: UINavigationBar {
         }
         set {
             super.prefersLargeTitles = newValue
-            frame.size.height =  44.0 + largeTitleHeight + extraHeight
+            frame.size.height =  44.0 + additionalHeight
         }
     }
     
@@ -88,41 +84,12 @@ extension EachNavigationBar {
         let size = font.pointSize * 1.2
         return size > 49 ? size : 49
     }
-}
-
-extension UINavigationBar {
     
-    @objc public func setTitleAlpha(_ alpha: CGFloat) {
-        if var titleTextAttributes = titleTextAttributes {
-            let color = titleTextAttributes[.foregroundColor] as? UIColor ?? UIColor.black
-            titleTextAttributes[.foregroundColor] = color.withAlphaComponent(alpha)
-            self.titleTextAttributes = titleTextAttributes
+    var additionalHeight: CGFloat {
+        if #available(iOS 11.0, *) {
+            return extraHeight + largeTitleHeight
         } else {
-            self.titleTextAttributes = [.foregroundColor: UIColor.black.withAlphaComponent(alpha)]
-        }
-    }
-    
-    @available(iOS 11.0, *)
-    @objc public func setLargeTitleAlpha(_ alpha: CGFloat) {
-        if var largeTitleTextAttributes = largeTitleTextAttributes {
-            let color = largeTitleTextAttributes[.foregroundColor] as? UIColor ?? UIColor.black
-            largeTitleTextAttributes[.foregroundColor] = color.withAlphaComponent(alpha)
-            self.largeTitleTextAttributes = largeTitleTextAttributes
-        } else {
-            self.largeTitleTextAttributes = [.foregroundColor: UIColor.black.withAlphaComponent(alpha)]
-        }
-    }
-    
-    @objc public func setTintAlpha(_ alpha: CGFloat) {
-        tintColor = tintColor.withAlphaComponent(alpha)
-    }
-    
-    @objc public func setShadowHidden(_ hidden: Bool) {
-        let image = hidden ? UIImage() : nil
-        shadowImage = image
-        guard #available(iOS 11.0, *) else {
-            setBackgroundImage(image, for: .default)
-            return
+            return extraHeight
         }
     }
 }

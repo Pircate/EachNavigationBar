@@ -43,11 +43,12 @@ class ViewController: UIViewController {
             .foregroundColor: UIColor.blue,
             .font: UIFont.systemFont(ofSize: 24)]
         
-        let leftButton = UIButton(type: .custom)
-        leftButton.setTitle("LEFT", for: .normal)
-        leftButton.setTitleColor(UIColor.red, for: .normal)
-        leftButton.sizeToFit()
-        navigation.item.leftBarButtonItem = UIBarButtonItem(customView: leftButton)
+        let backButton = UIButton(type: .custom)
+        backButton.setTitle("Back", for: .normal)
+        backButton.setTitleColor(UIColor.red, for: .normal)
+        backButton.sizeToFit()
+        backButton.addTarget(self, action: #selector(backBarButtonAction), for: .touchUpInside)
+        navigation.item.leftBarButtonItem = UIBarButtonItem(customView: backButton)
         
         // if you want change navigation bar position
         navigation.bar.isUnrestoredWhenViewWillLayoutSubviews = true
@@ -67,6 +68,10 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @objc private func backBarButtonAction() {
+        navigationController?.popViewController(animated: true)
     }
     
     @objc private func rightBarButtonAction() {

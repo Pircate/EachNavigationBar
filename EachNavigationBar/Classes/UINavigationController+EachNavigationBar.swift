@@ -24,10 +24,6 @@ extension UINavigationController {
             }
         }
         
-        if #available(iOS 11.0, *) {
-            bar.frame.size.height = navigationBar.frame.height + bar.extraHeight + bar.largeTitleHeight
-        } else {
-            bar.frame.size.height = navigationBar.frame.height + bar.extraHeight
-        }
+        bar.frame.size.height = navigationBar.frame.height + bar.additionalHeight
     }
 }

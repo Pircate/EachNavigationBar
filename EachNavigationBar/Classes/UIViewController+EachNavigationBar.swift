@@ -143,13 +143,14 @@ extension UIViewController {
         guard let navigationController = navigationController,
             navigationController.viewControllers.count > 1,
             let image = navigationController.navigation.configuration.backImage else { return }
-        _navigationItem.leftBarButtonItem = UIBarButtonItem(image: image,
-                                                                style: .plain,
-                                                                target: self,
-                                                                action: #selector(backAction))
+        _navigationItem.leftBarButtonItem = UIBarButtonItem(
+            image: image,
+            style: .plain,
+            target: self,
+            action: #selector(each_backBarButtonAction))
     }
     
-    @objc private func backAction() {
+    @objc private func each_backBarButtonAction() {
         navigationController?.popViewController(animated: true)
     }
 }

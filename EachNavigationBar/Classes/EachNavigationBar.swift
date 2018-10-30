@@ -54,6 +54,12 @@ open class EachNavigationBar: UINavigationBar {
         }
     }
     
+    private lazy var _contentView: UIView? = {
+        subviews.filter {
+            String(describing: $0.classForCoder) == "_UINavigationBarContentView"
+        }.first
+    }()
+    
     public convenience init(navigationItem: UINavigationItem) {
         self.init()
         setItems([navigationItem], animated: false)
@@ -69,6 +75,8 @@ open class EachNavigationBar: UINavigationBar {
             y: -UIApplication.shared.statusBarFrame.maxY,
             width: bounds.width,
             height: bounds.height + UIApplication.shared.statusBarFrame.maxY)
+        
+        _contentView?.frame.origin.y = extraHeight
     }
 }
 

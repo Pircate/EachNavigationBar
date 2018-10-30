@@ -49,15 +49,17 @@ class MainViewController: UIViewController {
         navigation.bar.extraHeight = CGFloat(sender.value)
     }
     
-    @available(iOS 11.0, *)
     @IBAction func prefersLargetTitleAction(_ sender: UISwitch) {
-        navigation.bar.prefersLargeTitles = sender.isOn
-        setLargeTitleAlphaSlider.isEnabled = sender.isOn
+        if #available(iOS 11.0, *) {
+            navigation.bar.prefersLargeTitles = sender.isOn
+            setLargeTitleAlphaSlider.isEnabled = sender.isOn
+        }
     }
     
-    @available(iOS 11.0, *)
     @IBAction func setLargeTitleAlphaAction(_ sender: UISlider) {
-        navigation.bar.setLargeTitleAlpha(CGFloat(sender.value))
+        if #available(iOS 11.0, *) {
+            navigation.bar.setLargeTitleAlpha(CGFloat(sender.value))
+        }
     }
     
     @IBAction func isStatusBarHiddenAction(_ sender: UISwitch) {

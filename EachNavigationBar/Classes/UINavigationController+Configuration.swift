@@ -27,6 +27,8 @@ public class Configuration: NSObject {
     
     @objc public var shadowImage: UIImage?
     
+    @objc public var isShadowHidden: Bool = false
+    
     @objc public var titleTextAttributes: [AttributedStringKey : Any]?
     
     @objc public var isTranslucent: Bool = true
@@ -57,15 +59,6 @@ public class Configuration: NSObject {
         self.backgroundImage = backgroundImage
         self.barPosition = barPosition
         self.barMetrics = barMetrics
-    }
-    
-    @objc public func setShadowHidden(_ hidden: Bool) {
-        let image = hidden ? UIImage() : nil
-        shadowImage = image
-        guard #available(iOS 11.0, *) else {
-            backgroundImage = image
-            return
-        }
     }
 }
 

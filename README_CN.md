@@ -133,7 +133,7 @@ navigation.item.leftBarButtonItem?.tintColor = navigation.item.leftBarButtonItem
 navigation.bar.isTranslucent = false
 
 // 隐藏底部黑线
-navigation.bar.setShadowHidden(true)
+navigation.bar.isShadowHidden = true
 
 // 设置状态栏白色文字
 navigationController?.navigationBar.barStyle = .black

@@ -129,7 +129,7 @@ navigation.item.leftBarButtonItem?.tintColor = navigation.item.leftBarButtonItem
 navigation.bar.isTranslucent = false
 
 // hide bottom black line
-navigation.bar.setShadowHidden(true)
+navigation.bar.isShadowHidden = true
 
 // if you need to set status bar style lightContent
 navigationController?.navigationBar.barStyle = .black

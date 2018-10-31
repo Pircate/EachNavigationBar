@@ -137,6 +137,7 @@ extension UIViewController {
         _navigationBar.alpha = configuration.alpha
         _navigationBar.barTintColor = configuration.barTintColor
         _navigationBar.shadowImage = configuration.shadowImage
+        _navigationBar.isShadowHidden = configuration.isShadowHidden
         _navigationBar.titleTextAttributes = configuration.titleTextAttributes
         _navigationBar.setBackgroundImage(
             configuration.backgroundImage,

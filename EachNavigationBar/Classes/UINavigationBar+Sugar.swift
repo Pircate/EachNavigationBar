@@ -32,13 +32,4 @@ extension UINavigationBar {
     @objc public func setTintAlpha(_ alpha: CGFloat) {
         tintColor = tintColor.withAlphaComponent(alpha)
     }
-    
-    @objc public func setShadowHidden(_ hidden: Bool) {
-        let image = hidden ? UIImage() : nil
-        shadowImage = image
-        guard #available(iOS 11.0, *) else {
-            setBackgroundImage(image, for: .default)
-            return
-        }
-    }
 }

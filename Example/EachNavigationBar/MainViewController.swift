@@ -42,7 +42,7 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func isShadowHiddenAction(_ sender: UISwitch) {
-        navigation.bar.setShadowHidden(sender.isOn)
+        navigation.bar.isShadowHidden = sender.isOn
     }
     
     @IBAction func extraHeightAction(_ sender: UISlider) {

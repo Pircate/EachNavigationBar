@@ -188,6 +188,36 @@ if (@available(iOS 11.0, *)) {
 }
 ```
 
+#### 调整 UIScrollView 的 contentInset
+
+Swift
+``` swift
+adjustsScrollViewContentInset(scrollView)
+```
+
+Objective-C
+``` ObjC
+[self adjustsScrollViewContentInset:self.scrollView];
+```
+
+#### UITableViewController
+
+请在控制器释放的时候移除观察者
+
+Swift
+``` swift
+deinit {
+    removeObserverForContentOffset()
+}
+```
+
+Objective-C
+``` ObjC
+- (void)dealloc {
+    [self removeObserverForContentOffset];
+}
+```
+
 ## 作者
 
 Pircate, gao497868860@163.com

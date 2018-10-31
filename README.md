@@ -183,7 +183,35 @@ if (@available(iOS 11.0, *)) {
     [self.each_navigationBar setLargeTitleAlpha:0.5];
 }
 ```
+#### Adjusts UIScrollView contentInset
 
+Swift
+``` swift
+adjustsScrollViewContentInset(scrollView)
+```
+
+Objective-C
+``` ObjC
+[self adjustsScrollViewContentInset:self.scrollView];
+```
+
+#### For UITableViewController
+
+Must remove observer when deinit
+
+Swift
+``` swift
+deinit {
+    removeObserverForContentOffset()
+}
+```
+
+Objective-C
+``` ObjC
+- (void)dealloc {
+    [self removeObserverForContentOffset];
+}
+```
 ## Author
 
 Pircate, gao497868860@163.com

@@ -8,6 +8,10 @@
 
 extension UITableViewController {
     
+    @objc public func removeObserverForContentOffset() {
+        tableView.removeObserver(self, forKeyPath: "contentOffset")
+    }
+    
     func addObserverForContentOffset() {
         _navigationBar.isUnrestoredWhenViewWillLayoutSubviews = true
         tableView.addObserver(
@@ -18,9 +22,7 @@ extension UITableViewController {
     }
     
     func adjustsTableViewContentInset() {
-        guard !_navigationBar.isHidden else { return }
-        tableView.contentInset.top = _navigationBar.bounds.height
-        tableView.scrollIndicatorInsets.top = _navigationBar.bounds.height
+        adjustsScrollViewContentInset(tableView)
     }
     
     open override func observeValue(
@@ -31,6 +33,6 @@ extension UITableViewController {
         guard keyPath == "contentOffset",
             let tableView = object as? UITableView,
             self.tableView === tableView else { return }
-        _navigationBar.frame.origin.y = tableView.contentOffset.y + UIApplication.shared.statusBarFrame.maxY
+        _navigationBar.frame.origin.y = tableView.contentOffset.y + statusBarMaxY
     }
 }

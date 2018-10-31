@@ -19,6 +19,7 @@ class ViewController: UIViewController {
         } else {
             automaticallyAdjustsScrollViewInsets = false
         }
+        adjustsScrollViewContentInset(scrollView)
         return scrollView
     }()
     

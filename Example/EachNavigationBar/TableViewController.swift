@@ -22,6 +22,7 @@ class TableViewController: UITableViewController {
     }
     
     deinit {
+        removeObserverForContentOffset()
         debugPrint("deinit")
     }
 

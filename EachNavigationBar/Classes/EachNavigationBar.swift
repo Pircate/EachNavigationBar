@@ -76,7 +76,9 @@ open class EachNavigationBar: UINavigationBar {
             width: bounds.width,
             height: bounds.height + UIApplication.shared.statusBarFrame.maxY)
         
-        _contentView?.frame.origin.y = extraHeight
+        if #available(iOS 11.0, *) {
+            _contentView?.frame.origin.y = extraHeight
+        }
     }
 }
 

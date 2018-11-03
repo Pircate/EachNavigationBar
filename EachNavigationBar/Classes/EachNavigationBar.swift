@@ -67,13 +67,22 @@ open class EachNavigationBar: UINavigationBar {
         }.first
     }()
     
-    public convenience init(navigationItem: UINavigationItem) {
+    private var scrollViewsForAdjustsContentInset: Set<UIScrollView> = []
+    
+    private weak var viewController: UIViewController?
+    
+    public convenience init(viewController: UIViewController) {
         self.init()
-        setItems([navigationItem], animated: false)
+        self.viewController = viewController
+        setItems([viewController._navigationItem], animated: false)
     }
     
     open override func layoutSubviews() {
         super.layoutSubviews()
+        
+        scrollViewsForAdjustsContentInset.forEach {
+            adjustsScrollViewContentInset($0)
+        }
         
         guard let background = subviews.first else { return }
         background.alpha = _alpha
@@ -109,5 +118,27 @@ extension EachNavigationBar {
         } else {
             return extraHeight
         }
+    }
+}
+
+extension EachNavigationBar {
+    
+    func appendScrollViewForAdjustsContentInset(_ scrollView: UIScrollView) {
+        scrollViewsForAdjustsContentInset.insert(scrollView)
+    }
+    
+    private func adjustsScrollViewContentInset(_ scrollView: UIScrollView) {
+        guard let viewController = viewController else { return }
+        let bar = viewController._navigationBar
+        let top: CGFloat
+        if #available(iOS 11.0, *) {
+            top = scrollView.contentInsetAdjustmentBehavior == .never
+                ? viewController.statusBarMaxY : 0
+        } else {
+            top = viewController.statusBarMaxY
+        }
+        let contentInsetTop = top + (bar.isHidden ? 0 : bar.bounds.height)
+        scrollView.contentInset.top = contentInsetTop
+        scrollView.scrollIndicatorInsets.top = contentInsetTop
     }
 }

@@ -41,15 +41,7 @@ extension UIViewController {
     }
     
     @objc public func adjustsScrollViewContentInset(_ scrollView: UIScrollView) {
-        let top: CGFloat
-        if #available(iOS 11.0, *) {
-            top = scrollView.contentInsetAdjustmentBehavior == .never ? statusBarMaxY : 0
-        } else {
-            top = automaticallyAdjustsScrollViewInsets ? 0 : statusBarMaxY
-        }
-        let contentInsetTop = top + (_navigationBar.isHidden ? 0 : _navigationBar.bounds.height)
-        scrollView.contentInset.top = contentInsetTop
-        scrollView.scrollIndicatorInsets.top = contentInsetTop
+        _navigationBar.appendScrollViewForAdjustsContentInset(scrollView)
     }
 }
 
@@ -101,7 +93,7 @@ extension UIViewController {
         if let bar = objc_getAssociatedObject(self, &AssociatedKeys.navigationBar) as? EachNavigationBar {
             return bar
         }
-        let bar = EachNavigationBar(navigationItem: _navigationItem)
+        let bar = EachNavigationBar(viewController: self)
         objc_setAssociatedObject(self, &AssociatedKeys.navigationBar, bar, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         return bar
     }

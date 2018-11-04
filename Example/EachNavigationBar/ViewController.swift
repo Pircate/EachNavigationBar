@@ -33,7 +33,11 @@ class ViewController: UIViewController {
         view.addSubview(scrollView)
         view.addSubview(tipLabel)
         
+        navigation.bar.statusBarStyle = .lightContent
+        navigation.bar.setBackgroundImage(#imageLiteral(resourceName: "nav"), for: .default)
+        
         navigation.item.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(rightBarButtonAction))
+        navigation.item.rightBarButtonItem?.tintColor = UIColor.orange
         navigation.item.title = "Home"
         navigation.bar.titleTextAttributes = [
             .foregroundColor: UIColor.blue,
@@ -55,15 +59,6 @@ class ViewController: UIViewController {
                 .foregroundColor: UIColor.green]
             navigation.bar.prefersLargeTitles = true
         }
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @objc private func backBarButtonAction() {

@@ -36,7 +36,7 @@ github "Pircate/EachNavigationBar"
 ## Overview
 
 ![](https://github.com/Pircate/EachNavigationBar/blob/master/demo.gif)
-![](https://github.com/Pircate/EachNavigationBar/blob/master/new_demo.gif)
+![](https://github.com/Pircate/EachNavigationBar/blob/master/demo_new.gif)
 
 ## Usage
 
@@ -131,8 +131,8 @@ navigation.bar.isTranslucent = false
 // hide bottom black line
 navigation.bar.isShadowHidden = true
 
-// if you need to set status bar style lightContent
-navigationController?.navigationBar.barStyle = .black
+// set status bar style
+navigation.bar.statusBarStyle = .lightContent
 
 // if you want change navigation bar position
 navigation.bar.isUnrestoredWhenViewWillLayoutSubviews = true

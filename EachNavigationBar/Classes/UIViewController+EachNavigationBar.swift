@@ -75,6 +75,7 @@ extension UIViewController {
         guard let navigationController = navigationController,
             navigationController.navigation.configuration.isEnabled else { return }
         
+        navigationController.navigationBar.barStyle = _navigationBar._barStyle
         bringNavigationBarToFront()
         asTableViewController?.adjustsTableViewContentInset()
     }

@@ -33,7 +33,7 @@ github "Pircate/EachNavigationBar"
 ## 预览
 
 ![](https://github.com/Pircate/EachNavigationBar/blob/master/demo.gif) 
-![](https://github.com/Pircate/EachNavigationBar/blob/master/new_demo.gif)
+![](https://github.com/Pircate/EachNavigationBar/blob/master/demo_new.gif)
 
 ## 用法
 
@@ -135,8 +135,8 @@ navigation.bar.isTranslucent = false
 // 隐藏底部黑线
 navigation.bar.isShadowHidden = true
 
-// 设置状态栏白色文字
-navigationController?.navigationBar.barStyle = .black
+// 设置状态栏文字颜色
+navigation.bar.statusBarStyle = .lightContent
 
 // 如果想自定义导航栏位置，请将下面属性设为 true
 navinavigation.bar.isUnrestoredWhenViewWillLayoutSubviews = true

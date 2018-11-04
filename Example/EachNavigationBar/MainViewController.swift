@@ -62,6 +62,10 @@ class MainViewController: UIViewController {
         }
     }
     
+    @IBAction func changeStatusBarStyle(_ sender: UISwitch) {
+        navigation.bar.statusBarStyle = sender.isOn ? .lightContent : .default
+    }
+    
     @IBAction func isStatusBarHiddenAction(_ sender: UISwitch) {
         isStatusBarHidden = sender.isOn
         setNeedsStatusBarAppearanceUpdate()

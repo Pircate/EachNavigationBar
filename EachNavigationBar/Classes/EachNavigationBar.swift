@@ -9,6 +9,10 @@
 import UIKit
 
 open class EachNavigationBar: UINavigationBar {
+    
+    var _barStyle: UIBarStyle {
+        return statusBarStyle == .default ? .default : .black
+    }
 
     private var _alpha: CGFloat = 1
     
@@ -18,6 +22,12 @@ open class EachNavigationBar: UINavigationBar {
     @objc open var extraHeight: CGFloat = 0 {
         didSet {
             frame.size.height = 44.0 + additionalHeight
+        }
+    }
+    
+    @objc open var statusBarStyle: UIStatusBarStyle = .default {
+        didSet {
+            viewController?.navigationController?.navigationBar.barStyle = _barStyle
         }
     }
     

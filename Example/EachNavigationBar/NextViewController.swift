@@ -39,9 +39,6 @@ class NextViewController: UIViewController {
         view.addSubview(tipLabel)
         
         navigation.item.title = "Next"
-        navigation.bar.setBackgroundImage(#imageLiteral(resourceName: "nav"), for: .default)
-//        navigation.item.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(backBarButtonAction))
-        navigation.item.leftBarButtonItem?.tintColor = UIColor.white
         
         let titleView = UITextField(frame: CGRect(x: 0, y: 0, width: view.bounds.width - 100, height: 30))
         titleView.backgroundColor = UIColor.lightGray
@@ -51,11 +48,6 @@ class NextViewController: UIViewController {
         if #available(iOS 11.0, *) {
             navigation.bar.prefersLargeTitles = false
         }
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @objc private func backBarButtonAction() {

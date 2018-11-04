@@ -32,8 +32,8 @@ github "Pircate/EachNavigationBar"
 
 ## 预览
 
-![](https://github.com/Pircate/EachNavigationBar/blob/master/demo.gif) 
 ![](https://github.com/Pircate/EachNavigationBar/blob/master/demo_new.gif)
+![](https://github.com/Pircate/EachNavigationBar/blob/master/demo_push.gif)
 
 ## 用法
 

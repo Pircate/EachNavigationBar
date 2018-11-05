@@ -138,6 +138,7 @@ extension UIViewController {
             barMetrics: configuration.barMetrics)
         _navigationBar.isTranslucent = configuration.isTranslucent
         _navigationBar.barStyle = configuration.barStyle
+        _navigationBar.statusBarStyle = configuration.statusBarStyle
         _navigationBar.extraHeight = configuration.extraHeight
         if #available(iOS 11.0, *) {
             _navigationBar.prefersLargeTitles = configuration.prefersLargeTitles

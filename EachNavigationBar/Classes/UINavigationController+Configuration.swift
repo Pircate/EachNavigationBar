@@ -35,6 +35,8 @@ public class Configuration: NSObject {
     
     @objc public var barStyle: UIBarStyle = .default
     
+    @objc public var statusBarStyle: UIStatusBarStyle = .default
+    
     /// Extra height for the navigation bar.
     @objc public var extraHeight: CGFloat = 0
     

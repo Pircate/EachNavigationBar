@@ -25,6 +25,13 @@ open class EachNavigationBar: UINavigationBar {
         }
     }
     
+    @objc open var isShadowHidden: Bool = false {
+        didSet {
+            guard let background = subviews.first else { return }
+            background.clipsToBounds = isShadowHidden
+        }
+    }
+    
     @objc open var statusBarStyle: UIStatusBarStyle = .default {
         didSet {
             viewController?.navigationController?.navigationBar.barStyle = _barStyle
@@ -61,13 +68,6 @@ open class EachNavigationBar: UINavigationBar {
         set {
             super.prefersLargeTitles = newValue
             frame.size.height =  44.0 + additionalHeight
-        }
-    }
-    
-    @objc public var isShadowHidden: Bool = false {
-        didSet {
-            guard let background = subviews.first else { return }
-            background.clipsToBounds = isShadowHidden
         }
     }
     

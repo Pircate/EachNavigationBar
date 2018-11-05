@@ -15,4 +15,8 @@ public extension Navigation where Base: UIViewController {
     var item: UINavigationItem {
         return base._navigationItem
     }
+    
+    static func swizzle() {
+        Base.setupNavigationBar
+    }
 }

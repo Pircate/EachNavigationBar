@@ -12,23 +12,28 @@ import ObjectiveC
 // MARK: - Public
 extension UIViewController {
     
+    @available(swift, deprecated: 4.2, message: "Please use navigation.swizzle() instead.")
     public static let setupNavigationBar: Void = {
         selector_exchangeImplementations(#selector(viewDidLoad), #selector(each_viewDidLoad))
-        selector_exchangeImplementations(#selector(viewWillAppear(_:)), #selector(each_viewWillAppear(_:)))
-        selector_exchangeImplementations(#selector(setNeedsStatusBarAppearanceUpdate), #selector(each_setNeedsStatusBarAppearanceUpdate))
+        selector_exchangeImplementations(
+            #selector(viewWillAppear(_:)),
+            #selector(each_viewWillAppear(_:)))
+        selector_exchangeImplementations(
+            #selector(setNeedsStatusBarAppearanceUpdate),
+            #selector(each_setNeedsStatusBarAppearanceUpdate))
     }()
     
-    @available(swift, obsoleted: 4.2, message: "Please use navigation.bar")
+    @available(swift, obsoleted: 4.2, message: "Please use navigation.bar instead.")
     @objc public var each_navigationBar: EachNavigationBar {
         return _navigationBar
     }
     
-    @available(swift, obsoleted: 4.2, message: "Please use navigation.item")
+    @available(swift, obsoleted: 4.2, message: "Please use navigation.item instead.")
     @objc public var each_navigationItem: UINavigationItem {
         return _navigationItem
     }
     
-    @available(swift, obsoleted: 4.2, message: "Please use setupNavigationBar")
+    @available(swift, obsoleted: 4.2, message: "Please use setupNavigationBar instead.")
     @objc public static func swizzle_setupNavigationBar() {
         setupNavigationBar
     }
@@ -91,7 +96,10 @@ extension UIViewController {
 extension UIViewController {
     
     var _navigationBar: EachNavigationBar {
-        if let bar = objc_getAssociatedObject(self, &AssociatedKeys.navigationBar) as? EachNavigationBar {
+        if let bar = objc_getAssociatedObject(
+            self,
+            &AssociatedKeys.navigationBar)
+            as? EachNavigationBar {
             return bar
         }
         let bar = EachNavigationBar(viewController: self)
@@ -100,7 +108,10 @@ extension UIViewController {
     }
     
     var _navigationItem: UINavigationItem {
-        if let item = objc_getAssociatedObject(self, &AssociatedKeys.navigationItem) as? UINavigationItem {
+        if let item = objc_getAssociatedObject(
+            self,
+            &AssociatedKeys.navigationItem)
+            as? UINavigationItem {
             return item
         }
         let item = UINavigationItem()

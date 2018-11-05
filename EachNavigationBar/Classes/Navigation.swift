@@ -20,12 +20,18 @@ public protocol NavigationCompatible {
     associatedtype CompatibleType
     
     var navigation: CompatibleType { get }
+    
+    static var navigation: CompatibleType.Type { get }
 }
 
 public extension NavigationCompatible {
     
     var navigation: Navigation<Self> {
         return Navigation(self)
+    }
+    
+    static var navigation: Navigation<Self>.Type {
+        return Navigation.self
     }
 }
 

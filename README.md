@@ -56,7 +56,7 @@ Objective-C
 
 Swift
 ``` swift
-UIViewController.setupNavigationBar
+UIViewController.navigation.swizzle()
 ```
 
 Objective-C

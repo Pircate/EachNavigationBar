@@ -13,6 +13,7 @@ extension UINavigationController {
         
         guard _configuration.isEnabled else { return }
         
+        isNavigationBarHidden = false
         navigationBar.isHidden = true
         
         guard let bar = topViewController?._navigationBar else { return }

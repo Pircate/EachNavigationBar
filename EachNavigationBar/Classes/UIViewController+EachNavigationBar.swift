@@ -110,6 +110,7 @@ extension UIViewController {
     
     private func bindNavigationBar() {
         guard let navigationController = navigationController else { return }
+        navigationController.isNavigationBarHidden = false
         navigationController.navigationBar.isHidden = true
         setupNavigationBarStyle()
         setupBackBarButtonItem()

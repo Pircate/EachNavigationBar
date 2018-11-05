@@ -12,30 +12,19 @@ import ObjectiveC
 // MARK: - Public
 extension UIViewController {
     
-    @available(swift, deprecated: 4.2, message: "Please use navigation.swizzle() instead.")
-    public static let setupNavigationBar: Void = {
-        selector_exchangeImplementations(#selector(viewDidLoad), #selector(each_viewDidLoad))
-        selector_exchangeImplementations(
-            #selector(viewWillAppear(_:)),
-            #selector(each_viewWillAppear(_:)))
-        selector_exchangeImplementations(
-            #selector(setNeedsStatusBarAppearanceUpdate),
-            #selector(each_setNeedsStatusBarAppearanceUpdate))
-    }()
-    
-    @available(swift, obsoleted: 4.2, message: "Please use navigation.bar instead.")
+    @available(swift, obsoleted: 4.2, message: "Only for Objective-C call.")
     @objc public var each_navigationBar: EachNavigationBar {
         return _navigationBar
     }
     
-    @available(swift, obsoleted: 4.2, message: "Please use navigation.item instead.")
+    @available(swift, obsoleted: 4.2, message: "Only for Objective-C call.")
     @objc public var each_navigationItem: UINavigationItem {
         return _navigationItem
     }
     
-    @available(swift, obsoleted: 4.2, message: "Please use setupNavigationBar instead.")
-    @objc public static func swizzle_setupNavigationBar() {
-        setupNavigationBar
+    @available(swift, obsoleted: 4.2, message: "Only for Objective-C call.")
+    @objc public static func each_methodSwizzling() {
+        method_swizzling
     }
     
     @objc public func adjustsNavigationBarPosition() {
@@ -63,6 +52,16 @@ extension UIViewController {
             method_exchangeImplementations(originalMethod, swizzledMethod)
         }
     }
+    
+    static let method_swizzling: Void = {
+        selector_exchangeImplementations(#selector(viewDidLoad), #selector(each_viewDidLoad))
+        selector_exchangeImplementations(
+            #selector(viewWillAppear(_:)),
+            #selector(each_viewWillAppear(_:)))
+        selector_exchangeImplementations(
+            #selector(setNeedsStatusBarAppearanceUpdate),
+            #selector(each_setNeedsStatusBarAppearanceUpdate))
+    }()
     
     @objc private func each_viewDidLoad() {
         each_viewDidLoad()

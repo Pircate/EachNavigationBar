@@ -66,7 +66,7 @@ public class Configuration: NSObject {
 
 extension UINavigationController {
     
-    @available(swift, obsoleted: 4.2, message: "Please use navigation.configuration")
+    @available(swift, obsoleted: 4.2, message: "Only for Objective-C call.")
     @objc public var global_configuration: Configuration {
         return _configuration
     }

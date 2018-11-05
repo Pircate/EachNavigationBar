@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [UIViewController swizzle_setupNavigationBar];
+    [UIViewController each_methodSwizzling];
     self.each_navigationBar.barTintColor = UIColor.redColor;
     self.each_navigationItem.title = @"OC";
 }

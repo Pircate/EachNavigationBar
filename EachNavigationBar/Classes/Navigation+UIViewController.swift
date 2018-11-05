@@ -17,6 +17,6 @@ public extension Navigation where Base: UIViewController {
     }
     
     static func swizzle() {
-        Base.setupNavigationBar
+        Base.method_swizzling
     }
 }

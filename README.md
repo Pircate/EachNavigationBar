@@ -51,7 +51,7 @@ Objective-C
 @import EachNavigationBar;
 ```
 
-### Setup 
+### Method Swizzlling
 #### before window set rootViewController (Don't Forget)
 
 Swift

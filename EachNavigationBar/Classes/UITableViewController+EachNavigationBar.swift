@@ -22,7 +22,15 @@ extension UITableViewController {
     }
     
     func adjustsTableViewContentInset() {
-        adjustsScrollViewContentInset(tableView)
+        let inset: CGFloat
+        if #available(iOS 11.0, *) {
+            inset = tableView.contentInsetAdjustmentBehavior == .never ? 0 : statusBarMaxY
+        } else {
+            inset = automaticallyAdjustsScrollViewInsets ? statusBarMaxY : 0
+        }
+        let contentInsetTop = _navigationBar.frame.maxY - inset
+        tableView.contentInset.top = contentInsetTop
+        tableView.scrollIndicatorInsets.top = contentInsetTop
     }
     
     open override func observeValue(

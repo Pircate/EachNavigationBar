@@ -48,19 +48,6 @@ Objective-C
 @import EachNavigationBar;
 ```
 
-### 方法交换
-#### 在设置 window 的 rootViewController 之前调用以下方法（千万别忘了）
-
-Swift
-``` swift
-UIViewController.navigation.swizzle()
-```
-
-Objective-C
-``` ObjC
-[UIViewController each_methodSwizzling];
-```
-
 ### 开启
 
 给当前导航栈的 viewControllers 添加一个独立的导航栏。

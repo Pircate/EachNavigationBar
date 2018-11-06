@@ -7,182 +7,168 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A0F4758F308508BA09F1C7DC398852A /* Navigation+UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6331D4E40FF60C316E1AD169AC50310C /* Navigation+UINavigationController.swift */; };
-		1D9948C509E84BBD264887C900EF9401 /* Pods-EachNavigationBar_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 22410D9F51B9B2D800B05FF3E0D3DCCF /* Pods-EachNavigationBar_Example-dummy.m */; };
-		27C824422DCB31A0859AA8990852A359 /* UIViewController+EachNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887C2436DC60B5E58F169257CE9B54D2 /* UIViewController+EachNavigationBar.swift */; };
-		2D8EA6EC1843599EE9414C990B7952FE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2C02191C153C1554B35DEE8B2D09D4 /* UIKit.framework */; };
-		3209A3A7175B52DC9550D5A566377EAB /* Navigation+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD4958CF86C0A70F6231F7DCB9531A5 /* Navigation+UIViewController.swift */; };
-		4175577CEC1FE3AEBCF9A126243420FC /* AssociatedKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA446B4DBF539B2B55126D87D88C7B9B /* AssociatedKeys.swift */; };
-		42A35E473FA1C4023787636911F87877 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D74ADC1C477AC57C85A108C11F7192 /* Navigation.swift */; };
-		45883F61313078FA58430D9BD8895BA3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908E902E026C5C22904CF9014A5604AD /* Foundation.framework */; };
-		686D8289968FFE7BD2BCB2677EF858E5 /* EachNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E746FD767AB69E8B6330D7801E138F4E /* EachNavigationBar.swift */; };
-		6E39C8CD9062FFE9F91652817A96997F /* Pods-EachNavigationBar_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 70F0B022D48F647470AD45032D2363EB /* Pods-EachNavigationBar_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		76316B8387B0AEBBC48E74F2556F65F7 /* UINavigationController+EachNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5C9C44A27CA34C878E9056E18EA6C7 /* UINavigationController+EachNavigationBar.swift */; };
-		7B0C88323DCEE9462B9989A00FB35B7C /* UINavigationController+Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8699F193D5A01CAD2B8F0737EDA5648B /* UINavigationController+Configuration.swift */; };
-		81ADB6E9AB3E2AA3FBA91486F661A1C8 /* UITableViewController+EachNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC17164C10FF378002D0AF2D56051595 /* UITableViewController+EachNavigationBar.swift */; };
-		89993B039E63D1F890C0C66321547ED0 /* EachNavigationBar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 829A0FA3C473C895BFD7C60A658A3F2C /* EachNavigationBar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C08B389B3671E6253E683363318EBBF1 /* UINavigationBar+Sugar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4BA31FFE5C9D0E1C85B9CAF6FC93A3 /* UINavigationBar+Sugar.swift */; };
-		C488A349A1EE5A102EDD0CAED9BC0A9A /* EachNavigationBar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0DD699CD921FC427BB21325FF91CBB /* EachNavigationBar-dummy.m */; };
-		D42308D36F49983CB94D4CF2F97E93A5 /* Pods-EachNavigationBar_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F0927C79BD033D93ECDB152665BD10F7 /* Pods-EachNavigationBar_Tests-dummy.m */; };
-		EE9DC4B1282786FB320F59C1F14997BA /* Pods-EachNavigationBar_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EF2A6D9C70A46387E1B74482C75364B0 /* Pods-EachNavigationBar_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F1C31D50850A0C0B7887790CF89545D9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908E902E026C5C22904CF9014A5604AD /* Foundation.framework */; };
-		F9A5745B35F205B25F3C562CAF51CA45 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908E902E026C5C22904CF9014A5604AD /* Foundation.framework */; };
+		066AF95FC805800A5C6163FE53F8DAA7 /* EachNavigationBar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 51F212634EBBF2367697F7F28A8BF3D2 /* EachNavigationBar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0887AD0F93D97E7AB26F45418369D17A /* Pods-EachNavigationBar_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DD97C9FC9E251043BBD33D524F3F93B8 /* Pods-EachNavigationBar_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09E5213EE38C70F52F258F6940BDBA88 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66675F4325361B8804957761BC080388 /* Navigation.swift */; };
+		28CBB58996CABF3A862481DBBB3FD5B8 /* UINavigationController+Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE6C8CB239F045812F823E4B2A125CE /* UINavigationController+Configuration.swift */; };
+		36057F3684908F948AFAB1B961E811E2 /* UIViewController+EachNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE5F5CD60C395881B8FC258C8107F90 /* UIViewController+EachNavigationBar.swift */; };
+		3B80CBCDCECE4ED1F2466B00A297EE1B /* AssociatedKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C868D360149ABA7CAE65FD2B18379CDE /* AssociatedKeys.swift */; };
+		44A07D2297FCAB58593E4C836BBC422E /* EachNavigationBar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F4FBFA02C290CE86BB11BE1AF7565AC /* EachNavigationBar-dummy.m */; };
+		4D53C977EED2660EB524BA4FD4F5D2B2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EFB40531CB700ADF867FEEE78561E78 /* Foundation.framework */; };
+		4DA08DC0D99C642C533AAD7174F574C4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EFB40531CB700ADF867FEEE78561E78 /* Foundation.framework */; };
+		4F118BFDF49E67ECE0769B47AC909A85 /* Navigation+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8791CFCC72E37D5C26F12D585C9823CE /* Navigation+UIViewController.swift */; };
+		7CFE05A66E865C00CB4B6A37ECA0694B /* UINavigationController+EachNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F520203454F62BD80C1E08C38A783F /* UINavigationController+EachNavigationBar.swift */; };
+		7EB38C8DAA3C77BD1C478DBF259C4088 /* UITableViewController+EachNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2BF9BFEE13E5E326EE7A2B68C7EFBA /* UITableViewController+EachNavigationBar.swift */; };
+		9C82B616073AAC6E1088753D4B8FBC01 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74E404AA6957590324067E330E0EC533 /* UIKit.framework */; };
+		A81E01AF4BEB28106B0FC683FB47DCCA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EFB40531CB700ADF867FEEE78561E78 /* Foundation.framework */; };
+		AEE283CC1E532F5F9DC5114AB41349A0 /* EachNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F147AA520FB17CD3AE3E7820027C35 /* EachNavigationBar.swift */; };
+		B3A606040B0CD4CAFD07B177C9BE6E22 /* UIViewController+Load.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AE03A06A5E33FE8261F35F3E22AA2C1 /* UIViewController+Load.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C4A81E53B4B67A88C8E2B5DD2A7EEF7B /* Pods-EachNavigationBar_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCEB8A415EC4F105023DD8F26539367 /* Pods-EachNavigationBar_Tests-dummy.m */; };
+		C86DA2DC2CD99CC5D930147EC46433F6 /* Navigation+UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6056B03245AB080C4ED6992AE00032B3 /* Navigation+UINavigationController.swift */; };
+		CAF00175BF6A4AF5825CFA6D683C9320 /* Pods-EachNavigationBar_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C08D238A5876D2F500D6FC6D19A7194F /* Pods-EachNavigationBar_Example-dummy.m */; };
+		CB287ED79E7680B03B5AD62C72ECE648 /* Pods-EachNavigationBar_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CC62C7CBB02CE93704172290ED735BB8 /* Pods-EachNavigationBar_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFE023214AC6CB0B05F0A3107445FA8D /* UIViewController+Load.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FCACA138DD23400E79E59AA2B14447 /* UIViewController+Load.m */; };
+		FC5AF1280548DE0B52BB2C60AB50EB8B /* UINavigationBar+Sugar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E859C9835257DE7FB4B1E2620C316F5 /* UINavigationBar+Sugar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		7DBA9628BABCCD47A15D92E0AB78598F /* PBXContainerItemProxy */ = {
+		DDB0A3056791279381CF2E4EE9986BB7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 4319E59DAA6D215211C2C07D6E5741C0;
+			remoteGlobalIDString = EE455DAB0502B95DDB380BE4D442074C;
 			remoteInfo = "Pods-EachNavigationBar_Example";
 		};
-		C51B0DDAC623E1547D3981F88E673B72 /* PBXContainerItemProxy */ = {
+		E4D460B5B091B2B4434EEDD4577350E3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = B358AF4B170A29B9424A4B23D67AE3C5;
+			remoteGlobalIDString = 6F477B87BC11A94BF5F5CE1ADAF29108;
 			remoteInfo = EachNavigationBar;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		03E02AACF7CF9E980ABCD49F48C8F91B /* Pods-EachNavigationBar_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-EachNavigationBar_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		0B235BBDB3068A9E9F5E7833DF7388AD /* Pods-EachNavigationBar_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-EachNavigationBar_Tests.modulemap"; sourceTree = "<group>"; };
-		0C5C9C44A27CA34C878E9056E18EA6C7 /* UINavigationController+EachNavigationBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UINavigationController+EachNavigationBar.swift"; path = "EachNavigationBar/Classes/UINavigationController+EachNavigationBar.swift"; sourceTree = "<group>"; };
-		0DD4958CF86C0A70F6231F7DCB9531A5 /* Navigation+UIViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Navigation+UIViewController.swift"; path = "EachNavigationBar/Classes/Navigation+UIViewController.swift"; sourceTree = "<group>"; };
-		1861DCBCA1A44E4EE973BDA825679BA0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1CDA56360B6238BEC84CA1807814C55C /* Pods_EachNavigationBar_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EachNavigationBar_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		22410D9F51B9B2D800B05FF3E0D3DCCF /* Pods-EachNavigationBar_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EachNavigationBar_Example-dummy.m"; sourceTree = "<group>"; };
-		27450367B5ABCD1721CF1012353E0DA6 /* Pods-EachNavigationBar_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EachNavigationBar_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		2A3D2EC1F3619D0FA16CAE29CAA5AE0D /* Pods_EachNavigationBar_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EachNavigationBar_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2C27A5AEB3D470C39740BB90D2102F9D /* Pods-EachNavigationBar_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EachNavigationBar_Tests-resources.sh"; sourceTree = "<group>"; };
-		3C724A4467918D556DFC36BBCAB54807 /* EachNavigationBar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EachNavigationBar-prefix.pch"; sourceTree = "<group>"; };
-		405E3E1ADC4AAC04588DBC0303CAE2D9 /* EachNavigationBar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = EachNavigationBar.modulemap; sourceTree = "<group>"; };
-		4C1CF22DC654BCECB7FA35D227F3B501 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		50D74ADC1C477AC57C85A108C11F7192 /* Navigation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Navigation.swift; path = EachNavigationBar/Classes/Navigation.swift; sourceTree = "<group>"; };
-		6161FD713AA1FD1B70CE7DC01D58B851 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6331D4E40FF60C316E1AD169AC50310C /* Navigation+UINavigationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Navigation+UINavigationController.swift"; path = "EachNavigationBar/Classes/Navigation+UINavigationController.swift"; sourceTree = "<group>"; };
-		70F0B022D48F647470AD45032D2363EB /* Pods-EachNavigationBar_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-EachNavigationBar_Tests-umbrella.h"; sourceTree = "<group>"; };
-		7204B020D84B91C2DB2745C739DD2F8E /* Pods-EachNavigationBar_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EachNavigationBar_Example-resources.sh"; sourceTree = "<group>"; };
-		7C2DB8D0D602D63E3E1B76EBDBB42F4C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		7FCBDDF1582A895D1142184EDD5ECB2D /* EachNavigationBar.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = EachNavigationBar.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		828832FF320D3EE7CD0B3B4936E57261 /* Pods-EachNavigationBar_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EachNavigationBar_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		829A0FA3C473C895BFD7C60A658A3F2C /* EachNavigationBar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EachNavigationBar-umbrella.h"; sourceTree = "<group>"; };
-		8699F193D5A01CAD2B8F0737EDA5648B /* UINavigationController+Configuration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UINavigationController+Configuration.swift"; path = "EachNavigationBar/Classes/UINavigationController+Configuration.swift"; sourceTree = "<group>"; };
-		887C2436DC60B5E58F169257CE9B54D2 /* UIViewController+EachNavigationBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+EachNavigationBar.swift"; path = "EachNavigationBar/Classes/UIViewController+EachNavigationBar.swift"; sourceTree = "<group>"; };
-		89A91F196AC8C5B117525A0C2B06A922 /* Pods-EachNavigationBar_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-EachNavigationBar_Example.modulemap"; sourceTree = "<group>"; };
-		8EA4CC5144B6414DEDD4B648E6AC9176 /* Pods-EachNavigationBar_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EachNavigationBar_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		908E902E026C5C22904CF9014A5604AD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9A0DD699CD921FC427BB21325FF91CBB /* EachNavigationBar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "EachNavigationBar-dummy.m"; sourceTree = "<group>"; };
-		9CFA2E2CD85C4D1DE0AA650AE3D9B044 /* Pods-EachNavigationBar_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-EachNavigationBar_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		A2AB06B05B0F298C1800B87629DF0308 /* EachNavigationBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EachNavigationBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A679B4E121659DDEEB70CF6B68B73746 /* Pods-EachNavigationBar_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EachNavigationBar_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		BC2C02191C153C1554B35DEE8B2D09D4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		C2C68734173E0CDE100919E78EF65383 /* Pods-EachNavigationBar_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EachNavigationBar_Example-frameworks.sh"; sourceTree = "<group>"; };
-		C7D859AA0B70A8A9EED3AFD139C6CD8F /* EachNavigationBar.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = EachNavigationBar.xcconfig; sourceTree = "<group>"; };
-		C89E1052DA5541967FD0B18AC1EC6430 /* Pods-EachNavigationBar_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EachNavigationBar_Example.release.xcconfig"; sourceTree = "<group>"; };
-		CA446B4DBF539B2B55126D87D88C7B9B /* AssociatedKeys.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssociatedKeys.swift; path = EachNavigationBar/Classes/AssociatedKeys.swift; sourceTree = "<group>"; };
-		D0EA5EC5CBA5C61A08D7935361BE5799 /* Pods-EachNavigationBar_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EachNavigationBar_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		E746FD767AB69E8B6330D7801E138F4E /* EachNavigationBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EachNavigationBar.swift; path = EachNavigationBar/Classes/EachNavigationBar.swift; sourceTree = "<group>"; };
-		EC17164C10FF378002D0AF2D56051595 /* UITableViewController+EachNavigationBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITableViewController+EachNavigationBar.swift"; path = "EachNavigationBar/Classes/UITableViewController+EachNavigationBar.swift"; sourceTree = "<group>"; };
-		ED4BA31FFE5C9D0E1C85B9CAF6FC93A3 /* UINavigationBar+Sugar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UINavigationBar+Sugar.swift"; path = "EachNavigationBar/Classes/UINavigationBar+Sugar.swift"; sourceTree = "<group>"; };
-		EE7EA68FBEF85AA1BFCC05F9EAFA5714 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EF2A6D9C70A46387E1B74482C75364B0 /* Pods-EachNavigationBar_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-EachNavigationBar_Example-umbrella.h"; sourceTree = "<group>"; };
-		F0927C79BD033D93ECDB152665BD10F7 /* Pods-EachNavigationBar_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EachNavigationBar_Tests-dummy.m"; sourceTree = "<group>"; };
-		FE38CC00BF51961469C45DE01D387097 /* Pods-EachNavigationBar_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EachNavigationBar_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		0653753414275333350C225057D7BF96 /* Pods-EachNavigationBar_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EachNavigationBar_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		0C2BF9BFEE13E5E326EE7A2B68C7EFBA /* UITableViewController+EachNavigationBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITableViewController+EachNavigationBar.swift"; path = "EachNavigationBar/Classes/UITableViewController+EachNavigationBar.swift"; sourceTree = "<group>"; };
+		0F4FBFA02C290CE86BB11BE1AF7565AC /* EachNavigationBar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "EachNavigationBar-dummy.m"; sourceTree = "<group>"; };
+		10DE921B3A7D207731469D76049E17AC /* Pods-EachNavigationBar_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-EachNavigationBar_Example.modulemap"; sourceTree = "<group>"; };
+		15BF25D04ECF07653B25827D3F74E334 /* Pods-EachNavigationBar_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EachNavigationBar_Example-Info.plist"; sourceTree = "<group>"; };
+		16A246EB1FCB94DA50136610A48B75DF /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		1CDA56360B6238BEC84CA1807814C55C /* Pods_EachNavigationBar_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_EachNavigationBar_Tests.framework; path = "Pods-EachNavigationBar_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FCEB8A415EC4F105023DD8F26539367 /* Pods-EachNavigationBar_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EachNavigationBar_Tests-dummy.m"; sourceTree = "<group>"; };
+		2A3D2EC1F3619D0FA16CAE29CAA5AE0D /* Pods_EachNavigationBar_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_EachNavigationBar_Example.framework; path = "Pods-EachNavigationBar_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E859C9835257DE7FB4B1E2620C316F5 /* UINavigationBar+Sugar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UINavigationBar+Sugar.swift"; path = "EachNavigationBar/Classes/UINavigationBar+Sugar.swift"; sourceTree = "<group>"; };
+		2EFB40531CB700ADF867FEEE78561E78 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		35A1016ACF30CD0D00661638D97C81D3 /* EachNavigationBar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EachNavigationBar-prefix.pch"; sourceTree = "<group>"; };
+		35F147AA520FB17CD3AE3E7820027C35 /* EachNavigationBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EachNavigationBar.swift; path = EachNavigationBar/Classes/EachNavigationBar.swift; sourceTree = "<group>"; };
+		4043DC58023D7C257336FA60E47780A1 /* Pods-EachNavigationBar_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EachNavigationBar_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		42FCACA138DD23400E79E59AA2B14447 /* UIViewController+Load.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+Load.m"; path = "EachNavigationBar/Classes/UIViewController+Load.m"; sourceTree = "<group>"; };
+		4366D393FF2DEE3E50DE5541C69114E3 /* Pods-EachNavigationBar_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EachNavigationBar_Example.release.xcconfig"; sourceTree = "<group>"; };
+		493C77532A6D56703938F150D834B363 /* EachNavigationBar.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = EachNavigationBar.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		51F212634EBBF2367697F7F28A8BF3D2 /* EachNavigationBar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EachNavigationBar-umbrella.h"; sourceTree = "<group>"; };
+		6056B03245AB080C4ED6992AE00032B3 /* Navigation+UINavigationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Navigation+UINavigationController.swift"; path = "EachNavigationBar/Classes/Navigation+UINavigationController.swift"; sourceTree = "<group>"; };
+		605F2DB236FCCB9D9BAD5CF5A6AA1B72 /* Pods-EachNavigationBar_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-EachNavigationBar_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		66675F4325361B8804957761BC080388 /* Navigation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Navigation.swift; path = EachNavigationBar/Classes/Navigation.swift; sourceTree = "<group>"; };
+		6AE6C8CB239F045812F823E4B2A125CE /* UINavigationController+Configuration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UINavigationController+Configuration.swift"; path = "EachNavigationBar/Classes/UINavigationController+Configuration.swift"; sourceTree = "<group>"; };
+		6E2ADB148FADAD73520F145CB0CC09A4 /* EachNavigationBar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = EachNavigationBar.modulemap; sourceTree = "<group>"; };
+		703B464B9E3A36F7FA19C8ED727A390F /* Pods-EachNavigationBar_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-EachNavigationBar_Tests.modulemap"; sourceTree = "<group>"; };
+		74E404AA6957590324067E330E0EC533 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		7AE03A06A5E33FE8261F35F3E22AA2C1 /* UIViewController+Load.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+Load.h"; path = "EachNavigationBar/Classes/UIViewController+Load.h"; sourceTree = "<group>"; };
+		7B4D0CE2A5A5C4C70F6B5D2074B7053E /* Pods-EachNavigationBar_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EachNavigationBar_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		7BE5F5CD60C395881B8FC258C8107F90 /* UIViewController+EachNavigationBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+EachNavigationBar.swift"; path = "EachNavigationBar/Classes/UIViewController+EachNavigationBar.swift"; sourceTree = "<group>"; };
+		7C274556A31633A8E5FA95B36361C404 /* Pods-EachNavigationBar_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EachNavigationBar_Example-frameworks.sh"; sourceTree = "<group>"; };
+		8791CFCC72E37D5C26F12D585C9823CE /* Navigation+UIViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Navigation+UIViewController.swift"; path = "EachNavigationBar/Classes/Navigation+UIViewController.swift"; sourceTree = "<group>"; };
+		9210A5B6207F0A43D46BAA909812B85A /* EachNavigationBar-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "EachNavigationBar-Info.plist"; sourceTree = "<group>"; };
+		93552A9C9E48C8D0308E501CEEAC8D7B /* Pods-EachNavigationBar_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-EachNavigationBar_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		A2AB06B05B0F298C1800B87629DF0308 /* EachNavigationBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = EachNavigationBar.framework; path = EachNavigationBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B36AB396275697EEE1A5B13BA8A38FE3 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		C08D238A5876D2F500D6FC6D19A7194F /* Pods-EachNavigationBar_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EachNavigationBar_Example-dummy.m"; sourceTree = "<group>"; };
+		C2BC65147216B2C3233B907BB7A595E6 /* EachNavigationBar.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = EachNavigationBar.xcconfig; sourceTree = "<group>"; };
+		C868D360149ABA7CAE65FD2B18379CDE /* AssociatedKeys.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssociatedKeys.swift; path = EachNavigationBar/Classes/AssociatedKeys.swift; sourceTree = "<group>"; };
+		CC62C7CBB02CE93704172290ED735BB8 /* Pods-EachNavigationBar_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-EachNavigationBar_Tests-umbrella.h"; sourceTree = "<group>"; };
+		DD97C9FC9E251043BBD33D524F3F93B8 /* Pods-EachNavigationBar_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-EachNavigationBar_Example-umbrella.h"; sourceTree = "<group>"; };
+		E00C23EC246288EA5065DB8074F19B37 /* Pods-EachNavigationBar_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EachNavigationBar_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		F02FC2353F52F4FA14745EE3897293F5 /* Pods-EachNavigationBar_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EachNavigationBar_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		F55826E04A252C049FEA8FFFD3168C34 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		F5F520203454F62BD80C1E08C38A783F /* UINavigationController+EachNavigationBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UINavigationController+EachNavigationBar.swift"; path = "EachNavigationBar/Classes/UINavigationController+EachNavigationBar.swift"; sourceTree = "<group>"; };
+		F776020ADBF4D6216A55F19D76722F3F /* Pods-EachNavigationBar_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EachNavigationBar_Tests-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		07842B17C32906EDF29A59F9624DB238 /* Frameworks */ = {
+		B12EDECD544748A19AA97D7C2F9337BB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1C31D50850A0C0B7887790CF89545D9 /* Foundation.framework in Frameworks */,
+				4DA08DC0D99C642C533AAD7174F574C4 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1AD62F197ED5754F0D2701A3139ED030 /* Frameworks */ = {
+		E89B6F34438900646BE9940BD59C0012 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9A5745B35F205B25F3C562CAF51CA45 /* Foundation.framework in Frameworks */,
+				4D53C977EED2660EB524BA4FD4F5D2B2 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1F4013A613AD509256DD8E4665C27A08 /* Frameworks */ = {
+		F3161ADE2C3C62AA463CDB0BAC95963F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45883F61313078FA58430D9BD8895BA3 /* Foundation.framework in Frameworks */,
-				2D8EA6EC1843599EE9414C990B7952FE /* UIKit.framework in Frameworks */,
+				A81E01AF4BEB28106B0FC683FB47DCCA /* Foundation.framework in Frameworks */,
+				9C82B616073AAC6E1088753D4B8FBC01 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		10DEDCB394BAA0C7FEDEBE330207B074 /* iOS */ = {
+		06CDD10DE71306278CF89108B3036DFD /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				908E902E026C5C22904CF9014A5604AD /* Foundation.framework */,
-				BC2C02191C153C1554B35DEE8B2D09D4 /* UIKit.framework */,
+				2EFB40531CB700ADF867FEEE78561E78 /* Foundation.framework */,
+				74E404AA6957590324067E330E0EC533 /* UIKit.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		151C1A4EDA72728793B5C7AA6C4E6604 /* Targets Support Files */ = {
+		2FA656EC52A60DA5A97E13C665C7366F /* EachNavigationBar */ = {
 			isa = PBXGroup;
 			children = (
-				3B04942AB13B3041DB3EA786AFA57581 /* Pods-EachNavigationBar_Example */,
-				6EAA160082FE00C46DA240BCFDB515D7 /* Pods-EachNavigationBar_Tests */,
+				C868D360149ABA7CAE65FD2B18379CDE /* AssociatedKeys.swift */,
+				35F147AA520FB17CD3AE3E7820027C35 /* EachNavigationBar.swift */,
+				66675F4325361B8804957761BC080388 /* Navigation.swift */,
+				6056B03245AB080C4ED6992AE00032B3 /* Navigation+UINavigationController.swift */,
+				8791CFCC72E37D5C26F12D585C9823CE /* Navigation+UIViewController.swift */,
+				2E859C9835257DE7FB4B1E2620C316F5 /* UINavigationBar+Sugar.swift */,
+				6AE6C8CB239F045812F823E4B2A125CE /* UINavigationController+Configuration.swift */,
+				F5F520203454F62BD80C1E08C38A783F /* UINavigationController+EachNavigationBar.swift */,
+				0C2BF9BFEE13E5E326EE7A2B68C7EFBA /* UITableViewController+EachNavigationBar.swift */,
+				7BE5F5CD60C395881B8FC258C8107F90 /* UIViewController+EachNavigationBar.swift */,
+				7AE03A06A5E33FE8261F35F3E22AA2C1 /* UIViewController+Load.h */,
+				42FCACA138DD23400E79E59AA2B14447 /* UIViewController+Load.m */,
+				745D339B5D816A2E3A6A3913E427069B /* Pod */,
+				70A069BA0F3BE776FCBD363DBC6C16ED /* Support Files */,
 			);
-			name = "Targets Support Files";
+			name = EachNavigationBar;
+			path = ../..;
 			sourceTree = "<group>";
 		};
-		3B04942AB13B3041DB3EA786AFA57581 /* Pods-EachNavigationBar_Example */ = {
+		3FD34E0645AE68E974870DCEDE448B59 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				EE7EA68FBEF85AA1BFCC05F9EAFA5714 /* Info.plist */,
-				89A91F196AC8C5B117525A0C2B06A922 /* Pods-EachNavigationBar_Example.modulemap */,
-				9CFA2E2CD85C4D1DE0AA650AE3D9B044 /* Pods-EachNavigationBar_Example-acknowledgements.markdown */,
-				27450367B5ABCD1721CF1012353E0DA6 /* Pods-EachNavigationBar_Example-acknowledgements.plist */,
-				22410D9F51B9B2D800B05FF3E0D3DCCF /* Pods-EachNavigationBar_Example-dummy.m */,
-				C2C68734173E0CDE100919E78EF65383 /* Pods-EachNavigationBar_Example-frameworks.sh */,
-				7204B020D84B91C2DB2745C739DD2F8E /* Pods-EachNavigationBar_Example-resources.sh */,
-				EF2A6D9C70A46387E1B74482C75364B0 /* Pods-EachNavigationBar_Example-umbrella.h */,
-				FE38CC00BF51961469C45DE01D387097 /* Pods-EachNavigationBar_Example.debug.xcconfig */,
-				C89E1052DA5541967FD0B18AC1EC6430 /* Pods-EachNavigationBar_Example.release.xcconfig */,
+				2FA656EC52A60DA5A97E13C665C7366F /* EachNavigationBar */,
 			);
-			name = "Pods-EachNavigationBar_Example";
-			path = "Target Support Files/Pods-EachNavigationBar_Example";
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				10DEDCB394BAA0C7FEDEBE330207B074 /* iOS */,
+				06CDD10DE71306278CF89108B3036DFD /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		43A37F0AE96A2F5FC3DF41142543E1B6 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				7FCBDDF1582A895D1142184EDD5ECB2D /* EachNavigationBar.podspec */,
-				4C1CF22DC654BCECB7FA35D227F3B501 /* LICENSE */,
-				7C2DB8D0D602D63E3E1B76EBDBB42F4C /* README.md */,
-			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
-		526CD1BA1DD3F8EFE6A6B5FEC2FEAF9B /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				B9F4605F720592FDF2DFDA67D54C6552 /* EachNavigationBar */,
-			);
-			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		536A1F83CB93E3478D283DCCBD194FDA /* Products */ = {
@@ -195,142 +181,141 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6EAA160082FE00C46DA240BCFDB515D7 /* Pods-EachNavigationBar_Tests */ = {
+		70A069BA0F3BE776FCBD363DBC6C16ED /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				6161FD713AA1FD1B70CE7DC01D58B851 /* Info.plist */,
-				0B235BBDB3068A9E9F5E7833DF7388AD /* Pods-EachNavigationBar_Tests.modulemap */,
-				03E02AACF7CF9E980ABCD49F48C8F91B /* Pods-EachNavigationBar_Tests-acknowledgements.markdown */,
-				A679B4E121659DDEEB70CF6B68B73746 /* Pods-EachNavigationBar_Tests-acknowledgements.plist */,
-				F0927C79BD033D93ECDB152665BD10F7 /* Pods-EachNavigationBar_Tests-dummy.m */,
-				8EA4CC5144B6414DEDD4B648E6AC9176 /* Pods-EachNavigationBar_Tests-frameworks.sh */,
-				2C27A5AEB3D470C39740BB90D2102F9D /* Pods-EachNavigationBar_Tests-resources.sh */,
-				70F0B022D48F647470AD45032D2363EB /* Pods-EachNavigationBar_Tests-umbrella.h */,
-				828832FF320D3EE7CD0B3B4936E57261 /* Pods-EachNavigationBar_Tests.debug.xcconfig */,
-				D0EA5EC5CBA5C61A08D7935361BE5799 /* Pods-EachNavigationBar_Tests.release.xcconfig */,
-			);
-			name = "Pods-EachNavigationBar_Tests";
-			path = "Target Support Files/Pods-EachNavigationBar_Tests";
-			sourceTree = "<group>";
-		};
-		7DB346D0F39D3F0E887471402A8071AB = {
-			isa = PBXGroup;
-			children = (
-				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				526CD1BA1DD3F8EFE6A6B5FEC2FEAF9B /* Development Pods */,
-				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
-				536A1F83CB93E3478D283DCCBD194FDA /* Products */,
-				151C1A4EDA72728793B5C7AA6C4E6604 /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		B9F4605F720592FDF2DFDA67D54C6552 /* EachNavigationBar */ = {
-			isa = PBXGroup;
-			children = (
-				CA446B4DBF539B2B55126D87D88C7B9B /* AssociatedKeys.swift */,
-				E746FD767AB69E8B6330D7801E138F4E /* EachNavigationBar.swift */,
-				50D74ADC1C477AC57C85A108C11F7192 /* Navigation.swift */,
-				6331D4E40FF60C316E1AD169AC50310C /* Navigation+UINavigationController.swift */,
-				0DD4958CF86C0A70F6231F7DCB9531A5 /* Navigation+UIViewController.swift */,
-				ED4BA31FFE5C9D0E1C85B9CAF6FC93A3 /* UINavigationBar+Sugar.swift */,
-				8699F193D5A01CAD2B8F0737EDA5648B /* UINavigationController+Configuration.swift */,
-				0C5C9C44A27CA34C878E9056E18EA6C7 /* UINavigationController+EachNavigationBar.swift */,
-				EC17164C10FF378002D0AF2D56051595 /* UITableViewController+EachNavigationBar.swift */,
-				887C2436DC60B5E58F169257CE9B54D2 /* UIViewController+EachNavigationBar.swift */,
-				43A37F0AE96A2F5FC3DF41142543E1B6 /* Pod */,
-				F70A238157E5A7C000873E227CE41659 /* Support Files */,
-			);
-			name = EachNavigationBar;
-			path = ../..;
-			sourceTree = "<group>";
-		};
-		F70A238157E5A7C000873E227CE41659 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				405E3E1ADC4AAC04588DBC0303CAE2D9 /* EachNavigationBar.modulemap */,
-				C7D859AA0B70A8A9EED3AFD139C6CD8F /* EachNavigationBar.xcconfig */,
-				9A0DD699CD921FC427BB21325FF91CBB /* EachNavigationBar-dummy.m */,
-				3C724A4467918D556DFC36BBCAB54807 /* EachNavigationBar-prefix.pch */,
-				829A0FA3C473C895BFD7C60A658A3F2C /* EachNavigationBar-umbrella.h */,
-				1861DCBCA1A44E4EE973BDA825679BA0 /* Info.plist */,
+				6E2ADB148FADAD73520F145CB0CC09A4 /* EachNavigationBar.modulemap */,
+				C2BC65147216B2C3233B907BB7A595E6 /* EachNavigationBar.xcconfig */,
+				0F4FBFA02C290CE86BB11BE1AF7565AC /* EachNavigationBar-dummy.m */,
+				9210A5B6207F0A43D46BAA909812B85A /* EachNavigationBar-Info.plist */,
+				35A1016ACF30CD0D00661638D97C81D3 /* EachNavigationBar-prefix.pch */,
+				51F212634EBBF2367697F7F28A8BF3D2 /* EachNavigationBar-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "Example/Pods/Target Support Files/EachNavigationBar";
 			sourceTree = "<group>";
 		};
+		745D339B5D816A2E3A6A3913E427069B /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				493C77532A6D56703938F150D834B363 /* EachNavigationBar.podspec */,
+				F55826E04A252C049FEA8FFFD3168C34 /* LICENSE */,
+				16A246EB1FCB94DA50136610A48B75DF /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				B36AB396275697EEE1A5B13BA8A38FE3 /* Podfile */,
+				3FD34E0645AE68E974870DCEDE448B59 /* Development Pods */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				536A1F83CB93E3478D283DCCBD194FDA /* Products */,
+				F74A90C0AC662503D571690A8E09DE44 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		9A85DD6FD5E20CF59429836D9D66EE91 /* Pods-EachNavigationBar_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				703B464B9E3A36F7FA19C8ED727A390F /* Pods-EachNavigationBar_Tests.modulemap */,
+				93552A9C9E48C8D0308E501CEEAC8D7B /* Pods-EachNavigationBar_Tests-acknowledgements.markdown */,
+				7B4D0CE2A5A5C4C70F6B5D2074B7053E /* Pods-EachNavigationBar_Tests-acknowledgements.plist */,
+				1FCEB8A415EC4F105023DD8F26539367 /* Pods-EachNavigationBar_Tests-dummy.m */,
+				F776020ADBF4D6216A55F19D76722F3F /* Pods-EachNavigationBar_Tests-Info.plist */,
+				CC62C7CBB02CE93704172290ED735BB8 /* Pods-EachNavigationBar_Tests-umbrella.h */,
+				F02FC2353F52F4FA14745EE3897293F5 /* Pods-EachNavigationBar_Tests.debug.xcconfig */,
+				E00C23EC246288EA5065DB8074F19B37 /* Pods-EachNavigationBar_Tests.release.xcconfig */,
+			);
+			name = "Pods-EachNavigationBar_Tests";
+			path = "Target Support Files/Pods-EachNavigationBar_Tests";
+			sourceTree = "<group>";
+		};
+		D2D1FAA6A2624CE58E818BF9E8C9A104 /* Pods-EachNavigationBar_Example */ = {
+			isa = PBXGroup;
+			children = (
+				10DE921B3A7D207731469D76049E17AC /* Pods-EachNavigationBar_Example.modulemap */,
+				605F2DB236FCCB9D9BAD5CF5A6AA1B72 /* Pods-EachNavigationBar_Example-acknowledgements.markdown */,
+				4043DC58023D7C257336FA60E47780A1 /* Pods-EachNavigationBar_Example-acknowledgements.plist */,
+				C08D238A5876D2F500D6FC6D19A7194F /* Pods-EachNavigationBar_Example-dummy.m */,
+				7C274556A31633A8E5FA95B36361C404 /* Pods-EachNavigationBar_Example-frameworks.sh */,
+				15BF25D04ECF07653B25827D3F74E334 /* Pods-EachNavigationBar_Example-Info.plist */,
+				DD97C9FC9E251043BBD33D524F3F93B8 /* Pods-EachNavigationBar_Example-umbrella.h */,
+				0653753414275333350C225057D7BF96 /* Pods-EachNavigationBar_Example.debug.xcconfig */,
+				4366D393FF2DEE3E50DE5541C69114E3 /* Pods-EachNavigationBar_Example.release.xcconfig */,
+			);
+			name = "Pods-EachNavigationBar_Example";
+			path = "Target Support Files/Pods-EachNavigationBar_Example";
+			sourceTree = "<group>";
+		};
+		F74A90C0AC662503D571690A8E09DE44 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D2D1FAA6A2624CE58E818BF9E8C9A104 /* Pods-EachNavigationBar_Example */,
+				9A85DD6FD5E20CF59429836D9D66EE91 /* Pods-EachNavigationBar_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		158692B2352901822B8C192EEE80CDF0 /* Headers */ = {
+		16CD8A5BD0C66F48C573182EED52663B /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89993B039E63D1F890C0C66321547ED0 /* EachNavigationBar-umbrella.h in Headers */,
+				CB287ED79E7680B03B5AD62C72ECE648 /* Pods-EachNavigationBar_Tests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		47691E7D4A930449E30AD4C1918B5C72 /* Headers */ = {
+		7AB85CE6756DDE3AFE8B279A351910BC /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE9DC4B1282786FB320F59C1F14997BA /* Pods-EachNavigationBar_Example-umbrella.h in Headers */,
+				066AF95FC805800A5C6163FE53F8DAA7 /* EachNavigationBar-umbrella.h in Headers */,
+				B3A606040B0CD4CAFD07B177C9BE6E22 /* UIViewController+Load.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		71F611E33CD057F36173BB4A8CF5ED1D /* Headers */ = {
+		C08B956D59F1401AF5C9E9F505E1FB6D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E39C8CD9062FFE9F91652817A96997F /* Pods-EachNavigationBar_Tests-umbrella.h in Headers */,
+				0887AD0F93D97E7AB26F45418369D17A /* Pods-EachNavigationBar_Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		4319E59DAA6D215211C2C07D6E5741C0 /* Pods-EachNavigationBar_Example */ = {
+		2FD92C847A7D35F0E824E420023FF06E /* Pods-EachNavigationBar_Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4E1555A32720F3610CCFD61F8AC44385 /* Build configuration list for PBXNativeTarget "Pods-EachNavigationBar_Example" */;
+			buildConfigurationList = 02AD2D76E4EDD0A86CF05650ADAAAE25 /* Build configuration list for PBXNativeTarget "Pods-EachNavigationBar_Tests" */;
 			buildPhases = (
-				942AA95D284E729A5594610BB76CFCD1 /* Sources */,
-				1AD62F197ED5754F0D2701A3139ED030 /* Frameworks */,
-				47691E7D4A930449E30AD4C1918B5C72 /* Headers */,
+				16CD8A5BD0C66F48C573182EED52663B /* Headers */,
+				82DD621EDA9B0B9453F39F5A65696C61 /* Sources */,
+				B12EDECD544748A19AA97D7C2F9337BB /* Frameworks */,
+				E341F649F9F67D0C8F17F96E22DD8F5C /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				908F498EC2265CAB85723748683A740D /* PBXTargetDependency */,
-			);
-			name = "Pods-EachNavigationBar_Example";
-			productName = "Pods-EachNavigationBar_Example";
-			productReference = 2A3D2EC1F3619D0FA16CAE29CAA5AE0D /* Pods_EachNavigationBar_Example.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		716EBF98260B34356F477FD5942F022B /* Pods-EachNavigationBar_Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 188EEDF22A8B17C597CA848E5432AA08 /* Build configuration list for PBXNativeTarget "Pods-EachNavigationBar_Tests" */;
-			buildPhases = (
-				0A2836798EF0F46F43645836D055CE69 /* Sources */,
-				07842B17C32906EDF29A59F9624DB238 /* Frameworks */,
-				71F611E33CD057F36173BB4A8CF5ED1D /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				3182197377F03D090B562433D5CBC6CB /* PBXTargetDependency */,
+				A132D9B055BB3B1346C9E4F513F66B6B /* PBXTargetDependency */,
 			);
 			name = "Pods-EachNavigationBar_Tests";
 			productName = "Pods-EachNavigationBar_Tests";
 			productReference = 1CDA56360B6238BEC84CA1807814C55C /* Pods_EachNavigationBar_Tests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		B358AF4B170A29B9424A4B23D67AE3C5 /* EachNavigationBar */ = {
+		6F477B87BC11A94BF5F5CE1ADAF29108 /* EachNavigationBar */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 648CBCE0C0847AE720150CF6CEA720AB /* Build configuration list for PBXNativeTarget "EachNavigationBar" */;
+			buildConfigurationList = 027882B6FCA499D0CDC6D0F59F6DAAFF /* Build configuration list for PBXNativeTarget "EachNavigationBar" */;
 			buildPhases = (
-				3E361D00F26ADCB3924DF6B42EB41434 /* Sources */,
-				1F4013A613AD509256DD8E4665C27A08 /* Frameworks */,
-				158692B2352901822B8C192EEE80CDF0 /* Headers */,
+				7AB85CE6756DDE3AFE8B279A351910BC /* Headers */,
+				15A0F7BDEDBB9C9959F171B2A06017BB /* Sources */,
+				F3161ADE2C3C62AA463CDB0BAC95963F /* Frameworks */,
+				14A527339AD490987CDFE66F921988A6 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -341,6 +326,25 @@
 			productReference = A2AB06B05B0F298C1800B87629DF0308 /* EachNavigationBar.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		EE455DAB0502B95DDB380BE4D442074C /* Pods-EachNavigationBar_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C2258EB4254A674CA3FE9037FD4A6AA7 /* Build configuration list for PBXNativeTarget "Pods-EachNavigationBar_Example" */;
+			buildPhases = (
+				C08B956D59F1401AF5C9E9F505E1FB6D /* Headers */,
+				C66F622CA2FC025F61C217AF97ECF198 /* Sources */,
+				E89B6F34438900646BE9940BD59C0012 /* Frameworks */,
+				92C52D9BCBD9B5C6A89FF24227C8BE8B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E979C2857381DF729E178085580E791F /* PBXTargetDependency */,
+			);
+			name = "Pods-EachNavigationBar_Example";
+			productName = "Pods-EachNavigationBar_Example";
+			productReference = 2A3D2EC1F3619D0FA16CAE29CAA5AE0D /* Pods_EachNavigationBar_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -348,7 +352,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 0930;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -362,67 +366,124 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B358AF4B170A29B9424A4B23D67AE3C5 /* EachNavigationBar */,
-				4319E59DAA6D215211C2C07D6E5741C0 /* Pods-EachNavigationBar_Example */,
-				716EBF98260B34356F477FD5942F022B /* Pods-EachNavigationBar_Tests */,
+				6F477B87BC11A94BF5F5CE1ADAF29108 /* EachNavigationBar */,
+				EE455DAB0502B95DDB380BE4D442074C /* Pods-EachNavigationBar_Example */,
+				2FD92C847A7D35F0E824E420023FF06E /* Pods-EachNavigationBar_Tests */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		14A527339AD490987CDFE66F921988A6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92C52D9BCBD9B5C6A89FF24227C8BE8B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E341F649F9F67D0C8F17F96E22DD8F5C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		0A2836798EF0F46F43645836D055CE69 /* Sources */ = {
+		15A0F7BDEDBB9C9959F171B2A06017BB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D42308D36F49983CB94D4CF2F97E93A5 /* Pods-EachNavigationBar_Tests-dummy.m in Sources */,
+				3B80CBCDCECE4ED1F2466B00A297EE1B /* AssociatedKeys.swift in Sources */,
+				44A07D2297FCAB58593E4C836BBC422E /* EachNavigationBar-dummy.m in Sources */,
+				AEE283CC1E532F5F9DC5114AB41349A0 /* EachNavigationBar.swift in Sources */,
+				C86DA2DC2CD99CC5D930147EC46433F6 /* Navigation+UINavigationController.swift in Sources */,
+				4F118BFDF49E67ECE0769B47AC909A85 /* Navigation+UIViewController.swift in Sources */,
+				09E5213EE38C70F52F258F6940BDBA88 /* Navigation.swift in Sources */,
+				FC5AF1280548DE0B52BB2C60AB50EB8B /* UINavigationBar+Sugar.swift in Sources */,
+				28CBB58996CABF3A862481DBBB3FD5B8 /* UINavigationController+Configuration.swift in Sources */,
+				7CFE05A66E865C00CB4B6A37ECA0694B /* UINavigationController+EachNavigationBar.swift in Sources */,
+				7EB38C8DAA3C77BD1C478DBF259C4088 /* UITableViewController+EachNavigationBar.swift in Sources */,
+				36057F3684908F948AFAB1B961E811E2 /* UIViewController+EachNavigationBar.swift in Sources */,
+				DFE023214AC6CB0B05F0A3107445FA8D /* UIViewController+Load.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3E361D00F26ADCB3924DF6B42EB41434 /* Sources */ = {
+		82DD621EDA9B0B9453F39F5A65696C61 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4175577CEC1FE3AEBCF9A126243420FC /* AssociatedKeys.swift in Sources */,
-				C488A349A1EE5A102EDD0CAED9BC0A9A /* EachNavigationBar-dummy.m in Sources */,
-				686D8289968FFE7BD2BCB2677EF858E5 /* EachNavigationBar.swift in Sources */,
-				0A0F4758F308508BA09F1C7DC398852A /* Navigation+UINavigationController.swift in Sources */,
-				3209A3A7175B52DC9550D5A566377EAB /* Navigation+UIViewController.swift in Sources */,
-				42A35E473FA1C4023787636911F87877 /* Navigation.swift in Sources */,
-				C08B389B3671E6253E683363318EBBF1 /* UINavigationBar+Sugar.swift in Sources */,
-				7B0C88323DCEE9462B9989A00FB35B7C /* UINavigationController+Configuration.swift in Sources */,
-				76316B8387B0AEBBC48E74F2556F65F7 /* UINavigationController+EachNavigationBar.swift in Sources */,
-				81ADB6E9AB3E2AA3FBA91486F661A1C8 /* UITableViewController+EachNavigationBar.swift in Sources */,
-				27C824422DCB31A0859AA8990852A359 /* UIViewController+EachNavigationBar.swift in Sources */,
+				C4A81E53B4B67A88C8E2B5DD2A7EEF7B /* Pods-EachNavigationBar_Tests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		942AA95D284E729A5594610BB76CFCD1 /* Sources */ = {
+		C66F622CA2FC025F61C217AF97ECF198 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D9948C509E84BBD264887C900EF9401 /* Pods-EachNavigationBar_Example-dummy.m in Sources */,
+				CAF00175BF6A4AF5825CFA6D683C9320 /* Pods-EachNavigationBar_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3182197377F03D090B562433D5CBC6CB /* PBXTargetDependency */ = {
+		A132D9B055BB3B1346C9E4F513F66B6B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-EachNavigationBar_Example";
-			target = 4319E59DAA6D215211C2C07D6E5741C0 /* Pods-EachNavigationBar_Example */;
-			targetProxy = 7DBA9628BABCCD47A15D92E0AB78598F /* PBXContainerItemProxy */;
+			target = EE455DAB0502B95DDB380BE4D442074C /* Pods-EachNavigationBar_Example */;
+			targetProxy = DDB0A3056791279381CF2E4EE9986BB7 /* PBXContainerItemProxy */;
 		};
-		908F498EC2265CAB85723748683A740D /* PBXTargetDependency */ = {
+		E979C2857381DF729E178085580E791F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = EachNavigationBar;
-			target = B358AF4B170A29B9424A4B23D67AE3C5 /* EachNavigationBar */;
-			targetProxy = C51B0DDAC623E1547D3981F88E673B72 /* PBXContainerItemProxy */;
+			target = 6F477B87BC11A94BF5F5CE1ADAF29108 /* EachNavigationBar */;
+			targetProxy = E4D460B5B091B2B4434EEDD4577350E3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		199D972A13F2B4C56847F7A89CCA83BC /* Debug */ = {
+		000965D755612678CCC80549C5142569 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2BC65147216B2C3233B907BB7A595E6 /* EachNavigationBar.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/EachNavigationBar/EachNavigationBar-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/EachNavigationBar/EachNavigationBar-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/EachNavigationBar/EachNavigationBar.modulemap";
+				PRODUCT_MODULE_NAME = EachNavigationBar;
+				PRODUCT_NAME = EachNavigationBar;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		08B0394D5F17A9F046DC0719C25BA452 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -454,8 +515,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_ALLOWED = NO;
-				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -476,18 +535,21 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		2334914FEB56FCD4BF549EBEB84D175F /* Release */ = {
+		30812F644A544FC503BE51BE3F254441 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C89E1052DA5541967FD0B18AC1EC6430 /* Pods-EachNavigationBar_Example.release.xcconfig */;
+			baseConfigurationReference = E00C23EC246288EA5065DB8074F19B37 /* Pods-EachNavigationBar_Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -499,42 +561,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-EachNavigationBar_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-EachNavigationBar_Example/Pods-EachNavigationBar_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		2D228D230BDBF43F8EC6629C425DC9C2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0EA5EC5CBA5C61A08D7935361BE5799 /* Pods-EachNavigationBar_Tests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-EachNavigationBar_Tests/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-EachNavigationBar_Tests/Pods-EachNavigationBar_Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -554,77 +581,9 @@
 			};
 			name = Release;
 		};
-		444C926C5454BC8AF88E44CC54F76A82 /* Debug */ = {
+		5983B8A9748261B09956206A44C4E5E0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 828832FF320D3EE7CD0B3B4936E57261 /* Pods-EachNavigationBar_Tests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-EachNavigationBar_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-EachNavigationBar_Tests/Pods-EachNavigationBar_Tests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		67C0A48B87BC671055F8F0F843073FC2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FE38CC00BF51961469C45DE01D387097 /* Pods-EachNavigationBar_Example.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-EachNavigationBar_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-EachNavigationBar_Example/Pods-EachNavigationBar_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		79921ADED5AC5655135306EC31F1CF4D /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C7D859AA0B70A8A9EED3AFD139C6CD8F /* EachNavigationBar.xcconfig */;
+			baseConfigurationReference = C2BC65147216B2C3233B907BB7A595E6 /* EachNavigationBar.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -636,7 +595,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_PREFIX_HEADER = "Target Support Files/EachNavigationBar/EachNavigationBar-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/EachNavigationBar/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/EachNavigationBar/EachNavigationBar-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -646,8 +605,40 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		75193B64514E95A37B10E2317E7A3B0F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4366D393FF2DEE3E50DE5541C69114E3 /* Pods-EachNavigationBar_Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-EachNavigationBar_Example/Pods-EachNavigationBar_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-EachNavigationBar_Example/Pods-EachNavigationBar_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -655,7 +646,73 @@
 			};
 			name = Release;
 		};
-		FDB2FC4A1E5891381CD9D922145497F1 /* Release */ = {
+		75835BDD35CDFB7835DE2354A658CF36 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F02FC2353F52F4FA14745EE3897293F5 /* Pods-EachNavigationBar_Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-EachNavigationBar_Tests/Pods-EachNavigationBar_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-EachNavigationBar_Tests/Pods-EachNavigationBar_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		92111677B4E685F126EAF6089D67011B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0653753414275333350C225057D7BF96 /* Pods-EachNavigationBar_Example.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-EachNavigationBar_Example/Pods-EachNavigationBar_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-EachNavigationBar_Example/Pods-EachNavigationBar_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E82C56363775B4EF468FF2AD9A2F5414 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -687,8 +744,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_ALLOWED = NO;
-				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -707,53 +762,33 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
 		};
-		FE331A7DDF996EA4C4BFE60A68FF506C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C7D859AA0B70A8A9EED3AFD139C6CD8F /* EachNavigationBar.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/EachNavigationBar/EachNavigationBar-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/EachNavigationBar/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/EachNavigationBar/EachNavigationBar.modulemap";
-				PRODUCT_MODULE_NAME = EachNavigationBar;
-				PRODUCT_NAME = EachNavigationBar;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		188EEDF22A8B17C597CA848E5432AA08 /* Build configuration list for PBXNativeTarget "Pods-EachNavigationBar_Tests" */ = {
+		027882B6FCA499D0CDC6D0F59F6DAAFF /* Build configuration list for PBXNativeTarget "EachNavigationBar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				444C926C5454BC8AF88E44CC54F76A82 /* Debug */,
-				2D228D230BDBF43F8EC6629C425DC9C2 /* Release */,
+				5983B8A9748261B09956206A44C4E5E0 /* Debug */,
+				000965D755612678CCC80549C5142569 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		02AD2D76E4EDD0A86CF05650ADAAAE25 /* Build configuration list for PBXNativeTarget "Pods-EachNavigationBar_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				75835BDD35CDFB7835DE2354A658CF36 /* Debug */,
+				30812F644A544FC503BE51BE3F254441 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -761,26 +796,17 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				199D972A13F2B4C56847F7A89CCA83BC /* Debug */,
-				FDB2FC4A1E5891381CD9D922145497F1 /* Release */,
+				08B0394D5F17A9F046DC0719C25BA452 /* Debug */,
+				E82C56363775B4EF468FF2AD9A2F5414 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4E1555A32720F3610CCFD61F8AC44385 /* Build configuration list for PBXNativeTarget "Pods-EachNavigationBar_Example" */ = {
+		C2258EB4254A674CA3FE9037FD4A6AA7 /* Build configuration list for PBXNativeTarget "Pods-EachNavigationBar_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				67C0A48B87BC671055F8F0F843073FC2 /* Debug */,
-				2334914FEB56FCD4BF549EBEB84D175F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		648CBCE0C0847AE720150CF6CEA720AB /* Build configuration list for PBXNativeTarget "EachNavigationBar" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FE331A7DDF996EA4C4BFE60A68FF506C /* Debug */,
-				79921ADED5AC5655135306EC31F1CF4D /* Release */,
+				92111677B4E685F126EAF6089D67011B /* Debug */,
+				75193B64514E95A37B10E2317E7A3B0F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

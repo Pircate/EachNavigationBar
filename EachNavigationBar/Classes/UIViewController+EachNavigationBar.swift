@@ -30,7 +30,7 @@ extension UIViewController {
     }
     
     @objc public func adjustsScrollViewContentInset(_ scrollView: UIScrollView) {
-        _navigationBar.appendScrollViewForAdjustsContentInset(scrollView)
+        _navigationBar.appendScrollView(forAdjustsContentInset: scrollView)
     }
 }
 

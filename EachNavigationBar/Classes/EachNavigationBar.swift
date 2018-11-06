@@ -10,13 +10,8 @@ import UIKit
 
 open class EachNavigationBar: UINavigationBar {
     
-    var _barStyle: UIBarStyle {
-        return statusBarStyle == .default ? .default : .black
-    }
-
-    private var _alpha: CGFloat = 1
-    
-    /// Default is false. If set true, navigation bar will not restore when the UINavigationController call viewWillLayoutSubviews
+    /// Default is false. If set true, navigation bar will not restore
+    /// when the UINavigationController call viewWillLayoutSubviews
     @objc open var isUnrestoredWhenViewWillLayoutSubviews = false
     
     @objc open var extraHeight: CGFloat = 0 {
@@ -71,11 +66,17 @@ open class EachNavigationBar: UINavigationBar {
         }
     }
     
+    var _barStyle: UIBarStyle {
+        return statusBarStyle == .default ? .default : .black
+    }
+    
     private lazy var _contentView: UIView? = {
         subviews.filter {
             String(describing: $0.classForCoder) == "_UINavigationBarContentView"
         }.first
     }()
+    
+    private var _alpha: CGFloat = 1
     
     private var scrollViewsForAdjustsContentInset: Set<UIScrollView> = []
     
@@ -111,8 +112,16 @@ open class EachNavigationBar: UINavigationBar {
 
 extension EachNavigationBar {
     
+    var additionalHeight: CGFloat {
+        if #available(iOS 11.0, *) {
+            return extraHeight + largeTitleHeight
+        } else {
+            return extraHeight
+        }
+    }
+    
     @available(iOS 11.0, *)
-    var largeTitleHeight: CGFloat {
+    private var largeTitleHeight: CGFloat {
         guard prefersLargeTitles else { return 0 }
         guard let largeTitleTextAttributes = largeTitleTextAttributes,
             let font = largeTitleTextAttributes[.font] as? UIFont else {
@@ -121,19 +130,11 @@ extension EachNavigationBar {
         let size = font.pointSize * 1.2
         return size > 49 ? size : 49
     }
-    
-    var additionalHeight: CGFloat {
-        if #available(iOS 11.0, *) {
-            return extraHeight + largeTitleHeight
-        } else {
-            return extraHeight
-        }
-    }
 }
 
 extension EachNavigationBar {
     
-    func appendScrollViewForAdjustsContentInset(_ scrollView: UIScrollView) {
+    func appendScrollView(forAdjustsContentInset scrollView: UIScrollView) {
         scrollViewsForAdjustsContentInset.insert(scrollView)
     }
     

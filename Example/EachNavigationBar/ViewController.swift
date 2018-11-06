@@ -37,7 +37,6 @@ class ViewController: UIViewController {
         navigation.bar.setBackgroundImage(#imageLiteral(resourceName: "nav"), for: .default)
         
         navigation.item.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(rightBarButtonAction))
-        navigation.item.rightBarButtonItem?.tintColor = UIColor.orange
         navigation.item.title = "Home"
         navigation.bar.titleTextAttributes = [
             .foregroundColor: UIColor.blue,
@@ -84,8 +83,7 @@ extension ViewController: UIScrollViewDelegate {
         if originY <= statusBarMaxY {
             let minY = statusBarMaxY - navigation.bar.frame.height
             navigation.bar.frame.origin.y = originY > minY ? originY : minY
-        }
-        else {
+        } else {
             navigation.bar.frame.origin.y = statusBarMaxY
         }
     }

@@ -51,19 +51,6 @@ Objective-C
 @import EachNavigationBar;
 ```
 
-### Method Swizzling
-#### before window set rootViewController (Don't Forget)
-
-Swift
-``` swift
-UIViewController.navigation.swizzle()
-```
-
-Objective-C
-``` ObjC
-[UIViewController each_methodSwizzling];
-```
-
 ### To enable EachNavigationBar of a navigation controller
 
 Swift

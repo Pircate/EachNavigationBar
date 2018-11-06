@@ -13,11 +13,6 @@ import ObjectiveC
 extension UIViewController {
     
     @available(swift, obsoleted: 4.2, message: "Only for Objective-C call.")
-    @objc public static func each_methodSwizzling() {
-        method_swizzling
-    }
-    
-    @available(swift, obsoleted: 4.2, message: "Only for Objective-C call.")
     @objc public var each_navigationBar: EachNavigationBar {
         return _navigationBar
     }
@@ -53,7 +48,12 @@ extension UIViewController {
         }
     }
     
-    static let method_swizzling: Void = {
+    @available(swift, obsoleted: 4.2, message: "Only for Objective-C call.")
+    @objc public static func each_methodSwizzling() {
+        method_swizzling
+    }
+    
+    private static let method_swizzling: Void = {
         selector_exchangeImplementations(#selector(viewDidLoad), #selector(each_viewDidLoad))
         selector_exchangeImplementations(
             #selector(viewWillAppear(_:)),

@@ -13,6 +13,11 @@ import ObjectiveC
 extension UIViewController {
     
     @available(swift, obsoleted: 4.2, message: "Only for Objective-C call.")
+    @objc public static func each_methodSwizzling() {
+        method_swizzling
+    }
+    
+    @available(swift, obsoleted: 4.2, message: "Only for Objective-C call.")
     @objc public var each_navigationBar: EachNavigationBar {
         return _navigationBar
     }
@@ -20,11 +25,6 @@ extension UIViewController {
     @available(swift, obsoleted: 4.2, message: "Only for Objective-C call.")
     @objc public var each_navigationItem: UINavigationItem {
         return _navigationItem
-    }
-    
-    @available(swift, obsoleted: 4.2, message: "Only for Objective-C call.")
-    @objc public static func each_methodSwizzling() {
-        method_swizzling
     }
     
     @objc public func adjustsNavigationBarPosition() {

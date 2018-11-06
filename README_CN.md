@@ -58,7 +58,7 @@ UIViewController.navigation.swizzle()
 
 Objective-C
 ``` ObjC
-[UIViewController swizzle_setupNavigationBar];
+[UIViewController each_methodSwizzling];
 ```
 
 ### 开启

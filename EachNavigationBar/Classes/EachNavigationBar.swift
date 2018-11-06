@@ -140,14 +140,20 @@ extension EachNavigationBar {
     private func adjustsScrollViewContentInset(_ scrollView: UIScrollView) {
         guard let viewController = viewController else { return }
         let bar = viewController._navigationBar
-        let top: CGFloat
+        let barHeight = bar.isHidden ? 0 : bar.bounds.height
+        let scrollViewY = viewController.view.convert(scrollView.frame, to: viewController.view).minY
+        guard scrollViewY < viewController.statusBarMaxY + barHeight else { return }
+        let contentInsetTop: CGFloat
         if #available(iOS 11.0, *) {
-            top = scrollView.contentInsetAdjustmentBehavior == .never
-                ? viewController.statusBarMaxY : 0
+            if scrollView.contentInsetAdjustmentBehavior == .never {
+                contentInsetTop = viewController.statusBarMaxY + barHeight - scrollViewY
+            } else {
+                let offset = scrollViewY - viewController.view.safeAreaInsets.top
+                contentInsetTop = barHeight - (offset > 0 ? offset : 0)
+            }
         } else {
-            top = viewController.statusBarMaxY
+            contentInsetTop = viewController.statusBarMaxY + barHeight - scrollViewY
         }
-        let contentInsetTop = top + (bar.isHidden ? 0 : bar.bounds.height)
         scrollView.contentInset.top = contentInsetTop
         scrollView.scrollIndicatorInsets.top = contentInsetTop
     }

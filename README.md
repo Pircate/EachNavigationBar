@@ -5,6 +5,7 @@
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![License](https://img.shields.io/cocoapods/l/EachNavigationBar.svg?style=flat)](http://cocoapods.org/pods/EachNavigationBar)
 ![iOS 8.0+](https://img.shields.io/badge/iOS-8.0%2B-blue.svg)
+[![](https://woolson.gitee.io/npmer-badge/-007ec6-%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3-007ec6-github-ffffff-square-gradient-shadow.svg)](https://github.com/Pircate/EachNavigationBar/blob/master/README_CN.md)
 
 [中文文档](https://github.com/Pircate/EachNavigationBar/blob/master/README_CN.md)
 
@@ -51,7 +52,7 @@ Objective-C
 @import EachNavigationBar;
 ```
 
-### To enable EachNavigationBar of a navigation controller
+### Enable
 
 Swift
 ``` swift

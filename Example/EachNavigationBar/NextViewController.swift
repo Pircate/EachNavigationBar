@@ -19,7 +19,6 @@ class NextViewController: UIViewController {
         } else {
             automaticallyAdjustsScrollViewInsets = false
         }
-        adjustsScrollViewContentInset(scrollView)
         return scrollView
     }()
     

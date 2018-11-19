@@ -37,10 +37,6 @@ extension UIViewController {
 // MARK: - Swizzle
 extension UIViewController {
     
-    private var asTableViewController: UITableViewController? {
-        return self as? UITableViewController
-    }
-    
     private static func selector_exchangeImplementations(_ sel1: Selector, _ sel2: Selector) {
         if let originalMethod = class_getInstanceMethod(UIViewController.self, sel1),
             let swizzledMethod = class_getInstanceMethod(UIViewController.self, sel2) {
@@ -70,11 +66,11 @@ extension UIViewController {
             navigationController.navigation.configuration.isEnabled else { return }
         
         bindNavigationBar()
-        if let collectionViewController = self as? UICollectionViewController {
+        if let tableViewController = self as? UITableViewController {
+            tableViewController.addObserverForContentOffset()
+        } else if let collectionViewController = self as? UICollectionViewController {
             adjustsScrollViewContentInset(collectionViewController.collectionView)
-            return
         }
-        asTableViewController?.addObserverForContentOffset()
     }
     
     @objc private func each_viewWillAppear(_ animated: Bool) {
@@ -85,7 +81,7 @@ extension UIViewController {
         
         navigationController.navigationBar.barStyle = _navigationBar._barStyle
         bringNavigationBarToFront()
-        asTableViewController?.adjustsTableViewContentInset()
+        automaticallyAdjustsScrollViewContentInset()
     }
     
     @objc private func each_setNeedsStatusBarAppearanceUpdate() {
@@ -170,6 +166,14 @@ extension UIViewController {
     
     @objc private func each_backBarButtonAction() {
         navigationController?.popViewController(animated: true)
+    }
+    
+    private func automaticallyAdjustsScrollViewContentInset() {
+        if let tableViewController = self as? UITableViewController {
+            tableViewController.adjustsTableViewContentInset()
+        } else if !view.subviews.isEmpty, let scrollView = view.subviews[0] as? UIScrollView {
+            adjustsScrollViewContentInset(scrollView)
+        }
     }
 }
 

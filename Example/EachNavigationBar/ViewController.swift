@@ -14,7 +14,6 @@ class ViewController: UIViewController {
         let scrollView = UIScrollView(frame: view.bounds)
         scrollView.contentSize = CGSize(width: view.bounds.width, height: 1000)
         scrollView.delegate = self
-        adjustsScrollViewContentInset(scrollView)
         return scrollView
     }()
     

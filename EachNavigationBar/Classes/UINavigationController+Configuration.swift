@@ -9,12 +9,6 @@
 import UIKit
 import ObjectiveC
 
-#if swift(>=4.2)
-public typealias AttributedStringKey = NSAttributedString.Key
-#else
-public typealias AttributedStringKey = NSAttributedStringKey
-#endif
-
 public class Configuration: NSObject {
     
     @objc public var isEnabled = false
@@ -29,7 +23,7 @@ public class Configuration: NSObject {
     
     @objc public var isShadowHidden: Bool = false
     
-    @objc public var titleTextAttributes: [AttributedStringKey : Any]?
+    @objc public var titleTextAttributes: [NSAttributedString.Key : Any]?
     
     @objc public var isTranslucent: Bool = true
     
@@ -46,7 +40,7 @@ public class Configuration: NSObject {
     
     @objc public var prefersLargeTitles: Bool = false
     
-    @objc public var largeTitleTextAttributes: [AttributedStringKey: Any]?
+    @objc public var largeTitleTextAttributes: [NSAttributedString.Key: Any]?
     
     var backgroundImage: UIImage?
     

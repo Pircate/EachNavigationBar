@@ -70,6 +70,10 @@ extension UIViewController {
             navigationController.navigation.configuration.isEnabled else { return }
         
         bindNavigationBar()
+        if let collectionViewController = self as? UICollectionViewController {
+            adjustsScrollViewContentInset(collectionViewController.collectionView)
+            return
+        }
         asTableViewController?.addObserverForContentOffset()
     }
     
@@ -128,11 +132,7 @@ extension UIViewController {
     }
     
     private func bringNavigationBarToFront() {
-        #if swift(>=4.2)
         view.bringSubviewToFront(_navigationBar)
-        #else
-        view.bringSubview(toFront: each_navigationBar)
-        #endif
     }
     
     private func setupNavigationBarStyle() {

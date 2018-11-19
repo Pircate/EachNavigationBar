@@ -549,6 +549,37 @@
 			};
 			name = Release;
 		};
+		6FDF5EED9EB15C292B5C3AC4B384B30F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2BC65147216B2C3233B907BB7A595E6 /* EachNavigationBar.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/EachNavigationBar/EachNavigationBar-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/EachNavigationBar/EachNavigationBar-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/EachNavigationBar/EachNavigationBar.modulemap";
+				PRODUCT_MODULE_NAME = EachNavigationBar;
+				PRODUCT_NAME = EachNavigationBar;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		75193B64514E95A37B10E2317E7A3B0F /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4366D393FF2DEE3E50DE5541C69114E3 /* Pods-EachNavigationBar_Example.release.xcconfig */;
@@ -616,37 +647,6 @@
 			};
 			name = Debug;
 		};
-		77D531F71965ACF5A08108F4B62F22AC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C2BC65147216B2C3233B907BB7A595E6 /* EachNavigationBar.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/EachNavigationBar/EachNavigationBar-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/EachNavigationBar/EachNavigationBar-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/EachNavigationBar/EachNavigationBar.modulemap";
-				PRODUCT_MODULE_NAME = EachNavigationBar;
-				PRODUCT_NAME = EachNavigationBar;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		92111677B4E685F126EAF6089D67011B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0653753414275333350C225057D7BF96 /* Pods-EachNavigationBar_Example.debug.xcconfig */;
@@ -679,6 +679,38 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		A4AF6E278FB8CEDC8D82C6DAD17EE4A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2BC65147216B2C3233B907BB7A595E6 /* EachNavigationBar.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/EachNavigationBar/EachNavigationBar-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/EachNavigationBar/EachNavigationBar-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/EachNavigationBar/EachNavigationBar.modulemap";
+				PRODUCT_MODULE_NAME = EachNavigationBar;
+				PRODUCT_NAME = EachNavigationBar;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		E82C56363775B4EF468FF2AD9A2F5414 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -740,46 +772,14 @@
 			};
 			name = Release;
 		};
-		F3AA90834055F87843733F48D129EFD7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C2BC65147216B2C3233B907BB7A595E6 /* EachNavigationBar.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/EachNavigationBar/EachNavigationBar-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/EachNavigationBar/EachNavigationBar-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/EachNavigationBar/EachNavigationBar.modulemap";
-				PRODUCT_MODULE_NAME = EachNavigationBar;
-				PRODUCT_NAME = EachNavigationBar;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
 		027882B6FCA499D0CDC6D0F59F6DAAFF /* Build configuration list for PBXNativeTarget "EachNavigationBar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				77D531F71965ACF5A08108F4B62F22AC /* Debug */,
-				F3AA90834055F87843733F48D129EFD7 /* Release */,
+				6FDF5EED9EB15C292B5C3AC4B384B30F /* Debug */,
+				A4AF6E278FB8CEDC8D82C6DAD17EE4A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

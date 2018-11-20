@@ -78,7 +78,7 @@ open class EachNavigationBar: UINavigationBar {
     
     private var _alpha: CGFloat = 1
     
-    private var scrollViewsForAdjustsContentInset: Set<UIScrollView> = []
+    private var scrollViewSet: Set<UIScrollView> = []
     
     private weak var viewController: UIViewController?
     
@@ -91,7 +91,7 @@ open class EachNavigationBar: UINavigationBar {
     open override func layoutSubviews() {
         super.layoutSubviews()
         
-        scrollViewsForAdjustsContentInset.forEach {
+        scrollViewSet.forEach {
             adjustsScrollViewContentInset($0)
         }
         
@@ -134,8 +134,8 @@ extension EachNavigationBar {
 
 extension EachNavigationBar {
     
-    func appendScrollView(forAdjustsContentInset scrollView: UIScrollView) {
-        scrollViewsForAdjustsContentInset.insert(scrollView)
+    func insertScrollView(forAdjustsContentInset scrollView: UIScrollView) {
+        scrollViewSet.insert(scrollView)
     }
     
     private func adjustsScrollViewContentInset(_ scrollView: UIScrollView) {

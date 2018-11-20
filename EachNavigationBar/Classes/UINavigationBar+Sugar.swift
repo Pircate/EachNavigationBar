@@ -15,10 +15,10 @@ extension UINavigationBar {
     @objc public func setTitleAlpha(_ alpha: CGFloat) {
         if var titleTextAttributes = titleTextAttributes {
             let color = titleTextAttributes[.foregroundColor] as? UIColor ?? defaultTitleColor
-            titleTextAttributes[.foregroundColor] = color.withAlphaComponent(alpha)
+            titleTextAttributes[.foregroundColor] = color.alpha(alpha)
             self.titleTextAttributes = titleTextAttributes
         } else {
-            self.titleTextAttributes = [.foregroundColor: defaultTitleColor.withAlphaComponent(alpha)]
+            self.titleTextAttributes = [.foregroundColor: defaultTitleColor.alpha(alpha)]
         }
     }
     
@@ -26,14 +26,21 @@ extension UINavigationBar {
     @objc public func setLargeTitleAlpha(_ alpha: CGFloat) {
         if var largeTitleTextAttributes = largeTitleTextAttributes {
             let color = largeTitleTextAttributes[.foregroundColor] as? UIColor ?? defaultTitleColor
-            largeTitleTextAttributes[.foregroundColor] = color.withAlphaComponent(alpha)
+            largeTitleTextAttributes[.foregroundColor] = color.alpha(alpha)
             self.largeTitleTextAttributes = largeTitleTextAttributes
         } else {
-            self.largeTitleTextAttributes = [.foregroundColor: defaultTitleColor.withAlphaComponent(alpha)]
+            self.largeTitleTextAttributes = [.foregroundColor: defaultTitleColor.alpha(alpha)]
         }
     }
     
     @objc public func setTintAlpha(_ alpha: CGFloat) {
-        tintColor = tintColor.withAlphaComponent(alpha)
+        tintColor = tintColor.alpha(alpha)
+    }
+}
+
+private extension UIColor {
+    
+    func alpha(_ alpha: CGFloat) -> UIColor {
+        return withAlphaComponent(alpha)
     }
 }

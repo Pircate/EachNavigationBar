@@ -97,18 +97,16 @@ open class EachNavigationBar: UINavigationBar {
     open override func layoutSubviews() {
         super.layoutSubviews()
         
-        scrollViewSet.forEach {
-            adjustsScrollViewContentInset($0)
-        }
+        scrollViewSet.forEach { adjustsScrollViewContentInset($0) }
         
         guard let background = subviews.first else { return }
         background.alpha = _alpha
         background.clipsToBounds = isShadowHidden
         background.frame = CGRect(
             x: 0,
-            y: -UIApplication.shared.statusBarFrame.maxY,
+            y: -CGFloat.StatusBar.maxY,
             width: bounds.width,
-            height: bounds.height + UIApplication.shared.statusBarFrame.maxY)
+            height: bounds.height + CGFloat.StatusBar.maxY)
         
         if #available(iOS 11.0, *) {
             _contentView?.frame.origin.y = extraHeight
@@ -129,19 +127,13 @@ extension EachNavigationBar {
     @available(iOS 11.0, *)
     private var largeTitleHeight: CGFloat {
         guard prefersLargeTitles else { return 0 }
-        let largeTitleHeight: CGFloat
-        if let largeTitleTextAttributes = largeTitleTextAttributes,
-            let font = largeTitleTextAttributes[.font] as? UIFont {
-            let size = font.pointSize * 1.2
-            largeTitleHeight = (size > 49 ? size : 49) + largeTitleAdditionalHeight
-        } else {
-            largeTitleHeight = 49 + largeTitleAdditionalHeight
-        }
+        let largeTitleHeight = CGFloat.LargeTitle.height(for: largeTitleTextAttributes)
+            + largeTitleAdditionalHeight
         return largeTitleHeight < 0 ? 0 : largeTitleHeight
     }
     
     private func updateAdditionalHeight() {
-        frame.size.height =  44.0 + additionalHeight
+        frame.size.height =  CGFloat.NavigationBar.height + additionalHeight
     }
 }
 

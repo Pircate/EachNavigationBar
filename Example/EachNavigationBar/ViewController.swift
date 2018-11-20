@@ -72,15 +72,14 @@ extension ViewController: UIScrollViewDelegate {
         if originY <= statusBarMaxY {
             if originY > -49 {
                 let alpha = 1 - (scrollView.contentOffset.y) / 49
-                if #available(iOS 11.0, *) {
-                    navigation.bar.setLargeTitleAlpha(alpha)
-                }
+                if #available(iOS 11.0, *) { navigation.bar.setLargeTitleAlpha(alpha) }
                 navigation.bar.largeTitleAdditionalHeight = originY
             } else {
                 let minY = statusBarMaxY - navigation.bar.frame.height
                 if originY + 49 > minY {
                     navigation.bar.frame.origin.y = originY + 49
                 } else {
+                    if #available(iOS 11.0, *) { navigation.bar.setLargeTitleAlpha(0) }
                     navigation.bar.setTitleAlpha(0)
                     navigation.bar.setTintAlpha(0)
                     navigation.item.leftBarButtonItem?.customView?.alpha = 0
@@ -88,9 +87,7 @@ extension ViewController: UIScrollViewDelegate {
                 }
             }
         } else {
-            if #available(iOS 11.0, *) {
-                navigation.bar.setLargeTitleAlpha(1)
-            }
+            if #available(iOS 11.0, *) { navigation.bar.setLargeTitleAlpha(1) }
             navigation.bar.setTitleAlpha(1)
             navigation.bar.setTintAlpha(1)
             navigation.item.leftBarButtonItem?.customView?.alpha = 1

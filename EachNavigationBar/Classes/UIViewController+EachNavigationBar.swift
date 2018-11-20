@@ -66,11 +66,7 @@ extension UIViewController {
             navigationController.navigation.configuration.isEnabled else { return }
         
         bindNavigationBar()
-        if let tableViewController = self as? UITableViewController {
-            tableViewController.addObserverForContentOffset()
-        } else if let collectionViewController = self as? UICollectionViewController {
-            adjustsScrollViewContentInset(collectionViewController.collectionView)
-        }
+        adjustsScrollViewContentInsetForScrollViewController()
     }
     
     @objc private func each_viewWillAppear(_ animated: Bool) {
@@ -167,6 +163,17 @@ extension UIViewController {
     @objc private func each_backBarButtonAction() {
         navigationController?.popViewController(animated: true)
     }
+}
+
+extension UIViewController {
+    
+    private func adjustsScrollViewContentInsetForScrollViewController() {
+        if let tableViewController = self as? UITableViewController {
+            tableViewController.addObserverForContentOffset()
+        } else if let collectionViewController = self as? UICollectionViewController {
+            adjustsScrollViewContentInset(collectionViewController.collectionView)
+        }
+    }
     
     private func automaticallyAdjustsScrollViewContentInset() {
         if let tableViewController = self as? UITableViewController {
@@ -174,12 +181,5 @@ extension UIViewController {
         } else if !view.subviews.isEmpty, let scrollView = view.subviews[0] as? UIScrollView {
             adjustsScrollViewContentInset(scrollView)
         }
-    }
-}
-
-extension UIViewController {
-    
-    var statusBarMaxY: CGFloat {
-        return UIApplication.shared.statusBarFrame.maxY
     }
 }

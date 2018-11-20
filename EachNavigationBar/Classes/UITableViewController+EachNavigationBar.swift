@@ -24,9 +24,9 @@ extension UITableViewController {
     func adjustsTableViewContentInset() {
         let inset: CGFloat
         if #available(iOS 11.0, *) {
-            inset = tableView.contentInsetAdjustmentBehavior == .never ? 0 : statusBarMaxY
+            inset = tableView.contentInsetAdjustmentBehavior == .never ? 0 : CGFloat.StatusBar.maxY
         } else {
-            inset = automaticallyAdjustsScrollViewInsets ? statusBarMaxY : 0
+            inset = automaticallyAdjustsScrollViewInsets ? CGFloat.StatusBar.maxY : 0
         }
         let contentInsetTop = _navigationBar.frame.maxY - inset
         tableView.contentInset.top = contentInsetTop
@@ -41,6 +41,6 @@ extension UITableViewController {
         guard keyPath == "contentOffset",
             let tableView = object as? UITableView,
             self.tableView === tableView else { return }
-        _navigationBar.frame.origin.y = tableView.contentOffset.y + statusBarMaxY
+        _navigationBar.frame.origin.y = tableView.contentOffset.y + CGFloat.StatusBar.maxY
     }
 }

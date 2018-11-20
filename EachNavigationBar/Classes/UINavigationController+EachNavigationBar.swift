@@ -34,6 +34,14 @@ extension UINavigationController {
     func sendNavigationBarToBack() {
         isNavigationBarHidden = false
         navigationBar.isHidden = false
+        navigationBar.tintColor = UIColor.clear
+        if navigationBar.shadowImage == nil {
+            let image = UIImage()
+            navigationBar.setBackgroundImage(image, for: .default)
+            navigationBar.shadowImage = image
+            navigationBar.backIndicatorImage = image
+            navigationBar.backIndicatorTransitionMaskImage = image
+        }
         view.sendSubviewToBack(navigationBar)
     }
 }

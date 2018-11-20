@@ -138,7 +138,6 @@ self.each_navigationItem.xxx
 
 ##### LargeTitle(iOS 11.0+)
 
-Swift
 ``` swift
 // show
 if #available(iOS 11.0, *) {
@@ -152,52 +151,26 @@ if #available(iOS 11.0, *) {
 if #available(iOS 11.0, *) {
     navigation.bar.setLargeTitleAlpha(0.5)
 }
+// large title additional height
+navigation.bar.largeTitleAdditionalHeight = -49
 ```
 
-Objective-C
-``` ObjC
-// show
-if (@available(iOS 11.0, *)) {
-    self.each_navigationBar.prefersLargeTitles = YES;
-}
-// hide
-if (@available(iOS 11.0, *)) {
-    self.each_navigationBar.prefersLargeTitles = NO;
-}
-// alpha
-if (@available(iOS 11.0, *)) {
-    [self.each_navigationBar setLargeTitleAlpha:0.5];
-}
-```
 #### Adjusts UIScrollView contentInset
 
-Swift
 ``` swift
 adjustsScrollViewContentInset(scrollView)
-```
-
-Objective-C
-``` ObjC
-[self adjustsScrollViewContentInset:self.scrollView];
 ```
 
 #### For UITableViewController
 
 Must remove observer when deinit
 
-Swift
 ``` swift
 deinit {
     removeObserverForContentOffset()
 }
 ```
 
-Objective-C
-``` ObjC
-- (void)dealloc {
-    [self removeObserverForContentOffset];
-}
-```
 ## Author
 
 Pircate, gao497868860@163.com

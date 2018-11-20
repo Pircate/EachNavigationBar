@@ -141,7 +141,6 @@ self.each_navigationItem.xxx
 
 ##### 大标题设置(iOS 11.0+)
 
-Swift
 ``` swift
 // 显示大标题
 if #available(iOS 11.0, *) {
@@ -155,51 +154,23 @@ if #available(iOS 11.0, *) {
 if #available(iOS 11.0, *) {
     navigation.bar.setLargeTitleAlpha(0.5)
 }
-```
-
-Objective-C
-``` ObjC
-// 显示大标题
-if (@available(iOS 11.0, *)) {
-    self.each_navigationBar.prefersLargeTitles = YES;
-}
-// 隐藏大标题
-if (@available(iOS 11.0, *)) {
-    self.each_navigationBar.prefersLargeTitles = NO;
-}
-// 设置大标题透明度
-if (@available(iOS 11.0, *)) {
-    [self.each_navigationBar setLargeTitleAlpha:0.5];
-}
+// 大标题附加高度
+navigation.bar.largeTitleAdditionalHeight = -49
 ```
 
 #### 调整 UIScrollView 的 contentInset
 
-Swift
 ``` swift
 adjustsScrollViewContentInset(scrollView)
 ```
 
-Objective-C
-``` ObjC
-[self adjustsScrollViewContentInset:self.scrollView];
-```
-
-#### UITableViewController
+#### 对于 UITableViewController
 
 请在控制器释放的时候移除观察者
 
-Swift
 ``` swift
 deinit {
     removeObserverForContentOffset()
-}
-```
-
-Objective-C
-``` ObjC
-- (void)dealloc {
-    [self removeObserverForContentOffset];
 }
 ```
 

@@ -13,8 +13,7 @@ extension UINavigationController {
         
         guard _configuration.isEnabled else { return }
         
-        isNavigationBarHidden = false
-        navigationBar.isHidden = true
+        sendNavigationBarToBack()
         
         guard let bar = topViewController?._navigationBar else { return }
         
@@ -29,6 +28,12 @@ extension UINavigationController {
             }
         }
         
-        bar.frame.size.height = navigationBar.frame.height + bar.additionalHeight
+        bar.frame.size.height = navigationBar.frame.height + bar.extraHeight
+    }
+    
+    func sendNavigationBarToBack() {
+        isNavigationBarHidden = false
+        navigationBar.isHidden = false
+        view.sendSubviewToBack(navigationBar)
     }
 }

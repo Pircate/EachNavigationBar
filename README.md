@@ -151,14 +151,6 @@ if #available(iOS 11.0, *) {
 if #available(iOS 11.0, *) {
     navigation.bar.setLargeTitleAlpha(0.5)
 }
-// large title additional height
-navigation.bar.largeTitleAdditionalHeight = -49
-```
-
-#### Adjusts UIScrollView contentInset
-
-``` swift
-adjustsScrollViewContentInset(scrollView)
 ```
 
 #### For UITableViewController

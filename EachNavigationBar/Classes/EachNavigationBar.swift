@@ -20,12 +20,6 @@ open class EachNavigationBar: UINavigationBar {
         }
     }
     
-    @objc open var largeTitleAdditionalHeight: CGFloat = 0 {
-        didSet {
-            updateAdditionalHeight()
-        }
-    }
-    
     @objc open var isShadowHidden: Bool = false {
         didSet {
             guard let background = subviews.first else { return }
@@ -68,6 +62,10 @@ open class EachNavigationBar: UINavigationBar {
         }
         set {
             super.prefersLargeTitles = newValue
+            if newValue {
+                viewController?.navigationController?.navigationBar.prefersLargeTitles = true
+            }
+            updateLargeTitleDisplayMode(for: prefersLargeTitles)
             updateAdditionalHeight()
         }
     }
@@ -127,13 +125,16 @@ extension EachNavigationBar {
     @available(iOS 11.0, *)
     private var largeTitleHeight: CGFloat {
         guard prefersLargeTitles else { return 0 }
-        let largeTitleHeight = CGFloat.LargeTitle.height(for: largeTitleTextAttributes)
-            + largeTitleAdditionalHeight
-        return largeTitleHeight < 0 ? 0 : largeTitleHeight
+        return CGFloat.LargeTitle.height(for: largeTitleTextAttributes)
     }
     
     private func updateAdditionalHeight() {
         frame.size.height =  CGFloat.NavigationBar.height + additionalHeight
+    }
+    
+    @available(iOS 11.0, *)
+    private func updateLargeTitleDisplayMode(for prefersLargeTitles: Bool) {
+        viewController?.navigationItem.largeTitleDisplayMode = prefersLargeTitles ? .always : .never
     }
 }
 

@@ -62,10 +62,6 @@ class MainViewController: UIViewController {
         }
     }
     
-    @IBAction func largeTitleAddtionalHeightAction(_ sender: UISlider) {
-        navigation.bar.largeTitleAdditionalHeight = CGFloat(sender.value)
-    }
-    
     @IBAction func changeStatusBarStyle(_ sender: UISwitch) {
         navigation.bar.statusBarStyle = sender.isOn ? .lightContent : .default
     }

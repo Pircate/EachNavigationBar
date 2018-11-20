@@ -25,7 +25,7 @@ extension UIViewController {
     @objc public func adjustsNavigationBarPosition() {
         guard let navigationBar = navigationController?.navigationBar else { return }
         _navigationBar.frame = navigationBar.frame
-        _navigationBar.frame.size.height += _navigationBar.additionalHeight
+        _navigationBar.frame.size.height += _navigationBar.extraHeight
         _navigationBar.setNeedsLayout()
     }
     
@@ -66,7 +66,10 @@ extension UIViewController {
             navigationController.navigation.configuration.isEnabled else { return }
         
         bindNavigationBar()
-        adjustsScrollViewContentInsetForScrollViewController()
+        
+        if let tableViewController = self as? UITableViewController {
+            tableViewController.addObserverForContentOffset()
+        }
     }
     
     @objc private func each_viewWillAppear(_ animated: Bool) {
@@ -77,7 +80,6 @@ extension UIViewController {
         
         navigationController.navigationBar.barStyle = _navigationBar._barStyle
         bringNavigationBarToFront()
-        automaticallyAdjustsScrollViewContentInset()
     }
     
     @objc private func each_setNeedsStatusBarAppearanceUpdate() {
@@ -116,8 +118,7 @@ extension UIViewController {
     
     private func bindNavigationBar() {
         guard let navigationController = navigationController else { return }
-        navigationController.isNavigationBarHidden = false
-        navigationController.navigationBar.isHidden = true
+        navigationController.sendNavigationBarToBack()
         setupNavigationBarStyle()
         setupBackBarButtonItem()
         view.addSubview(_navigationBar)
@@ -162,24 +163,5 @@ extension UIViewController {
     
     @objc private func each_backBarButtonAction() {
         navigationController?.popViewController(animated: true)
-    }
-}
-
-extension UIViewController {
-    
-    private func adjustsScrollViewContentInsetForScrollViewController() {
-        if let tableViewController = self as? UITableViewController {
-            tableViewController.addObserverForContentOffset()
-        } else if let collectionViewController = self as? UICollectionViewController {
-            adjustsScrollViewContentInset(collectionViewController.collectionView)
-        }
-    }
-    
-    private func automaticallyAdjustsScrollViewContentInset() {
-        if let tableViewController = self as? UITableViewController {
-            tableViewController.adjustsTableViewContentInset()
-        } else if !view.subviews.isEmpty, let scrollView = view.subviews[0] as? UIScrollView {
-            adjustsScrollViewContentInset(scrollView)
-        }
     }
 }

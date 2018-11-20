@@ -14,11 +14,6 @@ class NextViewController: UIViewController {
         let scrollView = UIScrollView(frame: view.bounds)
         scrollView.contentSize = CGSize(width: view.bounds.width, height: 1000)
         scrollView.delegate = self
-        if #available(iOS 11.0, *) {
-            scrollView.contentInsetAdjustmentBehavior = .never
-        } else {
-            automaticallyAdjustsScrollViewInsets = false
-        }
         return scrollView
     }()
     

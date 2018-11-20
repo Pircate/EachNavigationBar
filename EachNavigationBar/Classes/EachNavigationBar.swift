@@ -16,7 +16,13 @@ open class EachNavigationBar: UINavigationBar {
     
     @objc open var extraHeight: CGFloat = 0 {
         didSet {
-            frame.size.height = 44.0 + additionalHeight
+            updateAdditionalHeight()
+        }
+    }
+    
+    @objc open var largeTitleAdditionalHeight: CGFloat = 0 {
+        didSet {
+            updateAdditionalHeight()
         }
     }
     
@@ -62,7 +68,7 @@ open class EachNavigationBar: UINavigationBar {
         }
         set {
             super.prefersLargeTitles = newValue
-            frame.size.height =  44.0 + additionalHeight
+            updateAdditionalHeight()
         }
     }
     
@@ -123,12 +129,19 @@ extension EachNavigationBar {
     @available(iOS 11.0, *)
     private var largeTitleHeight: CGFloat {
         guard prefersLargeTitles else { return 0 }
-        guard let largeTitleTextAttributes = largeTitleTextAttributes,
-            let font = largeTitleTextAttributes[.font] as? UIFont else {
-                return 49
+        let largeTitleHeight: CGFloat
+        if let largeTitleTextAttributes = largeTitleTextAttributes,
+            let font = largeTitleTextAttributes[.font] as? UIFont {
+            let size = font.pointSize * 1.2
+            largeTitleHeight = (size > 49 ? size : 49) + largeTitleAdditionalHeight
+        } else {
+            largeTitleHeight = 49 + largeTitleAdditionalHeight
         }
-        let size = font.pointSize * 1.2
-        return size > 49 ? size : 49
+        return largeTitleHeight < 0 ? 0 : largeTitleHeight
+    }
+    
+    private func updateAdditionalHeight() {
+        frame.size.height =  44.0 + additionalHeight
     }
 }
 

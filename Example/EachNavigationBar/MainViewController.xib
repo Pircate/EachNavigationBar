@@ -21,11 +21,11 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="4c1-Ga-tNn">
-                    <rect key="frame" x="25" y="135" width="110" height="406.5"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4c1-Ga-tNn">
+                    <rect key="frame" x="25" y="135" width="114.5" height="407.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="隐藏导航栏" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oeo-Un-9Bz">
-                            <rect key="frame" x="0.0" y="0.0" width="110" height="31"/>
+                            <rect key="frame" x="0.0" y="0.0" width="114.5" height="31"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="31" id="PJu-Ar-Aee"/>
                             </constraints>
@@ -34,7 +34,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="导航栏透明度" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCz-aG-F4E">
-                            <rect key="frame" x="0.0" y="46" width="110" height="31"/>
+                            <rect key="frame" x="0.0" y="41" width="114.5" height="31"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="31" id="PBH-y8-xkg"/>
                             </constraints>
@@ -43,7 +43,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="标题透明度" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QQf-fT-vPp">
-                            <rect key="frame" x="0.0" y="92" width="110" height="31"/>
+                            <rect key="frame" x="0.0" y="82" width="114.5" height="31"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="31" id="OBs-lP-OPi"/>
                             </constraints>
@@ -52,7 +52,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="隐藏黑线" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rog-vv-WDB">
-                            <rect key="frame" x="0.0" y="138" width="110" height="31"/>
+                            <rect key="frame" x="0.0" y="123" width="114.5" height="31"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="31" id="Qj3-0y-N36"/>
                             </constraints>
@@ -61,7 +61,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="额外高度" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Yn-vA-Ic1">
-                            <rect key="frame" x="0.0" y="184" width="110" height="31"/>
+                            <rect key="frame" x="0.0" y="164" width="114.5" height="31"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="31" id="m5a-KQ-KId"/>
                             </constraints>
@@ -70,7 +70,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="显示大标题" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQy-eh-TwA">
-                            <rect key="frame" x="0.0" y="230" width="110" height="31"/>
+                            <rect key="frame" x="0.0" y="205" width="114.5" height="31"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="31" id="FCF-mh-Ihm"/>
                             </constraints>
@@ -79,7 +79,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="大标题透明度" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iff-YU-IOV">
-                            <rect key="frame" x="0.0" y="276" width="110" height="31"/>
+                            <rect key="frame" x="0.0" y="246" width="114.5" height="31"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="31" id="DUz-Ub-Uuy"/>
                             </constraints>
@@ -87,8 +87,17 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="大标题附加高度" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EyK-6T-9c5">
+                            <rect key="frame" x="0.0" y="287" width="114.5" height="31"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="31" id="Edm-Hu-h7e"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="状态栏颜色" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQS-TT-Ra1">
-                            <rect key="frame" x="0.0" y="322" width="110" height="31"/>
+                            <rect key="frame" x="0.0" y="328" width="114.5" height="31"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="31" id="n29-2j-GO6"/>
                             </constraints>
@@ -97,15 +106,15 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="隐藏状态栏 (非刘海屏有效)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gu0-Lo-60S">
-                            <rect key="frame" x="0.0" y="368" width="110" height="38.5"/>
+                            <rect key="frame" x="0.0" y="369" width="114.5" height="38.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
                 </stackView>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ADU-Jz-1Ud">
-                    <rect key="frame" x="175" y="135" width="120" height="403"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="ADU-Jz-1Ud">
+                    <rect key="frame" x="175" y="135" width="120" height="404"/>
                     <subviews>
                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Iyl-EQ-dsJ">
                             <rect key="frame" x="0.0" y="0.0" width="122" height="31"/>
@@ -114,49 +123,55 @@
                             </connections>
                         </switch>
                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="CMO-TM-Kk8">
-                            <rect key="frame" x="-2" y="47" width="124" height="31"/>
+                            <rect key="frame" x="-2" y="42" width="124" height="31"/>
                             <connections>
                                 <action selector="setAlphaAction:" destination="-1" eventType="valueChanged" id="934-tY-58s"/>
                             </connections>
                         </slider>
                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="xBm-mB-Z0Z">
-                            <rect key="frame" x="-2" y="93" width="124" height="31"/>
+                            <rect key="frame" x="-2" y="83" width="124" height="31"/>
                             <connections>
                                 <action selector="setTitleAlphaAction:" destination="-1" eventType="valueChanged" id="FIr-CA-gWX"/>
                             </connections>
                         </slider>
                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="t1g-XA-k6P">
-                            <rect key="frame" x="0.0" y="139" width="122" height="31"/>
+                            <rect key="frame" x="0.0" y="124" width="122" height="31"/>
                             <connections>
                                 <action selector="isShadowHiddenAction:" destination="-1" eventType="valueChanged" id="Tt7-kA-yx8"/>
                             </connections>
                         </switch>
                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="hnM-UL-F6P">
-                            <rect key="frame" x="-2" y="186" width="124" height="31"/>
+                            <rect key="frame" x="-2" y="166" width="124" height="31"/>
                             <connections>
                                 <action selector="extraHeightAction:" destination="-1" eventType="valueChanged" id="8Mu-eH-BQl"/>
                             </connections>
                         </slider>
                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="PRU-hc-ZxC">
-                            <rect key="frame" x="0.0" y="232" width="122" height="31"/>
+                            <rect key="frame" x="0.0" y="207" width="122" height="31"/>
                             <connections>
                                 <action selector="prefersLargetTitleAction:" destination="-1" eventType="valueChanged" id="deM-hv-VoV"/>
                             </connections>
                         </switch>
                         <slider opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="nkx-Tz-d9s">
-                            <rect key="frame" x="-2" y="279" width="124" height="31"/>
+                            <rect key="frame" x="-2" y="249" width="124" height="31"/>
                             <connections>
                                 <action selector="setLargeTitleAlphaAction:" destination="-1" eventType="valueChanged" id="p5Z-o4-VPw"/>
                             </connections>
                         </slider>
+                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-70" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="CBn-it-1p6">
+                            <rect key="frame" x="-2" y="290" width="124" height="31"/>
+                            <connections>
+                                <action selector="largeTitleAddtionalHeightAction:" destination="-1" eventType="valueChanged" id="hdF-Ei-RE2"/>
+                            </connections>
+                        </slider>
                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9AG-vh-9N0">
-                            <rect key="frame" x="0.0" y="325" width="122" height="31"/>
+                            <rect key="frame" x="0.0" y="331" width="122" height="31"/>
                             <connections>
                                 <action selector="changeStatusBarStyle:" destination="-1" eventType="valueChanged" id="lGi-8s-4tm"/>
                             </connections>
                         </switch>
                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fhC-ax-Fpl">
-                            <rect key="frame" x="0.0" y="372" width="122" height="31"/>
+                            <rect key="frame" x="0.0" y="373" width="122" height="31"/>
                             <connections>
                                 <action selector="isStatusBarHiddenAction:" destination="-1" eventType="valueChanged" id="KPt-gr-wFu"/>
                             </connections>

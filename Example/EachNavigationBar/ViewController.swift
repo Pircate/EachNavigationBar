@@ -52,9 +52,6 @@ class ViewController: UIViewController {
         navigation.bar.isUnrestoredWhenViewWillLayoutSubviews = true
         
         if #available(iOS 11.0, *) {
-            navigation.bar.largeTitleTextAttributes = [
-                .font: UIFont.systemFont(ofSize: 50),
-                .foregroundColor: UIColor.green]
             navigation.bar.prefersLargeTitles = true
         }
     }
@@ -72,17 +69,32 @@ extension ViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let statusBarMaxY = UIApplication.shared.statusBarFrame.maxY
         let originY = -scrollView.contentOffset.y + statusBarMaxY
-        let alpha = 1 - (scrollView.contentOffset.y) / navigation.bar.frame.height
-        navigation.item.leftBarButtonItem?.customView?.alpha = alpha
-        navigation.bar.setTintAlpha(alpha)
-        navigation.bar.setTitleAlpha(alpha)
-        if #available(iOS 11.0, *) {
-            navigation.bar.setLargeTitleAlpha(alpha)
-        }
         if originY <= statusBarMaxY {
-            let minY = statusBarMaxY - navigation.bar.frame.height
-            navigation.bar.frame.origin.y = originY > minY ? originY : minY
+            if originY > -49 {
+                let alpha = 1 - (scrollView.contentOffset.y) / 49
+                if #available(iOS 11.0, *) {
+                    navigation.bar.setLargeTitleAlpha(alpha)
+                }
+                navigation.bar.largeTitleAdditionalHeight = originY
+            } else {
+                let minY = statusBarMaxY - navigation.bar.frame.height
+                if originY + 49 > minY {
+                    navigation.bar.frame.origin.y = originY + 49
+                } else {
+                    navigation.bar.setTitleAlpha(0)
+                    navigation.bar.setTintAlpha(0)
+                    navigation.item.leftBarButtonItem?.customView?.alpha = 0
+                    navigation.bar.frame.origin.y = minY
+                }
+            }
         } else {
+            if #available(iOS 11.0, *) {
+                navigation.bar.setLargeTitleAlpha(1)
+            }
+            navigation.bar.setTitleAlpha(1)
+            navigation.bar.setTintAlpha(1)
+            navigation.item.leftBarButtonItem?.customView?.alpha = 1
+            navigation.bar.largeTitleAdditionalHeight = 0
             navigation.bar.frame.origin.y = statusBarMaxY
         }
     }

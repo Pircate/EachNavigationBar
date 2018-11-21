@@ -22,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="4c1-Ga-tNn">
-                    <rect key="frame" x="25" y="30" width="110" height="406.5"/>
+                    <rect key="frame" x="25" y="74" width="110" height="406.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="隐藏导航栏" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oeo-Un-9Bz">
                             <rect key="frame" x="0.0" y="0.0" width="110" height="31"/>
@@ -105,7 +105,7 @@
                     </subviews>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ADU-Jz-1Ud">
-                    <rect key="frame" x="175" y="30" width="120" height="403"/>
+                    <rect key="frame" x="175" y="74" width="120" height="403"/>
                     <subviews>
                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Iyl-EQ-dsJ">
                             <rect key="frame" x="0.0" y="0.0" width="122" height="31"/>
@@ -169,11 +169,14 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="4c1-Ga-tNn" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="ClZ-wd-LgW"/>
+                <constraint firstItem="4c1-Ga-tNn" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" priority="750" constant="10" id="ClZ-wd-LgW"/>
                 <constraint firstItem="4c1-Ga-tNn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="DRk-cg-sM3"/>
-                <constraint firstItem="ADU-Jz-1Ud" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="UJX-Ui-coB"/>
+                <constraint firstItem="ADU-Jz-1Ud" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" priority="750" constant="10" id="UJX-Ui-coB"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ADU-Jz-1Ud" secondAttribute="trailing" constant="25" id="fMb-oy-ZaH"/>
+                <constraint firstItem="4c1-Ga-tNn" firstAttribute="top" relation="greaterThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="74" id="nCA-h2-NVM"/>
+                <constraint firstItem="ADU-Jz-1Ud" firstAttribute="top" relation="greaterThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="74" id="xAg-GV-wyq"/>
             </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="-492" y="-0.44977511244377816"/>
         </view>

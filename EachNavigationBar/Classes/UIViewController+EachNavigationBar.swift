@@ -78,7 +78,7 @@ extension UIViewController {
         guard let navigationController = navigationController,
             navigationController.navigation.configuration.isEnabled else { return }
         
-        navigationController.navigationBar.barStyle = _navigationBar._barStyle
+        updateNavigationBarWhenViewWillAppear()
         bringNavigationBarToFront()
     }
     
@@ -147,6 +147,15 @@ extension UIViewController {
         if #available(iOS 11.0, *) {
             _navigationBar.prefersLargeTitles = configuration.prefersLargeTitles
             _navigationBar.largeTitleTextAttributes = configuration.largeTitleTextAttributes
+        }
+    }
+    
+    private func updateNavigationBarWhenViewWillAppear() {
+        guard let navigationBar = navigationController?.navigationBar else { return }
+        navigationBar.barStyle = _navigationBar._barStyle
+        if #available(iOS 11.0, *) {
+            navigationBar.prefersLargeTitles = _navigationBar.prefersLargeTitles
+            navigationBar.largeTitleTextAttributes = _navigationBar.largeTitleTextAttributes
         }
     }
     

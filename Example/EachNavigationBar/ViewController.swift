@@ -52,6 +52,7 @@ class ViewController: UIViewController {
         navigation.bar.isUnrestoredWhenViewWillLayoutSubviews = true
         
         if #available(iOS 11.0, *) {
+            navigation.bar.largeTitleTextAttributes = [.font: UIFont.systemFont(ofSize: 50)]
             navigation.bar.prefersLargeTitles = true
         }
     }

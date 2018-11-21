@@ -16,7 +16,7 @@ open class EachNavigationBar: UINavigationBar {
     
     @objc open var extraHeight: CGFloat = 0 {
         didSet {
-            updateAdditionalHeight()
+            frame.size.height = barHeight + extraHeight
         }
     }
     
@@ -62,22 +62,25 @@ open class EachNavigationBar: UINavigationBar {
         }
         set {
             super.prefersLargeTitles = newValue
-            if newValue {
-                viewController?.navigationController?.navigationBar.prefersLargeTitles = true
-            }
-            updateLargeTitleDisplayMode(for: prefersLargeTitles)
-            updateAdditionalHeight()
+            
+            updateLargeTitleDisplayMode(for: newValue)
         }
     }
     
-    var _barStyle: UIBarStyle {
-        return statusBarStyle == .default ? .default : .black
+    @available(iOS 11.0, *)
+    open override var largeTitleTextAttributes: [NSAttributedString.Key : Any]? {
+        get {
+            return super.largeTitleTextAttributes
+        }
+        set {
+            super.largeTitleTextAttributes = newValue
+            
+            viewController?.navigationController?.navigationBar.largeTitleTextAttributes = newValue
+        }
     }
     
     private lazy var _contentView: UIView? = {
-        subviews.filter {
-            String(describing: $0.classForCoder) == "_UINavigationBarContentView"
-        }.first
+        subviews.filter { String(describing: $0.classForCoder) == "_UINavigationBarContentView" }.first
     }()
     
     private var _alpha: CGFloat = 1
@@ -114,26 +117,24 @@ open class EachNavigationBar: UINavigationBar {
 
 extension EachNavigationBar {
     
-    var additionalHeight: CGFloat {
-        if #available(iOS 11.0, *) {
-            return extraHeight + largeTitleHeight
+    var _barStyle: UIBarStyle {
+        return statusBarStyle == .default ? .default : .black
+    }
+    
+    private var barHeight: CGFloat {
+        if let bar = viewController?.navigationController?.navigationBar {
+            return bar.frame.height
         } else {
-            return extraHeight
+            return CGFloat.NavigationBar.height
         }
     }
-    
-    @available(iOS 11.0, *)
-    private var largeTitleHeight: CGFloat {
-        guard prefersLargeTitles else { return 0 }
-        return CGFloat.LargeTitle.height(for: largeTitleTextAttributes)
-    }
-    
-    private func updateAdditionalHeight() {
-        frame.size.height =  CGFloat.NavigationBar.height + additionalHeight
-    }
+}
+
+extension EachNavigationBar {
     
     @available(iOS 11.0, *)
     private func updateLargeTitleDisplayMode(for prefersLargeTitles: Bool) {
+        viewController?.navigationController?.navigationBar.prefersLargeTitles = prefersLargeTitles
         viewController?.navigationItem.largeTitleDisplayMode = prefersLargeTitles ? .always : .never
     }
 }

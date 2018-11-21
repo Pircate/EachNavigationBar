@@ -28,10 +28,6 @@ extension UIViewController {
         _navigationBar.frame.size.height += _navigationBar.extraHeight
         _navigationBar.setNeedsLayout()
     }
-    
-    @objc public func adjustsScrollViewContentInset(_ scrollView: UIScrollView) {
-        _navigationBar.insertScrollView(forAdjustsContentInset: scrollView)
-    }
 }
 
 // MARK: - Swizzle

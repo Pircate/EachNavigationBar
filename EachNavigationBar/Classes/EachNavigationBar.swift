@@ -85,8 +85,6 @@ open class EachNavigationBar: UINavigationBar {
     
     private var _alpha: CGFloat = 1
     
-    private var scrollViewSet: Set<UIScrollView> = []
-    
     private weak var viewController: UIViewController?
     
     public convenience init(viewController: UIViewController) {
@@ -97,8 +95,6 @@ open class EachNavigationBar: UINavigationBar {
     
     open override func layoutSubviews() {
         super.layoutSubviews()
-        
-        scrollViewSet.forEach { adjustsScrollViewContentInset($0) }
         
         guard let background = subviews.first else { return }
         background.alpha = _alpha
@@ -136,33 +132,5 @@ extension EachNavigationBar {
     private func updateLargeTitleDisplayMode(for prefersLargeTitles: Bool) {
         viewController?.navigationController?.navigationBar.prefersLargeTitles = prefersLargeTitles
         viewController?.navigationItem.largeTitleDisplayMode = prefersLargeTitles ? .always : .never
-    }
-}
-
-extension EachNavigationBar {
-    
-    func insertScrollView(forAdjustsContentInset scrollView: UIScrollView) {
-        scrollViewSet.insert(scrollView)
-    }
-    
-    private func adjustsScrollViewContentInset(_ scrollView: UIScrollView) {
-        guard let viewController = viewController else { return }
-        let bar = viewController._navigationBar
-        let barMaxY = bar.isHidden ? bar.frame.minY : bar.frame.maxY
-        let scrollViewY = viewController.view.convert(scrollView.frame, to: viewController.view).minY
-        guard scrollViewY < barMaxY else { return }
-        let contentInsetTop: CGFloat
-        if #available(iOS 11.0, *) {
-            if scrollView.contentInsetAdjustmentBehavior == .never {
-                contentInsetTop = barMaxY - scrollViewY
-            } else {
-                let inset = max(scrollViewY, viewController.view.safeAreaInsets.top)
-                contentInsetTop = barMaxY - inset
-            }
-        } else {
-            contentInsetTop = barMaxY - scrollViewY
-        }
-        scrollView.contentInset.top = contentInsetTop
-        scrollView.scrollIndicatorInsets.top = contentInsetTop
     }
 }

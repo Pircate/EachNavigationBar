@@ -149,6 +149,7 @@ extension UIViewController {
     private func updateNavigationBarWhenViewWillAppear() {
         guard let navigationBar = navigationController?.navigationBar else { return }
         navigationBar.barStyle = _navigationBar._barStyle
+        navigationBar.isHidden = _navigationBar.isHidden
         if #available(iOS 11.0, *) {
             navigationBar.prefersLargeTitles = _navigationBar.prefersLargeTitles
             navigationBar.largeTitleTextAttributes = _navigationBar.largeTitleTextAttributes

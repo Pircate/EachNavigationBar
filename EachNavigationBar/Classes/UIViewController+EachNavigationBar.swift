@@ -21,13 +21,6 @@ extension UIViewController {
     @objc public var each_navigationItem: UINavigationItem {
         return _navigationItem
     }
-    
-    @objc public func adjustsNavigationBarPosition() {
-        guard let navigationBar = navigationController?.navigationBar else { return }
-        _navigationBar.frame = navigationBar.frame
-        _navigationBar.frame.size.height += _navigationBar.additionalHeight
-        _navigationBar.setNeedsLayout()
-    }
 }
 
 // MARK: - Swizzle
@@ -151,6 +144,7 @@ extension UIViewController {
         navigationBar.barStyle = _navigationBar._barStyle
         navigationBar.isHidden = _navigationBar.isHidden
         if #available(iOS 11.0, *) {
+            adjustsSafeAreaInsetsAfterIOS11()
             navigationBar.prefersLargeTitles = _navigationBar.prefersLargeTitles
             navigationBar.largeTitleTextAttributes = _navigationBar.largeTitleTextAttributes
         }
@@ -169,5 +163,20 @@ extension UIViewController {
     
     @objc private func each_backBarButtonAction() {
         navigationController?.popViewController(animated: true)
+    }
+}
+
+extension UIViewController {
+    
+    private func adjustsNavigationBarPosition() {
+        guard let navigationBar = navigationController?.navigationBar else { return }
+        _navigationBar.frame = navigationBar.frame
+        _navigationBar.frame.size.height += _navigationBar.additionalHeight
+        _navigationBar.setNeedsLayout()
+    }
+    
+    func adjustsSafeAreaInsetsAfterIOS11() {
+        guard #available(iOS 11.0, *) else { return }
+        additionalSafeAreaInsets.top = _navigationBar.isHidden ? -view.safeAreaInsets.top : 0
     }
 }

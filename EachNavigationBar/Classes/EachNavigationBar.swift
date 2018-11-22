@@ -33,6 +33,12 @@ open class EachNavigationBar: UINavigationBar {
         }
     }
     
+    open override var isHidden: Bool {
+        didSet {
+            viewController?.adjustsSafeAreaInsetsAfterIOS11()
+        }
+    }
+    
     open override var alpha: CGFloat {
         get {
             return super.alpha

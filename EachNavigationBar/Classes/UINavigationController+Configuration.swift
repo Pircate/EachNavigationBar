@@ -66,11 +66,18 @@ extension UINavigationController {
     }
     
     var _configuration: Configuration {
-        if let configuration = objc_getAssociatedObject(self, &AssociatedKeys.configuration) as? Configuration {
+        if let configuration = objc_getAssociatedObject(
+            self,
+            &AssociatedKeys.configuration)
+            as? Configuration {
             return configuration
         }
         let configuration = Configuration()
-        objc_setAssociatedObject(self, &AssociatedKeys.configuration, configuration, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        objc_setAssociatedObject(
+            self,
+            &AssociatedKeys.configuration,
+            configuration,
+            .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         return configuration
     }
 }

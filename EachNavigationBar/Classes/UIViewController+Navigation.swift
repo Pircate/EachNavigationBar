@@ -1,5 +1,5 @@
 //
-//  Navigation+UIViewController.swift
+//  UIViewController+Navigation.swift
 //  EachNavigationBar
 //
 //  Created by Pircate(gao497868860@gmail.com) on 2018/6/26.

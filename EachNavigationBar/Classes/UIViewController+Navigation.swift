@@ -16,3 +16,10 @@ public extension Navigation where Base: UIViewController {
         return base._navigationItem
     }
 }
+
+public extension Navigation where Base: UINavigationController {
+    
+    var configuration: Configuration {
+        return base._configuration
+    }
+}

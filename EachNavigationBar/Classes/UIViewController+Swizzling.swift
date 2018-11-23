@@ -6,28 +6,27 @@
 //  Copyright © 2018年 Pircate. All rights reserved.
 //
 
-extension UIViewController {
-    
-    private static func selector_exchangeImplementations(_ sel1: Selector, _ sel2: Selector) {
-        if let originalMethod = class_getInstanceMethod(UIViewController.self, sel1),
-            let swizzledMethod = class_getInstanceMethod(UIViewController.self, sel2) {
-            method_exchangeImplementations(originalMethod, swizzledMethod)
-        }
+infix operator <=>
+
+private func <=>(left: Selector, right: Selector) {
+    if let originalMethod = class_getInstanceMethod(UIViewController.self, left),
+        let swizzledMethod = class_getInstanceMethod(UIViewController.self, right) {
+        method_exchangeImplementations(originalMethod, swizzledMethod)
     }
+}
+
+extension UIViewController {
     
     @available(swift, obsoleted: 4.2, message: "Only for Objective-C call.")
     @objc public static func each_methodSwizzling() {
-        method_swizzling
+        methodSwizzling
     }
     
-    private static let method_swizzling: Void = {
-        selector_exchangeImplementations(#selector(viewDidLoad), #selector(each_viewDidLoad))
-        selector_exchangeImplementations(
-            #selector(viewWillAppear(_:)),
-            #selector(each_viewWillAppear(_:)))
-        selector_exchangeImplementations(
-            #selector(setNeedsStatusBarAppearanceUpdate),
-            #selector(each_setNeedsStatusBarAppearanceUpdate))
+    private static let methodSwizzling: Void = {
+        #selector(viewDidLoad) <=> #selector(each_viewDidLoad)
+        #selector(viewWillAppear(_:)) <=> #selector(each_viewWillAppear(_:))
+        #selector(setNeedsStatusBarAppearanceUpdate)
+            <=> #selector(each_setNeedsStatusBarAppearanceUpdate)
     }()
     
     @objc private func each_viewDidLoad() {

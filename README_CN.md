@@ -126,8 +126,13 @@ navigation.bar.statusBarStyle = .lightContent
 // 设置返回按钮
 navigation.bar.backBarButtonItem = .init(style: .image("Back"), tintColor: .red)
 
-// 返回按钮点击事件回调
-navigation.bar.didTapBackBarButtonItem = {
+// 返回事件之前回调
+navigation.bar.backBarButtonItem.willBack = {
+    // do something
+}
+
+// 返回事件之后回调
+navigation.bar.backBarButtonItem.didBack = {
     // do something
 }
 

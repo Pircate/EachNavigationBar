@@ -42,10 +42,11 @@ class ViewController: UIViewController {
             .font: UIFont.systemFont(ofSize: 24)]
         
         navigation.bar.backBarButtonItem = .init(style: .title("Back"), tintColor: .red)
-        navigation.bar.didTapBackBarButtonItem = { [weak self] in
-            guard let `self` = self else { return }
-            debugPrint("didTapBackBarButtonItem")
-            self.navigationController?.popViewController(animated: true)
+        navigation.bar.backBarButtonItem.willBack = {
+            debugPrint("willBack")
+        }
+        navigation.bar.backBarButtonItem.didBack = {
+            debugPrint("didBack")
         }
         
         // if you want change navigation bar position

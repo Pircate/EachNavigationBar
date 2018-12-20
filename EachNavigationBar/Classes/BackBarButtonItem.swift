@@ -12,6 +12,10 @@ public struct BackBarButtonItem {
     
     var tintColor: UIColor?
     
+    public var willBack: () -> Void = {}
+    
+    public var didBack: () -> Void = {}
+    
     public enum Style {
         case none
         case title(String?)

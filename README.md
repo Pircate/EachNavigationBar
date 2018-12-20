@@ -123,8 +123,13 @@ navigation.bar.statusBarStyle = .lightContent
 // set back bar button item
 navigation.bar.backBarButtonItem = .init(style: .title("Back"), tintColor: .red)
 
-// back bar button item action
-navigation.bar.didTapBackBarButtonItem = {
+// handler before back
+navigation.bar.backBarButtonItem.willBack = {
+    // do something
+}
+
+// handler after back
+navigation.bar.backBarButtonItem.didBack = {
     // do something
 }
 

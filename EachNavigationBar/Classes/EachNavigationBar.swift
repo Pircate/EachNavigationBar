@@ -34,6 +34,13 @@ open class EachNavigationBar: UINavigationBar {
         }
     }
     
+    open var backBarButtonItem: BackBarButtonItem = .init() {
+        didSet {
+            viewController?._navigationItem.leftBarButtonItem = backBarButtonItem
+                .makeBarButtonItem(self, action: #selector(backBarButtonItemAction))
+        }
+    }
+    
     open override var isHidden: Bool {
         didSet {
             viewController?.adjustsSafeAreaInsetsAfterIOS11()
@@ -104,6 +111,10 @@ open class EachNavigationBar: UINavigationBar {
         super.layoutSubviews()
         
         updateSubviews()
+    }
+    
+    @objc private func backBarButtonItemAction() {
+        viewController?.navigationController?.popViewController(animated: true)
     }
 }
 

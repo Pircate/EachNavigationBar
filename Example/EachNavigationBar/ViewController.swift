@@ -41,12 +41,7 @@ class ViewController: UIViewController {
             .foregroundColor: UIColor.blue,
             .font: UIFont.systemFont(ofSize: 24)]
         
-        let backButton = UIButton(type: .custom)
-        backButton.setTitle("Back", for: .normal)
-        backButton.setTitleColor(UIColor.red, for: .normal)
-        backButton.sizeToFit()
-        backButton.addTarget(self, action: #selector(backBarButtonAction), for: .touchUpInside)
-        navigation.item.leftBarButtonItem = UIBarButtonItem(customView: backButton)
+        navigation.bar.backBarButtonItem = .init(style: .title("Back"), tintColor: .red)
         
         // if you want change navigation bar position
         navigation.bar.isUnrestoredWhenViewWillLayoutSubviews = true
@@ -57,10 +52,6 @@ class ViewController: UIViewController {
                 .foregroundColor: UIColor.orange]
             navigation.bar.prefersLargeTitles = true
         }
-    }
-    
-    @objc private func backBarButtonAction() {
-        navigationController?.popViewController(animated: true)
     }
     
     @objc private func rightBarButtonAction() {

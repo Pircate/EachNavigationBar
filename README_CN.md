@@ -117,11 +117,14 @@ navigation.item.leftBarButtonItem?.tintColor = navigation.item.leftBarButtonItem
 // 移除毛玻璃效果
 navigation.bar.isTranslucent = false
 
-// 隐藏底部黑线
+// 隐藏底部阴影
 navigation.bar.isShadowHidden = true
 
 // 设置状态栏文字颜色
 navigation.bar.statusBarStyle = .lightContent
+
+// 设置返回按钮
+navigation.bar.backBarButtonItem = .init(style: .image("Back"), tintColor: .red)
 
 // 如果想自定义导航栏位置，请将下面属性设为 true
 navinavigation.bar.isUnrestoredWhenViewWillLayoutSubviews = true

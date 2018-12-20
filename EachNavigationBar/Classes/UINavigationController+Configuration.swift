@@ -61,28 +61,6 @@ public class Configuration: NSObject {
     }
 }
 
-extension Configuration {
-    
-    public struct BackBarButtonItem {
-        
-        var style: Style = .none
-        
-        var tintColor: UIColor?
-        
-        public enum Style {
-            case none
-            case title(String?)
-            case image(UIImage?)
-            case custom(UIButton)
-        }
-        
-        public init(style: Style = .none, tintColor: UIColor? = nil) {
-            self.style = style
-            self.tintColor = tintColor
-        }
-    }
-}
-
 extension UINavigationController {
     
     @available(swift, obsoleted: 4.2, message: "Only for Objective-C call.")

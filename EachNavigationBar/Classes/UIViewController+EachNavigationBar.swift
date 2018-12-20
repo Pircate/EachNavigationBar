@@ -83,23 +83,11 @@ extension UIViewController {
             navigationController.viewControllers.count > 1 else { return }
         
         let backBarButtonItem = navigationController._configuration.backBarButtonItem
-        switch backBarButtonItem.style {
-        case .none:
-            break
-        case .title(let title):
-            _navigationItem.leftBarButtonItem = UIBarButtonItem(title: title, style: .plain, target: self, action: #selector(each_backBarButtonAction))
-            _navigationItem.leftBarButtonItem?.tintColor = backBarButtonItem.tintColor
-        case .image(let image):
-            _navigationItem.leftBarButtonItem = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(each_backBarButtonAction))
-            _navigationItem.leftBarButtonItem?.tintColor = backBarButtonItem.tintColor
-        case .custom(let customView):
-            customView.addTarget(self, action: #selector(each_backBarButtonAction), for: .touchUpInside)
-            customView.tintColor = backBarButtonItem.tintColor
-            _navigationItem.leftBarButtonItem = UIBarButtonItem(customView: customView)
-        }
+            .makeBarButtonItem(self, action: #selector(each_backBarButtonItemAction))
+        _navigationItem.leftBarButtonItem = backBarButtonItem
     }
     
-    @objc private func each_backBarButtonAction() {
+    @objc private func each_backBarButtonItemAction() {
         navigationController?.popViewController(animated: true)
     }
 }

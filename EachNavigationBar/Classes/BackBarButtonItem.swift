@@ -1,0 +1,53 @@
+// 
+//  BackBarButtonItem.swift
+//  EachNavigationBar
+//
+//  Created by Pircate(gao497868860@gmail.com) on 2018/12/20
+//  
+//
+
+public struct BackBarButtonItem {
+    
+    var style: Style = .none
+    
+    var tintColor: UIColor?
+    
+    public enum Style {
+        case none
+        case title(String?)
+        case image(UIImage?)
+        case custom(UIButton)
+    }
+    
+    public init(style: Style = .none, tintColor: UIColor? = nil) {
+        self.style = style
+        self.tintColor = tintColor
+    }
+    
+    func makeBarButtonItem(_ target: Any, action: Selector) -> UIBarButtonItem? {
+        switch style {
+        case .none:
+            return nil
+        case .title(let title):
+            let backBarButtonItem = UIBarButtonItem(
+                title: title,
+                style: .plain,
+                target: target,
+                action: action)
+            backBarButtonItem.tintColor = tintColor
+            return backBarButtonItem
+        case .image(let image):
+            let backBarButtonItem = UIBarButtonItem(
+                image: image,
+                style: .plain,
+                target: target,
+                action: action)
+            backBarButtonItem.tintColor = tintColor
+            return backBarButtonItem
+        case .custom(let customView):
+            customView.addTarget(target, action: action, for: .touchUpInside)
+            customView.tintColor = tintColor
+            return UIBarButtonItem(customView: customView)
+        }
+    }
+}

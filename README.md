@@ -114,11 +114,14 @@ navigation.item.leftBarButtonItem?.tintColor = navigation.item.leftBarButtonItem
 // remove blur effect
 navigation.bar.isTranslucent = false
 
-// hide bottom black line
+// hide shadow
 navigation.bar.isShadowHidden = true
 
 // set status bar style
 navigation.bar.statusBarStyle = .lightContent
+
+// set back bar button item
+navigation.bar.backBarButtonItem = .init(style: .title("Back"), tintColor: .red)
 
 // if you want change navigation bar position
 navigation.bar.isUnrestoredWhenViewWillLayoutSubviews = true

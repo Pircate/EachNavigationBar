@@ -3,7 +3,7 @@
 //  EachNavigationBar
 //
 //  Created by Pircate(gao497868860@gmail.com) on 2018/12/20
-//  
+//  Copyright © 2018年 Pircate. All rights reserved.
 //
 
 public struct BackBarButtonItem {

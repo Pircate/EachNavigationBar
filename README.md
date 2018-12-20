@@ -123,6 +123,11 @@ navigation.bar.statusBarStyle = .lightContent
 // set back bar button item
 navigation.bar.backBarButtonItem = .init(style: .title("Back"), tintColor: .red)
 
+// back bar button item action
+navigation.bar.didTapBackBarButtonItem = {
+    // do something
+}
+
 // if you want change navigation bar position
 navigation.bar.isUnrestoredWhenViewWillLayoutSubviews = true
 

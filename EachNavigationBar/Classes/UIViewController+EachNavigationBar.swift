@@ -62,7 +62,9 @@ extension UIViewController {
         guard let navigationController = navigationController else { return }
         navigationController.sendNavigationBarToBack()
         _navigationBar.setup(with: navigationController._configuration)
-        setupBackBarButtonItem()
+        if navigationController.viewControllers.count > 1 {
+            _navigationBar.backBarButtonItem = navigationController._configuration.backBarButtonItem
+        }
         view.addSubview(_navigationBar)
     }
     
@@ -76,19 +78,6 @@ extension UIViewController {
             navigationBar.largeTitleTextAttributes = _navigationBar.largeTitleTextAttributes
         }
         view.bringSubviewToFront(_navigationBar)
-    }
-    
-    private func setupBackBarButtonItem() {
-        guard let navigationController = navigationController,
-            navigationController.viewControllers.count > 1 else { return }
-        
-        let backBarButtonItem = navigationController._configuration.backBarButtonItem
-            .makeBarButtonItem(self, action: #selector(each_backBarButtonItemAction))
-        _navigationItem.leftBarButtonItem = backBarButtonItem
-    }
-    
-    @objc private func each_backBarButtonItemAction() {
-        navigationController?.popViewController(animated: true)
     }
 }
 

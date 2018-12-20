@@ -126,6 +126,11 @@ navigation.bar.statusBarStyle = .lightContent
 // 设置返回按钮
 navigation.bar.backBarButtonItem = .init(style: .image("Back"), tintColor: .red)
 
+// 返回按钮点击事件回调
+navigation.bar.didTapBackBarButtonItem = {
+    // do something
+}
+
 // 如果想自定义导航栏位置，请将下面属性设为 true
 navinavigation.bar.isUnrestoredWhenViewWillLayoutSubviews = true
 

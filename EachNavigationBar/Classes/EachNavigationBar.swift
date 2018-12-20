@@ -41,6 +41,8 @@ open class EachNavigationBar: UINavigationBar {
         }
     }
     
+    open var didTapBackBarButtonItem: () -> Void = {}
+    
     open override var isHidden: Bool {
         didSet {
             viewController?.adjustsSafeAreaInsetsAfterIOS11()
@@ -104,6 +106,9 @@ open class EachNavigationBar: UINavigationBar {
     public convenience init(viewController: UIViewController) {
         self.init()
         self.viewController = viewController
+        self.didTapBackBarButtonItem = {
+            viewController.navigationController?.popViewController(animated: true)
+        }
         setItems([viewController._navigationItem], animated: false)
     }
     
@@ -114,7 +119,7 @@ open class EachNavigationBar: UINavigationBar {
     }
     
     @objc private func backBarButtonItemAction() {
-        viewController?.navigationController?.popViewController(animated: true)
+        didTapBackBarButtonItem()
     }
 }
 

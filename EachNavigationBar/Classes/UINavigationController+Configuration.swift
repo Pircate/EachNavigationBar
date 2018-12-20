@@ -36,7 +36,10 @@ public class Configuration: NSObject {
     
     /// Image for leftBarButtonItem(not backBarButtonItem).
     /// If you don't set, there will be no back button by default.
+    @available(swift, obsoleted: 4.2, message: "Only for Objective-C call.")
     @objc public var backImage: UIImage?
+    
+    public var backBarButtonItem: BackBarButtonItem = .init()
     
     @objc public var prefersLargeTitles: Bool = false
     
@@ -55,6 +58,28 @@ public class Configuration: NSObject {
         self.backgroundImage = backgroundImage
         self.barPosition = barPosition
         self.barMetrics = barMetrics
+    }
+}
+
+extension Configuration {
+    
+    public struct BackBarButtonItem {
+        
+        var style: Style = .none
+        
+        var tintColor: UIColor?
+        
+        public enum Style {
+            case none
+            case title(String?)
+            case image(UIImage?)
+            case custom(UIButton)
+        }
+        
+        public init(style: Style = .none, tintColor: UIColor? = nil) {
+            self.style = style
+            self.tintColor = tintColor
+        }
     }
 }
 

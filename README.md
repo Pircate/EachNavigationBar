@@ -74,7 +74,7 @@ Swift
 nav.navigation.configuration.titleTextAttributes = [.foregroundColor: UIColor.blue]
 nav.navigation.configuration.barTintColor = UIColor.red
 nav.navigation.configuration.shadowImage = UIImage(named: "shadow")
-nav.navigation.configuration.backImage = UIImage(named: "back")
+nav.navigation.configuration.backBarButtonItem = .init(style: .image(UIImage(named: "back")), tintColor: UIColor.red)
 nav.navigation.configuration.setBackgroundImage(UIImage(named: "nav"), for: .any, barMetrics: .default)
 ```
 

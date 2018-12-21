@@ -74,18 +74,27 @@ nav.global_configuration.isEnabled = YES;
 Swift
 ``` swift
 nav.navigation.configuration.titleTextAttributes = [.foregroundColor: UIColor.blue]
+
 nav.navigation.configuration.barTintColor = UIColor.red
+
 nav.navigation.configuration.shadowImage = UIImage(named: "shadow")
+
 nav.navigation.configuration.backBarButtonItem = .init(style: .image(UIImage(named: "back")), tintColor: UIColor.red)
+
 nav.navigation.configuration.setBackgroundImage(UIImage(named: "nav"), for: .any, barMetrics: .default)
 ```
 
 Objective-C
 ``` ObjC
 nav.global_configuration.titleTextAttributes = @{NSForegroundColorAttributeName: UIColor.blueColor};
+
 nav.global_configuration.barTintColor = UIColor.redColor;
+
 nav.global_configuration.shadowImage = [UIImage imageNamed:@"shadow"];
-nav.global_configuration.backImage = [UIImage imageNamed:@"back"];
+
+UIBarButtonItem *backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
+[nav.global_configuration setBackBarButtonItem:backBarButtonItem];
+
 [nav.global_configuration setBackgroundImage:[UIImage imageNamed:@"nav"] for:UIBarPositionAny barMetrics:UIBarMetricsDefault];
 ```
 

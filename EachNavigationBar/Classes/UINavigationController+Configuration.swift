@@ -34,11 +34,6 @@ public class Configuration: NSObject {
     /// Extra height for the navigation bar.
     @objc public var extraHeight: CGFloat = 0
     
-    /// Image for leftBarButtonItem(not backBarButtonItem).
-    /// If you don't set, there will be no back button by default.
-    @available(swift, obsoleted: 4.2, message: "Only for Objective-C call.")
-    @objc public var backImage: UIImage?
-    
     public var backBarButtonItem: BackBarButtonItem = .init()
     
     @objc public var prefersLargeTitles: Bool = false
@@ -58,6 +53,16 @@ public class Configuration: NSObject {
         self.backgroundImage = backgroundImage
         self.barPosition = barPosition
         self.barMetrics = barMetrics
+    }
+    
+    var isObjc: Bool = false
+    
+    var _backBarButtonItem: UIBarButtonItem?
+    
+    @available(swift, obsoleted: 4.2, message: "Only for Objective-C call.")
+    @objc public func setBackBarButtonItem(_ backBarButtonItem: UIBarButtonItem) {
+        self.isObjc = true
+        self._backBarButtonItem = backBarButtonItem
     }
 }
 

@@ -168,4 +168,14 @@ extension EachNavigationBar {
         superNavigationBar?.prefersLargeTitles = prefersLargeTitles
         viewController?.navigationItem.largeTitleDisplayMode = prefersLargeTitles ? .always : .never
     }
+    
+    func setBackBarButtonItem(_ backBarButtonItem: UIBarButtonItem?) {
+        viewController?._navigationItem.leftBarButtonItem = backBarButtonItem?.duplicate()
+        guard let button = viewController?._navigationItem.leftBarButtonItem?.customView as? UIButton else {
+            viewController?._navigationItem.leftBarButtonItem?.target = self
+            viewController?._navigationItem.leftBarButtonItem?.action = #selector(backBarButtonItemAction)
+            return
+        }
+        button.addTarget(self, action: #selector(backBarButtonItemAction), for: .touchUpInside)
+    }
 }

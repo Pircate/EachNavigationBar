@@ -61,11 +61,19 @@ extension UIViewController {
     func setupNavigationBarWhenViewDidLoad() {
         guard let navigationController = navigationController else { return }
         navigationController.sendNavigationBarToBack()
-        _navigationBar.setup(with: navigationController._configuration)
+        
+        let configuration = navigationController._configuration
+        _navigationBar.setup(with: configuration)
+        
         if navigationController.viewControllers.count > 1 {
-            navigationController._configuration.backBarButtonItem.needsDuplicate = true
-            _navigationBar.backBarButtonItem = navigationController._configuration.backBarButtonItem
+            if configuration.isObjc {
+                _navigationBar.setBackBarButtonItem(configuration._backBarButtonItem)
+            } else {
+                configuration.backBarButtonItem.needsDuplicate = true
+                _navigationBar.backBarButtonItem = configuration.backBarButtonItem
+            }
         }
+        
         view.addSubview(_navigationBar)
     }
     

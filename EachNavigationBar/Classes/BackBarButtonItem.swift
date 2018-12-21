@@ -63,16 +63,3 @@ public struct BackBarButtonItem {
         }
     }
 }
-
-protocol Duplicatable {
-    func duplicate() -> Self?
-}
-
-extension Duplicatable where Self: UIView {
-    func duplicate() -> Self? {
-        let data = NSKeyedArchiver.archivedData(withRootObject: self)
-        return NSKeyedUnarchiver.unarchiveObject(with: data) as? Self
-    }
-}
-
-extension UIView: Duplicatable {}

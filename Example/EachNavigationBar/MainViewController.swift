@@ -22,7 +22,11 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
 
         navigation.item.title = "EachNavigationBar"
-        navigation.item.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(rightBarButtonAction))
+        navigation.item.rightBarButtonItem = UIBarButtonItem(
+            title: "Next",
+            style: .plain,
+            target: self,
+            action: #selector(rightBarButtonAction))
     }
     
     @objc private func rightBarButtonAction() {

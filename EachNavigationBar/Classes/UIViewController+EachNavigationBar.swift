@@ -63,6 +63,7 @@ extension UIViewController {
         navigationController.sendNavigationBarToBack()
         _navigationBar.setup(with: navigationController._configuration)
         if navigationController.viewControllers.count > 1 {
+            navigationController._configuration.backBarButtonItem.needsDuplicate = true
             _navigationBar.backBarButtonItem = navigationController._configuration.backBarButtonItem
         }
         view.addSubview(_navigationBar)

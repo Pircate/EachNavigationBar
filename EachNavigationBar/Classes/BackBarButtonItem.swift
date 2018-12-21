@@ -12,6 +12,8 @@ public struct BackBarButtonItem {
     
     var tintColor: UIColor?
     
+    var needsDuplicate: Bool = false
+    
     public var willBack: () -> Void = {}
     
     public var didBack: () -> Void = {}
@@ -48,10 +50,29 @@ public struct BackBarButtonItem {
                 action: action)
             backBarButtonItem.tintColor = tintColor
             return backBarButtonItem
-        case .custom(let customView):
+        case .custom(let button):
+            guard needsDuplicate else {
+                button.addTarget(target, action: action, for: .touchUpInside)
+                button.tintColor = tintColor
+                return UIBarButtonItem(customView: button)
+            }
+            guard let customView = button.duplicate() else { return nil }
             customView.addTarget(target, action: action, for: .touchUpInside)
             customView.tintColor = tintColor
             return UIBarButtonItem(customView: customView)
         }
     }
 }
+
+protocol Duplicatable {
+    func duplicate() -> Self?
+}
+
+extension Duplicatable where Self: UIView {
+    func duplicate() -> Self? {
+        let data = NSKeyedArchiver.archivedData(withRootObject: self)
+        return NSKeyedUnarchiver.unarchiveObject(with: data) as? Self
+    }
+}
+
+extension UIView: Duplicatable {}

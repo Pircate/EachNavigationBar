@@ -23,7 +23,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // config
         nav.navigation.configuration.isEnabled = true
         nav.navigation.configuration.barTintColor = UIColor.yellow
-        nav.navigation.configuration.backBarButtonItem = .init(style: .image(UIImage(named: "back")), tintColor: UIColor.blue)
+        let button = UIButton(type: .custom)
+        button.setImage(UIImage(named: "back"), for: .normal)
+        button.frame = CGRect(x: 0, y: 0, width: 20, height: 44)
+        nav.navigation.configuration.backBarButtonItem = .init(
+            style: .custom(button),
+            tintColor: UIColor.blue)
         window?.rootViewController = nav
         window?.makeKeyAndVisible()
         return true

@@ -35,7 +35,10 @@ class ViewController: UIViewController {
         navigation.bar.statusBarStyle = .lightContent
         navigation.bar.setBackgroundImage(#imageLiteral(resourceName: "nav"), for: .default)
         
-        navigation.item.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(rightBarButtonAction))
+        navigation.item.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .done,
+            target: self,
+            action: #selector(rightBarButtonAction))
         navigation.item.title = "Home"
         navigation.bar.titleTextAttributes = [
             .foregroundColor: UIColor.blue,

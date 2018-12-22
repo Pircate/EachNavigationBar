@@ -63,7 +63,7 @@ nav.navigation.configuration.isEnabled = true
 Objective-C
 ``` ObjC
 UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
-nav.global_configuration.isEnabled = YES;
+nav.navigation_configuration.isEnabled = YES;
 ```
 
 ###  设置

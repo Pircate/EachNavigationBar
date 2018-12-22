@@ -45,6 +45,9 @@ public class Configuration: NSObject {
     var barMetrics: UIBarMetrics = .default
     
     var barPosition: UIBarPosition = .any
+}
+
+extension Configuration {
     
     @objc public func setBackgroundImage(
         _ backgroundImage: UIImage?,
@@ -53,24 +56,5 @@ public class Configuration: NSObject {
         self.backgroundImage = backgroundImage
         self.barPosition = barPosition
         self.barMetrics = barMetrics
-    }
-}
-
-extension UINavigationController {
-    
-    var _configuration: Configuration {
-        if let configuration = objc_getAssociatedObject(
-            self,
-            &AssociatedKeys.configuration)
-            as? Configuration {
-            return configuration
-        }
-        let configuration = Configuration()
-        objc_setAssociatedObject(
-            self,
-            &AssociatedKeys.configuration,
-            configuration,
-            .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        return configuration
     }
 }

@@ -30,8 +30,8 @@ extension UIViewController {
 extension Configuration {
     
     @available(swift, obsoleted: 4.2, message: "Only for Objective-C call.")
-    @objc public func setBackBarButtonItem(_ backBarButtonItem: UIBarButtonItem) {
-        guard let backBarButtonItem = backBarButtonItem.makeBackBarButtonItem() else { return }
+    @objc public func setBackBarButtonItem(_ barButtonItem: UIBarButtonItem) {
+        guard let backBarButtonItem = barButtonItem.makeBackBarButtonItem() else { return }
         self.backBarButtonItem = backBarButtonItem
     }
 }

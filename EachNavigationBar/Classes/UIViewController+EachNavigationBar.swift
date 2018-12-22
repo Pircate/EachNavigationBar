@@ -7,42 +7,9 @@
 //
 
 import UIKit
-import ObjectiveC
 
 extension UIViewController {
-    
-    var _navigationBar: EachNavigationBar {
-        if let bar = objc_getAssociatedObject(
-            self,
-            &AssociatedKeys.navigationBar)
-            as? EachNavigationBar {
-            return bar
-        }
-        let bar = EachNavigationBar(viewController: self)
-        objc_setAssociatedObject(
-            self,
-            &AssociatedKeys.navigationBar,
-            bar,
-            .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        return bar
-    }
-    
-    var _navigationItem: UINavigationItem {
-        if let item = objc_getAssociatedObject(
-            self,
-            &AssociatedKeys.navigationItem)
-            as? UINavigationItem {
-            return item
-        }
-        let item = UINavigationItem()
-        objc_setAssociatedObject(
-            self,
-            &AssociatedKeys.navigationItem,
-            item,
-            .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        return item
-    }
-    
+
     func setupNavigationBarWhenViewDidLoad() {
         guard let navigationController = navigationController else { return }
         navigationController.sendNavigationBarToBack()
@@ -85,5 +52,29 @@ extension UIViewController {
         additionalSafeAreaInsets.top = _navigationBar.isHidden
             ? -view.safeAreaInsets.top
             : _navigationBar.additionalHeight
+    }
+}
+
+private extension EachNavigationBar {
+    
+    func setup(with configuration: Configuration) {
+        isHidden = configuration.isHidden
+        alpha = configuration.alpha
+        barTintColor = configuration.barTintColor
+        shadowImage = configuration.shadowImage
+        isShadowHidden = configuration.isShadowHidden
+        titleTextAttributes = configuration.titleTextAttributes
+        setBackgroundImage(
+            configuration.backgroundImage,
+            for: configuration.barPosition,
+            barMetrics: configuration.barMetrics)
+        isTranslucent = configuration.isTranslucent
+        barStyle = configuration.barStyle
+        statusBarStyle = configuration.statusBarStyle
+        extraHeight = configuration.extraHeight
+        if #available(iOS 11.0, *) {
+            prefersLargeTitles = configuration.prefersLargeTitles
+            largeTitleTextAttributes = configuration.largeTitleTextAttributes
+        }
     }
 }

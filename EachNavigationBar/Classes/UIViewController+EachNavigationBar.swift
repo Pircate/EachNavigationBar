@@ -13,12 +13,12 @@ import ObjectiveC
 extension UIViewController {
     
     @available(swift, obsoleted: 4.2, message: "Only for Objective-C call.")
-    @objc public var each_navigationBar: EachNavigationBar {
+    @objc public var navigation_bar: EachNavigationBar {
         return _navigationBar
     }
     
     @available(swift, obsoleted: 4.2, message: "Only for Objective-C call.")
-    @objc public var each_navigationItem: UINavigationItem {
+    @objc public var navigation_item: UINavigationItem {
         return _navigationItem
     }
 }

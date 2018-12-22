@@ -12,7 +12,7 @@
 @implementation UIViewController (Load)
 
 + (void)load {
-    [self each_methodSwizzling];
+    [self navigation_methodSwizzling];
 }
 
 @end

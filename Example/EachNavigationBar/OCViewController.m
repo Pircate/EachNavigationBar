@@ -17,8 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.each_navigationBar.barTintColor = UIColor.redColor;
-    self.each_navigationItem.title = @"OC";
+    self.navigation_bar.barTintColor = UIColor.redColor;
+    self.navigation_item.title = @"OC";
 }
 
 @end

@@ -18,7 +18,7 @@ private func <=>(left: Selector, right: Selector) {
 extension UIViewController {
     
     @available(swift, obsoleted: 4.2, message: "Only for Objective-C call.")
-    @objc public static func each_methodSwizzling() {
+    @objc public static func navigation_methodSwizzling() {
         methodSwizzling
     }
     

@@ -9,21 +9,6 @@
 import UIKit
 import ObjectiveC
 
-// MARK: - Public
-extension UIViewController {
-    
-    @available(swift, obsoleted: 4.2, message: "Only for Objective-C call.")
-    @objc public var navigation_bar: EachNavigationBar {
-        return _navigationBar
-    }
-    
-    @available(swift, obsoleted: 4.2, message: "Only for Objective-C call.")
-    @objc public var navigation_item: UINavigationItem {
-        return _navigationItem
-    }
-}
-
-// MARK: - Setup navigation bar
 extension UIViewController {
     
     var _navigationBar: EachNavigationBar {
@@ -66,12 +51,8 @@ extension UIViewController {
         _navigationBar.setup(with: configuration)
         
         if navigationController.viewControllers.count > 1 {
-            if configuration.isObjc {
-                _navigationBar.setBackBarButtonItem(configuration._backBarButtonItem)
-            } else {
-                configuration.backBarButtonItem.needsDuplicate = true
-                _navigationBar.backBarButtonItem = configuration.backBarButtonItem
-            }
+            configuration.backBarButtonItem.needsDuplicate = true
+            _navigationBar.backBarButtonItem = configuration.backBarButtonItem
         }
         
         view.addSubview(_navigationBar)

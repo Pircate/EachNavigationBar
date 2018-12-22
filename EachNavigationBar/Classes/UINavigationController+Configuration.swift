@@ -54,24 +54,9 @@ public class Configuration: NSObject {
         self.barPosition = barPosition
         self.barMetrics = barMetrics
     }
-    
-    var isObjc: Bool = false
-    
-    var _backBarButtonItem: UIBarButtonItem?
-    
-    @available(swift, obsoleted: 4.2, message: "Only for Objective-C call.")
-    @objc public func setBackBarButtonItem(_ backBarButtonItem: UIBarButtonItem) {
-        self.isObjc = true
-        self._backBarButtonItem = backBarButtonItem
-    }
 }
 
 extension UINavigationController {
-    
-    @available(swift, obsoleted: 4.2, message: "Only for Objective-C call.")
-    @objc public var navigation_configuration: Configuration {
-        return _configuration
-    }
     
     var _configuration: Configuration {
         if let configuration = objc_getAssociatedObject(

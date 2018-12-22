@@ -86,16 +86,16 @@ nav.navigation.configuration.setBackgroundImage(UIImage(named: "nav"), for: .any
 
 Objective-C
 ``` ObjC
-nav.global_configuration.titleTextAttributes = @{NSForegroundColorAttributeName: UIColor.blueColor};
+nav.navigation_configuration.titleTextAttributes = @{NSForegroundColorAttributeName: UIColor.blueColor};
 
-nav.global_configuration.barTintColor = UIColor.redColor;
+nav.navigation_configuration.barTintColor = UIColor.redColor;
 
-nav.global_configuration.shadowImage = [UIImage imageNamed:@"shadow"];
+nav.navigation_configuration.shadowImage = [UIImage imageNamed:@"shadow"];
 
 UIBarButtonItem *backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
-[nav.global_configuration setBackBarButtonItem:backBarButtonItem];
+[nav.navigation_configuration setBackBarButtonItem:backBarButtonItem];
 
-[nav.global_configuration setBackgroundImage:[UIImage imageNamed:@"nav"] for:UIBarPositionAny barMetrics:UIBarMetricsDefault];
+[nav.navigation_configuration setBackgroundImage:[UIImage imageNamed:@"nav"] for:UIBarPositionAny barMetrics:UIBarMetricsDefault];
 ```
 
 #### 每个控制器设置
@@ -157,8 +157,8 @@ navigation.item.leftBarButtonItem?.action = #selector(backBarButtonAction)
 
 Objective-C
 ``` ObjC
-self.each_navigationBar.xxx
-self.each_navigationItem.xxx
+self.navigation_bar.xxx
+self.navigation_item.xxx
 ```
 
 ##### 大标题设置(iOS 11.0+)

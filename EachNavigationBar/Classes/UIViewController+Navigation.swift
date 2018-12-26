@@ -9,10 +9,12 @@
 public extension Navigation where Base: UIViewController {
     
     var bar: EachNavigationBar {
+        assert(!(base is UINavigationController), "UINavigationController can't use this property.")
         return base._navigationBar
     }
     
     var item: UINavigationItem {
+        assert(!(base is UINavigationController), "UINavigationController can't use this property.")
         return base._navigationItem
     }
 }

@@ -34,7 +34,7 @@ public class Configuration: NSObject {
     /// Extra height for the navigation bar.
     @objc public var extraHeight: CGFloat = 0
     
-    public var backBarButtonItem: BackBarButtonItem = .init()
+    public var backBarButtonItem: BackBarButtonItem = .init(style: .none)
     
     @objc public var prefersLargeTitles: Bool = false
     

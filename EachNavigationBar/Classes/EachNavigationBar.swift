@@ -34,7 +34,7 @@ open class EachNavigationBar: UINavigationBar {
         }
     }
     
-    open var backBarButtonItem: BackBarButtonItem = .init() {
+    open var backBarButtonItem: BackBarButtonItem = .init(style: .none) {
         didSet {
             viewController?._navigationItem.leftBarButtonItem = backBarButtonItem
                 .makeBarButtonItem(self, action: #selector(backBarButtonItemAction))

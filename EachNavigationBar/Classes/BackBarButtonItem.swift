@@ -25,7 +25,7 @@ public struct BackBarButtonItem {
         case custom(UIButton)
     }
     
-    public init(style: Style = .none, tintColor: UIColor? = nil) {
+    public init(style: Style, tintColor: UIColor? = nil) {
         self.style = style
         self.tintColor = tintColor
     }

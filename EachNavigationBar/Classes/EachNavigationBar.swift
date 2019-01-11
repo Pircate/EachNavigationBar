@@ -93,6 +93,7 @@ open class EachNavigationBar: UINavigationBar {
         }
     }
     
+    @available(iOS 11.0, *)
     private lazy var _contentView: UIView? = {
         subviews.filter { String(describing: $0.classForCoder) == "_UINavigationBarContentView" }.first
     }()
@@ -158,9 +159,12 @@ extension EachNavigationBar {
             width: bounds.width,
             height: bounds.height + CGFloat.StatusBar.maxY)
         
-        if #available(iOS 11.0, *) {
-            _contentView?.frame.origin.y = additionalHeight
-        }
+        adjustsContentViewFrameAfterIOS11()
+    }
+    
+    private func adjustsContentViewFrameAfterIOS11() {
+        guard #available(iOS 11.0, *) else { return }
+        _contentView?.frame.origin.y = additionalHeight
     }
     
     @available(iOS 11.0, *)

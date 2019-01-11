@@ -51,8 +51,8 @@ extension Configuration {
     
     @objc public func setBackgroundImage(
         _ backgroundImage: UIImage?,
-        for barPosition: UIBarPosition,
-        barMetrics: UIBarMetrics) {
+        for barPosition: UIBarPosition = .any,
+        barMetrics: UIBarMetrics = .default) {
         self.backgroundImage = backgroundImage
         self.barPosition = barPosition
         self.barMetrics = barMetrics

@@ -27,6 +27,7 @@ extension UIViewController {
         #selector(viewWillAppear(_:)) <=> #selector(navigation_viewWillAppear)
         #selector(setNeedsStatusBarAppearanceUpdate)
             <=> #selector(navigation_setNeedsStatusBarAppearanceUpdate)
+        #selector(viewDidLayoutSubviews) <=> #selector(navigation_viewDidLayoutSubviews)
     }()
     
     @objc private func navigation_viewDidLoad() {
@@ -55,5 +56,11 @@ extension UIViewController {
         navigation_setNeedsStatusBarAppearanceUpdate()
         
         adjustsNavigationBarPosition()
+    }
+    
+    @objc private func navigation_viewDidLayoutSubviews() {
+        navigation_viewDidLayoutSubviews()
+        
+        view.bringSubviewToFront(_navigationBar)
     }
 }

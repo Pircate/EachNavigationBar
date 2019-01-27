@@ -52,7 +52,7 @@ extension UIViewController {
             as? UINavigationItem {
             return item
         }
-        let item = UINavigationItem()
+        let item = navigationItem.duplicate() ?? UINavigationItem()
         objc_setAssociatedObject(
             self,
             &AssociatedKeys.navigationItem,

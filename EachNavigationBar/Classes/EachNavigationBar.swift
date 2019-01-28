@@ -42,7 +42,7 @@ open class EachNavigationBar: UINavigationBar {
             } else {
                 if case .custom = backBarButtonItem.style {
                     let space = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
-                    space.width = -CGFloat.NavigationBar.padding
+                    space.width = -Const.NavigationBar.padding.left
                     viewController?._navigationItem.leftBarButtonItems = [space, item].compactMap { $0 }
                 } else {
                     viewController?._navigationItem.leftBarButtonItems = [item].compactMap { $0 }
@@ -108,11 +108,7 @@ open class EachNavigationBar: UINavigationBar {
         subviews.filter { String(describing: $0.classForCoder) == "_UINavigationBarContentView" }.first
     }()
     
-    private var _layoutPadding: UIEdgeInsets = .init(
-        top: 0,
-        left: CGFloat.NavigationBar.padding,
-        bottom: 0,
-        right: CGFloat.NavigationBar.padding)
+    private var _layoutPadding: UIEdgeInsets = Const.NavigationBar.padding
     
     private var _alpha: CGFloat = 1
     
@@ -158,7 +154,7 @@ extension EachNavigationBar {
         if let bar = superNavigationBar {
             return bar.frame.height
         } else {
-            return CGFloat.NavigationBar.height
+            return Const.NavigationBar.height
         }
     }
 }
@@ -184,9 +180,9 @@ extension EachNavigationBar {
         background.clipsToBounds = isShadowHidden
         background.frame = CGRect(
             x: 0,
-            y: -CGFloat.StatusBar.maxY,
+            y: -Const.StatusBar.maxY,
             width: bounds.width,
-            height: bounds.height + CGFloat.StatusBar.maxY)
+            height: bounds.height + Const.StatusBar.maxY)
         
         adjustsContentViewFrameAfterIOS11()
     }

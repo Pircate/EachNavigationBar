@@ -1,5 +1,5 @@
 // 
-//  CGFloat+EachNavigationBar.swift
+//  Const.swift
 //  EachNavigationBar
 //
 //  Created by Pircate(gao497868860@gmail.com) on 2018/11/20
@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension CGFloat {
+struct Const {
     
     struct StatusBar {
         
@@ -21,6 +21,6 @@ extension CGFloat {
         
         static let height: CGFloat = 44.0
         
-        static let padding: CGFloat = 8.0
+        static let padding: UIEdgeInsets = .init(top: 0, left: 8, bottom: 0, right: 8)
     }
 }

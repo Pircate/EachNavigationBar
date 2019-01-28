@@ -26,7 +26,7 @@ extension UINavigationController {
             bar.frame = navigationBar.frame
             if #available(iOS 11.0, *) {
                 if bar.prefersLargeTitles {
-                    bar.frame.origin.y = CGFloat.StatusBar.maxY
+                    bar.frame.origin.y = Const.StatusBar.maxY
                 }
             }
         }

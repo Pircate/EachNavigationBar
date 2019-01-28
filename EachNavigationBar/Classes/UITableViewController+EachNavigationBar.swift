@@ -29,6 +29,6 @@ extension UITableViewController {
         guard keyPath == "contentOffset",
             let tableView = object as? UITableView,
             self.tableView === tableView else { return }
-        _navigationBar.frame.origin.y = tableView.contentOffset.y + CGFloat.StatusBar.maxY
+        _navigationBar.frame.origin.y = tableView.contentOffset.y + Const.StatusBar.maxY
     }
 }

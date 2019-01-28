@@ -36,8 +36,18 @@ open class EachNavigationBar: UINavigationBar {
     
     open var backBarButtonItem: BackBarButtonItem = .init(style: .none) {
         didSet {
-            viewController?._navigationItem.leftBarButtonItem = backBarButtonItem
-                .makeBarButtonItem(self, action: #selector(backBarButtonItemAction))
+            let item = backBarButtonItem.makeBarButtonItem(self, action: #selector(backBarButtonItemAction))
+            if #available(iOS 11.0, *) {
+                viewController?._navigationItem.leftBarButtonItem = item
+            } else {
+                if case .custom = backBarButtonItem.style {
+                    let space = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+                    space.width = -CGFloat.NavigationBar.padding
+                    viewController?._navigationItem.leftBarButtonItems = [space, item].compactMap { $0 }
+                } else {
+                    viewController?._navigationItem.leftBarButtonItems = [item].compactMap { $0 }
+                }
+            }
         }
     }
     
@@ -98,6 +108,12 @@ open class EachNavigationBar: UINavigationBar {
         subviews.filter { String(describing: $0.classForCoder) == "_UINavigationBarContentView" }.first
     }()
     
+    private var _layoutPadding: UIEdgeInsets = .init(
+        top: 0,
+        left: CGFloat.NavigationBar.padding,
+        bottom: 0,
+        right: CGFloat.NavigationBar.padding)
+    
     private var _alpha: CGFloat = 1
     
     private weak var viewController: UIViewController?
@@ -149,6 +165,19 @@ extension EachNavigationBar {
 
 extension EachNavigationBar {
     
+    @available(iOS 11.0, *)
+    open var layoutPadding: UIEdgeInsets {
+        get {
+            return _layoutPadding
+        }
+        set {
+            _layoutPadding = newValue
+        }
+    }
+}
+
+extension EachNavigationBar {
+    
     private func updateSubviews() {
         guard let background = subviews.first else { return }
         background.alpha = _alpha
@@ -165,6 +194,7 @@ extension EachNavigationBar {
     private func adjustsContentViewFrameAfterIOS11() {
         guard #available(iOS 11.0, *) else { return }
         _contentView?.frame.origin.y = additionalHeight
+        _contentView?.layoutMargins = _layoutPadding
     }
     
     @available(iOS 11.0, *)

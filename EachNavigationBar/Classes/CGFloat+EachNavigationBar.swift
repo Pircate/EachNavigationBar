@@ -11,12 +11,16 @@ import Foundation
 extension CGFloat {
     
     struct StatusBar {
+        
         static var maxY: CGFloat {
             return UIApplication.shared.statusBarFrame.maxY
         }
     }
     
     struct NavigationBar {
+        
         static let height: CGFloat = 44.0
+        
+        static let padding: CGFloat = 8.0
     }
 }

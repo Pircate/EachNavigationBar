@@ -148,6 +148,9 @@ navigation.bar.isUnrestoredWhenViewWillLayoutSubviews = true
 
 // navigation bar extra height
 navigation.bar.extraHeight = 14
+
+// item padding
+navigation.bar.layoutPaddings = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)
 ```
 
 Objective-C

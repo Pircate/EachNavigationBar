@@ -42,7 +42,7 @@ open class EachNavigationBar: UINavigationBar {
             } else {
                 if case .custom = backBarButtonItem.style {
                     let space = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
-                    space.width = -Const.NavigationBar.padding.left
+                    space.width = -Const.NavigationBar.layoutPaddings.left
                     viewController?._navigationItem.leftBarButtonItems = [space, item].compactMap { $0 }
                 } else {
                     viewController?._navigationItem.leftBarButtonItems = [item].compactMap { $0 }
@@ -108,7 +108,7 @@ open class EachNavigationBar: UINavigationBar {
         subviews.filter { String(describing: $0.classForCoder) == "_UINavigationBarContentView" }.first
     }()
     
-    private var _layoutPadding: UIEdgeInsets = Const.NavigationBar.padding
+    private var _layoutPaddings: UIEdgeInsets = Const.NavigationBar.layoutPaddings
     
     private var _alpha: CGFloat = 1
     
@@ -162,12 +162,12 @@ extension EachNavigationBar {
 extension EachNavigationBar {
     
     @available(iOS 11.0, *)
-    open var layoutPadding: UIEdgeInsets {
+    open var layoutPaddings: UIEdgeInsets {
         get {
-            return _layoutPadding
+            return _layoutPaddings
         }
         set {
-            _layoutPadding = newValue
+            _layoutPaddings = newValue
         }
     }
 }
@@ -190,7 +190,7 @@ extension EachNavigationBar {
     private func adjustsContentViewFrameAfterIOS11() {
         guard #available(iOS 11.0, *) else { return }
         _contentView?.frame.origin.y = additionalHeight
-        _contentView?.layoutMargins = _layoutPadding
+        _contentView?.layoutMargins = _layoutPaddings
     }
     
     @available(iOS 11.0, *)

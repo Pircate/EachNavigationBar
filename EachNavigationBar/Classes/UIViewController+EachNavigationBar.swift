@@ -17,12 +17,31 @@ extension UIViewController {
         let configuration = navigationController._configuration
         _navigationBar.setup(with: configuration)
         
-        if navigationController.viewControllers.count > 1 {
-            configuration.backBarButtonItem.needsDuplicate = true
-            _navigationBar.backBarButtonItem = configuration.backBarButtonItem
-        }
+        setupBackBarButtonItem(navigationController)
         
         view.addSubview(_navigationBar)
+    }
+    
+    private func setupBackBarButtonItem(_ navigationController: UINavigationController) {
+        let count = navigationController.viewControllers.count
+        guard count > 1 else { return }
+        
+        let configuration = navigationController._configuration
+        guard case .none = configuration.backBarButtonItem.style else {
+            configuration.backBarButtonItem.needsDuplicate = true
+            _navigationBar.backBarButtonItem = configuration.backBarButtonItem
+            return
+        }
+        
+        let backButton = UIButton(type: .system)
+        let image = UIImage(named: "navigation_back_default", in: Bundle.current, compatibleWith: nil)
+        backButton.setImage(image, for: .normal)
+        let title = navigationController.viewControllers[count - 2]._navigationItem.title
+        backButton.setTitle(title, for: .normal)
+        backButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
+        backButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: -10, bottom: 0, right: 10)
+        backButton.sizeToFit()
+        _navigationBar.backBarButtonItem = BackBarButtonItem(style: .custom(backButton))
     }
     
     func updateNavigationBarWhenViewWillAppear() {
@@ -76,5 +95,16 @@ private extension EachNavigationBar {
             prefersLargeTitles = configuration.prefersLargeTitles
             largeTitleTextAttributes = configuration.largeTitleTextAttributes
         }
+    }
+}
+
+private extension Bundle {
+    
+    static var current: Bundle? {
+        guard let resourcePath = Bundle(for: EachNavigationBar.self).resourcePath,
+            let bundle = Bundle(path: "\(resourcePath)/EachNavigationBar.bundle") else {
+                return nil
+        }
+        return bundle
     }
 }

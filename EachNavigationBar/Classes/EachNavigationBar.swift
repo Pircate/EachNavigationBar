@@ -162,7 +162,7 @@ extension EachNavigationBar {
 extension EachNavigationBar {
     
     @available(iOS 11.0, *)
-    open var layoutPaddings: UIEdgeInsets {
+    @objc open var layoutPaddings: UIEdgeInsets {
         get {
             return _layoutPaddings
         }

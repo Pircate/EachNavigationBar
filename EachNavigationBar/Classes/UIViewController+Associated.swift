@@ -53,11 +53,35 @@ extension UIViewController {
             return item
         }
         let item = navigationItem.duplicate() ?? UINavigationItem()
+        item.copyTargetActions(from: navigationItem)
         objc_setAssociatedObject(
             self,
             &AssociatedKeys.navigationItem,
             item,
             .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         return item
+    }
+}
+
+private extension UINavigationItem {
+    
+    func copyTargetActions(from navigationItem: UINavigationItem) {
+        if let leftBarButtonItems = navigationItem.leftBarButtonItems,
+            let leftItems = self.leftBarButtonItems,
+            leftBarButtonItems.count == leftItems.count {
+            leftItems.enumerated().forEach {
+                $0.element.target = leftBarButtonItems[$0.offset].target
+                $0.element.action = leftBarButtonItems[$0.offset].action
+            }
+        }
+        
+        if let rightBarButtonItems = navigationItem.rightBarButtonItems,
+            let rightItems = self.rightBarButtonItems,
+            rightBarButtonItems.count == rightItems.count {
+            rightItems.enumerated().forEach {
+                $0.element.target = rightBarButtonItems[$0.offset].target
+                $0.element.action = rightBarButtonItems[$0.offset].action
+            }
+        }
     }
 }

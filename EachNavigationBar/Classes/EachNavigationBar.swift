@@ -106,7 +106,7 @@ open class EachNavigationBar: UINavigationBar {
         }
     }
     
-    @objc open var shadow: Shadow = .init() {
+    var shadow: Shadow = .init() {
         didSet {
             layer.shadowColor = shadow.color
             layer.shadowOpacity = shadow.opacity

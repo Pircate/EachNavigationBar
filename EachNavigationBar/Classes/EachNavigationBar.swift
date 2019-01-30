@@ -63,6 +63,9 @@ open class EachNavigationBar: UINavigationBar {
         }
         set {
             _alpha = newValue
+            
+            layer.shadowOpacity = newValue < 1 ? 0 : shadow.opacity
+            
             if let background = subviews.first {
                 background.alpha = newValue
             }
@@ -100,6 +103,16 @@ open class EachNavigationBar: UINavigationBar {
             super.largeTitleTextAttributes = newValue
             
             superNavigationBar?.largeTitleTextAttributes = newValue
+        }
+    }
+    
+    @objc open var shadow: Shadow = .init() {
+        didSet {
+            layer.shadowColor = shadow.color
+            layer.shadowOpacity = shadow.opacity
+            layer.shadowOffset = shadow.offset
+            layer.shadowRadius = shadow.radius
+            layer.shadowPath = shadow.path
         }
     }
     

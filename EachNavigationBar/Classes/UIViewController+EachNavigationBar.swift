@@ -78,18 +78,24 @@ private extension EachNavigationBar {
     func setup(with configuration: Configuration) {
         isHidden = configuration.isHidden
         alpha = configuration.alpha
+        isTranslucent = configuration.isTranslucent
         barTintColor = configuration.barTintColor
-        shadowImage = configuration.shadowImage
-        isShadowHidden = configuration.isShadowHidden
+        
         titleTextAttributes = configuration.titleTextAttributes
+        shadowImage = configuration.shadowImage
         setBackgroundImage(
             configuration.backgroundImage,
             for: configuration.barPosition,
             barMetrics: configuration.barMetrics)
-        isTranslucent = configuration.isTranslucent
+        
         barStyle = configuration.barStyle
         statusBarStyle = configuration.statusBarStyle
+        
         extraHeight = configuration.extraHeight
+        
+        isShadowHidden = configuration.isShadowHidden
+        shadow = configuration.shadow
+        
         if #available(iOS 11.0, *) {
             prefersLargeTitles = configuration.prefersLargeTitles
             largeTitleTextAttributes = configuration.largeTitleTextAttributes

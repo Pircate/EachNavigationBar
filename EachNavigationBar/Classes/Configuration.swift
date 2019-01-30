@@ -40,6 +40,8 @@ public class Configuration: NSObject {
     
     @objc public var largeTitleTextAttributes: [NSAttributedString.Key: Any]?
     
+    @objc public var shadow: Shadow = .init()
+    
     var backgroundImage: UIImage?
     
     var barMetrics: UIBarMetrics = .default
@@ -57,4 +59,12 @@ extension Configuration {
         self.barPosition = barPosition
         self.barMetrics = barMetrics
     }
+}
+
+public class Shadow: NSObject {
+    @objc public var color: CGColor?
+    @objc public var opacity: Float = 0
+    @objc public var offset: CGSize = CGSize(width: 0, height: -3)
+    @objc public var radius: CGFloat = 3
+    @objc public var path: CGPath?
 }

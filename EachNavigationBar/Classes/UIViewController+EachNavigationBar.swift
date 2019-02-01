@@ -94,7 +94,10 @@ private extension EachNavigationBar {
         extraHeight = configuration.extraHeight
         
         isShadowHidden = configuration.isShadowHidden
-        shadow = configuration.shadow
+        
+        if let shadow = configuration.shadow {
+            self.shadow = shadow
+        }
         
         if #available(iOS 11.0, *) {
             prefersLargeTitles = configuration.prefersLargeTitles

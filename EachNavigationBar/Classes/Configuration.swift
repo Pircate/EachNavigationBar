@@ -40,7 +40,7 @@ public class Configuration: NSObject {
     
     @objc public var largeTitleTextAttributes: [NSAttributedString.Key: Any]?
     
-    @objc public var shadow: Shadow = .init()
+    @objc public var shadow: Shadow?
     
     var backgroundImage: UIImage?
     
@@ -67,4 +67,18 @@ public class Shadow: NSObject {
     @objc public var offset: CGSize = CGSize(width: 0, height: -3)
     @objc public var radius: CGFloat = 3
     @objc public var path: CGPath?
+    
+    @objc public convenience init(
+        color: CGColor? = nil,
+        opacity: Float = 0,
+        offset: CGSize = CGSize(width: 0, height: -3),
+        radius: CGFloat = 3,
+        path: CGPath? = nil) {
+        self.init()
+        self.color = color
+        self.opacity = opacity
+        self.offset = offset
+        self.radius = radius
+        self.path = path
+    }
 }

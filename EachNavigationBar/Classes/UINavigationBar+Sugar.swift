@@ -8,39 +8,44 @@
 
 extension UINavigationBar {
     
-    private var defaultTitleColor: UIColor {
-        return barStyle == .default ? UIColor.black : UIColor.white
-    }
-    
     @objc public func setTitleAlpha(_ alpha: CGFloat) {
-        if var titleTextAttributes = titleTextAttributes {
-            let color = titleTextAttributes[.foregroundColor] as? UIColor ?? defaultTitleColor
-            titleTextAttributes[.foregroundColor] = color.alpha(alpha)
-            self.titleTextAttributes = titleTextAttributes
-        } else {
-            self.titleTextAttributes = [.foregroundColor: defaultTitleColor.alpha(alpha)]
-        }
+        let color = titleTextAttributes?[.foregroundColor] as? UIColor ?? defaultTitleColor
+        setTitleColor(color.withAlphaComponent(alpha))
     }
     
     @available(iOS 11.0, *)
     @objc public func setLargeTitleAlpha(_ alpha: CGFloat) {
-        if var largeTitleTextAttributes = largeTitleTextAttributes {
-            let color = largeTitleTextAttributes[.foregroundColor] as? UIColor ?? defaultTitleColor
-            largeTitleTextAttributes[.foregroundColor] = color.alpha(alpha)
-            self.largeTitleTextAttributes = largeTitleTextAttributes
-        } else {
-            self.largeTitleTextAttributes = [.foregroundColor: defaultTitleColor.alpha(alpha)]
-        }
+        let color = largeTitleTextAttributes?[.foregroundColor] as? UIColor ?? defaultTitleColor
+        setLargeTitleColor(color.withAlphaComponent(alpha))
     }
     
     @objc public func setTintAlpha(_ alpha: CGFloat) {
-        tintColor = tintColor.alpha(alpha)
+        tintColor = tintColor.withAlphaComponent(alpha)
     }
 }
 
-private extension UIColor {
+private extension UINavigationBar {
     
-    func alpha(_ alpha: CGFloat) -> UIColor {
-        return withAlphaComponent(alpha)
+    var defaultTitleColor: UIColor {
+        return barStyle == .default ? UIColor.black : UIColor.white
+    }
+    
+    func setTitleColor(_ color: UIColor) {
+        if var titleTextAttributes = titleTextAttributes {
+            titleTextAttributes[.foregroundColor] = color
+            self.titleTextAttributes = titleTextAttributes
+        } else {
+            titleTextAttributes = [.foregroundColor: color]
+        }
+    }
+    
+    @available(iOS 11.0, *)
+    func setLargeTitleColor(_ color: UIColor) {
+        if var largeTitleTextAttributes = largeTitleTextAttributes {
+            largeTitleTextAttributes[.foregroundColor] = color
+            self.largeTitleTextAttributes = largeTitleTextAttributes
+        } else {
+            self.largeTitleTextAttributes = [.foregroundColor: color]
+        }
     }
 }

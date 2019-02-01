@@ -21,6 +21,7 @@ open class EachNavigationBar: UINavigationBar {
         }
     }
     
+    /// Hides shadow image
     @objc open var isShadowHidden: Bool = false {
         didSet {
             guard let background = subviews.first else { return }
@@ -50,6 +51,48 @@ open class EachNavigationBar: UINavigationBar {
             }
         }
     }
+
+    var shadow: Shadow = .init() {
+        didSet {
+            layer.shadowColor = shadow.color
+            layer.shadowOpacity = shadow.opacity
+            layer.shadowOffset = shadow.offset
+            layer.shadowRadius = shadow.radius
+            layer.shadowPath = shadow.path
+        }
+    }
+    
+    @available(iOS 11.0, *)
+    @objc public lazy var layoutPaddings: UIEdgeInsets = {
+        Const.NavigationBar.layoutPaddings
+    }()
+    
+    private var _contentView: UIView?
+    
+    private var _alpha: CGFloat = 1
+    
+    private weak var viewController: UIViewController?
+    
+    public convenience init(viewController: UIViewController) {
+        self.init()
+        self.viewController = viewController
+        setItems([viewController._navigationItem], animated: false)
+    }
+    
+    open override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        _layoutSubviews()
+    }
+    
+    @objc private func backBarButtonItemAction() {
+        backBarButtonItem.willBack()
+        viewController?.navigationController?.popViewController(animated: true)
+        backBarButtonItem.didBack()
+    }
+}
+
+extension EachNavigationBar {
     
     open override var isHidden: Bool {
         didSet {
@@ -81,6 +124,9 @@ open class EachNavigationBar: UINavigationBar {
             barTintColor = newValue
         }
     }
+}
+
+extension EachNavigationBar {
     
     @available(iOS 11.0, *)
     open override var prefersLargeTitles: Bool {
@@ -104,45 +150,6 @@ open class EachNavigationBar: UINavigationBar {
             
             superNavigationBar?.largeTitleTextAttributes = newValue
         }
-    }
-    
-    var shadow: Shadow = .init() {
-        didSet {
-            layer.shadowColor = shadow.color
-            layer.shadowOpacity = shadow.opacity
-            layer.shadowOffset = shadow.offset
-            layer.shadowRadius = shadow.radius
-            layer.shadowPath = shadow.path
-        }
-    }
-    
-    @available(iOS 11.0, *)
-    private lazy var _contentView: UIView? = {
-        subviews.filter { String(describing: $0.classForCoder) == "_UINavigationBarContentView" }.first
-    }()
-    
-    private var _layoutPaddings: UIEdgeInsets = Const.NavigationBar.layoutPaddings
-    
-    private var _alpha: CGFloat = 1
-    
-    private weak var viewController: UIViewController?
-    
-    public convenience init(viewController: UIViewController) {
-        self.init()
-        self.viewController = viewController
-        setItems([viewController._navigationItem], animated: false)
-    }
-    
-    open override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        updateSubviews()
-    }
-    
-    @objc private func backBarButtonItemAction() {
-        backBarButtonItem.willBack()
-        viewController?.navigationController?.popViewController(animated: true)
-        backBarButtonItem.didBack()
     }
 }
 
@@ -175,19 +182,17 @@ extension EachNavigationBar {
 extension EachNavigationBar {
     
     @available(iOS 11.0, *)
-    @objc open var layoutPaddings: UIEdgeInsets {
-        get {
-            return _layoutPaddings
-        }
-        set {
-            _layoutPaddings = newValue
-        }
+    private var contentView: UIView? {
+        if let contentView = _contentView { return contentView }
+        
+        _contentView = subviews
+            .filter {
+                String(describing: $0.classForCoder) == "_UINavigationBarContentView"
+            }.first
+        return _contentView
     }
-}
-
-extension EachNavigationBar {
     
-    private func updateSubviews() {
+    private func _layoutSubviews() {
         guard let background = subviews.first else { return }
         background.alpha = _alpha
         background.clipsToBounds = isShadowHidden
@@ -202,8 +207,8 @@ extension EachNavigationBar {
     
     private func adjustsContentViewFrameAfterIOS11() {
         guard #available(iOS 11.0, *) else { return }
-        _contentView?.frame.origin.y = additionalHeight
-        _contentView?.layoutMargins = _layoutPaddings
+        contentView?.frame.origin.y = additionalHeight
+        contentView?.layoutMargins = layoutPaddings
     }
     
     @available(iOS 11.0, *)

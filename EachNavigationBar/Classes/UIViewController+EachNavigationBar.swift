@@ -80,6 +80,7 @@ private extension EachNavigationBar {
         alpha = configuration.alpha
         isTranslucent = configuration.isTranslucent
         barTintColor = configuration.barTintColor
+        tintColor = configuration.tintColor
         
         titleTextAttributes = configuration.titleTextAttributes
         shadowImage = configuration.shadowImage

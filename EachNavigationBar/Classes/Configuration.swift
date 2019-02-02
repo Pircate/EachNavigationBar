@@ -19,6 +19,8 @@ public class Configuration: NSObject {
     
     @objc public var barTintColor: UIColor?
     
+    @objc public var tintColor: UIColor?
+    
     @objc public var shadowImage: UIImage?
     
     @objc public var isShadowHidden: Bool = false

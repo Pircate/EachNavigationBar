@@ -20,9 +20,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = UIColor.white
         let nav = UINavigationController(rootViewController: MainViewController())
+        
         // config
         nav.navigation.configuration.isEnabled = true
-        nav.navigation.configuration.barTintColor = UIColor.yellow
+        nav.navigation.configuration.barTintColor = UIColor.green
+        nav.navigation.configuration.tintColor = UIColor.white
         
         let shadow = Shadow(
             color: UIColor.black.cgColor,
@@ -30,9 +32,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             offset: CGSize(width: 0, height: 3))
         nav.navigation.configuration.shadow = shadow
         
-        let button = UIButton(type: .custom)
-        button.setImage(UIImage(named: "back"), for: .normal)
-        button.frame = CGRect(x: 0, y: 0, width: 20, height: 44)
         window?.rootViewController = nav
         window?.makeKeyAndVisible()
         return true

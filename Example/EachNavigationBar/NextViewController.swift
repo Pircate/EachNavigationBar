@@ -33,6 +33,7 @@ class NextViewController: UIViewController {
         view.addSubview(tipLabel)
         
         navigation.item.title = "Next"
+        navigation.bar.tintColor = nil
         
         let titleView = UITextField(frame: CGRect(x: 0, y: 0, width: view.bounds.width - 100, height: 30))
         titleView.backgroundColor = UIColor.lightGray

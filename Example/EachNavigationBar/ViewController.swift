@@ -44,7 +44,6 @@ class ViewController: UIViewController {
             .foregroundColor: UIColor.blue,
             .font: UIFont.systemFont(ofSize: 24)]
         
-        navigation.bar.backBarButtonItem = .init(style: .title("Back"), tintColor: .red)
         navigation.bar.backBarButtonItem.willBack = {
             debugPrint("willBack")
         }
@@ -73,7 +72,6 @@ extension ViewController: UIScrollViewDelegate {
         let statusBarMaxY = UIApplication.shared.statusBarFrame.maxY
         let originY = -scrollView.contentOffset.y + statusBarMaxY
         let alpha = 1 - (scrollView.contentOffset.y) / navigation.bar.frame.height
-        navigation.item.leftBarButtonItem?.tintColor = navigation.item.leftBarButtonItem?.tintColor?.withAlphaComponent(alpha)
         navigation.bar.setTintAlpha(alpha)
         navigation.bar.setTitleAlpha(alpha)
         if #available(iOS 11.0, *) {
@@ -86,7 +84,6 @@ extension ViewController: UIScrollViewDelegate {
             if #available(iOS 11.0, *) { navigation.bar.setLargeTitleAlpha(1) }
             navigation.bar.setTitleAlpha(1)
             navigation.bar.setTintAlpha(1)
-            navigation.item.leftBarButtonItem?.tintColor = navigation.item.leftBarButtonItem?.tintColor?.withAlphaComponent(1)
             navigation.bar.frame.origin.y = statusBarMaxY
         }
     }

@@ -12,7 +12,8 @@
 @implementation UIViewController (Load)
 
 + (void)load {
-    [self navigation_methodSwizzling];
+    [UIViewController navigation_methodSwizzling];
+    [UINavigationItem navigation_methodSwizzling];
 }
 
 @end

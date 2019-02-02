@@ -36,10 +36,19 @@ extension UIViewController {
         let backButton = UIButton(type: .system)
         let image = UIImage(named: "navigation_back_default", in: Bundle.current, compatibleWith: nil)
         backButton.setImage(image, for: .normal)
-        let title = navigationController.viewControllers[count - 2]._navigationItem.title
-        backButton.setTitle(title, for: .normal)
+        
+        if let title = navigationController.viewControllers[count - 2]._navigationItem.title {
+            let maxWidth = UIScreen.main.bounds.width / 3
+            let width = (title as NSString).boundingRect(
+                with: CGSize(width: maxWidth, height: 20),
+                options: NSStringDrawingOptions.usesFontLeading,
+                attributes: [.font: UIFont.boldSystemFont(ofSize: 17)],
+                context: nil).size.width
+            backButton.setTitle(width < maxWidth ? title : "Back", for: .normal)
+        }
         backButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
         backButton.sizeToFit()
+    
         _navigationBar.backBarButtonItem = BackBarButtonItem(style: .custom(backButton))
     }
     

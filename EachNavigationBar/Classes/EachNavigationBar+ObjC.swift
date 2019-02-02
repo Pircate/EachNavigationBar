@@ -17,6 +17,11 @@ extension UINavigationController {
 extension UIViewController {
     
     @available(swift, obsoleted: 4.2, message: "Only for Objective-C call.")
+    @objc public static func navigation_methodSwizzling() {
+        methodSwizzling
+    }
+    
+    @available(swift, obsoleted: 4.2, message: "Only for Objective-C call.")
     @objc public var navigation_bar: EachNavigationBar {
         assert(!(self is UINavigationController), "UINavigationController can't use this property.")
         return _navigationBar
@@ -59,5 +64,13 @@ public extension BackBarButtonItem {
     @available(swift, obsoleted: 4.2, message: "Only for Objective-C call.")
     @objc convenience init(customView: UIButton, tintColor: UIColor?) {
         self.init(style: .custom(customView), tintColor: tintColor)
+    }
+}
+
+extension UINavigationItem {
+    
+    @available(swift, obsoleted: 4.2, message: "Only for Objective-C call.")
+    @objc public static func navigation_methodSwizzling() {
+        methodSwizzling
     }
 }

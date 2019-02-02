@@ -40,17 +40,7 @@ open class EachNavigationBar: UINavigationBar {
             backBarButtonItem.navigationController = viewController?.navigationController
             
             let item = backBarButtonItem.makeBarButtonItem()
-            if #available(iOS 11.0, *) {
-                viewController?._navigationItem.leftBarButtonItem = item
-            } else {
-                if case .custom = backBarButtonItem.style {
-                    let space = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
-                    space.width = -Const.NavigationBar.layoutPaddings.left
-                    viewController?._navigationItem.leftBarButtonItems = [space, item].compactMap { $0 }
-                } else {
-                    viewController?._navigationItem.leftBarButtonItems = [item].compactMap { $0 }
-                }
-            }
+            viewController?._navigationItem.leftBarButtonItem = item
         }
     }
 

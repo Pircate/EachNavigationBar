@@ -90,9 +90,7 @@ nav.navigation_configuration.barTintColor = UIColor.redColor;
 
 nav.navigation_configuration.shadowImage = [UIImage imageNamed:@"shadow"];
 
-UIBarButtonItem *backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
-// customView 仅支持 UIButton 类
-[nav.navigation_configuration setBackBarButtonItem:backBarButtonItem];
+nav.navigation_configuration.backBarButtonItem = [[BackBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back"]];
 
 [nav.navigation_configuration setBackgroundImage:[UIImage imageNamed:@"nav"] for:UIBarPositionAny barMetrics:UIBarMetricsDefault];
 ```
@@ -132,6 +130,12 @@ navigation.bar.statusBarStyle = .lightContent
 
 // set back bar button item
 navigation.bar.backBarButtonItem = .init(style: .title("Back"), tintColor: .red)
+
+// allow back
+navigation.bar.backBarButtonItem.shouldBack = { item in
+    // do something
+    return false
+}
 
 // handler before back
 navigation.bar.backBarButtonItem.willBack = {

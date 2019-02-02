@@ -29,25 +29,35 @@ extension UIViewController {
     }
 }
 
-extension Configuration {
+public extension BackBarButtonItem {
     
     @available(swift, obsoleted: 4.2, message: "Only for Objective-C call.")
-    @objc public func setBackBarButtonItem(_ barButtonItem: UIBarButtonItem) {
-        guard let backBarButtonItem = barButtonItem.makeBackBarButtonItem() else { return }
-        self.backBarButtonItem = backBarButtonItem
+    @objc convenience init(title: String?) {
+        self.init(style: .title(title), tintColor: nil)
     }
-}
-
-private extension UIBarButtonItem {
     
-    func makeBackBarButtonItem() -> BackBarButtonItem? {
-        if let title = self.title {
-            return BackBarButtonItem(style: .title(title), tintColor: tintColor)
-        } else if let image = self.image {
-            return BackBarButtonItem(style: .image(image), tintColor: tintColor)
-        } else if let customView = self.customView as? UIButton {
-            return BackBarButtonItem(style: .custom(customView), tintColor: tintColor)
-        }
-        return nil
+    @available(swift, obsoleted: 4.2, message: "Only for Objective-C call.")
+    @objc convenience init(title: String?, tintColor: UIColor?) {
+        self.init(style: .title(title), tintColor: tintColor)
+    }
+    
+    @available(swift, obsoleted: 4.2, message: "Only for Objective-C call.")
+    @objc convenience init(image: UIImage?) {
+        self.init(style: .image(image), tintColor: nil)
+    }
+    
+    @available(swift, obsoleted: 4.2, message: "Only for Objective-C call.")
+    @objc convenience init(image: UIImage?, tintColor: UIColor?) {
+        self.init(style: .image(image), tintColor: tintColor)
+    }
+    
+    @available(swift, obsoleted: 4.2, message: "Only for Objective-C call.")
+    @objc convenience init(customView: UIButton) {
+        self.init(style: .custom(customView), tintColor: nil)
+    }
+    
+    @available(swift, obsoleted: 4.2, message: "Only for Objective-C call.")
+    @objc convenience init(customView: UIButton, tintColor: UIColor?) {
+        self.init(style: .custom(customView), tintColor: tintColor)
     }
 }

@@ -35,9 +35,11 @@ open class EachNavigationBar: UINavigationBar {
         }
     }
     
-    open var backBarButtonItem: BackBarButtonItem = .init(style: .none) {
+    @objc open var backBarButtonItem: BackBarButtonItem = .none {
         didSet {
-            let item = backBarButtonItem.makeBarButtonItem(self, action: #selector(backBarButtonItemAction))
+            backBarButtonItem.navigationController = viewController?.navigationController
+            
+            let item = backBarButtonItem.makeBarButtonItem()
             if #available(iOS 11.0, *) {
                 viewController?._navigationItem.leftBarButtonItem = item
             } else {
@@ -83,12 +85,6 @@ open class EachNavigationBar: UINavigationBar {
         super.layoutSubviews()
         
         _layoutSubviews()
-    }
-    
-    @objc private func backBarButtonItemAction() {
-        backBarButtonItem.willBack()
-        viewController?.navigationController?.popViewController(animated: true)
-        backBarButtonItem.didBack()
     }
 }
 

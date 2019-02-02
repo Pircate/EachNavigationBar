@@ -6,17 +6,15 @@
 //  Copyright © 2018年 Pircate. All rights reserved.
 //
 
-public struct BackBarButtonItem {
+public class BackBarButtonItem: NSObject {
     
-    var style: Style = .none
+    @objc public static let none: BackBarButtonItem = .init(style: .none)
     
-    var tintColor: UIColor?
+    @objc public var shouldBack: (BackBarButtonItem) -> Bool = { _ in true }
     
-    var needsDuplicate: Bool = false
+    @objc public var willBack: () -> Void = {}
     
-    public var willBack: () -> Void = {}
-    
-    public var didBack: () -> Void = {}
+    @objc public var didBack: () -> Void = {}
     
     public enum Style {
         case none
@@ -25,12 +23,26 @@ public struct BackBarButtonItem {
         case custom(UIButton)
     }
     
+    weak var navigationController: UINavigationController?
+    
+    var needsDuplicate: Bool = false
+    
+    var style: Style = .none
+    
+    var tintColor: UIColor?
+    
     public init(style: Style, tintColor: UIColor? = nil) {
         self.style = style
         self.tintColor = tintColor
     }
     
-    func makeBarButtonItem(_ target: Any, action: Selector) -> UIBarButtonItem? {
+    @objc public func goBack() {
+        navigationController?.popViewController(animated: true)
+    }
+ 
+    func makeBarButtonItem() -> UIBarButtonItem? {
+        let action = #selector(backBarButtonItemAction)
+        
         switch style {
         case .none:
             return nil
@@ -38,28 +50,39 @@ public struct BackBarButtonItem {
             let backBarButtonItem = UIBarButtonItem(
                 title: title,
                 style: .plain,
-                target: target,
+                target: self,
                 action: action)
             backBarButtonItem.tintColor = tintColor
+            
             return backBarButtonItem
         case .image(let image):
             let backBarButtonItem = UIBarButtonItem(
                 image: image,
                 style: .plain,
-                target: target,
+                target: self,
                 action: action)
             backBarButtonItem.tintColor = tintColor
+            
             return backBarButtonItem
         case .custom(let button):
             guard needsDuplicate else {
-                button.addTarget(target, action: action, for: .touchUpInside)
+                button.addTarget(self, action: action, for: .touchUpInside)
                 button.tintColor = tintColor
                 return UIBarButtonItem(customView: button)
             }
+            
             guard let customView = button.duplicate() else { return nil }
-            customView.addTarget(target, action: action, for: .touchUpInside)
+            customView.addTarget(self, action: action, for: .touchUpInside)
             customView.tintColor = tintColor
             return UIBarButtonItem(customView: customView)
         }
+    }
+    
+    @objc private func backBarButtonItemAction() {
+        guard shouldBack(self) else { return }
+        
+        willBack()
+        goBack()
+        didBack()
     }
 }

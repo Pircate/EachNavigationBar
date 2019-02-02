@@ -43,6 +43,17 @@ class NextViewController: UIViewController {
         if #available(iOS 11.0, *) {
             navigation.bar.prefersLargeTitles = false
         }
+        
+        navigation.bar.backBarButtonItem.shouldBack = { item in
+            let alert = UIAlertController(title: "确定退出", message: nil, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "确定", style: .default) { _ in
+                item.goBack()
+            })
+            self.present(alert, animated: true, completion: nil)
+            debugPrint("shouldBack")
+            return false
+        }
     }
     
     @objc private func backBarButtonAction() {

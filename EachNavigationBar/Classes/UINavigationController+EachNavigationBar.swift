@@ -31,7 +31,7 @@ extension UINavigationController {
             }
         }
         
-        bar.frame.size.height = navigationBar.frame.height + bar.additionalHeight
+        bar.layout()
     }
     
     func sendNavigationBarToBack() {

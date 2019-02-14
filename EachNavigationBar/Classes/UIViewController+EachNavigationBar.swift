@@ -14,6 +14,10 @@ extension UIViewController {
         guard let navigationController = navigationController else { return }
         navigationController.sendNavigationBarToBack()
         
+        if #available(iOS 11.0, *) {
+            _navigationBar.prefersLargeTitles = navigationController.navigationBar.prefersLargeTitles
+        }
+        
         let configuration = navigationController._configuration
         _navigationBar.setup(with: configuration)
         
@@ -58,7 +62,7 @@ extension UIViewController {
         navigationBar.isHidden = _navigationBar.isHidden
         if #available(iOS 11.0, *) {
             adjustsSafeAreaInsetsAfterIOS11()
-            navigationBar.prefersLargeTitles = _navigationBar.prefersLargeTitles
+            navigationItem.title = _navigationItem.title
             navigationBar.largeTitleTextAttributes = _navigationBar.largeTitleTextAttributes
         }
         view.bringSubviewToFront(_navigationBar)
@@ -110,7 +114,6 @@ private extension EachNavigationBar {
         }
         
         if #available(iOS 11.0, *) {
-            prefersLargeTitles = configuration.prefersLargeTitles
             largeTitleTextAttributes = configuration.largeTitleTextAttributes
         }
     }

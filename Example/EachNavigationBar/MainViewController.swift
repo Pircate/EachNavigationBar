@@ -21,6 +21,10 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if #available(iOS 11.0, *) {
+            navigation.bar.prefersLargeTitles = false
+        }
+        
         navigation.item.title = "EachNavigationBar"
         navigation.item.rightBarButtonItem = UIBarButtonItem(
             title: "Next",

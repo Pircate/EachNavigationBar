@@ -165,7 +165,15 @@ self.navigation_item.xxx
 
 ##### LargeTitle(iOS 11.0+)
 
+UINavigationController
 ``` swift
+// enable
+if #available(iOS 11.0, *) {
+    nav.navigation.prefersLargeTitles()
+}
+```
+UIViewController
+```swift
 // show
 if #available(iOS 11.0, *) {
     navigation.bar.prefersLargeTitles = true

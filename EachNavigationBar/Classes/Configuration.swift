@@ -38,17 +38,28 @@ public class Configuration: NSObject {
     
     @objc public var backBarButtonItem: BackBarButtonItem = .none
     
-    @objc public var prefersLargeTitles: Bool = false
-    
-    @objc public var largeTitleTextAttributes: [NSAttributedString.Key: Any]?
-    
     @objc public var shadow: Shadow?
+    
+    var _largeTitleTextAttributes: [NSAttributedString.Key: Any]?
     
     var backgroundImage: UIImage?
     
     var barMetrics: UIBarMetrics = .default
     
     var barPosition: UIBarPosition = .any
+}
+
+extension Configuration {
+    
+    @available(iOS 11.0, *)
+    @objc public var largeTitleTextAttributes: [NSAttributedString.Key: Any]? {
+        get {
+            return _largeTitleTextAttributes
+        }
+        set {
+            _largeTitleTextAttributes = newValue
+        }
+    }
 }
 
 extension Configuration {

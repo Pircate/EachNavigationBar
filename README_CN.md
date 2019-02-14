@@ -165,7 +165,15 @@ self.navigation_item.xxx
 
 ##### 大标题设置(iOS 11.0+)
 
+UINavigationController
 ``` swift
+// 开启大标题
+if #available(iOS 11.0, *) {
+    nav.navigation.prefersLargeTitles()
+}
+```
+UIViewController
+```swift
 // 显示大标题
 if #available(iOS 11.0, *) {
     navigation.bar.prefersLargeTitles = true

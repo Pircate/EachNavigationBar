@@ -26,6 +26,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         nav.navigation.configuration.barTintColor = UIColor.green
         nav.navigation.configuration.tintColor = UIColor.white
         
+        if #available(iOS 11.0, *) {
+            nav.navigation.prefersLargeTitles()
+        }
+        
         let shadow = Shadow(
             color: UIColor.black.cgColor,
             opacity: 0.5,

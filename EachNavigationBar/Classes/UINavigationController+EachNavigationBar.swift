@@ -31,7 +31,7 @@ extension UINavigationController {
             }
         }
         
-        bar.layout()
+        bar.adjustsLayout()
     }
     
     func sendNavigationBarToBack() {

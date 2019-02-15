@@ -42,7 +42,7 @@ extension UIViewController {
         backButton.setImage(image, for: .normal)
         
         if let title = navigationController.viewControllers[count - 2]._navigationItem.title {
-            let maxWidth = UIScreen.main.bounds.width / 3
+            let maxWidth = min(UIScreen.main.bounds.width, UIScreen.main.bounds.height) / 3
             let width = (title as NSString).boundingRect(
                 with: CGSize(width: maxWidth, height: 20),
                 options: NSStringDrawingOptions.usesFontLeading,
@@ -80,9 +80,11 @@ extension UIViewController {
     
     func adjustsSafeAreaInsetsAfterIOS11() {
         guard #available(iOS 11.0, *) else { return }
+        
+        let height = _navigationBar.additionalView?.frame.height ?? 0
         additionalSafeAreaInsets.top = _navigationBar.isHidden
             ? -view.safeAreaInsets.top
-            : _navigationBar.additionalHeight
+            : _navigationBar.additionalHeight + height
     }
 }
 

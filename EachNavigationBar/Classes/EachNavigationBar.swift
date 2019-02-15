@@ -16,7 +16,7 @@ open class EachNavigationBar: UINavigationBar {
     
     @objc open var extraHeight: CGFloat = 0 {
         didSet {
-            layout()
+            adjustsLayout()
             viewController?.adjustsSafeAreaInsetsAfterIOS11()
         }
     }
@@ -44,6 +44,22 @@ open class EachNavigationBar: UINavigationBar {
         }
     }
 
+    @available(iOS 11.0, *)
+    @objc public lazy var layoutPaddings: UIEdgeInsets = {
+        Const.NavigationBar.layoutPaddings
+    }()
+    
+    @objc public var additionalView: UIView? {
+        didSet {
+            guard let additionalView = additionalView else {
+                oldValue?.removeFromSuperview()
+                return
+            }
+            
+            setupAdditionalView(additionalView)
+        }
+    }
+    
     var shadow: Shadow = .init() {
         didSet {
             layer.shadowColor = shadow.color
@@ -54,16 +70,11 @@ open class EachNavigationBar: UINavigationBar {
         }
     }
     
-    @available(iOS 11.0, *)
-    @objc public lazy var layoutPaddings: UIEdgeInsets = {
-        Const.NavigationBar.layoutPaddings
-    }()
-    
     private var _contentView: UIView?
     
-    private var _alpha: CGFloat = 1
+    var _alpha: CGFloat = 1
     
-    private weak var viewController: UIViewController?
+    weak var viewController: UIViewController?
     
     public convenience init(viewController: UIViewController) {
         self.init()
@@ -80,74 +91,8 @@ open class EachNavigationBar: UINavigationBar {
 
 extension EachNavigationBar {
     
-    open override var isHidden: Bool {
-        didSet {
-            viewController?.adjustsSafeAreaInsetsAfterIOS11()
-        }
-    }
-    
-    open override var alpha: CGFloat {
-        get {
-            return super.alpha
-        }
-        set {
-            _alpha = newValue
-            
-            layer.shadowOpacity = newValue < 1 ? 0 : shadow.opacity
-            
-            if let background = subviews.first {
-                background.alpha = newValue
-            }
-        }
-    }
-    
-    /// map to barTintColor
-    open override var backgroundColor: UIColor? {
-        get {
-            return super.backgroundColor
-        }
-        set {
-            barTintColor = newValue
-        }
-    }
-}
-
-extension EachNavigationBar {
-    
-    @available(iOS 11.0, *)
-    open override var prefersLargeTitles: Bool {
-        get {
-            return super.prefersLargeTitles
-        }
-        set {
-            super.prefersLargeTitles = newValue
-            
-            viewController?.navigationItem.largeTitleDisplayMode = newValue ? .always : .never
-        }
-    }
-    
-    @available(iOS 11.0, *)
-    open override var largeTitleTextAttributes: [NSAttributedString.Key : Any]? {
-        get {
-            return super.largeTitleTextAttributes
-        }
-        set {
-            super.largeTitleTextAttributes = newValue
-            
-            viewController?.navigationItem.title = viewController?._navigationItem.title
-            superNavigationBar?.largeTitleTextAttributes = newValue
-        }
-    }
-}
-
-extension EachNavigationBar {
-    
     var _barStyle: UIBarStyle {
         return statusBarStyle == .default ? .default : .black
-    }
-    
-    func layout() {
-        frame.size.height = barHeight + additionalHeight
     }
     
     var additionalHeight: CGFloat {
@@ -183,9 +128,23 @@ extension EachNavigationBar {
         
         return _contentView
     }
+    
+    private func setupAdditionalView(_ additionalView: UIView) {
+        addSubview(additionalView)
+        additionalView.translatesAutoresizingMaskIntoConstraints = false
+        additionalView.topAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        additionalView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+        additionalView.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
+        additionalView.heightAnchor.constraint(
+            equalToConstant: additionalView.frame.height).isActive = true
+    }
 }
 
 extension EachNavigationBar {
+    
+    func adjustsLayout() {
+        frame.size.height = barHeight + additionalHeight
+    }
     
     private func _layoutSubviews() {
         guard let background = subviews.first else { return }

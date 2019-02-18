@@ -150,8 +150,8 @@ navigation.bar.backBarButtonItem.didBack = {
     // do something
 }
 
-// 如果想自定义导航栏位置，请将下面属性设为 true
-navinavigation.bar.isUnrestoredWhenViewWillLayoutSubviews = true
+// 如果想自定义导航栏位置，请将下面属性设为 false
+navigation.bar.automaticallyAdjustsPosition = false
 
 // 导航栏额外高度
 navigation.bar.extraHeight = 14

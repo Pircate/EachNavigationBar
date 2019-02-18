@@ -148,7 +148,7 @@ navigation.bar.backBarButtonItem.didBack = {
 }
 
 // if you want change navigation bar position
-navigation.bar.isUnrestoredWhenViewWillLayoutSubviews = true
+navigation.bar.automaticallyAdjustsPosition = false
 
 // navigation bar extra height
 navigation.bar.extraHeight = 14

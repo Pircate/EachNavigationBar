@@ -10,13 +10,11 @@ import UIKit
 
 open class EachNavigationBar: UINavigationBar {
     
-    /// Default is false. If set true, navigation bar will not restore
-    /// when the UINavigationController call viewWillLayoutSubviews
-    @objc open var isUnrestoredWhenViewWillLayoutSubviews = false
+    @objc open var automaticallyAdjustsPosition: Bool = true
     
     @objc open var extraHeight: CGFloat = 0 {
         didSet {
-            adjustsLayout()
+            frame.size.height = barHeight + additionalHeight
             viewController?.adjustsSafeAreaInsetsAfterIOS11()
         }
     }
@@ -143,7 +141,20 @@ extension EachNavigationBar {
 extension EachNavigationBar {
     
     func adjustsLayout() {
-        frame.size.height = barHeight + additionalHeight
+        guard let navigationBar = viewController?.navigationController?.navigationBar else { return }
+        
+        if automaticallyAdjustsPosition {
+            frame = navigationBar.frame
+            if #available(iOS 11.0, *) {
+                if prefersLargeTitles {
+                    frame.origin.y = Const.StatusBar.maxY
+                }
+            }
+        } else {
+            frame.size = navigationBar.frame.size
+        }
+        
+        frame.size.height = navigationBar.frame.height + additionalHeight
     }
     
     private func _layoutSubviews() {

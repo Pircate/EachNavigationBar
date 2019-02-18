@@ -13,7 +13,7 @@ extension UITableViewController {
     }
     
     func addObserverForContentOffset() {
-        _navigationBar.isUnrestoredWhenViewWillLayoutSubviews = true
+        _navigationBar.automaticallyAdjustsPosition = false
         tableView.addObserver(
             self,
             forKeyPath: "contentOffset",

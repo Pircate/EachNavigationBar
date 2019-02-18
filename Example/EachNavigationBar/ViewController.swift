@@ -52,7 +52,7 @@ class ViewController: UIViewController {
         }
         
         // if you want change navigation bar position
-        navigation.bar.isUnrestoredWhenViewWillLayoutSubviews = true
+        navigation.bar.automaticallyAdjustsPosition = false
         
         if #available(iOS 11.0, *) {
             navigation.bar.largeTitleTextAttributes = [

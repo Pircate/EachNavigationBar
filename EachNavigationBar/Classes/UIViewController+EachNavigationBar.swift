@@ -71,10 +71,8 @@ extension UIViewController {
 
 extension UIViewController {
     
-    func adjustsNavigationBarPosition() {
-        guard let navigationBar = navigationController?.navigationBar else { return }
-        _navigationBar.frame = navigationBar.frame
-        _navigationBar.frame.size.height += _navigationBar.additionalHeight
+    @objc public func adjustsNavigationBarLayout() {
+        _navigationBar.adjustsLayout()
         _navigationBar.setNeedsLayout()
     }
     

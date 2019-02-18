@@ -50,7 +50,7 @@ extension UIViewController {
     @objc private func navigation_setNeedsStatusBarAppearanceUpdate() {
         navigation_setNeedsStatusBarAppearanceUpdate()
         
-        adjustsNavigationBarPosition()
+        adjustsNavigationBarLayout()
     }
     
     @objc private func navigation_viewDidLayoutSubviews() {

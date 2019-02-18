@@ -153,8 +153,14 @@ navigation.bar.backBarButtonItem.didBack = {
 // 如果想自定义导航栏位置，请将下面属性设为 false
 navigation.bar.automaticallyAdjustsPosition = false
 
-// 导航栏额外高度
-navigation.bar.extraHeight = 14
+// 导航栏附加高度
+navigation.bar.additionalHeight = 14
+
+// 导航栏阴影
+navigation.bar.shadow = Shadow(
+    color: UIColor.black.cgColor,
+    opacity: 0.5,
+    offset: CGSize(width: 0, height: 3))
 ```
 
 Objective-C
@@ -168,24 +174,15 @@ self.navigation_item.xxx
 UINavigationController
 ``` swift
 // 开启大标题
-if #available(iOS 11.0, *) {
-    nav.navigation.prefersLargeTitles()
-}
+nav.navigation.prefersLargeTitles()
 ```
 UIViewController
 ```swift
-// 显示大标题
-if #available(iOS 11.0, *) {
-    navigation.bar.prefersLargeTitles = true
-}
-// 隐藏大标题
-if #available(iOS 11.0, *) {
-    navigation.bar.prefersLargeTitles = false
-}
+// 显示或隐藏大标题
+navigation.bar.prefersLargeTitles = true
+
 // 设置大标题透明度
-if #available(iOS 11.0, *) {
-    navigation.bar.setLargeTitleAlpha(0.5)
-}
+navigation.bar.setLargeTitleAlpha(0.5)
 ```
 
 #### 对于 UITableViewController

@@ -12,9 +12,9 @@ open class EachNavigationBar: UINavigationBar {
     
     @objc open var automaticallyAdjustsPosition: Bool = true
     
-    @objc open var extraHeight: CGFloat = 0 {
+    @objc open var additionalHeight: CGFloat = 0 {
         didSet {
-            frame.size.height = barHeight + additionalHeight
+            frame.size.height = barHeight + _additionalHeight
             viewController?.adjustsSafeAreaInsetsAfterIOS11()
         }
     }
@@ -58,7 +58,7 @@ open class EachNavigationBar: UINavigationBar {
         }
     }
     
-    var shadow: Shadow = .init() {
+    @objc public var shadow: Shadow = .none {
         didSet {
             layer.shadowColor = shadow.color
             layer.shadowOpacity = shadow.opacity
@@ -93,11 +93,11 @@ extension EachNavigationBar {
         return statusBarStyle == .default ? .default : .black
     }
     
-    var additionalHeight: CGFloat {
+    var _additionalHeight: CGFloat {
         if #available(iOS 11.0, *) {
             if prefersLargeTitles { return 0 }
         }
-        return extraHeight
+        return additionalHeight
     }
     
     private var barHeight: CGFloat {
@@ -154,7 +154,7 @@ extension EachNavigationBar {
             frame.size = navigationBar.frame.size
         }
         
-        frame.size.height = navigationBar.frame.height + additionalHeight
+        frame.size.height = navigationBar.frame.height + _additionalHeight
     }
     
     private func _layoutSubviews() {
@@ -174,7 +174,20 @@ extension EachNavigationBar {
         guard #available(iOS 11.0, *) else { return }
         
         layoutMargins = Const.NavigationBar.layoutMargins
-        contentView?.frame.origin.y = prefersLargeTitles ? 0 : extraHeight
+        contentView?.frame.origin.y = prefersLargeTitles ? 0 : additionalHeight
         contentView?.layoutMargins = layoutPaddings
+    }
+}
+
+extension EachNavigationBar {
+    
+    @available(swift, deprecated: 4.2, message: "Please use additionalHeight.")
+    @objc open var extraHeight: CGFloat {
+        get {
+            return additionalHeight
+        }
+        set {
+            additionalHeight = newValue
+        }
     }
 }

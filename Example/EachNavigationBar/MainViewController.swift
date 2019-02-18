@@ -31,6 +31,8 @@ class MainViewController: UIViewController {
             style: .plain,
             target: self,
             action: #selector(rightBarButtonAction))
+        
+        navigation.bar.shadow = .none
     }
     
     @objc private func rightBarButtonAction() {
@@ -54,7 +56,7 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func extraHeightAction(_ sender: UISlider) {
-        navigation.bar.extraHeight = CGFloat(sender.value)
+        navigation.bar.additionalHeight = CGFloat(sender.value)
     }
     
     @IBAction func prefersLargetTitleAction(_ sender: UISwitch) {

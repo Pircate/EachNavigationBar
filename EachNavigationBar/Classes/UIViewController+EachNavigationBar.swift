@@ -82,7 +82,7 @@ extension UIViewController {
         let height = _navigationBar.additionalView?.frame.height ?? 0
         additionalSafeAreaInsets.top = _navigationBar.isHidden
             ? -view.safeAreaInsets.top
-            : _navigationBar.additionalHeight + height
+            : _navigationBar._additionalHeight + height
     }
 }
 
@@ -105,7 +105,7 @@ private extension EachNavigationBar {
         barStyle = configuration.barStyle
         statusBarStyle = configuration.statusBarStyle
         
-        extraHeight = configuration.extraHeight
+        additionalHeight = configuration.additionalHeight
         
         isShadowHidden = configuration.isShadowHidden
         
@@ -114,6 +114,7 @@ private extension EachNavigationBar {
         }
         
         if #available(iOS 11.0, *) {
+            layoutPaddings = configuration.layoutPaddings
             largeTitleTextAttributes = configuration.largeTitleTextAttributes
         }
     }

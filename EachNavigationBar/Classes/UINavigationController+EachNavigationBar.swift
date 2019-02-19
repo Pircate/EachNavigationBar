@@ -21,6 +21,8 @@ extension UINavigationController {
         navigationBar.isHidden = bar.isHidden
         
         bar.adjustsLayout()
+        
+        topViewController?.adjustsSafeAreaInsetsAfterIOS11()
     }
     
     func sendNavigationBarToBack() {

@@ -128,11 +128,11 @@ navigation.bar.isTranslucent = false
 // 隐藏底部阴影
 navigation.bar.isShadowHidden = true
 
-// 设置状态栏文字颜色
+// 设置状态栏样式
 navigation.bar.statusBarStyle = .lightContent
 
 // 设置返回按钮
-navigation.bar.backBarButtonItem = .init(style: .image("Back"), tintColor: .red)
+navigation.bar.backBarButtonItem = .init(style: .title("Back"), tintColor: .red)
 
 // 允许返回事件
 navigation.bar.backBarButtonItem.shouldBack = { item in
@@ -155,6 +155,9 @@ navigation.bar.automaticallyAdjustsPosition = false
 
 // 导航栏附加高度
 navigation.bar.additionalHeight = 14
+
+// 导航栏附加视图
+navigation.bar.additionalView = UIView()
 
 // 导航栏阴影
 navigation.bar.shadow = Shadow(

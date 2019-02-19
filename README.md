@@ -122,7 +122,7 @@ navigation.item.leftBarButtonItem?.tintColor = navigation.item.leftBarButtonItem
 // remove blur effect
 navigation.bar.isTranslucent = false
 
-// hide shadow
+// hides shadow image
 navigation.bar.isShadowHidden = true
 
 // set status bar style
@@ -152,6 +152,9 @@ navigation.bar.automaticallyAdjustsPosition = false
 
 // navigation bar additional height
 navigation.bar.additionalHeight = 14
+
+// navigation bar additional view
+navigation.bar.additionalView = UIView()
 
 // item padding
 navigation.bar.layoutPaddings = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)

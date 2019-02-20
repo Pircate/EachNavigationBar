@@ -29,7 +29,8 @@ extension UIViewController {
         navigation_viewDidLoad()
         
         guard let navigationController = navigationController,
-            navigationController.navigation.configuration.isEnabled else { return }
+            navigationController.navigation.configuration.isEnabled,
+            navigationController.viewControllers.contains(self) else { return }
         
         setupNavigationBarWhenViewDidLoad()
         
@@ -42,7 +43,8 @@ extension UIViewController {
         navigation_viewWillAppear(animated)
         
         guard let navigationController = navigationController,
-            navigationController.navigation.configuration.isEnabled else { return }
+            navigationController.navigation.configuration.isEnabled,
+            navigationController.viewControllers.contains(self) else { return }
         
         updateNavigationBarWhenViewWillAppear()
     }

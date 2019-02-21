@@ -25,12 +25,17 @@ extension UIViewController {
         #selector(viewDidLayoutSubviews) <=> #selector(navigation_viewDidLayoutSubviews)
     }()
     
+    private var isNavigationBarEnabled: Bool {
+        guard let navigationController = navigationController,
+            navigationController.navigation.configuration.isEnabled,
+            navigationController.viewControllers.contains(self) else { return false }
+        return true
+    }
+    
     @objc private func navigation_viewDidLoad() {
         navigation_viewDidLoad()
         
-        guard let navigationController = navigationController,
-            navigationController.navigation.configuration.isEnabled,
-            navigationController.viewControllers.contains(self) else { return }
+        guard isNavigationBarEnabled else { return }
         
         setupNavigationBarWhenViewDidLoad()
         
@@ -42,9 +47,7 @@ extension UIViewController {
     @objc private func navigation_viewWillAppear(_ animated: Bool) {
         navigation_viewWillAppear(animated)
         
-        guard let navigationController = navigationController,
-            navigationController.navigation.configuration.isEnabled,
-            navigationController.viewControllers.contains(self) else { return }
+        guard isNavigationBarEnabled else { return }
         
         updateNavigationBarWhenViewWillAppear()
     }

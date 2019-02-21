@@ -10,8 +10,10 @@ import UIKit
 
 open class EachNavigationBar: UINavigationBar {
     
+    /// automatically adjusts position when view layout
     @objc open var automaticallyAdjustsPosition: Bool = true
     
+    /// Additional height for the navigation bar.
     @objc open var additionalHeight: CGFloat = 0 {
         didSet {
             frame.size.height = barHeight + _additionalHeight
@@ -33,6 +35,7 @@ open class EachNavigationBar: UINavigationBar {
         }
     }
     
+    /// Bar button item to use for the back button in the child navigation item.
     @objc open var backBarButtonItem: BackBarButtonItem = .none {
         didSet {
             backBarButtonItem.navigationController = viewController?.navigationController
@@ -43,6 +46,7 @@ open class EachNavigationBar: UINavigationBar {
     }
 
     @available(iOS 11.0, *)
+    /// Padding of navigation bar content view.
     @objc public lazy var layoutPaddings: UIEdgeInsets = {
         Const.NavigationBar.layoutPaddings
     }()

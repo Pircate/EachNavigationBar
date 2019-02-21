@@ -49,6 +49,8 @@ extension UIViewController {
                 attributes: [.font: UIFont.boldSystemFont(ofSize: 17)],
                 context: nil).size.width
             backButton.setTitle(width < maxWidth ? title : "Back", for: .normal)
+        } else {
+            backButton.setTitle("Back", for: .normal)
         }
         backButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
         backButton.sizeToFit()

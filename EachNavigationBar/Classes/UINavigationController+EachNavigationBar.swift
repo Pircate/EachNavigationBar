@@ -25,6 +25,14 @@ extension UINavigationController {
         topViewController?.adjustsSafeAreaInsetsAfterIOS11()
     }
     
+    open override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        guard _configuration.isEnabled else { return }
+        
+        topViewController?._navigationBar.adjustsLayout()
+    }
+    
     func sendNavigationBarToBack() {
         navigationBar.tintColor = UIColor.clear
         if navigationBar.shadowImage == nil {

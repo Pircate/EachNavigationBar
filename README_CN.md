@@ -200,12 +200,11 @@ deinit {
 
 #### 关于约束
 
-和使用系统导航栏完全一致。
+    和使用系统导航栏完全一致。
 
-* iOS 11 以下和 `topLayoutGuide` 的 `bottom` 约束
-* iOS 11 以上和 view 的 `safeAreaLayoutGuide` 的 `top` 约束
-* 如果使用 XIB 请参看 [这篇文章](https://www.jianshu.com/p/ba9bb519f07f)，应该会有帮助。
-* [SnapKit](https://github.com/SnapKit/SnapKit) 用户可以试试这个[扩展](https://gist.github.com/Pircate/52a3aeb2c59695f6e997a6f3bd19242b)。
+* 请注意 iOS 11 以上和以下的区别。
+* 如果使用 XIB 请参看[这篇文章](https://www.jianshu.com/p/ba9bb519f07f)，应该会有帮助。
+* [SnapKit](https://github.com/SnapKit/SnapKit) 用户可以试试这个 [extension](https://gist.github.com/Pircate/52a3aeb2c59695f6e997a6f3bd19242b)。
 
 ## 作者
 

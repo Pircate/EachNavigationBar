@@ -188,16 +188,6 @@ navigation.bar.prefersLargeTitles = true
 navigation.bar.setLargeTitleAlpha(0.5)
 ```
 
-#### 对于 UITableViewController
-
-请在控制器释放的时候移除观察者
-
-``` swift
-deinit {
-    removeObserverForContentOffset()
-}
-```
-
 #### 关于约束
 
     和使用系统导航栏完全一致。

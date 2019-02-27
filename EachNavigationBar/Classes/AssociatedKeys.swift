@@ -13,4 +13,6 @@ struct AssociatedKeys {
     static var navigationBar = "com.pircate.github.navigationBar"
     
     static var navigationItem = "com.pircate.github.navigationItem"
+    
+    static var observation = "com.pircate.github.observation"
 }

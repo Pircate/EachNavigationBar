@@ -188,16 +188,6 @@ navigation.bar.prefersLargeTitles = true
 navigation.bar.setLargeTitleAlpha(0.5)
 ```
 
-#### For UITableViewController
-
-Must remove observer when deinit
-
-``` swift
-deinit {
-    removeObserverForContentOffset()
-}
-```
-
 ## Author
 
 Pircate, gao497868860@163.com

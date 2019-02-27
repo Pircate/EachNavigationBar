@@ -21,11 +21,6 @@ class TableViewController: UITableViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
     }
     
-    deinit {
-        removeObserverForContentOffset()
-        debugPrint("deinit")
-    }
-
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {

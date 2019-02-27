@@ -40,7 +40,7 @@ extension UIViewController {
         setupNavigationBarWhenViewDidLoad()
         
         if let tableViewController = self as? UITableViewController {
-            tableViewController.addObserverForContentOffset()
+            tableViewController.observeContentOffset()
         }
     }
     

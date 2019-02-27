@@ -8,27 +8,35 @@
 
 extension UITableViewController {
     
-    @objc public func removeObserverForContentOffset() {
-        tableView.removeObserver(self, forKeyPath: "contentOffset")
-    }
-    
-    func addObserverForContentOffset() {
-        _navigationBar.automaticallyAdjustsPosition = false
-        tableView.addObserver(
+    private var observation: NSKeyValueObservation {
+        if let observation = objc_getAssociatedObject(
             self,
-            forKeyPath: "contentOffset",
-            options: .new,
-            context: nil)
+            &AssociatedKeys.observation)
+            as? NSKeyValueObservation {
+            return observation
+        }
+        
+        let observation = tableView.observe(
+        \.contentOffset,
+        options: .new) { [weak self] tableView, change in
+            guard let `self` = self else { return }
+            
+            self.view.bringSubviewToFront(self._navigationBar)
+            self._navigationBar.frame.origin.y = tableView.contentOffset.y + Const.StatusBar.maxY
+        }
+        
+        objc_setAssociatedObject(
+            self,
+            &AssociatedKeys.observation,
+            observation,
+            .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        
+        return observation
     }
     
-    open override func observeValue(
-        forKeyPath keyPath: String?,
-        of object: Any?,
-        change: [NSKeyValueChangeKey : Any]?,
-        context: UnsafeMutableRawPointer?) {
-        guard keyPath == "contentOffset",
-            let tableView = object as? UITableView,
-            self.tableView === tableView else { return }
-        _navigationBar.frame.origin.y = tableView.contentOffset.y + Const.StatusBar.maxY
+    func observeContentOffset() {
+        _navigationBar.automaticallyAdjustsPosition = false
+        
+        _ = observation
     }
 }

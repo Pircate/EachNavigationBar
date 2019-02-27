@@ -9,15 +9,11 @@
 extension EachNavigationBar {
     
     open override var isHidden: Bool {
-        didSet {
-            viewController?.adjustsSafeAreaInsetsAfterIOS11()
-        }
+        didSet { viewController?.adjustsSafeAreaInsetsAfterIOS11() }
     }
     
     open override var alpha: CGFloat {
-        get {
-            return super.alpha
-        }
+        get { return super.alpha }
         set {
             _alpha = newValue
             
@@ -31,12 +27,8 @@ extension EachNavigationBar {
     
     /// map to barTintColor
     open override var backgroundColor: UIColor? {
-        get {
-            return super.backgroundColor
-        }
-        set {
-            barTintColor = newValue
-        }
+        get { return super.backgroundColor }
+        set { barTintColor = newValue }
     }
     
     open override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
@@ -49,9 +41,7 @@ extension EachNavigationBar {
     
     @available(iOS 11.0, *)
     open override var prefersLargeTitles: Bool {
-        get {
-            return super.prefersLargeTitles
-        }
+        get { return super.prefersLargeTitles }
         set {
             super.prefersLargeTitles = newValue
             
@@ -61,9 +51,7 @@ extension EachNavigationBar {
     
     @available(iOS 11.0, *)
     open override var largeTitleTextAttributes: [NSAttributedString.Key : Any]? {
-        get {
-            return super.largeTitleTextAttributes
-        }
+        get { return super.largeTitleTextAttributes }
         set {
             super.largeTitleTextAttributes = newValue
             

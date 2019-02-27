@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import ObjectiveC
 
 public class Configuration: NSObject {
     
@@ -61,12 +60,8 @@ extension Configuration {
     
     @available(iOS 11.0, *)
     @objc public var largeTitleTextAttributes: [NSAttributedString.Key: Any]? {
-        get {
-            return _largeTitleTextAttributes
-        }
-        set {
-            _largeTitleTextAttributes = newValue
-        }
+        get { return _largeTitleTextAttributes }
+        set { _largeTitleTextAttributes = newValue }
     }
 }
 
@@ -82,39 +77,11 @@ extension Configuration {
     }
 }
 
-public class Shadow: NSObject {
-    @objc public private(set) var color: CGColor?
-    @objc public private(set) var opacity: Float = 0
-    @objc public private(set) var offset: CGSize = CGSize(width: 0, height: -3)
-    @objc public private(set) var radius: CGFloat = 3
-    @objc public private(set) var path: CGPath?
-    
-    @objc public static let none: Shadow = .init()
-    
-    @objc public convenience init(
-        color: CGColor? = nil,
-        opacity: Float = 0,
-        offset: CGSize = CGSize(width: 0, height: -3),
-        radius: CGFloat = 3,
-        path: CGPath? = nil) {
-        self.init()
-        self.color = color
-        self.opacity = opacity
-        self.offset = offset
-        self.radius = radius
-        self.path = path
-    }
-}
-
 extension Configuration {
     
     @available(swift, deprecated: 4.2, message: "Please use additionalHeight.")
     @objc public var extraHeight: CGFloat {
-        get {
-            return additionalHeight
-        }
-        set {
-            additionalHeight = newValue
-        }
+        get { return additionalHeight }
+        set { additionalHeight = newValue }
     }
 }

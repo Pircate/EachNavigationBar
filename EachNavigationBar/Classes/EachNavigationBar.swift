@@ -51,7 +51,7 @@ open class EachNavigationBar: UINavigationBar {
         Const.NavigationBar.layoutPaddings
     }()
     
-    @objc public var additionalView: UIView? {
+    @objc open var additionalView: UIView? {
         didSet {
             guard let additionalView = additionalView else {
                 oldValue?.removeFromSuperview()
@@ -62,7 +62,7 @@ open class EachNavigationBar: UINavigationBar {
         }
     }
     
-    @objc public var shadow: Shadow = .none {
+    @objc open var shadow: Shadow = .none {
         didSet {
             layer.shadowColor = shadow.color
             layer.shadowOpacity = shadow.opacity
@@ -187,11 +187,7 @@ extension EachNavigationBar {
     
     @available(swift, deprecated: 4.2, message: "Please use additionalHeight.")
     @objc open var extraHeight: CGFloat {
-        get {
-            return additionalHeight
-        }
-        set {
-            additionalHeight = newValue
-        }
+        get { return additionalHeight }
+        set { additionalHeight = newValue }
     }
 }

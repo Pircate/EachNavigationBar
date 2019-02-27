@@ -20,6 +20,10 @@
     self.navigation_bar.barTintColor = UIColor.redColor;
     self.navigation_item.title = @"OC";
     
+    if (@available(iOS 11.0, *)) {
+        [self.navigationController navigation_prefersLargeTitles];
+    }
+    
     self.navigation_bar.backBarButtonItem = [[BackBarButtonItem alloc] initWithTitle:@"" tintColor:nil];
     
     self.navigation_bar.backBarButtonItem.willBack = ^{

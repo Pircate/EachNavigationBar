@@ -12,6 +12,12 @@ extension UINavigationController {
     @objc public var navigation_configuration: Configuration {
         return _configuration
     }
+    
+    @available(swift, obsoleted: 4.2, message: "Only for Objective-C call.")
+    @available(iOS 11.0, *)
+    @objc public func navigation_prefersLargeTitles() {
+        navigationBar.prefersLargeTitles = true
+    }
 }
 
 extension UIViewController {

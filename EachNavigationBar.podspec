@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'EachNavigationBar'
-  s.version          = '1.9.0'
+  s.version          = '1.9.1'
   s.summary          = 'A custom navigation bar of UIViewController.'
   s.homepage         = 'https://github.com/Pircate/EachNavigationBar'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }

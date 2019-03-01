@@ -28,7 +28,7 @@ extension UINavigationController {
     open override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        guard _configuration.isEnabled else { return }
+        guard #available(iOS 11.0, *), _configuration.isEnabled else { return }
         
         topViewController?._navigationBar.adjustsLayout()
     }

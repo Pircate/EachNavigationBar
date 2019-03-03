@@ -21,7 +21,7 @@ struct Const {
         
         static let height: CGFloat = 44.0
         
-        static let layoutPaddings: UIEdgeInsets = .init(top: 0, left: 8, bottom: 0, right: 8)
+        static let layoutPaddings: UIEdgeInsets = .init(top: 0, left: 16, bottom: 0, right: 16)
         
         static let layoutMargins: UIEdgeInsets = .init(top: 8, left: 16, bottom: 8, right: 16)
     }

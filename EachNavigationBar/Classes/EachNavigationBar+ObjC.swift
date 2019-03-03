@@ -72,11 +72,3 @@ public extension BackBarButtonItem {
         self.init(style: .custom(customView), tintColor: tintColor)
     }
 }
-
-extension UINavigationItem {
-    
-    @available(swift, obsoleted: 4.2, message: "Only for Objective-C call.")
-    @objc public static func navigation_methodSwizzling() {
-        methodSwizzling
-    }
-}

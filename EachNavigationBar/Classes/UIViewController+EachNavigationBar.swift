@@ -53,6 +53,7 @@ extension UIViewController {
             backButton.setTitle("Back", for: .normal)
         }
         backButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
+        backButton.contentEdgeInsets = .init(top: 0, left: -8, bottom: 0, right: 8)
         backButton.sizeToFit()
     
         _navigationBar.backBarButtonItem = BackBarButtonItem(style: .custom(backButton))

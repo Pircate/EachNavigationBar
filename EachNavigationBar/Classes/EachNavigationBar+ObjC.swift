@@ -29,13 +29,15 @@ extension UIViewController {
     
     @available(swift, obsoleted: 4.2, message: "Only for Objective-C call.")
     @objc public var navigation_bar: EachNavigationBar {
-        assert(!(self is UINavigationController), "UINavigationController can't use this property.")
+        assert(!(self is UINavigationController),
+               "UINavigationController can't use this property, please use configuration.")
         return _navigationBar
     }
     
     @available(swift, obsoleted: 4.2, message: "Only for Objective-C call.")
     @objc public var navigation_item: UINavigationItem {
-        assert(!(self is UINavigationController), "UINavigationController can't use this property.")
+        assert(!(self is UINavigationController),
+               "UINavigationController can't use this property, please use configuration.")
         return _navigationItem
     }
 }

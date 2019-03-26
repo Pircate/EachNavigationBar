@@ -6,11 +6,9 @@ Pod::Spec.new do |s|
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'gaoX' => 'gao497868860@163.com' }
   s.source           = { :git => 'https://github.com/Pircate/EachNavigationBar.git', :tag => s.version.to_s }
+  s.source_files     = 'EachNavigationBar/Classes/**/*'
+  s.resource_bundles = { 'EachNavigationBar' => ['EachNavigationBar/Assets/*.xcassets'] }
+  s.frameworks       = 'UIKit'
+  s.swift_versions   = ['4.2', '5.0']
   s.ios.deployment_target = '9.0'
-  s.swift_version = '4.2'
-  s.source_files = 'EachNavigationBar/Classes/**/*'
-  s.resource_bundles = {
-    'EachNavigationBar' => ['EachNavigationBar/Assets/*.xcassets']
-  }
-  s.frameworks = 'UIKit'
 end

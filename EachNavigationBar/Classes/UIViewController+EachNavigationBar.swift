@@ -67,7 +67,7 @@ extension UIViewController {
 
 extension UIViewController {
     
-    @objc public func adjustsNavigationBarLayout() {
+    public func adjustsNavigationBarLayout() {
         _navigationBar.adjustsLayout()
         _navigationBar.setNeedsLayout()
     }

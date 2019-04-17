@@ -8,8 +8,7 @@
 
 import UIKit
 
-@objcMembers
-public class Configuration: NSObject {
+public class Configuration {
     
     public var isEnabled = false
     
@@ -57,7 +56,7 @@ public class Configuration: NSObject {
 extension Configuration {
     
     @available(iOS 11.0, *)
-    @objc public var largeTitleTextAttributes: [NSAttributedString.Key: Any]? {
+    public var largeTitleTextAttributes: [NSAttributedString.Key: Any]? {
         get { return _largeTitleTextAttributes }
         set { _largeTitleTextAttributes = newValue }
     }
@@ -65,7 +64,7 @@ extension Configuration {
 
 extension Configuration {
     
-    @objc public func setBackgroundImage(
+    public func setBackgroundImage(
         _ backgroundImage: UIImage?,
         for barPosition: UIBarPosition = .any,
         barMetrics: UIBarMetrics = .default) {

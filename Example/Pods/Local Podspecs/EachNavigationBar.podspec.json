@@ -1,6 +1,6 @@
 {
   "name": "EachNavigationBar",
-  "version": "1.9.1",
+  "version": "1.10.0",
   "summary": "A custom navigation bar of UIViewController.",
   "homepage": "https://github.com/Pircate/EachNavigationBar",
   "license": {
@@ -12,17 +12,20 @@
   },
   "source": {
     "git": "https://github.com/Pircate/EachNavigationBar.git",
-    "tag": "1.9.1"
+    "tag": "1.10.0"
   },
-  "platforms": {
-    "ios": "9.0"
-  },
-  "swift_version": "4.2",
   "source_files": "EachNavigationBar/Classes/**/*",
   "resource_bundles": {
     "EachNavigationBar": [
       "EachNavigationBar/Assets/*.xcassets"
     ]
   },
-  "frameworks": "UIKit"
+  "frameworks": "UIKit",
+  "swift_versions": [
+    "4.2",
+    "5.0"
+  ],
+  "platforms": {
+    "ios": "9.0"
+  }
 }

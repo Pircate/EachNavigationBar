@@ -10,6 +10,11 @@ infix operator <=>
 
 extension UIViewController {
     
+    @available(swift, obsoleted: 4.2, message: "Only for Objective-C call.")
+    @objc public static func navigation_methodSwizzling() {
+        methodSwizzling
+    }
+    
     static let methodSwizzling: Void = {
         #selector(viewDidLoad) <=> #selector(navigation_viewDidLoad)
         #selector(viewWillAppear(_:)) <=> #selector(navigation_viewWillAppear(_:))

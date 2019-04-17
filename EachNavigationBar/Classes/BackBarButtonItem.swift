@@ -6,8 +6,7 @@
 //  Copyright © 2018年 Pircate. All rights reserved.
 //
 
-@objcMembers
-open class BackBarButtonItem: NSObject {
+open class BackBarButtonItem {
     
     public static let none: BackBarButtonItem = .init(style: .none)
     
@@ -41,10 +40,13 @@ extension BackBarButtonItem {
 
 extension BackBarButtonItem {
     
-    @objc public func goBack() {
+    public func goBack() {
         navigationController?.popViewController(animated: true)
     }
- 
+}
+
+extension BackBarButtonItem {
+    
     func makeBarButtonItem() -> UIBarButtonItem? {
         let action = #selector(backBarButtonItemAction)
         

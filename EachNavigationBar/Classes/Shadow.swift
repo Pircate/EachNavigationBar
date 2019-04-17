@@ -6,16 +6,16 @@
 //  Copyright © 2019年 Pircate. All rights reserved.
 //
 
-public class Shadow: NSObject {
+public struct Shadow {
     let color: CGColor?
     let opacity: Float
     let offset: CGSize
     let radius: CGFloat
     let path: CGPath?
     
-    @objc public static let none: Shadow = .init()
+    public static let none: Shadow = .init()
     
-    @objc public init(
+    public init(
         color: CGColor? = nil,
         opacity: Float = 0,
         offset: CGSize = CGSize(width: 0, height: -3),

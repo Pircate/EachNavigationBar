@@ -8,18 +8,18 @@
 
 extension UINavigationBar {
     
-    @objc public func setTitleAlpha(_ alpha: CGFloat) {
+    public func setTitleAlpha(_ alpha: CGFloat) {
         let color = titleTextAttributes?[.foregroundColor] as? UIColor ?? defaultTitleColor
         setTitleColor(color.withAlphaComponent(alpha))
     }
     
     @available(iOS 11.0, *)
-    @objc public func setLargeTitleAlpha(_ alpha: CGFloat) {
+    public func setLargeTitleAlpha(_ alpha: CGFloat) {
         let color = largeTitleTextAttributes?[.foregroundColor] as? UIColor ?? defaultTitleColor
         setLargeTitleColor(color.withAlphaComponent(alpha))
     }
     
-    @objc public func setTintAlpha(_ alpha: CGFloat) {
+    public func setTintAlpha(_ alpha: CGFloat) {
         tintColor = tintColor.withAlphaComponent(alpha)
     }
 }

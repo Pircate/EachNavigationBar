@@ -318,15 +318,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-EachNavigationBar_Example/Pods-EachNavigationBar_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/EachNavigationBar/EachNavigationBar.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EachNavigationBar.framework",
 			);

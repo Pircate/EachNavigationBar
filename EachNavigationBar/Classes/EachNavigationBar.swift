@@ -8,7 +8,6 @@
 
 import UIKit
 
-@objcMembers
 open class EachNavigationBar: UINavigationBar {
     
     /// automatically adjusts position when view layout

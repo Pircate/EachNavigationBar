@@ -36,7 +36,9 @@ extension UIViewController {
             as? EachNavigationBar {
             return bar
         }
+        
         let bar = EachNavigationBar(viewController: self)
+        
         objc_setAssociatedObject(
             self,
             &AssociatedKeys.navigationBar,
@@ -53,46 +55,13 @@ extension UIViewController {
             return item
         }
         
-        #if swift(<5)
-        let item: UINavigationItem
-        if let navigationItem = try? navigationItem.duplicate() {
-            item = navigationItem ?? UINavigationItem()
-        } else {
-            item = UINavigationItem()
-        }
-        #else
-        let item = (try? navigationItem.duplicate()) ?? UINavigationItem()
-        #endif
+        let item = UINavigationItem()
         
-        item.copyTargetActions(from: navigationItem)
         objc_setAssociatedObject(
             self,
             &AssociatedKeys.navigationItem,
             item,
             .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         return item
-    }
-}
-
-private extension UINavigationItem {
-    
-    func copyTargetActions(from navigationItem: UINavigationItem) {
-        if let leftBarButtonItems = navigationItem.leftBarButtonItems,
-            let leftItems = self.leftBarButtonItems,
-            leftBarButtonItems.count == leftItems.count {
-            leftItems.enumerated().forEach {
-                $0.element.target = leftBarButtonItems[$0.offset].target
-                $0.element.action = leftBarButtonItems[$0.offset].action
-            }
-        }
-        
-        if let rightBarButtonItems = navigationItem.rightBarButtonItems,
-            let rightItems = self.rightBarButtonItems,
-            rightBarButtonItems.count == rightItems.count {
-            rightItems.enumerated().forEach {
-                $0.element.target = rightBarButtonItems[$0.offset].target
-                $0.element.action = rightBarButtonItems[$0.offset].action
-            }
-        }
     }
 }

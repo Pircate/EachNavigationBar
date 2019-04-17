@@ -79,8 +79,6 @@ nav.navigation.configuration.barTintColor = UIColor.red
 
 nav.navigation.configuration.shadowImage = UIImage(named: "shadow")
 
-nav.navigation.configuration.backBarButtonItem = .init(style: .image(UIImage(named: "back")), tintColor: UIColor.red)
-
 nav.navigation.configuration.setBackgroundImage(UIImage(named: "nav"), for: .any, barMetrics: .default)
 ```
 
@@ -91,8 +89,6 @@ nav.navigation_configuration.titleTextAttributes = @{NSForegroundColorAttributeN
 nav.navigation_configuration.barTintColor = UIColor.redColor;
 
 nav.navigation_configuration.shadowImage = [UIImage imageNamed:@"shadow"];
-
-nav.navigation_configuration.backBarButtonItem = [[BackBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back"]];
 
 [nav.navigation_configuration setBackgroundImage:[UIImage imageNamed:@"nav"] for:UIBarPositionAny barMetrics:UIBarMetricsDefault];
 ```

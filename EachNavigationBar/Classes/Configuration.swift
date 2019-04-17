@@ -8,44 +8,45 @@
 
 import UIKit
 
+@objcMembers
 public class Configuration: NSObject {
     
-    @objc public var isEnabled = false
+    public var isEnabled = false
     
-    @objc public var isHidden = false
+    public var isHidden = false
     
-    @objc public var alpha: CGFloat = 1
+    public var alpha: CGFloat = 1
     
-    @objc public var barTintColor: UIColor?
+    public var barTintColor: UIColor?
     
-    @objc public var tintColor: UIColor?
+    public var tintColor: UIColor?
     
-    @objc public var shadowImage: UIImage?
+    public var shadowImage: UIImage?
     
     // Hides shadow image.
-    @objc public var isShadowHidden: Bool = false
+    public var isShadowHidden: Bool = false
     
-    @objc public var titleTextAttributes: [NSAttributedString.Key : Any]?
+    public var titleTextAttributes: [NSAttributedString.Key : Any]?
     
-    @objc public var isTranslucent: Bool = true
+    public var isTranslucent: Bool = true
     
-    @objc public var barStyle: UIBarStyle = .default
+    public var barStyle: UIBarStyle = .default
     
-    @objc public var statusBarStyle: UIStatusBarStyle = .default
+    public var statusBarStyle: UIStatusBarStyle = .default
     
     /// Additional height for the navigation bar.
-    @objc public var additionalHeight: CGFloat = 0
+    public var additionalHeight: CGFloat = 0
     
     /// Bar button item to use for the back button in the child navigation item.
-    @objc public var backBarButtonItem: BackBarButtonItem = .none
+    public var backBarButtonItem: BackBarButtonItem = .none
     
     @available(iOS 11.0, *)
     /// Padding of navigation bar content view.
-    @objc public lazy var layoutPaddings: UIEdgeInsets = {
+    public lazy var layoutPaddings: UIEdgeInsets = {
         Const.NavigationBar.layoutPaddings
     }()
     
-    @objc public var shadow: Shadow?
+    public var shadow: Shadow?
     
     var _largeTitleTextAttributes: [NSAttributedString.Key: Any]?
     
@@ -74,14 +75,5 @@ extension Configuration {
         self.backgroundImage = backgroundImage
         self.barPosition = barPosition
         self.barMetrics = barMetrics
-    }
-}
-
-extension Configuration {
-    
-    @available(swift, deprecated: 4.2, message: "Please use additionalHeight.")
-    @objc public var extraHeight: CGFloat {
-        get { return additionalHeight }
-        set { additionalHeight = newValue }
     }
 }

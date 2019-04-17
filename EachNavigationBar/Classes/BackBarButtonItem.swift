@@ -6,22 +6,16 @@
 //  Copyright © 2018年 Pircate. All rights reserved.
 //
 
-public class BackBarButtonItem: NSObject {
+@objcMembers
+open class BackBarButtonItem: NSObject {
     
-    @objc public static let none: BackBarButtonItem = .init(style: .none)
+    public static let none: BackBarButtonItem = .init(style: .none)
     
-    @objc public var shouldBack: (BackBarButtonItem) -> Bool = { _ in true }
+    public var shouldBack: (BackBarButtonItem) -> Bool = { _ in true }
     
-    @objc public var willBack: () -> Void = {}
+    public var willBack: () -> Void = {}
     
-    @objc public var didBack: () -> Void = {}
-    
-    public enum Style {
-        case none
-        case title(String?)
-        case image(UIImage?)
-        case custom(UIButton)
-    }
+    public var didBack: () -> Void = {}
     
     weak var navigationController: UINavigationController?
     
@@ -35,6 +29,19 @@ public class BackBarButtonItem: NSObject {
         self.style = style
         self.tintColor = tintColor
     }
+}
+
+extension BackBarButtonItem {
+    
+    public enum Style {
+        case none
+        case title(String?)
+        case image(UIImage?)
+        case custom(UIButton)
+    }
+}
+
+extension BackBarButtonItem {
     
     @objc public func goBack() {
         navigationController?.popViewController(animated: true)

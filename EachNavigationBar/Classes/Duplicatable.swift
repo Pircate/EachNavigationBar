@@ -7,14 +7,21 @@
 //
 
 protocol Duplicatable {
-    func duplicate() -> Self?
+    func duplicate() throws -> Self?
 }
 
-extension Duplicatable where Self: NSObject {
-    func duplicate() -> Self? {
-        let data = NSKeyedArchiver.archivedData(withRootObject: self)
-        return NSKeyedUnarchiver.unarchiveObject(with: data) as? Self
+extension Duplicatable where Self: NSObject, Self: NSCoding {
+    func duplicate() throws -> Self? {
+        if #available(iOS 11.0, *) {
+            let data = try NSKeyedArchiver.archivedData(withRootObject: self, requiringSecureCoding: true)
+            return try NSKeyedUnarchiver.unarchivedObject(ofClass: Self.self, from: data)
+        } else {
+            let data = NSKeyedArchiver.archivedData(withRootObject: self)
+            return NSKeyedUnarchiver.unarchiveObject(with: data) as? Self
+        }
     }
 }
 
-extension NSObject: Duplicatable {}
+extension UINavigationItem: Duplicatable {}
+
+extension UIButton: Duplicatable {}

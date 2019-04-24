@@ -52,7 +52,18 @@ extension UIViewController {
             as? UINavigationItem {
             return item
         }
+        
+        #if swift(<5)
+        let item: UINavigationItem
+        if let navigationItem = try? navigationItem.duplicate() {
+            item = navigationItem ?? UINavigationItem()
+        } else {
+            item = UINavigationItem()
+        }
+        #else
         let item = (try? navigationItem.duplicate()) ?? UINavigationItem()
+        #endif
+        
         item.copyTargetActions(from: navigationItem)
         objc_setAssociatedObject(
             self,

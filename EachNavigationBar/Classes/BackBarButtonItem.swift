@@ -78,7 +78,12 @@ extension BackBarButtonItem {
                 return UIBarButtonItem(customView: button)
             }
             
+            #if swift(<5)
+            guard let button = try? button.duplicate(), let customView = button else { return nil }
+            #else
             guard let customView = try? button.duplicate() else { return nil }
+            #endif
+            
             customView.addTarget(self, action: action, for: .touchUpInside)
             customView.tintColor = tintColor
             return UIBarButtonItem(customView: customView)

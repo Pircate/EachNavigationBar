@@ -8,13 +8,6 @@
 
 infix operator <=>
 
-private func <=>(left: Selector, right: Selector) {
-    if let originalMethod = class_getInstanceMethod(UIViewController.self, left),
-        let swizzledMethod = class_getInstanceMethod(UIViewController.self, right) {
-        method_exchangeImplementations(originalMethod, swizzledMethod)
-    }
-}
-
 extension UIViewController {
     
     static let methodSwizzling: Void = {
@@ -62,5 +55,15 @@ extension UIViewController {
         navigation_viewDidLayoutSubviews()
         
         view.bringSubviewToFront(_navigationBar)
+    }
+}
+
+private extension Selector {
+    
+    static func <=> (left: Selector, right: Selector) {
+        if let originalMethod = class_getInstanceMethod(UIViewController.self, left),
+            let swizzledMethod = class_getInstanceMethod(UIViewController.self, right) {
+            method_exchangeImplementations(originalMethod, swizzledMethod)
+        }
     }
 }

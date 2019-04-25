@@ -6,11 +6,11 @@
 //  Copyright © 2018年 Pircate. All rights reserved.
 //
 
-protocol Duplicatable {
+protocol Duplicatable: NSSecureCoding {
     func duplicate() throws -> Self?
 }
 
-extension Duplicatable where Self: NSObject, Self: NSCoding {
+extension Duplicatable where Self: NSObject {
     func duplicate() throws -> Self? {
         if #available(iOS 11.0, *) {
             let data = try NSKeyedArchiver.archivedData(withRootObject: self, requiringSecureCoding: true)
@@ -22,6 +22,8 @@ extension Duplicatable where Self: NSObject, Self: NSCoding {
     }
 }
 
-extension UINavigationItem: Duplicatable {}
-
-extension UIButton: Duplicatable {}
+extension UINavigationItem: Duplicatable {
+    public static var supportsSecureCoding: Bool {
+        return true
+    }
+}

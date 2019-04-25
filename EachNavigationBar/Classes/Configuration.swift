@@ -37,9 +37,6 @@ public class Configuration: NSObject {
     /// Additional height for the navigation bar.
     public var additionalHeight: CGFloat = 0
     
-    /// Bar button item to use for the back button in the child navigation item.
-    public var backBarButtonItem: BackBarButtonItem = .none
-    
     @available(iOS 11.0, *)
     /// Padding of navigation bar content view.
     public lazy var layoutPaddings: UIEdgeInsets = {

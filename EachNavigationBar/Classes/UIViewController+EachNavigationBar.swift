@@ -30,13 +30,6 @@ extension UIViewController {
         let count = navigationController.viewControllers.count
         guard count > 1 else { return }
         
-        let configuration = navigationController._configuration
-        guard case .none = configuration.backBarButtonItem.style else {
-            configuration.backBarButtonItem.needsDuplicate = true
-            _navigationBar.backBarButtonItem = configuration.backBarButtonItem
-            return
-        }
-        
         let backButton = UIButton(type: .system)
         let image = UIImage(named: "navigation_back_default", in: Bundle.current, compatibleWith: nil)
         backButton.setImage(image, for: .normal)

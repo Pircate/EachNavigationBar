@@ -19,8 +19,6 @@ open class BackBarButtonItem: NSObject {
     
     weak var navigationController: UINavigationController?
     
-    var needsDuplicate: Bool = false
-    
     var style: Style = .none
     
     var tintColor: UIColor?
@@ -72,21 +70,10 @@ extension BackBarButtonItem {
             
             return backBarButtonItem
         case .custom(let button):
-            guard needsDuplicate else {
-                button.addTarget(self, action: action, for: .touchUpInside)
-                button.tintColor = tintColor
-                return UIBarButtonItem(customView: button)
-            }
+            button.addTarget(self, action: action, for: .touchUpInside)
+            button.tintColor = tintColor
             
-            #if swift(<5)
-            guard let button = try? button.duplicate(), let customView = button else { return nil }
-            #else
-            guard let customView = try? button.duplicate() else { return nil }
-            #endif
-            
-            customView.addTarget(self, action: action, for: .touchUpInside)
-            customView.tintColor = tintColor
-            return UIBarButtonItem(customView: customView)
+            return UIBarButtonItem(customView: button)
         }
     }
     

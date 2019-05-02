@@ -56,6 +56,7 @@ extension UIViewController {
         }
         
         let item = UINavigationItem()
+        item.copy(by: navigationItem)
         
         objc_setAssociatedObject(
             self,
@@ -63,5 +64,13 @@ extension UIViewController {
             item,
             .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         return item
+    }
+}
+
+private extension UINavigationItem {
+    
+    func copy(by navigationItem: UINavigationItem) {
+        self.title = navigationItem.title
+        self.prompt = navigationItem.prompt
     }
 }

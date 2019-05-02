@@ -44,10 +44,10 @@ class ViewController: UIViewController {
             .foregroundColor: UIColor.blue,
             .font: UIFont.systemFont(ofSize: 24)]
         
-        navigation.bar.backBarButtonItem.willBack = {
+        navigation.bar.backBarButtonItem?.willBack = {
             debugPrint("willBack")
         }
-        navigation.bar.backBarButtonItem.didBack = {
+        navigation.bar.backBarButtonItem?.didBack = {
             debugPrint("didBack")
         }
         

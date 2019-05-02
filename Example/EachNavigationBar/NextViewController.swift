@@ -44,7 +44,7 @@ class NextViewController: UIViewController {
             navigation.bar.prefersLargeTitles = false
         }
         
-        navigation.bar.backBarButtonItem.shouldBack = { item in
+        navigation.bar.backBarButtonItem?.shouldBack = { item in
             let alert = UIAlertController(title: "确定退出", message: nil, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
             alert.addAction(UIAlertAction(title: "确定", style: .default) { _ in

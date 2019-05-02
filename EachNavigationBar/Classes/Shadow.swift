@@ -28,3 +28,14 @@ public struct Shadow {
         self.path = path
     }
 }
+
+extension CALayer {
+    
+    func set(_ shadow: Shadow) {
+        shadowColor = shadow.color
+        shadowOpacity = shadow.opacity
+        shadowOffset = shadow.offset
+        shadowRadius = shadow.radius
+        shadowPath = shadow.path
+    }
+}

@@ -36,12 +36,11 @@ open class EachNavigationBar: UINavigationBar {
     }
     
     /// Bar button item to use for the back button in the child navigation item.
-    open var backBarButtonItem: BackBarButtonItem = .none {
+    open var backBarButtonItem: BackBarButtonItem? {
         didSet {
-            backBarButtonItem.navigationController = viewController?.navigationController
+            backBarButtonItem?.navigationController = viewController?.navigationController
             
-            let item = backBarButtonItem.makeBarButtonItem()
-            viewController?._navigationItem.leftBarButtonItem = item
+            viewController?._navigationItem.leftBarButtonItem = backBarButtonItem
         }
     }
 
@@ -63,13 +62,7 @@ open class EachNavigationBar: UINavigationBar {
     }
     
     open var shadow: Shadow = .none {
-        didSet {
-            layer.shadowColor = shadow.color
-            layer.shadowOpacity = shadow.opacity
-            layer.shadowOffset = shadow.offset
-            layer.shadowRadius = shadow.radius
-            layer.shadowPath = shadow.path
-        }
+        didSet { layer.set(shadow) }
     }
     
     private var _contentView: UIView?

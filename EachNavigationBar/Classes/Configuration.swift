@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class Configuration {
+public final class Configuration {
     
     public var isEnabled = false
     

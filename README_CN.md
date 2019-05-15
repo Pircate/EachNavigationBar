@@ -43,10 +43,6 @@ Swift
 ``` swift
 import EachNavigationBar
 ```
-Objective-C
-``` ObjC
-@import EachNavigationBar;
-```
 
 ### 开启
 
@@ -54,16 +50,9 @@ Objective-C
 
 只对当前导航栈有效，不影响其他导航栈。
 
-Swift
 ``` swift
 let nav = UINavigationController(rootViewController: vc)
 nav.navigation.configuration.isEnabled = true
-```
-
-Objective-C
-``` ObjC
-UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
-nav.navigation_configuration.isEnabled = YES;
 ```
 
 ###  设置
@@ -71,7 +60,6 @@ nav.navigation_configuration.isEnabled = YES;
 
 更多配置请看[这里](https://github.com/Pircate/EachNavigationBar/blob/master/EachNavigationBar/Classes/UINavigationController%2BConfiguration.swift)
 
-Swift
 ``` swift
 nav.navigation.configuration.titleTextAttributes = [.foregroundColor: UIColor.blue]
 
@@ -82,21 +70,9 @@ nav.navigation.configuration.shadowImage = UIImage(named: "shadow")
 nav.navigation.configuration.setBackgroundImage(UIImage(named: "nav"), for: .any, barMetrics: .default)
 ```
 
-Objective-C
-``` ObjC
-nav.navigation_configuration.titleTextAttributes = @{NSForegroundColorAttributeName: UIColor.blueColor};
-
-nav.navigation_configuration.barTintColor = UIColor.redColor;
-
-nav.navigation_configuration.shadowImage = [UIImage imageNamed:@"shadow"];
-
-[nav.navigation_configuration setBackgroundImage:[UIImage imageNamed:@"nav"] for:UIBarPositionAny barMetrics:UIBarMetricsDefault];
-```
-
 #### 每个控制器设置
 ##### 普通设置
 
-Swift
 ``` swift
 // 一般用法同系统组件
 navigation.bar  -> EachNavigationBar -> UINavigationBar
@@ -160,12 +136,6 @@ navigation.bar.shadow = Shadow(
     color: UIColor.black.cgColor,
     opacity: 0.5,
     offset: CGSize(width: 0, height: 3))
-```
-
-Objective-C
-``` ObjC
-self.navigation_bar.xxx
-self.navigation_item.xxx
 ```
 
 ##### 大标题设置(iOS 11.0+)

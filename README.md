@@ -43,33 +43,20 @@ github "Pircate/EachNavigationBar"
 
 ### Import
 
-Swift
 ``` swift
 import EachNavigationBar
-```
-Objective-C
-``` ObjC
-@import EachNavigationBar;
 ```
 
 ### Enable
 
-Swift
 ``` swift
 let nav = UINavigationController(rootViewController: vc)
 nav.navigation.configuration.isEnabled = true
 ```
 
-Objective-C
-``` ObjC
-UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
-nav.navigation_configuration.isEnabled = YES;
-```
-
 ### Setting
 #### Global
 
-Swift
 ``` swift
 nav.navigation.configuration.titleTextAttributes = [.foregroundColor: UIColor.blue]
 
@@ -80,21 +67,9 @@ nav.navigation.configuration.shadowImage = UIImage(named: "shadow")
 nav.navigation.configuration.setBackgroundImage(UIImage(named: "nav"), for: .any, barMetrics: .default)
 ```
 
-Objective-C
-``` ObjC
-nav.navigation_configuration.titleTextAttributes = @{NSForegroundColorAttributeName: UIColor.blueColor};
-
-nav.navigation_configuration.barTintColor = UIColor.redColor;
-
-nav.navigation_configuration.shadowImage = [UIImage imageNamed:@"shadow"];
-
-[nav.navigation_configuration setBackgroundImage:[UIImage imageNamed:@"nav"] for:UIBarPositionAny barMetrics:UIBarMetricsDefault];
-```
-
 #### Each view controller
 ##### Normal
 
-Swift
 ``` swift
 navigation.bar  -> EachNavigationBar -> UINavigationBar
 navigation.item -> UINavigationItem
@@ -160,12 +135,6 @@ navigation.bar.shadow = Shadow(
     color: UIColor.black.cgColor,
     opacity: 0.5,
     offset: CGSize(width: 0, height: 3))
-```
-
-Objective-C
-``` ObjC
-self.navigation_bar.xxx
-self.navigation_item.xxx
 ```
 
 ##### LargeTitle(iOS 11.0+)

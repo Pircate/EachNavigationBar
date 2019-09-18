@@ -116,10 +116,13 @@ extension EachNavigationBar {
     private var contentView: UIView? {
         if let contentView = _contentView { return contentView }
         
-        _contentView = subviews
-            .filter {
-                String(describing: $0.classForCoder) == "_UINavigationBarContentView"
-            }.first
+        let className: String
+        if #available(iOS 13.0, *) {
+            className = "UINavigationBarContentView"
+        } else {
+            className = "_UINavigationBarContentView"
+        }
+        _contentView = subviews.filter { String(describing: $0.classForCoder) == className }.first
         
         return _contentView
     }

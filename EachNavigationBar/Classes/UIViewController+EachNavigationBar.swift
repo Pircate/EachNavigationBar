@@ -120,8 +120,9 @@ private extension Bundle {
     
     static var current: Bundle? {
         guard let resourcePath = Bundle(for: EachNavigationBar.self).resourcePath,
-            let bundle = Bundle(path: "\(resourcePath)/EachNavigationBar.bundle") else {
-                return nil
+            let bundle = Bundle(path: "\(resourcePath)/EachNavigationBar.bundle")
+        else {
+            return nil
         }
         return bundle
     }

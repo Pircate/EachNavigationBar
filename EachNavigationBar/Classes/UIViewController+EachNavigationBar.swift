@@ -8,33 +8,67 @@
 
 import UIKit
 
+public extension UIViewController {
+    
+    func adjustsNavigationBarLayout() {
+        _navigationBar.adjustsLayout()
+        _navigationBar.setNeedsLayout()
+    }
+}
+
 extension UIViewController {
 
     func setupNavigationBarWhenViewDidLoad() {
         guard let navigationController = navigationController else { return }
+        
         navigationController.sendNavigationBarToBack()
+        view.addSubview(_navigationBar)
         
         if #available(iOS 11.0, *) {
             _navigationBar.prefersLargeTitles = navigationController.navigationBar.prefersLargeTitles
         }
         
-        let configuration = navigationController._configuration
-        _navigationBar.setup(with: configuration)
+        _navigationBar.apply(navigationController._configuration)
         
-        setupBackBarButtonItem(navigationController)
+        let viewControllers = navigationController.viewControllers
         
-        view.addSubview(_navigationBar)
+        guard viewControllers.count > 1 else { return }
+        
+        _navigationBar.backBarButtonItem = buildBackBarButtonItem(viewControllers)
     }
     
-    private func setupBackBarButtonItem(_ navigationController: UINavigationController) {
-        let count = navigationController.viewControllers.count
-        guard count > 1 else { return }
+    func updateNavigationBarWhenViewWillAppear() {
+        guard let navigationBar = navigationController?.navigationBar else { return }
+        navigationBar.barStyle = _navigationBar._barStyle
+        navigationBar.isHidden = _navigationBar.isHidden
+        if #available(iOS 11.0, *) {
+            adjustsSafeAreaInsetsAfterIOS11()
+            navigationItem.title = _navigationItem.title
+            navigationBar.largeTitleTextAttributes = _navigationBar.largeTitleTextAttributes
+        }
+        view.bringSubviewToFront(_navigationBar)
+    }
+    
+    func adjustsSafeAreaInsetsAfterIOS11() {
+        guard #available(iOS 11.0, *) else { return }
+        
+        let height = _navigationBar.additionalView?.frame.height ?? 0
+        additionalSafeAreaInsets.top = _navigationBar.isHidden
+            ? -view.safeAreaInsets.top
+            : _navigationBar._additionalHeight + height
+    }
+}
+
+private extension UIViewController {
+    
+    func buildBackBarButtonItem(_ viewControllers: [UIViewController]) -> BackBarButtonItem {
+        let count = viewControllers.count
         
         let backButton = UIButton(type: .system)
         let image = UIImage(named: "navigation_back_default", in: Bundle.current, compatibleWith: nil)
         backButton.setImage(image, for: .normal)
         
-        if let title = navigationController.viewControllers[count - 2]._navigationItem.title {
+        if let title = viewControllers[count - 2]._navigationItem.title {
             let maxWidth = min(UIScreen.main.bounds.width, UIScreen.main.bounds.height) / 3
             let width = (title as NSString).boundingRect(
                 with: CGSize(width: maxWidth, height: 20),
@@ -49,42 +83,13 @@ extension UIViewController {
         backButton.contentEdgeInsets = .init(top: 0, left: -8, bottom: 0, right: 8)
         backButton.sizeToFit()
     
-        _navigationBar.backBarButtonItem = BackBarButtonItem(style: .custom(backButton))
-    }
-    
-    func updateNavigationBarWhenViewWillAppear() {
-        guard let navigationBar = navigationController?.navigationBar else { return }
-        navigationBar.barStyle = _navigationBar._barStyle
-        navigationBar.isHidden = _navigationBar.isHidden
-        if #available(iOS 11.0, *) {
-            adjustsSafeAreaInsetsAfterIOS11()
-            navigationItem.title = _navigationItem.title
-            navigationBar.largeTitleTextAttributes = _navigationBar.largeTitleTextAttributes
-        }
-        view.bringSubviewToFront(_navigationBar)
-    }
-}
-
-extension UIViewController {
-    
-    public func adjustsNavigationBarLayout() {
-        _navigationBar.adjustsLayout()
-        _navigationBar.setNeedsLayout()
-    }
-    
-    func adjustsSafeAreaInsetsAfterIOS11() {
-        guard #available(iOS 11.0, *) else { return }
-        
-        let height = _navigationBar.additionalView?.frame.height ?? 0
-        additionalSafeAreaInsets.top = _navigationBar.isHidden
-            ? -view.safeAreaInsets.top
-            : _navigationBar._additionalHeight + height
+        return BackBarButtonItem(style: .custom(backButton))
     }
 }
 
 private extension EachNavigationBar {
     
-    func setup(with configuration: Configuration) {
+    func apply(_ configuration: Configuration) {
         isHidden = configuration.isHidden
         alpha = configuration.alpha
         isTranslucent = configuration.isTranslucent

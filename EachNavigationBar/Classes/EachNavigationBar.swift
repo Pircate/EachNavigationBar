@@ -62,7 +62,7 @@ open class EachNavigationBar: UINavigationBar {
     }
     
     open var shadow: Shadow = .none {
-        didSet { layer.set(shadow) }
+        didSet { layer.apply(shadow) }
     }
     
     private var _contentView: UIView?

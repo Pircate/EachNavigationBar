@@ -34,7 +34,12 @@ extension UIViewController {
         
         guard viewControllers.count > 1 else { return }
         
-        _navigationBar.backBarButtonItem = buildBackBarButtonItem(viewControllers)
+        guard let backItem = navigationController._configuration.backItem else {
+            _navigationBar.backBarButtonItem = buildBackBarButtonItem(viewControllers)
+            return
+        }
+        
+        _navigationBar.backBarButtonItem = BackBarButtonItem(style: backItem.style, tintColor: backItem.tintColor)
     }
     
     func updateNavigationBarWhenViewWillAppear() {

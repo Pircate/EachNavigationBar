@@ -44,6 +44,8 @@ public final class Configuration {
     
     public var shadow: Shadow?
     
+    public var backItem: BackItem?
+    
     var _largeTitleTextAttributes: [NSAttributedString.Key: Any]?
     
     var backgroundImage: UIImage?
@@ -51,6 +53,19 @@ public final class Configuration {
     var barMetrics: UIBarMetrics = .default
     
     var barPosition: UIBarPosition = .any
+}
+
+extension Configuration {
+    
+    public struct BackItem {
+        public let style: BackBarButtonItem.ItemStyle
+        public let tintColor: UIColor?
+        
+        public init(style: BackBarButtonItem.ItemStyle, tintColor: UIColor? = nil) {
+            self.style = style
+            self.tintColor = tintColor
+        }
+    }
 }
 
 extension Configuration {

@@ -65,6 +65,8 @@ nav.navigation.configuration.barTintColor = UIColor.red
 nav.navigation.configuration.shadowImage = UIImage(named: "shadow")
 
 nav.navigation.configuration.setBackgroundImage(UIImage(named: "nav"), for: .any, barMetrics: .default)
+
+nav.navigation.configuration.backItem = Configuration.BackItem(style: .title("返回"))
 ```
 
 #### Each view controller

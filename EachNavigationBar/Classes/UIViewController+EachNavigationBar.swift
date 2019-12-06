@@ -79,7 +79,8 @@ private extension UIViewController {
                 with: CGSize(width: maxWidth, height: 20),
                 options: NSStringDrawingOptions.usesFontLeading,
                 attributes: [.font: UIFont.boldSystemFont(ofSize: 17)],
-                context: nil).size.width
+                context: nil
+            ).size.width
             backButton.setTitle(width < maxWidth ? title : "Back", for: .normal)
         } else {
             backButton.setTitle("Back", for: .normal)
@@ -106,7 +107,8 @@ private extension EachNavigationBar {
         setBackgroundImage(
             configuration.backgroundImage,
             for: configuration.barPosition,
-            barMetrics: configuration.barMetrics)
+            barMetrics: configuration.barMetrics
+        )
         
         barStyle = configuration.barStyle
         statusBarStyle = configuration.statusBarStyle

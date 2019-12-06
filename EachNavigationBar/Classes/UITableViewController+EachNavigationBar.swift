@@ -11,14 +11,15 @@ extension UITableViewController {
     private var observation: NSKeyValueObservation {
         if let observation = objc_getAssociatedObject(
             self,
-            &AssociatedKeys.observation)
-            as? NSKeyValueObservation {
+            &AssociatedKeys.observation
+            ) as? NSKeyValueObservation {
             return observation
         }
         
         let observation = tableView.observe(
-        \.contentOffset,
-        options: .new) { [weak self] tableView, change in
+            \.contentOffset,
+            options: .new
+        ) { [weak self] tableView, change in
             guard let `self` = self else { return }
             
             self.view.bringSubviewToFront(self._navigationBar)
@@ -29,7 +30,8 @@ extension UITableViewController {
             self,
             &AssociatedKeys.observation,
             observation,
-            .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            .OBJC_ASSOCIATION_RETAIN_NONATOMIC
+        )
         
         return observation
     }

@@ -56,8 +56,9 @@ class ViewController: UIViewController {
         
         if #available(iOS 11.0, *) {
             navigation.bar.largeTitleTextAttributes = [
-                .font: UIFont.systemFont(ofSize: 50),
-                .foregroundColor: UIColor.orange]
+                .font: UIFont.systemFont(ofSize: 80),
+                .foregroundColor: UIColor.orange
+            ]
             navigation.bar.prefersLargeTitles = true
         }
     }

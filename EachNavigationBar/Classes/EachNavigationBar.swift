@@ -67,6 +67,16 @@ open class EachNavigationBar: UINavigationBar {
     
     private var _contentView: UIView?
     
+    @available(iOS 13.0, *)
+    lazy var appearance: UINavigationBarAppearance = {
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = self.barTintColor
+        appearance.titleTextAttributes = self.titleTextAttributes ?? [:]
+        appearance.largeTitleTextAttributes = self.largeTitleTextAttributes ?? [:]
+        
+        return appearance
+    }()
+    
     var _alpha: CGFloat = 1
     
     weak var viewController: UIViewController?
@@ -133,8 +143,9 @@ extension EachNavigationBar {
         additionalView.topAnchor.constraint(equalTo: bottomAnchor).isActive = true
         additionalView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
         additionalView.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
-        additionalView.heightAnchor.constraint(
-            equalToConstant: additionalView.frame.height).isActive = true
+        additionalView.heightAnchor
+            .constraint(equalToConstant: additionalView.frame.height)
+            .isActive = true
     }
 }
 
@@ -157,6 +168,13 @@ extension EachNavigationBar {
         frame.size.height = navigationBar.frame.height + _additionalHeight
     }
     
+    @available(iOS 13.0, *)
+    func updateAppearance(_ appearance: UINavigationBarAppearance) {
+        self.standardAppearance = appearance
+        self.compactAppearance = appearance
+        self.scrollEdgeAppearance = appearance
+    }
+    
     private func _layoutSubviews() {
         guard let background = subviews.first else { return }
         background.alpha = _alpha
@@ -165,7 +183,8 @@ extension EachNavigationBar {
             x: 0,
             y: -Const.StatusBar.maxY,
             width: bounds.width,
-            height: bounds.height + Const.StatusBar.maxY)
+            height: bounds.height + Const.StatusBar.maxY
+        )
         
         adjustsLayoutMarginsAfterIOS11()
     }

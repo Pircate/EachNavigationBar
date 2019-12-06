@@ -25,10 +25,28 @@ extension EachNavigationBar {
         }
     }
     
+    open override var barTintColor: UIColor? {
+        didSet {
+            guard #available(iOS 13.0, *) else { return }
+            
+            appearance.backgroundColor = barTintColor
+            updateAppearance(appearance)
+        }
+    }
+    
     /// map to barTintColor
     open override var backgroundColor: UIColor? {
         get { return super.backgroundColor }
         set { barTintColor = newValue }
+    }
+    
+    open override var titleTextAttributes: [NSAttributedString.Key : Any]? {
+        didSet {
+            guard #available(iOS 13.0, *) else { return }
+            
+            appearance.titleTextAttributes = titleTextAttributes ?? [:]
+            updateAppearance(appearance)
+        }
     }
     
     open override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
@@ -46,6 +64,10 @@ extension EachNavigationBar {
             super.prefersLargeTitles = newValue
             
             viewController?.navigationItem.largeTitleDisplayMode = newValue ? .always : .never
+            
+            guard #available(iOS 13.0, *) else { return }
+            
+            updateAppearance(appearance)
         }
     }
     
@@ -58,6 +80,11 @@ extension EachNavigationBar {
             viewController?.navigationItem.title = viewController?._navigationItem.title
             let superNavigationBar = viewController?.navigationController?.navigationBar
             superNavigationBar?.largeTitleTextAttributes = newValue
+            
+            guard #available(iOS 13.0, *) else { return }
+            
+            appearance.largeTitleTextAttributes = newValue ?? [:]
+            updateAppearance(appearance)
         }
     }
 }

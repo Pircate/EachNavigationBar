@@ -42,7 +42,8 @@ class ViewController: UIViewController {
         navigation.item.title = "Home"
         navigation.bar.titleTextAttributes = [
             .foregroundColor: UIColor.blue,
-            .font: UIFont.systemFont(ofSize: 24)]
+            .font: UIFont.systemFont(ofSize: 24)
+        ]
         
         navigation.bar.backBarButtonItem?.willBack = {
             debugPrint("willBack")

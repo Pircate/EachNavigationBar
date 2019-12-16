@@ -53,6 +53,15 @@ extension EachNavigationBar {
         if super.point(inside: point, with: event) { return true }
         return additionalView?.frame.contains(point) ?? false
     }
+    
+    open override func setBackgroundImage(_ backgroundImage: UIImage?, for barPosition: UIBarPosition, barMetrics: UIBarMetrics) {
+        super.setBackgroundImage(backgroundImage, for: barPosition, barMetrics: barMetrics)
+        
+        guard #available(iOS 13.0, *) else { return }
+        
+        appearance.backgroundImage = backgroundImage
+        updateAppearance(appearance)
+    }
 }
 
 extension EachNavigationBar {

@@ -8,54 +8,53 @@
 
 import UIKit
 
-public final class Configuration {
+extension UINavigationController {
     
-    public var isEnabled = false
-    
-    public var isHidden = false
-    
-    public var alpha: CGFloat = 1
-    
-    public var barTintColor: UIColor?
-    
-    public var tintColor: UIColor?
-    
-    public var shadowImage: UIImage?
-    
-    // Hides shadow image.
-    public var isShadowHidden: Bool = false
-    
-    public var titleTextAttributes: [NSAttributedString.Key : Any]?
-    
-    public var isTranslucent: Bool = true
-    
-    public var barStyle: UIBarStyle = .default
-    
-    public var statusBarStyle: UIStatusBarStyle = .default
-    
-    /// Additional height for the navigation bar.
-    public var additionalHeight: CGFloat = 0
-    
-    @available(iOS 11.0, *)
-    /// Padding of navigation bar content view.
-    public lazy var layoutPaddings: UIEdgeInsets = {
-        Const.NavigationBar.layoutPaddings
-    }()
-    
-    public var shadow: Shadow?
-    
-    public var backItem: BackItem?
-    
-    var _largeTitleTextAttributes: [NSAttributedString.Key: Any]?
-    
-    var backgroundImage: UIImage?
-    
-    var barMetrics: UIBarMetrics = .default
-    
-    var barPosition: UIBarPosition = .any
+    public final class Configuration {
+        
+        public var isEnabled = false
+        
+        public var isHidden = false
+        
+        public var alpha: CGFloat = 1
+        
+        public var barTintColor: UIColor?
+        
+        public var tintColor: UIColor?
+        
+        public var shadowImage: UIImage?
+        
+        // Hides shadow image.
+        public var isShadowHidden: Bool = false
+        
+        public var titleTextAttributes: [NSAttributedString.Key : Any]?
+        
+        public var isTranslucent: Bool = true
+        
+        public var barStyle: UIBarStyle = .default
+        
+        public var statusBarStyle: UIStatusBarStyle = .default
+        
+        /// Additional height for the navigation bar.
+        public var additionalHeight: CGFloat = 0
+        
+        public var shadow: Shadow?
+        
+        public var backItem: BackItem?
+        
+        var _layoutPaddings: UIEdgeInsets = Const.NavigationBar.layoutPaddings
+        
+        var _largeTitleTextAttributes: [NSAttributedString.Key: Any]?
+        
+        var backgroundImage: UIImage?
+        
+        var barMetrics: UIBarMetrics = .default
+        
+        var barPosition: UIBarPosition = .any
+    }
 }
 
-extension Configuration {
+extension UINavigationController.Configuration {
     
     public struct BackItem {
         public let style: BackBarButtonItem.ItemStyle
@@ -68,18 +67,22 @@ extension Configuration {
     }
 }
 
-extension Configuration {
+public extension UINavigationController.Configuration {
     
     @available(iOS 11.0, *)
-    public var largeTitleTextAttributes: [NSAttributedString.Key: Any]? {
-        get { return _largeTitleTextAttributes }
+    /// Padding of navigation bar content view.
+    var layoutPaddings: UIEdgeInsets {
+        get { _layoutPaddings }
+        set { _layoutPaddings = newValue }
+    }
+    
+    @available(iOS 11.0, *)
+    var largeTitleTextAttributes: [NSAttributedString.Key: Any]? {
+        get { _largeTitleTextAttributes }
         set { _largeTitleTextAttributes = newValue }
     }
-}
-
-extension Configuration {
     
-    public func setBackgroundImage(
+    func setBackgroundImage(
         _ backgroundImage: UIImage?,
         for barPosition: UIBarPosition = .any,
         barMetrics: UIBarMetrics = .default

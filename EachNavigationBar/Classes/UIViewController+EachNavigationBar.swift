@@ -95,7 +95,7 @@ private extension UIViewController {
 
 private extension EachNavigationBar {
     
-    func apply(_ configuration: Configuration) {
+    func apply(_ configuration: UINavigationController.Configuration) {
         isHidden = configuration.isHidden
         alpha = configuration.alpha
         isTranslucent = configuration.isTranslucent

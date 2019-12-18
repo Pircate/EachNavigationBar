@@ -42,15 +42,15 @@ extension UINavigationController {
         
         public var backItem: BackItem?
         
-        var _layoutPaddings: UIEdgeInsets = Const.NavigationBar.layoutPaddings
-        
-        var _largeTitleTextAttributes: [NSAttributedString.Key: Any]?
-        
         var backgroundImage: UIImage?
         
         var barMetrics: UIBarMetrics = .default
         
         var barPosition: UIBarPosition = .any
+        
+        private var _layoutPaddings: UIEdgeInsets = Const.NavigationBar.layoutPaddings
+        
+        private var _largeTitleTextAttributes: [NSAttributedString.Key: Any]?
     }
 }
 

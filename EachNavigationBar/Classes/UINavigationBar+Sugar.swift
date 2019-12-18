@@ -6,20 +6,20 @@
 //  Copyright © 2018年 Pircate. All rights reserved.
 //
 
-extension UINavigationBar {
+public extension UINavigationBar {
     
-    public func setTitleAlpha(_ alpha: CGFloat) {
+    func setTitleAlpha(_ alpha: CGFloat) {
         let color = titleTextAttributes?[.foregroundColor] as? UIColor ?? defaultTitleColor
         setTitleColor(color.withAlphaComponent(alpha))
     }
     
     @available(iOS 11.0, *)
-    public func setLargeTitleAlpha(_ alpha: CGFloat) {
+    func setLargeTitleAlpha(_ alpha: CGFloat) {
         let color = largeTitleTextAttributes?[.foregroundColor] as? UIColor ?? defaultTitleColor
         setLargeTitleColor(color.withAlphaComponent(alpha))
     }
     
-    public func setTintAlpha(_ alpha: CGFloat) {
+    func setTintAlpha(_ alpha: CGFloat) {
         tintColor = tintColor.withAlphaComponent(alpha)
     }
 }

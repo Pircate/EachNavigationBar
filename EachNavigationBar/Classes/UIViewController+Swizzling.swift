@@ -18,8 +18,7 @@ extension UIViewController {
     static let methodSwizzling: Void = {
         #selector(viewDidLoad) <=> #selector(navigation_viewDidLoad)
         #selector(viewWillAppear(_:)) <=> #selector(navigation_viewWillAppear(_:))
-        #selector(setNeedsStatusBarAppearanceUpdate)
-            <=> #selector(navigation_setNeedsStatusBarAppearanceUpdate)
+        #selector(setNeedsStatusBarAppearanceUpdate) <=> #selector(navigation_setNeedsStatusBarAppearanceUpdate)
         #selector(viewDidLayoutSubviews) <=> #selector(navigation_viewDidLayoutSubviews)
     }()
     

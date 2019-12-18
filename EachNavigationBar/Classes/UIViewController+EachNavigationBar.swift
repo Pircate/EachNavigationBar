@@ -44,7 +44,7 @@ extension UIViewController {
     
     func updateNavigationBarWhenViewWillAppear() {
         guard let navigationBar = navigationController?.navigationBar else { return }
-        navigationBar.barStyle = _navigationBar._barStyle
+        navigationBar.barStyle = _navigationBar.superBarStyle
         navigationBar.isHidden = _navigationBar.isHidden
         if #available(iOS 11.0, *) {
             adjustsSafeAreaInsetsAfterIOS11()

@@ -61,6 +61,7 @@ class ViewController: UIViewController {
                 .foregroundColor: UIColor.orange
             ]
             navigation.bar.prefersLargeTitles = true
+            navigation.item.largeTitleDisplayMode = .always
         }
     }
     

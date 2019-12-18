@@ -50,7 +50,11 @@ extension UINavigationController {
         
         private var _layoutPaddings: UIEdgeInsets = Const.NavigationBar.layoutPaddings
         
+        private var _prefersLargeTitles: Bool = false
+        
         private var _largeTitleTextAttributes: [NSAttributedString.Key: Any]?
+        
+        private var _largeTitleDisplayMode: UINavigationItem.LargeTitleDisplayMode = .automatic
     }
 }
 
@@ -77,9 +81,21 @@ public extension UINavigationController.Configuration {
     }
     
     @available(iOS 11.0, *)
+    var prefersLargeTitles: Bool {
+        get { _prefersLargeTitles }
+        set { _prefersLargeTitles = newValue }
+    }
+    
+    @available(iOS 11.0, *)
     var largeTitleTextAttributes: [NSAttributedString.Key: Any]? {
         get { _largeTitleTextAttributes }
         set { _largeTitleTextAttributes = newValue }
+    }
+    
+    @available(iOS 11.0, *)
+    var largeTitleDisplayMode: UINavigationItem.LargeTitleDisplayMode {
+        get { _largeTitleDisplayMode }
+        set { _largeTitleDisplayMode = newValue }
     }
     
     func setBackgroundImage(

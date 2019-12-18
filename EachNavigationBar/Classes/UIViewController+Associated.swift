@@ -51,7 +51,7 @@ extension UIViewController {
             return item
         }
         
-        let item = UINavigationItem()
+        let item = EachNavigationItem(viewController: self)
         item.copy(by: navigationItem)
         
         objc_setAssociatedObject(

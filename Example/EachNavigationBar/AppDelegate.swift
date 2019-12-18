@@ -27,7 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         nav.navigation.configuration.tintColor = UIColor.white
         
         if #available(iOS 11.0, *) {
-            nav.navigation.prefersLargeTitles()
+            nav.navigation.configuration.prefersLargeTitles = true
+            nav.navigation.configuration.largeTitleDisplayMode = .never
         }
         
         let shadow = Shadow(

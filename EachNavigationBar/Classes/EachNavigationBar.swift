@@ -146,9 +146,11 @@ extension EachNavigationBar {
     open override var prefersLargeTitles: Bool {
         get { return super.prefersLargeTitles }
         set {
+            guard super.prefersLargeTitles != newValue else { return }
+            
             super.prefersLargeTitles = newValue
             
-            viewController?.navigationItem.largeTitleDisplayMode = newValue ? .always : .never
+            superNavigationBar?.prefersLargeTitles = newValue
             
             guard #available(iOS 13.0, *) else { return }
             
@@ -200,7 +202,7 @@ extension EachNavigationBar {
     
     var _additionalHeight: CGFloat {
         if #available(iOS 11.0, *) {
-            if prefersLargeTitles { return 0 }
+            if isLargeTitleShown { return 0 }
         }
         return additionalHeight
     }
@@ -226,14 +228,6 @@ extension EachNavigationBar {
 // MARK: - private
 private extension EachNavigationBar {
     
-    var barHeight: CGFloat {
-        if let bar = superNavigationBar {
-            return bar.frame.height
-        } else {
-            return Const.NavigationBar.height
-        }
-    }
-    
     var superNavigationBar: UINavigationBar? {
         return viewController?.navigationController?.navigationBar
     }
@@ -251,6 +245,19 @@ private extension EachNavigationBar {
         _contentView = subviews.filter { String(describing: $0.classForCoder) == className }.first
         
         return _contentView
+    }
+    
+    @available(iOS 11.0, *)
+    var isLargeTitleShown: Bool {
+        return prefersLargeTitles && viewController?._navigationItem.largeTitleDisplayMode != .never
+    }
+    
+    var barHeight: CGFloat {
+        if let bar = superNavigationBar {
+            return bar.frame.height
+        } else {
+            return Const.NavigationBar.height
+        }
     }
     
     func _layoutSubviews() {
@@ -271,7 +278,7 @@ private extension EachNavigationBar {
         guard #available(iOS 11.0, *) else { return }
         
         layoutMargins = Const.NavigationBar.layoutMargins
-        contentView?.frame.origin.y = prefersLargeTitles ? 0 : additionalHeight
+        contentView?.frame.origin.y = isLargeTitleShown ? 0 : additionalHeight
         contentView?.layoutMargins = layoutPaddings
     }
     

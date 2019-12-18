@@ -70,6 +70,10 @@ nav.navigation.configuration.shadowImage = UIImage(named: "shadow")
 nav.navigation.configuration.setBackgroundImage(UIImage(named: "nav"), for: .any, barMetrics: .default)
 
 nav.navigation.configuration.backItem = UINavigationController.Configuration.BackItem(style: .title("返回"))
+
+nav.navigation.configuration.prefersLargeTitles = true
+
+nav.navigation.configuration.largeTitle.displayMode = .always
 ```
 
 #### 每个控制器设置

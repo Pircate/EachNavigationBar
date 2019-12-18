@@ -42,32 +42,13 @@ extension UINavigationController {
         
         public var backItem: BackItem?
         
-        var backgroundImage: UIImage?
-        
-        var barMetrics: UIBarMetrics = .default
-        
-        var barPosition: UIBarPosition = .any
+        var background: Background = .init()
         
         private var _layoutPaddings: UIEdgeInsets = Const.NavigationBar.layoutPaddings
         
         private var _prefersLargeTitles: Bool = false
         
-        private var _largeTitleTextAttributes: [NSAttributedString.Key: Any]?
-        
-        private var _largeTitleDisplayMode: UINavigationItem.LargeTitleDisplayMode = .automatic
-    }
-}
-
-extension UINavigationController.Configuration {
-    
-    public struct BackItem {
-        public let style: BackBarButtonItem.ItemStyle
-        public let tintColor: UIColor?
-        
-        public init(style: BackBarButtonItem.ItemStyle, tintColor: UIColor? = nil) {
-            self.style = style
-            self.tintColor = tintColor
-        }
+        private var _largeTitle: LargeTitle = .init()
     }
 }
 
@@ -87,15 +68,9 @@ public extension UINavigationController.Configuration {
     }
     
     @available(iOS 11.0, *)
-    var largeTitleTextAttributes: [NSAttributedString.Key: Any]? {
-        get { _largeTitleTextAttributes }
-        set { _largeTitleTextAttributes = newValue }
-    }
-    
-    @available(iOS 11.0, *)
-    var largeTitleDisplayMode: UINavigationItem.LargeTitleDisplayMode {
-        get { _largeTitleDisplayMode }
-        set { _largeTitleDisplayMode = newValue }
+    var largeTitle: LargeTitle {
+        get { _largeTitle }
+        set { _largeTitle = newValue }
     }
     
     func setBackgroundImage(
@@ -103,8 +78,32 @@ public extension UINavigationController.Configuration {
         for barPosition: UIBarPosition = .any,
         barMetrics: UIBarMetrics = .default
     ) {
-        self.backgroundImage = backgroundImage
-        self.barPosition = barPosition
-        self.barMetrics = barMetrics
+        self.background.image = backgroundImage
+        self.background.barPosition = barPosition
+        self.background.barMetrics = barMetrics
+    }
+}
+
+extension UINavigationController.Configuration {
+    
+    public struct BackItem {
+        public let style: BackBarButtonItem.ItemStyle
+        public let tintColor: UIColor?
+        
+        public init(style: BackBarButtonItem.ItemStyle, tintColor: UIColor? = nil) {
+            self.style = style
+            self.tintColor = tintColor
+        }
+    }
+    
+    public struct LargeTitle {
+        public var textAttributes: [NSAttributedString.Key: Any]?
+        public var displayMode: UINavigationItem.LargeTitleDisplayMode = .automatic
+    }
+    
+    struct Background {
+        var image: UIImage?
+        var barMetrics: UIBarMetrics = .default
+        var barPosition: UIBarPosition = .any
     }
 }

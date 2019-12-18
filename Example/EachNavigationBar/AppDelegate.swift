@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if #available(iOS 11.0, *) {
             nav.navigation.configuration.prefersLargeTitles = true
-            nav.navigation.configuration.largeTitleDisplayMode = .never
+            nav.navigation.configuration.largeTitle.displayMode = .never
         }
         
         let shadow = Shadow(

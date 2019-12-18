@@ -25,7 +25,7 @@ extension UIViewController {
         view.addSubview(_navigationBar)
         
         if #available(iOS 11.0, *) {
-            _navigationItem.largeTitleDisplayMode = navigationController._configuration.largeTitleDisplayMode
+            _navigationItem.largeTitleDisplayMode = navigationController._configuration.largeTitle.displayMode
         }
         
         _navigationBar.apply(navigationController._configuration)
@@ -49,9 +49,9 @@ extension UIViewController {
         if #available(iOS 11.0, *) {
             adjustsSafeAreaInsetsAfterIOS11()
             navigationItem.title = _navigationItem.title
+            navigationItem.largeTitleDisplayMode = _navigationItem.largeTitleDisplayMode
             navigationBar.prefersLargeTitles = _navigationBar.prefersLargeTitles
             navigationBar.largeTitleTextAttributes = _navigationBar.largeTitleTextAttributes
-            navigationItem.largeTitleDisplayMode = _navigationItem.largeTitleDisplayMode
         }
         view.bringSubviewToFront(_navigationBar)
     }
@@ -107,9 +107,9 @@ private extension EachNavigationBar {
         titleTextAttributes = configuration.titleTextAttributes
         shadowImage = configuration.shadowImage
         setBackgroundImage(
-            configuration.backgroundImage,
-            for: configuration.barPosition,
-            barMetrics: configuration.barMetrics
+            configuration.background.image,
+            for: configuration.background.barPosition,
+            barMetrics: configuration.background.barMetrics
         )
         
         barStyle = configuration.barStyle
@@ -126,7 +126,7 @@ private extension EachNavigationBar {
         if #available(iOS 11.0, *) {
             layoutPaddings = configuration.layoutPaddings
             prefersLargeTitles = configuration.prefersLargeTitles
-            largeTitleTextAttributes = configuration.largeTitleTextAttributes
+            largeTitleTextAttributes = configuration.largeTitle.textAttributes
         }
     }
 }

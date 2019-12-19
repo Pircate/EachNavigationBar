@@ -146,13 +146,10 @@ navigation.bar.shadow = Shadow(
 
 ##### 大标题设置(iOS 11.0+)
 
-UINavigationController
 ``` swift
 // 开启大标题
 navigation.bar.prefersLargeTitles = true
-```
-UIViewController
-```swift
+
 // 显示模式
 navigation.item.largeTitleDisplayMode = .always
 

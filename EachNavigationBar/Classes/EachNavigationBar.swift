@@ -105,6 +105,15 @@ extension EachNavigationBar {
         didSet { viewController?.adjustsSafeAreaInsetsAfterIOS11() }
     }
     
+    open override var isTranslucent: Bool {
+        didSet {
+            guard #available(iOS 13.0, *), !isTranslucent else { return }
+            
+            appearance.backgroundEffect = nil
+            updateAppearance(appearance)
+        }
+    }
+    
     open override var alpha: CGFloat {
         get { return super.alpha }
         set {
@@ -131,6 +140,15 @@ extension EachNavigationBar {
     open override var backgroundColor: UIColor? {
         get { return super.backgroundColor }
         set { barTintColor = newValue }
+    }
+    
+    open override var shadowImage: UIImage? {
+        didSet {
+            guard #available(iOS 13.0, *) else { return }
+            
+            appearance.shadowImage = shadowImage
+            updateAppearance(appearance)
+        }
     }
     
     open override var titleTextAttributes: [NSAttributedString.Key : Any]? {

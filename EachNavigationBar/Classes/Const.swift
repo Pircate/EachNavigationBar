@@ -13,6 +13,9 @@ struct Const {
     struct StatusBar {
         
         static var maxY: CGFloat {
+            if #available(iOS 13, *) {
+                return UIApplication.shared.keyWindow?.windowScene?.statusBarManager?.statusBarFrame.maxY ?? 0
+            }
             return UIApplication.shared.statusBarFrame.maxY
         }
     }

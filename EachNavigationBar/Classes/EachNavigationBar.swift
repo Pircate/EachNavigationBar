@@ -230,11 +230,7 @@ extension EachNavigationBar {
         
         if automaticallyAdjustsPosition {
             frame = navigationBar.frame
-            if #available(iOS 11.0, *) {
-                if prefersLargeTitles {
-                    frame.origin.y = Const.StatusBar.maxY
-                }
-            }
+            frame.origin.y = Const.StatusBar.maxY
         } else {
             frame.size = navigationBar.frame.size
         }

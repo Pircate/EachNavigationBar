@@ -12,7 +12,9 @@ extension UINavigationController {
     
     public final class Configuration {
         
-        public var isEnabled = false
+        public var isEnabled = false {
+            didSet { UIViewController.methodSwizzling }
+        }
         
         public var isHidden = false
         

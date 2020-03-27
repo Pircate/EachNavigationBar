@@ -250,13 +250,9 @@ private extension EachNavigationBar {
     var contentView: UIView? {
         if let contentView = _contentView { return contentView }
         
-        let className: String
-        if #available(iOS 13.0, *) {
-            className = "UINavigationBarContentView"
-        } else {
-            className = "_UINavigationBarContentView"
-        }
-        _contentView = subviews.filter { String(describing: $0.classForCoder) == className }.first
+        _contentView = subviews.filter {
+            String(describing: $0.classForCoder) == "_UINavigationBarContentView"
+        }.first
         
         return _contentView
     }
@@ -292,8 +288,24 @@ private extension EachNavigationBar {
         guard #available(iOS 11.0, *) else { return }
         
         layoutMargins = Const.NavigationBar.layoutMargins
-        contentView?.frame.origin.y = isLargeTitleShown ? 0 : additionalHeight
-        contentView?.layoutMargins = layoutPaddings
+        
+        guard let contentView = contentView else { return }
+        
+        if #available(iOS 13.0, *) {
+            contentView.frame = CGRect(
+                x: layoutPaddings.left - layoutMargins.left,
+                y: isLargeTitleShown ? 0 : additionalHeight,
+                width: layoutMargins.left
+                    + layoutMargins.right
+                    - layoutPaddings.left
+                    - layoutPaddings.right
+                    + contentView.frame.width,
+                height: contentView.frame.height
+            )
+        } else {
+            contentView.frame.origin.y = isLargeTitleShown ? 0 : additionalHeight
+            contentView.layoutMargins = layoutPaddings
+        }
     }
     
     func setupAdditionalView(_ additionalView: UIView) {

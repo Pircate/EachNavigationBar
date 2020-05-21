@@ -1,6 +1,6 @@
 # EachNavigationBar
 
-[![CI Status](http://img.shields.io/travis/Pircate/EachNavigationBar.svg?style=flat)](https://travis-ci.org/Pircate/EachNavigationBar)
+[![Lint](https://github.com/Pircate/EachNavigationBar/workflows/Lint/badge.svg)](https://github.com/Pircate/EachNavigationBar/actions?query=workflow%3ALint)
 [![Version](https://img.shields.io/cocoapods/v/EachNavigationBar.svg?style=flat)](http://cocoapods.org/pods/EachNavigationBar)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![License](https://img.shields.io/cocoapods/l/EachNavigationBar.svg?style=flat)](http://cocoapods.org/pods/EachNavigationBar)

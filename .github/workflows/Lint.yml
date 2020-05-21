@@ -1,0 +1,19 @@
+name: Lint
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  test:
+
+    runs-on: macOS-latest
+
+    steps:
+    - uses: actions/checkout@master
+    - name: Install cocoapods
+      run: gem install cocoapods --pre && pod install --project-directory=Example
+    - name: Lib lint
+      run: pod lib lint --allow-warnings

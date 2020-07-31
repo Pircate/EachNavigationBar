@@ -26,7 +26,8 @@ class MainViewController: UIViewController {
             title: "Next",
             style: .plain,
             target: self,
-            action: #selector(rightBarButtonAction))
+            action: #selector(rightBarButtonAction)
+        )
         
         navigation.bar.shadow = .none
     }

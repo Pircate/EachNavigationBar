@@ -19,8 +19,11 @@ extension UIViewController {
     
     private var isNavigationBarEnabled: Bool {
         guard let navigationController = navigationController,
-            navigationController.navigation.configuration.isEnabled,
-            navigationController.viewControllers.contains(self) else { return false }
+              navigationController.navigation.configuration.isEnabled,
+              navigationController.viewControllers.contains(self) else {
+            return false
+        }
+        
         return true
     }
     

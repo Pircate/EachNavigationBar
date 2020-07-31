@@ -1,33 +1,44 @@
-# This file contains the fastlane.tools configuration
-# You can find the documentation at https://docs.fastlane.tools
-#
-# For a list of all available actions, check out
-#
-#     https://docs.fastlane.tools/actions
-#
-# For a list of all available plugins, check out
-#
-#     https://docs.fastlane.tools/plugins/available-plugins
-#
-
-# Uncomment the line if you want fastlane to automatically update itself
-# update_fastlane
-
 default_platform(:ios)
 
 platform :ios do
+
   desc "release new version"
   lane :release do |options|
-    target_version = options[:version]
-    raise "The version is missed." if target_version.nil?
+    # 获取 podspec 文件路径
+    podspec_json = read_podspec()
+    podspec_path = "#{podspec_json["name"]}.podspec"
 
-    version_bump_podspec(
-    	path: "EachNavigationBar.podspec", 
-    	version_number: target_version)
-    git_add(path: "./EachNavigationBar.podspec")
-    git_commit(path: "./EachNavigationBar.podspec", message: "release #{target_version} version")
-    add_git_tag tag: target_version
-    push_to_git_remote
-    pod_push(allow_warnings: true)
+    target_version = options[:version]
+    if !target_version.nil?
+      # 设置 podspec 版本
+      version_bump_podspec(
+        path: podspec_path,
+        version_number: target_version
+      )
+
+      # 添加并提交 podspec 文件
+      git_add(path: podspec_path)
+      git_commit(
+        path: podspec_path,
+        message: "release #{target_version} version"
+      )
+
+      # 推送 git 提交
+      push_to_git_remote
+    end
+
+    # 获取版本号
+    target_version = version_get_podspec(path: podspec_path)
+
+    # 添加标签
+    if !git_tag_exists(tag: target_version)
+      add_git_tag tag: target_version
+    end
+
+    # 推送标签
+    push_git_tags
+
+    # 发布到 pod
+    pod_push(path: podspec_path, allow_warnings: true)
   end
 end

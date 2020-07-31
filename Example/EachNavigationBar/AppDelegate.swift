@@ -34,7 +34,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let shadow = Shadow(
             color: UIColor.black.cgColor,
             opacity: 0.5,
-            offset: CGSize(width: 0, height: 3))
+            offset: CGSize(width: 0, height: 3)
+        )
         nav.navigation.configuration.shadow = shadow
         
         window?.rootViewController = nav

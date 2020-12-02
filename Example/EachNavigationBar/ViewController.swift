@@ -72,7 +72,7 @@ class ViewController: UIViewController {
 
 extension ViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let statusBarMaxY = UIApplication.shared.statusBarFrame.maxY
+        let statusBarMaxY = navigationController!.navigationBar.frame.minY
         let originY = -scrollView.contentOffset.y + statusBarMaxY
         let alpha = 1 - (scrollView.contentOffset.y) / navigation.bar.frame.height
         navigation.bar.setTintAlpha(alpha)

@@ -23,7 +23,7 @@ extension UITableViewController {
             guard let `self` = self else { return }
             
             self.view.bringSubviewToFront(self._navigationBar)
-            self._navigationBar.frame.origin.y = tableView.contentOffset.y + Const.StatusBar.maxY
+            self._navigationBar.frame.origin.y = tableView.contentOffset.y + self._navigationBar.barMinY
         }
         
         objc_setAssociatedObject(

@@ -225,12 +225,16 @@ extension EachNavigationBar {
         return additionalHeight
     }
     
+    var barMinY: CGFloat {
+        superNavigationBar?.frame.minY ?? Const.StatusBar.maxY
+    }
+    
     func adjustsLayout() {
         guard let navigationBar = superNavigationBar else { return }
         
         if automaticallyAdjustsPosition {
             frame = navigationBar.frame
-            frame.origin.y = Const.StatusBar.maxY
+            frame.origin.y = barMinY
         } else {
             frame.size = navigationBar.frame.size
         }
@@ -276,9 +280,9 @@ private extension EachNavigationBar {
         background.clipsToBounds = isShadowHidden
         background.frame = CGRect(
             x: 0,
-            y: -Const.StatusBar.maxY,
+            y: -barMinY,
             width: bounds.width,
-            height: bounds.height + Const.StatusBar.maxY
+            height: bounds.height + barMinY
         )
         
         adjustsLayoutMarginsAfterIOS11()

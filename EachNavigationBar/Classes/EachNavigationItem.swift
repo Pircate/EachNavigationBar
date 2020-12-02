@@ -6,6 +6,8 @@
 //  Copyright © 2019年 Pircate. All rights reserved.
 //
 
+import UIKit
+
 class EachNavigationItem: UINavigationItem {
     
     private weak var viewController: UIViewController?

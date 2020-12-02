@@ -6,12 +6,20 @@
 //  Copyright © 2018年 Pircate. All rights reserved.
 //
 
+import UIKit
+
+extension UIViewController: NavigationCompatible {}
+
 public extension Navigation where Base: UIViewController {
     
     var bar: EachNavigationBar {
         assert(
             !(base is UINavigationController),
             "UINavigationController can't use this property, please use configuration."
+        )
+        assert(
+            base.navigationController?.navigation.configuration.isEnabled == true,
+            "Please make sure UINavigationController navigation.configuration.isEnabled is true."
         )
         return base._navigationBar
     }
@@ -20,6 +28,10 @@ public extension Navigation where Base: UIViewController {
         assert(
             !(base is UINavigationController),
             "UINavigationController can't use this property, please use configuration."
+        )
+        assert(
+            base.navigationController?.navigation.configuration.isEnabled == true,
+            "Please make sure UINavigationController navigation.configuration.isEnabled is true."
         )
         return base._navigationItem
     }

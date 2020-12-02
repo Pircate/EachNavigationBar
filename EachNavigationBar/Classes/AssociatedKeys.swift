@@ -6,6 +6,8 @@
 //  Copyright © 2018年 Pircate. All rights reserved.
 //
 
+import Foundation
+
 struct AssociatedKeys {
     
     static var configuration = "com.pircate.github.configuration"

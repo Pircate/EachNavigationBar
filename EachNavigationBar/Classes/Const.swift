@@ -6,31 +6,28 @@
 //  Copyright © 2018年 Pircate. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-struct Const {
+extension CGFloat {
     
-    struct StatusBar {
-        
-        static var maxY: CGFloat {
-            if #available(iOS 13, *) {
-                return UIApplication.shared
-                    .keyWindow?
-                    .windowScene?
-                    .statusBarManager?
-                    .statusBarFrame
-                    .maxY ?? 0
-            }
-            return UIApplication.shared.statusBarFrame.maxY
+    static let navigationBarHeight: CGFloat = 44.0
+    
+    static var statusBarMaxY: CGFloat {
+        if #available(iOS 13, *) {
+            return UIApplication.shared
+                .keyWindow?
+                .windowScene?
+                .statusBarManager?
+                .statusBarFrame
+                .maxY ?? 0
         }
+        return UIApplication.shared.statusBarFrame.maxY
     }
+}
+
+extension UIEdgeInsets {
     
-    struct NavigationBar {
-        
-        static let height: CGFloat = 44.0
-        
-        static let layoutPaddings: UIEdgeInsets = .init(top: 0, left: 16, bottom: 0, right: 16)
-        
-        static let layoutMargins: UIEdgeInsets = .init(top: 8, left: 16, bottom: 8, right: 16)
-    }
+    static let barLayoutPaddings: UIEdgeInsets = .init(top: 0, left: 16, bottom: 0, right: 16)
+    
+    static let barLayoutMargins: UIEdgeInsets = .init(top: 8, left: 16, bottom: 8, right: 16)
 }

@@ -46,7 +46,7 @@ extension UINavigationController {
         
         var background: Background = .init()
         
-        private var _layoutPaddings: UIEdgeInsets = Const.NavigationBar.layoutPaddings
+        private var _layoutPaddings: UIEdgeInsets = .barLayoutPaddings
         
         private var _prefersLargeTitles: Bool = false
         

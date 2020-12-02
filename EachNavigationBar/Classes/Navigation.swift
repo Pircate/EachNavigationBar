@@ -6,6 +6,8 @@
 //  Copyright © 2018年 Pircate. All rights reserved.
 //
 
+import Foundation
+
 public struct Navigation<Base> {
     
     let base: Base
@@ -28,5 +30,3 @@ public extension NavigationCompatible {
         return Navigation(self)
     }
 }
-
-extension UIViewController: NavigationCompatible {}

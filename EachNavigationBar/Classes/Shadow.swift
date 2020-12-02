@@ -6,6 +6,8 @@
 //  Copyright © 2019年 Pircate. All rights reserved.
 //
 
+import UIKit
+
 public struct Shadow {
     let color: CGColor?
     let opacity: Float

@@ -70,6 +70,7 @@ open class EachNavigationBar: UINavigationBar {
     @available(iOS 13.0, *)
     private lazy var appearance: UINavigationBarAppearance = {
         let appearance = UINavigationBarAppearance()
+        
         appearance.backgroundColor = self.barTintColor
         appearance.titleTextAttributes = self.titleTextAttributes ?? [:]
         appearance.largeTitleTextAttributes = self.largeTitleTextAttributes ?? [:]
@@ -79,7 +80,7 @@ open class EachNavigationBar: UINavigationBar {
     
     private var _alpha: CGFloat = 1
     
-    private var _layoutPaddings: UIEdgeInsets = Const.NavigationBar.layoutPaddings
+    private var _layoutPaddings: UIEdgeInsets = .barLayoutPaddings
     
     private var _contentView: UIView?
     
@@ -226,7 +227,7 @@ extension EachNavigationBar {
     }
     
     var barMinY: CGFloat {
-        superNavigationBar?.frame.minY ?? Const.StatusBar.maxY
+        superNavigationBar?.frame.minY ?? .statusBarMaxY
     }
     
     func adjustsLayout() {
@@ -267,11 +268,7 @@ private extension EachNavigationBar {
     }
     
     var barHeight: CGFloat {
-        if let bar = superNavigationBar {
-            return bar.frame.height
-        } else {
-            return Const.NavigationBar.height
-        }
+        superNavigationBar?.frame.height ?? .navigationBarHeight
     }
     
     func _layoutSubviews() {
@@ -291,7 +288,7 @@ private extension EachNavigationBar {
     func adjustsLayoutMarginsAfterIOS11() {
         guard #available(iOS 11.0, *) else { return }
         
-        layoutMargins = Const.NavigationBar.layoutMargins
+        layoutMargins = .barLayoutMargins
         
         guard let contentView = contentView else { return }
         
@@ -315,12 +312,12 @@ private extension EachNavigationBar {
     func setupAdditionalView(_ additionalView: UIView) {
         addSubview(additionalView)
         additionalView.translatesAutoresizingMaskIntoConstraints = false
-        additionalView.topAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        additionalView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
-        additionalView.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
-        additionalView.heightAnchor
-            .constraint(equalToConstant: additionalView.frame.height)
-            .isActive = true
+        NSLayoutConstraint.activate([
+            additionalView.topAnchor.constraint(equalTo: bottomAnchor),
+            additionalView.leftAnchor.constraint(equalTo: leftAnchor),
+            additionalView.widthAnchor.constraint(equalTo: widthAnchor),
+            additionalView.heightAnchor.constraint(equalToConstant: additionalView.frame.height)
+        ])
     }
     
     @available(iOS 13.0, *)

@@ -39,7 +39,7 @@ extension UIViewController {
             return
         }
         
-        _navigationBar.backBarButtonItem = BackBarButtonItem(style: backItem.style, tintColor: backItem.tintColor)
+        _navigationBar.backBarButtonItem = BackBarButtonItem(from: backItem)
     }
     
     func updateNavigationBarWhenViewWillAppear() {
@@ -139,5 +139,17 @@ private extension Bundle {
             return nil
         }
         return bundle
+    }
+}
+
+private extension BackBarButtonItem {
+    
+    convenience init(from backItem: UINavigationController.Configuration.BackItem) {
+        switch backItem.style {
+        case .title(let title):
+            self.init(style: .title(title), tintColor: backItem.tintColor)
+        case .image(let image):
+            self.init(style: .image(image), tintColor: backItem.tintColor)
+        }
     }
 }

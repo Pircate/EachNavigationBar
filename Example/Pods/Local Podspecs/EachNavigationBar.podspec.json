@@ -1,6 +1,6 @@
 {
   "name": "EachNavigationBar",
-  "version": "1.14.2",
+  "version": "1.14.5",
   "summary": "A custom navigation bar of UIViewController.",
   "homepage": "https://github.com/Pircate/EachNavigationBar",
   "license": {
@@ -12,7 +12,7 @@
   },
   "source": {
     "git": "https://github.com/Pircate/EachNavigationBar.git",
-    "tag": "1.14.2"
+    "tag": "1.14.5"
   },
   "source_files": "EachNavigationBar/Classes/**/*",
   "resource_bundles": {
@@ -27,7 +27,7 @@
     "5.1"
   ],
   "platforms": {
-    "ios": "9.0"
+    "ios": "10.0"
   },
   "swift_version": "5.1"
 }

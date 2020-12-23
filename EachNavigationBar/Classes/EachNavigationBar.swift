@@ -255,9 +255,9 @@ private extension EachNavigationBar {
     var contentView: UIView? {
         if let contentView = _contentView { return contentView }
         
-        _contentView = subviews.filter {
+        _contentView = subviews.first {
             String(describing: $0.classForCoder) == "_UINavigationBarContentView"
-        }.first
+        }
         
         return _contentView
     }

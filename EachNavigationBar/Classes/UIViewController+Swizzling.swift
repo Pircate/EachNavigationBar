@@ -32,6 +32,12 @@ extension UIViewController {
     @objc private func navigation_viewDidLoad() {
         navigation_viewDidLoad()
         
+        //Filter white list
+        for aKind in navigationController?.navigation.configuration.whitelist ?? [] where self.isKind(of: aKind) {
+            _navigationBar.isHidden = true
+            return
+        }
+        
         guard isNavigationBarEnabled else { return }
         
         setupNavigationBarWhenViewDidLoad()

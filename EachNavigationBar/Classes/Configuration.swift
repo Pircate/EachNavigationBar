@@ -44,6 +44,9 @@ extension UINavigationController {
         
         public var backItem: BackItem?
         
+        ///Add white list without EachNavigationBar
+        public var whitelist:[UIViewController.Type] = []
+        
         var background: Background = .init()
         
         private var _layoutPaddings: UIEdgeInsets = .barLayoutPaddings

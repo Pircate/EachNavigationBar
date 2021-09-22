@@ -227,7 +227,11 @@ extension EachNavigationBar {
     }
     
     var barMinY: CGFloat {
-        superNavigationBar?.frame.minY ?? .statusBarMaxY
+        guard let barMinY = superNavigationBar?.frame.minY, barMinY > 0 else {
+            return .statusBarMaxY
+        }
+         
+        return barMinY
     }
     
     func adjustsLayout() {

@@ -58,7 +58,9 @@ nav.navigation.configuration.isEnabled = true
 ###  设置
 #### 导航栈全局配置
 
-更多配置请看[这里](https://github.com/Pircate/EachNavigationBar/blob/master/EachNavigationBar/Classes/UINavigationController%2BConfiguration.swift)
+不要通过 navigationController.navigationBar 去设置全局属性!!!
+
+更多配置请看[这里](https://github.com/Pircate/EachNavigationBar/blob/master/EachNavigationBar/Classes/Configuration.swift)
 
 ``` swift
 nav.navigation.configuration.titleTextAttributes = [.foregroundColor: UIColor.blue]

@@ -54,15 +54,6 @@ class ViewController: UIViewController {
         
         // if you want change navigation bar position
         navigation.bar.automaticallyAdjustsPosition = false
-        
-        if #available(iOS 11.0, *) {
-            navigation.bar.largeTitleTextAttributes = [
-                .font: UIFont.systemFont(ofSize: 80),
-                .foregroundColor: UIColor.orange
-            ]
-            navigation.bar.prefersLargeTitles = true
-            navigation.item.largeTitleDisplayMode = .always
-        }
     }
     
     @objc private func rightBarButtonAction() {

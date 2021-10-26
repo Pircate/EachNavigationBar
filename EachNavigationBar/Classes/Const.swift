@@ -11,18 +11,6 @@ import UIKit
 extension CGFloat {
     
     static let navigationBarHeight: CGFloat = 44.0
-    
-    static var statusBarMaxY: CGFloat {
-        if #available(iOS 13, *) {
-            return UIApplication.shared
-                .keyWindow?
-                .windowScene?
-                .statusBarManager?
-                .statusBarFrame
-                .maxY ?? 0
-        }
-        return UIApplication.shared.statusBarFrame.maxY
-    }
 }
 
 extension UIEdgeInsets {

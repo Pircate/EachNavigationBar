@@ -48,8 +48,8 @@ extension UIViewController {
         return bar
     }
     
-    var _navigationItem: UINavigationItem {
-        if let item = objc_getAssociatedObject(self, &AssociatedKeys.navigationItem) as? UINavigationItem {
+    var _navigationItem: EachNavigationItem {
+        if let item = objc_getAssociatedObject(self, &AssociatedKeys.navigationItem) as? EachNavigationItem {
             return item
         }
         

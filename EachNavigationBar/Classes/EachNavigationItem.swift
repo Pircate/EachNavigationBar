@@ -10,11 +10,14 @@ import UIKit
 
 class EachNavigationItem: UINavigationItem {
     
+    /// 记录修改过的属性
+    var changed: Set<PartialKeyPath<UINavigationItem>> = []
+    
     private weak var viewController: UIViewController?
     
     convenience init(viewController: UIViewController?) {
         self.init()
-        
+        self.changed = []
         self.viewController = viewController
     }
     
@@ -29,6 +32,8 @@ class EachNavigationItem: UINavigationItem {
             super.largeTitleDisplayMode = newValue
             
             viewController?.navigationItem.largeTitleDisplayMode = newValue
+            
+            changed.insert(\.largeTitleDisplayMode)
         }
     }
 }

@@ -24,6 +24,8 @@ extension UINavigationController {
         
         public var tintColor: UIColor?
         
+        public var shadow: Shadow?
+        
         public var shadowImage: UIImage?
         
         // Hides shadow image.
@@ -39,8 +41,6 @@ extension UINavigationController {
         
         /// Additional height for the navigation bar.
         public var additionalHeight: CGFloat = 0
-        
-        public var shadow: Shadow?
         
         public var backItem: BackItem?
         

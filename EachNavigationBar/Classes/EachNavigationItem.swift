@@ -25,7 +25,6 @@ class EachNavigationItem: UINavigationItem {
         didSet { viewController?.navigationItem.title = title }
     }
     
-    @available(iOS 11.0, *)
     override var largeTitleDisplayMode: UINavigationItem.LargeTitleDisplayMode {
         get { super.largeTitleDisplayMode }
         set {

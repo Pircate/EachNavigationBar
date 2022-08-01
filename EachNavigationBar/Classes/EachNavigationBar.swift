@@ -91,15 +91,23 @@ open class EachNavigationBar: UINavigationBar {
     }
     
     @available(iOS 13.0, *)
-    private lazy var appearance: UINavigationBarAppearance = {
+    private var appearance: UINavigationBarAppearance {
+        if let _appearance = _appearance as? UINavigationBarAppearance {
+            return _appearance
+        }
+        
         let appearance = UINavigationBarAppearance()
         
         appearance.backgroundColor = self.barTintColor
         appearance.titleTextAttributes = self.titleTextAttributes ?? [:]
         appearance.largeTitleTextAttributes = self.largeTitleTextAttributes ?? [:]
         
+        _appearance = appearance
+        
         return appearance
-    }()
+    }
+    
+    private var _appearance: Any?
     
     private var _alpha: CGFloat = 1
     

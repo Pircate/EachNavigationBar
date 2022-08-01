@@ -90,16 +90,20 @@ open class EachNavigationBar: UINavigationBar {
         didSet { layer.apply(shadow) }
     }
     
+    private var appearanceWrapper: Any?
     @available(iOS 13.0, *)
-    private lazy var appearance: UINavigationBarAppearance = {
-        let appearance = UINavigationBarAppearance()
-        
-        appearance.backgroundColor = self.barTintColor
-        appearance.titleTextAttributes = self.titleTextAttributes ?? [:]
-        appearance.largeTitleTextAttributes = self.largeTitleTextAttributes ?? [:]
-        
-        return appearance
-    }()
+    private var appearance: UINavigationBarAppearance {
+        if appearanceWrapper == nil {
+            let appearance = UINavigationBarAppearance()
+
+            appearance.backgroundColor = self.barTintColor
+            appearance.titleTextAttributes = self.titleTextAttributes ?? [:]
+            appearance.largeTitleTextAttributes = self.largeTitleTextAttributes ?? [:]
+
+            appearanceWrapper = appearance
+        }
+        return appearanceWrapper as! UINavigationBarAppearance
+    }
     
     private var _alpha: CGFloat = 1
     

@@ -3,3 +3,4 @@ Example/Pods/Pods.xcodeproj/xcuserdata/pircate.xcuserdatad/xcschemes/xcschememan
 .Gemfile.lock.icloud
 EachNavigationBar/Assets/EachNavigationBar.xcassets/.Contents.json.icloud
 EachNavigationBar/Assets/EachNavigationBar.xcassets/navigation_back_default.imageset/.Contents.json.icloud
+fastlane/report.xml

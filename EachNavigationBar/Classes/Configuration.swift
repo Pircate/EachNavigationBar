@@ -56,20 +56,17 @@ extension UINavigationController {
 
 public extension UINavigationController.Configuration {
     
-    @available(iOS 11.0, *)
     /// Padding of navigation bar content view.
     var layoutPaddings: UIEdgeInsets {
         get { _layoutPaddings }
         set { _layoutPaddings = newValue }
     }
     
-    @available(iOS 11.0, *)
     var prefersLargeTitles: Bool {
         get { _prefersLargeTitles }
         set { _prefersLargeTitles = newValue }
     }
     
-    @available(iOS 11.0, *)
     var largeTitle: LargeTitle {
         get { _largeTitle }
         set { _largeTitle = newValue }

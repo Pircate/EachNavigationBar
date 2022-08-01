@@ -28,7 +28,7 @@ open class EachNavigationBar: UINavigationBar {
         }
         didSet {
             frame.size.height = barHeight + _additionalHeight
-            viewController?.adjustsSafeAreaInsetsAfterIOS11()
+            viewController?.adjustsSafeAreaInsets()
         }
     }
     
@@ -64,7 +64,6 @@ open class EachNavigationBar: UINavigationBar {
         }
     }
     
-    @available(iOS 11.0, *)
     /// Padding of navigation bar content view.
     open var layoutPaddings: UIEdgeInsets {
         get { _layoutPaddings }
@@ -92,15 +91,23 @@ open class EachNavigationBar: UINavigationBar {
     }
     
     @available(iOS 13.0, *)
-    private lazy var appearance: UINavigationBarAppearance = {
+    private var appearance: UINavigationBarAppearance {
+        if let _appearance = _appearance as? UINavigationBarAppearance {
+            return _appearance
+        }
+        
         let appearance = UINavigationBarAppearance()
         
         appearance.backgroundColor = self.barTintColor
         appearance.titleTextAttributes = self.titleTextAttributes ?? [:]
         appearance.largeTitleTextAttributes = self.largeTitleTextAttributes ?? [:]
         
+        _appearance = appearance
+        
         return appearance
-    }()
+    }
+    
+    private var _appearance: Any?
     
     private var _alpha: CGFloat = 1
     
@@ -131,7 +138,7 @@ extension EachNavigationBar {
             changed.insert(\.isHidden)
         }
         didSet {
-            viewController?.adjustsSafeAreaInsetsAfterIOS11()
+            viewController?.adjustsSafeAreaInsets()
         }
     }
     
@@ -210,7 +217,6 @@ extension EachNavigationBar {
         }
     }
     
-    @available(iOS 11.0, *)
     open override var prefersLargeTitles: Bool {
         get { return super.prefersLargeTitles }
         set {
@@ -226,7 +232,6 @@ extension EachNavigationBar {
         }
     }
     
-    @available(iOS 11.0, *)
     open override var largeTitleTextAttributes: [NSAttributedString.Key : Any]? {
         get { return super.largeTitleTextAttributes }
         set {
@@ -271,9 +276,10 @@ extension EachNavigationBar {
     }
     
     var _additionalHeight: CGFloat {
-        if #available(iOS 11.0, *) {
-            if isLargeTitleShown { return 0 }
+        guard !isLargeTitleShown else {
+            return 0
         }
+        
         return additionalHeight
     }
     
@@ -310,7 +316,6 @@ private extension EachNavigationBar {
         return viewController?.navigationController?.navigationBar
     }
     
-    @available(iOS 11.0, *)
     var contentView: UIView? {
         if let contentView = _contentView { return contentView }
         
@@ -321,7 +326,6 @@ private extension EachNavigationBar {
         return _contentView
     }
     
-    @available(iOS 11.0, *)
     var isLargeTitleShown: Bool {
         return prefersLargeTitles && viewController?._navigationItem.largeTitleDisplayMode != .never
     }
@@ -341,12 +345,10 @@ private extension EachNavigationBar {
             height: bounds.height + barMinY
         )
         
-        adjustsLayoutMarginsAfterIOS11()
+        adjustsLayoutMargins()
     }
     
-    func adjustsLayoutMarginsAfterIOS11() {
-        guard #available(iOS 11.0, *) else { return }
-        
+    func adjustsLayoutMargins() {
         layoutMargins = .barLayoutMargins
         
         guard let contentView = contentView else { return }

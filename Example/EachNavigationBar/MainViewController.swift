@@ -58,6 +58,7 @@ class MainViewController: UIViewController {
     
     @IBAction func prefersLargetTitleAction(_ sender: UISwitch) {
         if #available(iOS 11.0, *) {
+            navigation.bar.prefersLargeTitles = sender.isOn
             navigation.item.largeTitleDisplayMode = sender.isOn ? .always : .never
             setLargeTitleAlphaSlider.isEnabled = sender.isOn
         }

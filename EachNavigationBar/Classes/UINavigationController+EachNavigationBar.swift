@@ -24,13 +24,13 @@ extension UINavigationController {
         
         bar.adjustsLayout()
         
-        topViewController?.adjustsSafeAreaInsetsAfterIOS11()
+        topViewController?.adjustsSafeAreaInsets()
     }
     
     open override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        guard #available(iOS 11.0, *), _configuration.isEnabled else { return }
+        guard _configuration.isEnabled else { return }
         
         topViewController?._navigationBar.adjustsLayout()
     }

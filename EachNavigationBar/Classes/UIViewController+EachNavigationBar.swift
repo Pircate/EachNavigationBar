@@ -14,6 +14,23 @@ public extension UIViewController {
         _navigationBar.adjustsLayout()
         _navigationBar.setNeedsLayout()
     }
+    
+    @objc
+    func adjustsNavigationBarConfiguration() {
+        guard let navigationController = navigationController else { return }
+        _navigationItem.update(navigationController._configuration)
+        _navigationBar.update(navigationController._configuration)
+    }
+}
+
+public extension UINavigationController {
+    
+    @objc
+    override func adjustsNavigationBarConfiguration() {
+        viewControllers.forEach {
+            $0.adjustsNavigationBarConfiguration()
+        }
+    }
 }
 
 extension UIViewController {
@@ -24,10 +41,7 @@ extension UIViewController {
         navigationController.sendNavigationBarToBack()
         view.addSubview(_navigationBar)
         
-        if #available(iOS 11.0, *) {
-            _navigationItem.largeTitleDisplayMode = navigationController._configuration.largeTitle.displayMode
-        }
-        
+        _navigationItem.apply(navigationController._configuration)
         _navigationBar.apply(navigationController._configuration)
         
         let viewControllers = navigationController.viewControllers
@@ -46,19 +60,15 @@ extension UIViewController {
         guard let navigationBar = navigationController?.navigationBar else { return }
         navigationBar.barStyle = _navigationBar.superBarStyle
         navigationBar.isHidden = _navigationBar.isHidden
-        if #available(iOS 11.0, *) {
-            adjustsSafeAreaInsetsAfterIOS11()
-            navigationItem.title = _navigationItem.title
-            navigationItem.largeTitleDisplayMode = _navigationItem.largeTitleDisplayMode
-            navigationBar.prefersLargeTitles = _navigationBar.prefersLargeTitles
-            navigationBar.largeTitleTextAttributes = _navigationBar.largeTitleTextAttributes
-        }
+        adjustsSafeAreaInsets()
+        navigationItem.title = _navigationItem.title
+        navigationItem.largeTitleDisplayMode = _navigationItem.largeTitleDisplayMode
+        navigationBar.prefersLargeTitles = _navigationBar.prefersLargeTitles
+        navigationBar.largeTitleTextAttributes = _navigationBar.largeTitleTextAttributes
         view.bringSubviewToFront(_navigationBar)
     }
     
-    func adjustsSafeAreaInsetsAfterIOS11() {
-        guard #available(iOS 11.0, *) else { return }
-        
+    func adjustsSafeAreaInsets() {
         let height = _navigationBar.additionalView?.frame.height ?? 0
         additionalSafeAreaInsets.top = _navigationBar.isHidden
             ? -view.safeAreaInsets.top
@@ -123,11 +133,100 @@ private extension EachNavigationBar {
             self.shadow = shadow
         }
         
-        if #available(iOS 11.0, *) {
+        layoutPaddings = configuration.layoutPaddings
+        prefersLargeTitles = configuration.prefersLargeTitles
+        largeTitleTextAttributes = configuration.largeTitle.textAttributes
+        
+        // 清空修改记录
+        changed.removeAll()
+    }
+    
+    func update(_ configuration: UINavigationController.Configuration) {
+        let original = changed
+        
+        if !changed.contains(\.isHidden) {
+            isHidden = configuration.isHidden
+        }
+        if !changed.contains(\.alpha) {
+            alpha = configuration.alpha
+        }
+        if !changed.contains(\.isTranslucent) {
+            isTranslucent = configuration.isTranslucent
+        }
+        if !changed.contains(\.barTintColor) {
+            barTintColor = configuration.barTintColor
+        }
+        if !changed.contains(\.tintColor) {
+            tintColor = configuration.tintColor
+        }
+        if !changed.contains(\.titleTextAttributes) {
+            titleTextAttributes = configuration.titleTextAttributes
+        }
+        if !changed.contains(\.shadowImage) {
+            shadowImage = configuration.shadowImage
+        }
+        let backgroundImage = backgroundImage(
+            for: configuration.background.barPosition,
+            barMetrics: configuration.background.barMetrics
+        )
+        if backgroundImage == nil {
+            setBackgroundImage(
+                configuration.background.image,
+                for: configuration.background.barPosition,
+                barMetrics: configuration.background.barMetrics
+            )
+        }
+        if !changed.contains(\.barStyle) {
+            barStyle = configuration.barStyle
+        }
+        if !changed.contains(\.statusBarStyle) {
+            statusBarStyle = configuration.statusBarStyle
+        }
+        if !changed.contains(\.additionalHeight) {
+            additionalHeight = configuration.additionalHeight
+        }
+        if !changed.contains(\.isShadowHidden) {
+            isShadowHidden = configuration.isShadowHidden
+        }
+        if !changed.contains(\.shadow) {
+            if let shadow = configuration.shadow {
+                self.shadow = shadow
+            }
+        }
+        
+        if !changed.contains(\.layoutPaddings) {
             layoutPaddings = configuration.layoutPaddings
+        }
+        if !changed.contains(\.prefersLargeTitles) {
             prefersLargeTitles = configuration.prefersLargeTitles
+        }
+        if !changed.contains(\.largeTitleTextAttributes) {
             largeTitleTextAttributes = configuration.largeTitle.textAttributes
         }
+        
+        // 恢复原始记录
+        changed = original
+    }
+}
+
+private extension EachNavigationItem {
+    
+    func apply(_ configuration: UINavigationController.Configuration) {
+        largeTitleDisplayMode = configuration.largeTitle.displayMode
+        
+        // 清空修改记录
+        changed.removeAll()
+    }
+    
+    func update(_ configuration: UINavigationController.Configuration) {
+        let original = changed
+        
+        if !changed.contains(\.largeTitleDisplayMode) {
+            largeTitleDisplayMode = configuration.largeTitle.displayMode
+        }
+        
+        // 恢复原始记录
+        changed = original
     }
 }
 

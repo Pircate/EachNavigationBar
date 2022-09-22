@@ -9,20 +9,34 @@
 import UIKit
 
 open class EachNavigationBar: UINavigationBar {
+    /// 记录修改过的属性
+    var changed: Set<PartialKeyPath<EachNavigationBar>> = []
     
     /// automatically adjusts position when view layout
     open var automaticallyAdjustsPosition: Bool = true
     
+    open override var barStyle: UIBarStyle {
+        willSet {
+            changed.insert(\.barStyle)
+        }
+    }
+    
     /// Additional height for the navigation bar.
     open var additionalHeight: CGFloat = 0 {
+        willSet {
+            changed.insert(\.additionalHeight)
+        }
         didSet {
             frame.size.height = barHeight + _additionalHeight
-            viewController?.adjustsSafeAreaInsetsAfterIOS11()
+            viewController?.adjustsSafeAreaInsets()
         }
     }
     
     /// Hides shadow image
     open var isShadowHidden: Bool = false {
+        willSet {
+            changed.insert(\.isShadowHidden)
+        }
         didSet {
             guard let background = subviews.first else { return }
             background.clipsToBounds = isShadowHidden
@@ -30,6 +44,9 @@ open class EachNavigationBar: UINavigationBar {
     }
     
     open var statusBarStyle: UIStatusBarStyle = .default {
+        willSet {
+            changed.insert(\.statusBarStyle)
+        }
         didSet {
             superNavigationBar?.barStyle = superBarStyle
         }
@@ -37,6 +54,9 @@ open class EachNavigationBar: UINavigationBar {
     
     /// Bar button item to use for the back button in the child navigation item.
     open var backBarButtonItem: BackBarButtonItem? {
+        willSet {
+            changed.insert(\.backBarButtonItem)
+        }
         didSet {
             backBarButtonItem?.navigationController = viewController?.navigationController
             
@@ -44,11 +64,13 @@ open class EachNavigationBar: UINavigationBar {
         }
     }
     
-    @available(iOS 11.0, *)
     /// Padding of navigation bar content view.
     open var layoutPaddings: UIEdgeInsets {
         get { _layoutPaddings }
-        set { _layoutPaddings = newValue }
+        set {
+            _layoutPaddings = newValue
+            changed.insert(\.layoutPaddings)
+        }
     }
     
     /// Additional view at the bottom of the navigation bar
@@ -64,19 +86,28 @@ open class EachNavigationBar: UINavigationBar {
     }
     
     open var shadow: Shadow = .none {
+        willSet { changed.insert(\.shadow) }
         didSet { layer.apply(shadow) }
     }
     
     @available(iOS 13.0, *)
-    private lazy var appearance: UINavigationBarAppearance = {
+    private var appearance: UINavigationBarAppearance {
+        if let _appearance = _appearance as? UINavigationBarAppearance {
+            return _appearance
+        }
+        
         let appearance = UINavigationBarAppearance()
         
         appearance.backgroundColor = self.barTintColor
         appearance.titleTextAttributes = self.titleTextAttributes ?? [:]
         appearance.largeTitleTextAttributes = self.largeTitleTextAttributes ?? [:]
         
+        _appearance = appearance
+        
         return appearance
-    }()
+    }
+    
+    private var _appearance: Any?
     
     private var _alpha: CGFloat = 1
     
@@ -103,10 +134,18 @@ open class EachNavigationBar: UINavigationBar {
 extension EachNavigationBar {
     
     open override var isHidden: Bool {
-        didSet { viewController?.adjustsSafeAreaInsetsAfterIOS11() }
+        willSet {
+            changed.insert(\.isHidden)
+        }
+        didSet {
+            viewController?.adjustsSafeAreaInsets()
+        }
     }
     
     open override var isTranslucent: Bool {
+        willSet {
+            changed.insert(\.isTranslucent)
+        }
         didSet {
             guard #available(iOS 13.0, *), !isTranslucent else { return }
             
@@ -125,10 +164,21 @@ extension EachNavigationBar {
             if let background = subviews.first {
                 background.alpha = newValue
             }
+            
+            changed.insert(\.alpha)
+        }
+    }
+    
+    open override var tintColor: UIColor! {
+        willSet {
+            changed.insert(\.tintColor)
         }
     }
     
     open override var barTintColor: UIColor? {
+        willSet {
+            changed.insert(\.barTintColor)
+        }
         didSet {
             guard #available(iOS 13.0, *) else { return }
             
@@ -144,6 +194,9 @@ extension EachNavigationBar {
     }
     
     open override var shadowImage: UIImage? {
+        willSet {
+            changed.insert(\.shadowImage)
+        }
         didSet {
             guard #available(iOS 13.0, *) else { return }
             
@@ -153,6 +206,9 @@ extension EachNavigationBar {
     }
     
     open override var titleTextAttributes: [NSAttributedString.Key : Any]? {
+        willSet {
+            changed.insert(\.titleTextAttributes)
+        }
         didSet {
             guard #available(iOS 13.0, *) else { return }
             
@@ -161,15 +217,14 @@ extension EachNavigationBar {
         }
     }
     
-    @available(iOS 11.0, *)
     open override var prefersLargeTitles: Bool {
         get { return super.prefersLargeTitles }
         set {
-            guard super.prefersLargeTitles != newValue else { return }
-            
             super.prefersLargeTitles = newValue
             
             superNavigationBar?.prefersLargeTitles = newValue
+            
+            changed.insert(\.prefersLargeTitles)
             
             guard #available(iOS 13.0, *) else { return }
             
@@ -177,7 +232,6 @@ extension EachNavigationBar {
         }
     }
     
-    @available(iOS 11.0, *)
     open override var largeTitleTextAttributes: [NSAttributedString.Key : Any]? {
         get { return super.largeTitleTextAttributes }
         set {
@@ -185,6 +239,8 @@ extension EachNavigationBar {
             
             viewController?.navigationItem.title = viewController?._navigationItem.title
             superNavigationBar?.largeTitleTextAttributes = newValue
+            
+            changed.insert(\.largeTitleTextAttributes)
             
             guard #available(iOS 13.0, *) else { return }
             
@@ -220,9 +276,10 @@ extension EachNavigationBar {
     }
     
     var _additionalHeight: CGFloat {
-        if #available(iOS 11.0, *) {
-            if isLargeTitleShown { return 0 }
+        guard !isLargeTitleShown else {
+            return 0
         }
+        
         return additionalHeight
     }
     
@@ -259,7 +316,6 @@ private extension EachNavigationBar {
         return viewController?.navigationController?.navigationBar
     }
     
-    @available(iOS 11.0, *)
     var contentView: UIView? {
         if let contentView = _contentView { return contentView }
         
@@ -270,7 +326,6 @@ private extension EachNavigationBar {
         return _contentView
     }
     
-    @available(iOS 11.0, *)
     var isLargeTitleShown: Bool {
         return prefersLargeTitles && viewController?._navigationItem.largeTitleDisplayMode != .never
     }
@@ -290,12 +345,10 @@ private extension EachNavigationBar {
             height: bounds.height + barMinY
         )
         
-        adjustsLayoutMarginsAfterIOS11()
+        adjustsLayoutMargins()
     }
     
-    func adjustsLayoutMarginsAfterIOS11() {
-        guard #available(iOS 11.0, *) else { return }
-        
+    func adjustsLayoutMargins() {
         layoutMargins = .barLayoutMargins
         
         guard let contentView = contentView else { return }

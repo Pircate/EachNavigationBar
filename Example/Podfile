@@ -1,4 +1,6 @@
-platform :ios, '10.0'
+source "https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git"
+
+platform :ios, '11.0'
 use_frameworks!
 install! 'cocoapods', :disable_input_output_paths => true
 

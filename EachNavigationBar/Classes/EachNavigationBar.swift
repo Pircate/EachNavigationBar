@@ -284,11 +284,13 @@ extension EachNavigationBar {
     }
     
     var barMinY: CGFloat {
-        if let superNavigationBar = superNavigationBar {
+        if let superNavigationBar = superNavigationBar, superNavigationBar.frame.minY > 0 {
             return superNavigationBar.frame.minY
         }
-         
+        
         if #available(iOS 13.0, *) {
+            let window = window ?? UIApplication.shared.keyWindow
+            
             return window?.windowScene?.statusBarManager?.statusBarFrame.maxY ?? 0
         } else {
             return UIApplication.shared.statusBarFrame.maxY

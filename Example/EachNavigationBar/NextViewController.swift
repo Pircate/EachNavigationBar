@@ -40,9 +40,7 @@ class NextViewController: UIViewController {
         titleView.layer.cornerRadius = 15
         titleView.layer.masksToBounds = true
         navigation.item.titleView = titleView
-        if #available(iOS 11.0, *) {
-            navigation.bar.prefersLargeTitles = false
-        }
+        navigation.bar.prefersLargeTitles = false
         
         navigation.bar.backBarButtonItem?.shouldBack = { item in
             let alert = UIAlertController(title: "确定退出", message: nil, preferredStyle: .alert)

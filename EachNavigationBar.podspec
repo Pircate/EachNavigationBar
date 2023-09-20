@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'EachNavigationBar'
-  s.version          = '1.17.0'
+  s.version          = '2.0.0'
   s.summary          = 'A custom navigation bar of UIViewController.'
   s.homepage         = 'https://github.com/Pircate/EachNavigationBar'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
@@ -10,5 +10,5 @@ Pod::Spec.new do |s|
   s.resource_bundles = { 'EachNavigationBar' => ['EachNavigationBar/Assets/*.xcassets'] }
   s.frameworks       = 'UIKit'
   s.swift_versions   = ['5.1', '5.2', '5.3']
-  s.ios.deployment_target = '11.0'
+  s.ios.deployment_target = '13.0'
 end

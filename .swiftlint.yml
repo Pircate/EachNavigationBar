@@ -1,0 +1,38 @@
+---
+included:
+excluded:
+- Carthage
+- Pods
+line_length:
+  warning: 120
+  ignores_function_declarations: true
+  ignores_comments: true
+disabled_rules:
+- empty_enum_arguments
+- trailing_whitespace
+- cyclomatic_complexity
+- file_length
+- type_name
+- inclusive_language
+- function_parameter_count
+- identifier_name
+- type_body_length
+- function_body_length
+- nesting
+- unneeded_break_in_switch
+identifier_name:
+  excluded:
+  - i
+  - idx
+  - h
+  - w
+  - x
+  - y
+  - id
+  - url
+  - min
+  - max
+  - r
+  - g
+  - b
+  - a

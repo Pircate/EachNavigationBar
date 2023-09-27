@@ -200,7 +200,7 @@ extension EachNavigationBar {
         }
     }
     
-    open override var titleTextAttributes: [NSAttributedString.Key : Any]? {
+    open override var titleTextAttributes: [NSAttributedString.Key: Any]? {
         willSet {
             changed.insert(\.titleTextAttributes)
         }
@@ -223,7 +223,7 @@ extension EachNavigationBar {
         }
     }
     
-    open override var largeTitleTextAttributes: [NSAttributedString.Key : Any]? {
+    open override var largeTitleTextAttributes: [NSAttributedString.Key: Any]? {
         get { return super.largeTitleTextAttributes }
         set {
             super.largeTitleTextAttributes = newValue

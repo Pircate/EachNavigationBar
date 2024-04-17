@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'EachNavigationBar'
-  s.version          = '2.0.0'
+  s.version          = '2.1.0'
   s.summary          = 'A custom navigation bar of UIViewController.'
   s.homepage         = 'https://github.com/Pircate/EachNavigationBar'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
@@ -11,4 +11,9 @@ Pod::Spec.new do |s|
   s.frameworks       = 'UIKit'
   s.swift_versions   = ['5.1', '5.2', '5.3']
   s.ios.deployment_target = '13.0'
+  s.subspec 'Privacy' do |ss|
+    ss.resource_bundles = {
+      "Privacy" => 'EachNavigationBar/Resources/PrivacyInfo.xcprivacy'
+    }
+  end
 end

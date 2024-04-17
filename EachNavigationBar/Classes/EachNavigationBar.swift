@@ -90,7 +90,6 @@ open class EachNavigationBar: UINavigationBar {
         didSet { layer.apply(shadow) }
     }
     
-    @available(iOS 13.0, *)
     private var appearance: UINavigationBarAppearance {
         if let _appearance = _appearance as? UINavigationBarAppearance {
             return _appearance
@@ -147,7 +146,7 @@ extension EachNavigationBar {
             changed.insert(\.isTranslucent)
         }
         didSet {
-            guard #available(iOS 13.0, *), !isTranslucent else { return }
+            guard !isTranslucent else { return }
             
             appearance.backgroundEffect = nil
             updateAppearance(appearance)
@@ -180,8 +179,6 @@ extension EachNavigationBar {
             changed.insert(\.barTintColor)
         }
         didSet {
-            guard #available(iOS 13.0, *) else { return }
-            
             appearance.backgroundColor = barTintColor
             updateAppearance(appearance)
         }
@@ -198,20 +195,16 @@ extension EachNavigationBar {
             changed.insert(\.shadowImage)
         }
         didSet {
-            guard #available(iOS 13.0, *) else { return }
-            
             appearance.shadowImage = shadowImage
             updateAppearance(appearance)
         }
     }
     
-    open override var titleTextAttributes: [NSAttributedString.Key : Any]? {
+    open override var titleTextAttributes: [NSAttributedString.Key: Any]? {
         willSet {
             changed.insert(\.titleTextAttributes)
         }
         didSet {
-            guard #available(iOS 13.0, *) else { return }
-            
             appearance.titleTextAttributes = titleTextAttributes ?? [:]
             updateAppearance(appearance)
         }
@@ -226,13 +219,11 @@ extension EachNavigationBar {
             
             changed.insert(\.prefersLargeTitles)
             
-            guard #available(iOS 13.0, *) else { return }
-            
             updateAppearance(appearance)
         }
     }
     
-    open override var largeTitleTextAttributes: [NSAttributedString.Key : Any]? {
+    open override var largeTitleTextAttributes: [NSAttributedString.Key: Any]? {
         get { return super.largeTitleTextAttributes }
         set {
             super.largeTitleTextAttributes = newValue
@@ -241,8 +232,6 @@ extension EachNavigationBar {
             superNavigationBar?.largeTitleTextAttributes = newValue
             
             changed.insert(\.largeTitleTextAttributes)
-            
-            guard #available(iOS 13.0, *) else { return }
             
             appearance.largeTitleTextAttributes = newValue ?? [:]
             updateAppearance(appearance)
@@ -261,8 +250,6 @@ extension EachNavigationBar {
         barMetrics: UIBarMetrics
     ) {
         super.setBackgroundImage(backgroundImage, for: barPosition, barMetrics: barMetrics)
-        
-        guard #available(iOS 13.0, *) else { return }
         
         appearance.backgroundImage = backgroundImage
         updateAppearance(appearance)
@@ -284,15 +271,13 @@ extension EachNavigationBar {
     }
     
     var barMinY: CGFloat {
-        if let superNavigationBar = superNavigationBar {
+        if let superNavigationBar = superNavigationBar, superNavigationBar.frame.minY > 0 {
             return superNavigationBar.frame.minY
         }
-         
-        if #available(iOS 13.0, *) {
-            return window?.windowScene?.statusBarManager?.statusBarFrame.maxY ?? 0
-        } else {
-            return UIApplication.shared.statusBarFrame.maxY
-        }
+        
+        let window = window ?? UIApplication.shared.windows.first { $0.isKeyWindow }
+        
+        return window?.windowScene?.statusBarManager?.statusBarFrame.maxY ?? 0
     }
     
     func adjustsLayout() {
@@ -353,21 +338,16 @@ private extension EachNavigationBar {
         
         guard let contentView = contentView else { return }
         
-        if #available(iOS 13.0, *) {
-            contentView.frame = CGRect(
-                x: layoutPaddings.left - layoutMargins.left,
-                y: isLargeTitleShown ? 0 : additionalHeight,
-                width: layoutMargins.left
-                    + layoutMargins.right
-                    - layoutPaddings.left
-                    - layoutPaddings.right
-                    + contentView.frame.width,
-                height: contentView.frame.height
-            )
-        } else {
-            contentView.frame.origin.y = isLargeTitleShown ? 0 : additionalHeight
-            contentView.layoutMargins = layoutPaddings
-        }
+        contentView.frame = CGRect(
+            x: layoutPaddings.left - layoutMargins.left,
+            y: isLargeTitleShown ? 0 : additionalHeight,
+            width: layoutMargins.left
+                + layoutMargins.right
+                - layoutPaddings.left
+                - layoutPaddings.right
+                + contentView.frame.width,
+            height: contentView.frame.height
+        )
     }
     
     func setupAdditionalView(_ additionalView: UIView) {
@@ -381,7 +361,6 @@ private extension EachNavigationBar {
         ])
     }
     
-    @available(iOS 13.0, *)
     func updateAppearance(_ appearance: UINavigationBarAppearance) {
         self.standardAppearance = appearance
         self.compactAppearance = appearance

@@ -57,17 +57,13 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func prefersLargetTitleAction(_ sender: UISwitch) {
-        if #available(iOS 11.0, *) {
-            navigation.bar.prefersLargeTitles = sender.isOn
-            navigation.item.largeTitleDisplayMode = sender.isOn ? .always : .never
-            setLargeTitleAlphaSlider.isEnabled = sender.isOn
-        }
+        navigation.bar.prefersLargeTitles = sender.isOn
+        navigation.item.largeTitleDisplayMode = sender.isOn ? .always : .never
+        setLargeTitleAlphaSlider.isEnabled = sender.isOn
     }
     
     @IBAction func setLargeTitleAlphaAction(_ sender: UISlider) {
-        if #available(iOS 11.0, *) {
-            navigation.bar.setLargeTitleAlpha(CGFloat(sender.value))
-        }
+        navigation.bar.setLargeTitleAlpha(CGFloat(sender.value))
     }
     
     @IBAction func changeStatusBarStyle(_ sender: UISwitch) {

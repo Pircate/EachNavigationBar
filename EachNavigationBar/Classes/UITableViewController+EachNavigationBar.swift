@@ -21,7 +21,7 @@ extension UITableViewController {
         let observation = tableView.observe(
             \.contentOffset,
             options: .new
-        ) { [weak self] tableView, change in
+        ) { [weak self] tableView, _ in
             guard let `self` = self else { return }
             
             self.view.bringSubviewToFront(self._navigationBar)

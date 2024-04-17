@@ -1,8 +1,10 @@
 source "https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git"
 
-platform :ios, '11.0'
+platform :ios, '13.0'
 use_frameworks!
-install! 'cocoapods', :disable_input_output_paths => true
+install! 'cocoapods',
+:disable_input_output_paths => true,
+:share_schemes_for_development_pods => true
 
 target 'EachNavigationBar_Example' do
   pod 'EachNavigationBar', :path => '../'

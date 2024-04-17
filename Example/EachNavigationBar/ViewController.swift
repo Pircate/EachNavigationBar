@@ -72,14 +72,12 @@ extension ViewController: UIScrollViewDelegate {
         let alpha = 1 - (scrollView.contentOffset.y) / navigation.bar.frame.height
         navigation.bar.setTintAlpha(alpha)
         navigation.bar.setTitleAlpha(alpha)
-        if #available(iOS 11.0, *) {
-            navigation.bar.setLargeTitleAlpha(alpha)
-        }
+        navigation.bar.setLargeTitleAlpha(alpha)
         if originY <= statusBarMaxY {
             let minY = statusBarMaxY - navigation.bar.frame.height
             navigation.bar.frame.origin.y = originY > minY ? originY : minY
         } else {
-            if #available(iOS 11.0, *) { navigation.bar.setLargeTitleAlpha(1) }
+            navigation.bar.setLargeTitleAlpha(1)
             navigation.bar.setTitleAlpha(1)
             navigation.bar.setTintAlpha(1)
             navigation.bar.frame.origin.y = statusBarMaxY

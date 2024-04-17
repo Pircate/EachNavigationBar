@@ -31,7 +31,7 @@ extension UINavigationController {
         // Hides shadow image.
         public var isShadowHidden: Bool = false
         
-        public var titleTextAttributes: [NSAttributedString.Key : Any]?
+        public var titleTextAttributes: [NSAttributedString.Key: Any]?
         
         public var isTranslucent: Bool = true
         

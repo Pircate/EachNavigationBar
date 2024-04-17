@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '13.0'
   s.subspec 'Privacy' do |ss|
     ss.resource_bundles = {
-      "Privacy" => 'EachNavigationBar/Resources/PrivacyInfo.xcprivacy'
+      "EachNavigationBar" => 'EachNavigationBar/Resources/PrivacyInfo.xcprivacy'
     }
   end
 end

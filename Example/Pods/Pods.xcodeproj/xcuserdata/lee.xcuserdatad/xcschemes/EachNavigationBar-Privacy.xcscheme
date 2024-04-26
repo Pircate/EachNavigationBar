@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1240"
+   LastUpgradeVersion = "1500"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AC283E29C073537248EC3F3F26142C29"
-               BuildableName = "EachNavigationBar.framework"
-               BlueprintName = "EachNavigationBar"
+               BlueprintIdentifier = "492FE29C9694908D78F7AD497AB0526C"
+               BuildableName = "Privacy.bundle"
+               BlueprintName = "EachNavigationBar-Privacy"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

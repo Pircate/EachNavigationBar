@@ -1,6 +1,48 @@
-Example/EachNavigationBar.xcodeproj/xcuserdata/pircate.xcuserdatad/xcschemes/xcschememanagement.plist
-Example/Pods/Pods.xcodeproj/xcuserdata/pircate.xcuserdatad/xcschemes/xcschememanagement.plist
-.Gemfile.lock.icloud
-EachNavigationBar/Assets/EachNavigationBar.xcassets/.Contents.json.icloud
-EachNavigationBar/Assets/EachNavigationBar.xcassets/navigation_back_default.imageset/.Contents.json.icloud
-fastlane/report.xml
+# OSX specific
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Xcode, Swift and Obj-C specific
+DerivedData
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+*.xccheckout
+*.moved-aside
+*.xcuserstate
+*.xcscmblueprint
+*.hmap
+*.ipa
+
+# Cocoa Pods specific
+Pods/
+*.xcworkspace
+#Podfile.lock
+
+.idea/*
+MiFit/DevLib/UI_HM_Lib/Theme/.idea/*
+Carthage/Checkouts/*
+xcschememanagement.plist
+SportDetail.xcworkspace/xcuserdata/huami.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist
+*.xcbkptlist
+report.xml

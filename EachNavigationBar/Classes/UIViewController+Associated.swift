@@ -12,19 +12,25 @@ import UIKit
 extension UINavigationController {
     
     var _configuration: Configuration {
-        if let configuration = objc_getAssociatedObject(
-            self,
-            &AssociatedKeys.configuration
-        ) as? Configuration {
-            return configuration
+        let config = withUnsafePointer(to: &AssociatedKeys.configuration) {
+            objc_getAssociatedObject(self, $0) as? Configuration
         }
+        
+        if let config  {
+            return config
+        }
+        
         let configuration = Configuration()
-        objc_setAssociatedObject(
-            self,
-            &AssociatedKeys.configuration,
-            configuration,
-            .OBJC_ASSOCIATION_RETAIN_NONATOMIC
-        )
+        
+        withUnsafePointer(to: &AssociatedKeys.configuration) {
+            objc_setAssociatedObject(
+                self,
+                $0,
+                configuration,
+                .OBJC_ASSOCIATION_RETAIN_NONATOMIC
+            )
+        }
+        
         return configuration
     }
 }
@@ -32,38 +38,50 @@ extension UINavigationController {
 extension UIViewController {
     
     var _navigationBar: EachNavigationBar {
-        if let bar = objc_getAssociatedObject(self, &AssociatedKeys.navigationBar) as? EachNavigationBar {
+        let bar = withUnsafePointer(to: &AssociatedKeys.navigationBar) {
+            objc_getAssociatedObject(self, $0) as? EachNavigationBar
+        }
+        
+        if let bar {
             return bar
         }
         
-        let bar = EachNavigationBar(viewController: self)
+        let navigationBar = EachNavigationBar(viewController: self)
         
-        objc_setAssociatedObject(
-            self,
-            &AssociatedKeys.navigationBar,
-            bar,
-            .OBJC_ASSOCIATION_RETAIN_NONATOMIC
-        )
+        withUnsafePointer(to: &AssociatedKeys.navigationBar) {
+            objc_setAssociatedObject(
+                self,
+                $0,
+                navigationBar,
+                .OBJC_ASSOCIATION_RETAIN_NONATOMIC
+            )
+        }
         
-        return bar
+        return navigationBar
     }
     
     var _navigationItem: EachNavigationItem {
-        if let item = objc_getAssociatedObject(self, &AssociatedKeys.navigationItem) as? EachNavigationItem {
+        let item = withUnsafePointer(to: &AssociatedKeys.navigationItem) {
+            objc_getAssociatedObject(self, $0) as? EachNavigationItem
+        }
+        
+        if let item  {
             return item
         }
         
-        let item = EachNavigationItem(viewController: self)
-        item.copy(by: navigationItem)
+        let navigationItem = EachNavigationItem(viewController: self)
+        navigationItem.copy(by: navigationItem)
         
-        objc_setAssociatedObject(
-            self,
-            &AssociatedKeys.navigationItem,
-            item,
-            .OBJC_ASSOCIATION_RETAIN_NONATOMIC
-        )
+        withUnsafePointer(to: &AssociatedKeys.navigationItem) {
+            objc_setAssociatedObject(
+                self,
+                $0,
+                navigationItem,
+                .OBJC_ASSOCIATION_RETAIN_NONATOMIC
+            )
+        }
         
-        return item
+        return navigationItem
     }
 }
 
